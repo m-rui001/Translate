@@ -18,4 +18,7 @@ _batch*.txt
 _files.txt
 _smoke.out
 /models.json
+/_*.py
+/_*.json
+/_*.out
 .env
