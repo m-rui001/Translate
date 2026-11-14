@@ -1,0 +1,101 @@
+======================================================================================================================
+SYNC2  EPUB -> WORK  (DRY RUN)
+======================================================================================================================
+epubs scanned        : 65
+paragraphs replaced  : 7828
+files to rewrite     : 3003
+books needing review : 21
+
+epub                           work book              layout       wPara  ePara    gap   oldHan   newHan  epubHan   delta  match   repl   low files stat
+----------------------------------------------------------------------------------------------------------------------
+三个火枪手（坟头草译）.epub               work_pub/musketeers    out-tree      8894   8833    -61   330486   330812   330565   0.001   8074    754     5   124 OK
+乌略亚庄园（坟头草译）.epub               work_gutenberg/ulloa   out-tree      1324   1099   -225   131697   131714   112959   0.166   1044     50     5    31 MISMATCH
+乡村医生（坟头草译）.epub                work_pub/landarzt      out-tree       135    135      0    20962    20964    20964   0.000    127      8     0     5 OK
+傲慢与偏见（坟头草译）.epub               work_pub/pride         out-tree      2311   2263    -48   184811   184893   184689   0.001   2172     83     8    51 OK
+判决（坟头草译）.epub                  work_pub/urteil        out-tree        73     73      0     6358     6358     6358   0.000     73      0     0     0 OK
+劝导（坟头草译）.epub                  work_pub/persuasion    out-tree      1028   1012    -16   124264   124314   124248   0.001    959     49     4    29 OK
+包法利夫人（坟头草译）.epub               work_pub/bovary        out-tree      2985   2983     -2   165061   165098   165085   0.000   2807    172     4    70 OK
+双城记（坟头草译）.epub                 work_pub/twocities     out-tree      3495   3304   -191   211811   211792   200391   0.057   2987    313     4    70 MISMATCH
+变形记（坟头草译）.epub                 work_pub/verwandlung   out-tree        99     99      0    28447    28454    28454   0.000     94      5     0     4 OK
+在流放地（坟头草译）.epub                work_pub/strafkolonie  out-tree        51     51      0    15089    15087    15087   0.000     48      3     0     3 OK
+基督山伯爵（坟头草译）.epub               work_pub/montecristo   out-tree      4200   4190    -10   179013   179091   179046   0.000   4047    142     1    58 OK
+奥尔拉（坟头草译）.epub                 work_pub/horla         out-tree      1480   1480      0    62411    62391    62394   0.000   1448     31     1    20 OK
+学生托勒斯的迷惘（坟头草译）.epub            work_pub/toerless      out-tree      1200   1200      0    82863    82874    82873   0.000   1152     47     1    25 OK
+巴黎圣母院（坟头草译）.epub               work_pub/notredame     out-tree      1616   1613     -3   124064   124083   124075   0.000   1553     59     1    33 OK
+布登勃洛克一家（坟头草译）.epub             work_pub/buddenbrooks  out-tree      3509   3412    -97   369804   370081   369801   0.001   2981    398    33   141 OK
+幸运的佩尔（坟头草译）.epub               work_gutenberg/lykkep  out-tree      1483   1356   -127   132741   132770   121956   0.089   1271     80     5    40 MISMATCH
+庭长夫人（坟头草译）.epub                work_gutenberg/regent  out-tree      5977   4717  -1260   495617   495623   412213   0.202   4364    333    20   131 MISMATCH
+彩石集（坟头草译）.epub                 work_gutenberg/buntes  out-tree      1393   1298    -95   142273   142333   127299   0.118   1251     44     3    26 MISMATCH
+德伯家的苔丝（坟头草译）.epub              work_pub/tess          out-tree      3377   3349    -28   224720   224730   224593   0.001   3173    173     3    69 OK
+悉达多（坟头草译）.epub                 work_pub/siddhartha    out-tree       538    538      0    52726    52685    52687   0.000    521     16     1    10 OK
+悲惨世界（坟头草译）.epub                work_pub/miserables    out-tree      2963   2900    -63   163740   163738   163530   0.001   2782    115     3    57 OK
+愚者与死神（坟头草译）.epub               work_pub/torundtod     out-tree       133    133      0     7109     7109     7109   0.000    133      0     0     0 OK
+戴安娜的交叉（坟头草译）.epub              work_gutenberg/diana   out-tree      2363   1832   -531   204278   204300   170695   0.197   1659    162    11    62 MISMATCH
+新诗集（坟头草译）.epub                 work_pub/neuegedichte  out-tree       502    833    331    18486    17324    18480   0.063    318     51   133    14 MISMATCH
+无名的裘德（坟头草译）.epub               work_pub/jude          out-tree      3691   3690     -1   212920   212868   212869   0.000   3533    154     3    68 OK
+时祷书（坟头草译）.epub                 work_pub/stundenbuch   out-tree       438    435     -3    27195    27195    27186   0.000    430      5     0     4 OK
+星期一或星期二（坟头草译）.epub             work_pub/mondaytuesda  out-tree       242    236     -6    28025    28042    28011   0.001    226      9     1     5 OK
+晚夏（坟头草译）.epub                  work_gutenberg/nachso  out-tree      2723   2480   -243   357188   357240   329602   0.084   2366    109     5    64 MISMATCH
+每个人（坟头草译）.epub                 work_pub/jedermann     out-tree      1113   1113      0    19288    19288    19288   0.000   1113      0     0     0 OK
+浮士德上册（坟头草译）.epub               work_pub/faust         out-tree      1110   1055    -55    50856    50856    50621   0.005   1055      0     0     0 OK
+热尔米妮·拉瑟尔特（坟头草译）.epub           work_gutenberg/germin  out-tree       771    684    -87    98310    98359    89354   0.101    621     54     9    31 MISMATCH
+爱玛（坟头草译）.epub                  work_pub/emma          out-tree      2356   2318    -38   236256   236318   236195   0.001   2192    120     6    68 OK
+瓜拉尼人（坟头草译）.epub                work_gutenberg/guaran  out-tree      4776   4776      0   172945   172927   172927   0.000   4705     71     0    43 OK
+白鲸（坟头草译）.epub                  work_whale             out-tree      2615   3558    943   332367   332378   370116   0.102   1984    524   107   171 MISMATCH
+百年孤独（坟头草译）.epub                work_soledad           out-tree       859    962    103   207133   207133   212367   0.025    750     75    30    55 MISMATCH
+福尔图娜塔与哈辛塔（坟头草译）.epub           work_gutenberg/fortun  out-tree      6113   5870   -243   606563   606632   606025   0.001   5398    429    43   199 OK
+离婚之后（坟头草译）.epub                work_gutenberg/dopoid  out-tree      1758   1651   -107    92332    92325    85754   0.077   1627     24     0    17 MISMATCH
+第六病室（坟头草译）.epub                work_chekhov           out-tree       393    374    -19    30464    30464    30438   0.001    374      0     0     0 OK
+索蒂莱萨（坟头草译）.epub                work_gutenberg/sotile  out-tree      2429   2037   -392   177045   177095   154091   0.149   1939     91     7    46 MISMATCH
+红与黑（坟头草译）.epub                 work_pub/rouge         out-tree      3924   3873    -51   258844   258895   258676   0.001   3610    255     8    96 OK
+艾菲·布里斯特（坟头草译）.epub             work_gutenberg/effi    out-tree      1817   1505   -312   147793   147840   127087   0.163   1419     79     7    37 MISMATCH
+茵梦湖（坟头草译）.epub                 work_gutenberg/immens  out-tree       317    303    -14    14814    14803    14716   0.006    292     10     1     6 OK
+草原村（坟头草译）.epub                 work_gutenberg/haided  out-tree       246    205    -41    17468    17459    12387   0.409    199      6     0     4 MISMATCH
+荒凉山庄（坟头草译）.epub                work_pub/bleakhouse    out-tree      7290   7239    -51   531291   531240   531006   0.000   6540    694     5   176 OK
+观察（坟头草译）.epub                  work_pub/betrachtung   out-tree       148    148      0     9103     9103     9103   0.000    148      0     0     0 OK
+诉讼（坟头草译）.epub                  work_pub/prozess       out-tree       195    188     -7   108417   108454   108433   0.000    146     41     1    35 OK
+达洛维夫人（坟头草译）.epub               work_pub/mrsdalloway   out-tree       777    777      0   100338   100346   100346   0.000    740     37     0    21 OK
+远大前程（坟头草译）.epub                work_pub/expectations  out-tree      3946   3900    -46   266067   266038   265863   0.001   3791    103     6    66 OK
+远航（坟头草译）.epub                  work_pub/voyageout     out-tree      2602   2582    -20   200916   200951   200876   0.000   2439    138     5    53 OK
+追忆似水年华（坟头草译）.epub              work_proust            proust        4516   4521      5  1938337  1938318  1938294   0.000   4247    263     4   167 OK
+都柏林人（坟头草译）.epub                work_pub/dubliners     out-tree      1689   1675    -14    97558    97568    97512   0.001   1600     74     1    29 OK
+野人旅馆（坟头草译）.epub                work_gutenberg/wilder  out-tree       530    495    -35    45133    45168    41863   0.079    476     19     0    15 MISMATCH
+金人（坟头草译）.epub                  work_gutenberg/timar   out-tree      3098   2570   -528   219802   219719   181180   0.213   2287    274     9    65 MISMATCH
+阿亚拉的天使（坟头草译）.epub              work_gutenberg/ayala   out-tree      4326   3684   -642   307031   307031   263428   0.166   3488    182    14    91 MISMATCH
+雅各的房间（坟头草译）.epub               work_pub/jacobsroom    out-tree      1192   1182    -10    85828    85836    85803   0.000   1146     36     0    20 OK
+饥饿艺术家（坟头草译）.epub               work_pub/hungerkuenst  out-tree        11     11      0     5701     5701     5701   0.000     11      0     0     0 OK
+马亚一家（坟头草译）.epub                work_gutenberg/maias   out-tree      5759   4188  -1571   360525   360549   267258   0.349   4050    137     1    76 MISMATCH
+马克斯·哈弗拉尔（坟头草译）.epub            work_gutenberg/maxhav  out-tree      2120   1638   -482   185570   185597   154490   0.201   1576     61     1    36 MISMATCH
+马尔特手记（坟头草译）.epub               work_pub/malte         out-tree       492    492      0    93691    93708    93708   0.000    443     49     0    26 OK
+高老头（坟头草译）.epub                 work_pub/goriot        out-tree      1596   1596      0   140717   140781   140781   0.000   1385    211     0    52 OK
+魔山（坟头草译）.epub                  work_zauberberg        out-tree      3054   3044    -10   510857   510857   510826   0.000   3044      0     0     0 OK
+魔戒（坟头草译）.epub                  work_overhaul/lotr-js  lotr-json     8456   8926    470   711262   711262   734967   0.032   8062    367    27    63 MISMATCH
+魔法袍（坟头草译）.epub                 work_gutenberg/zauber  out-tree       917    903    -14    44414    44412    43994   0.009    889     14     0     9 OK
+黑暗的心（坟头草译）.epub                work_pub/darkness      out-tree       200    200      0    58005    58033    58033   0.000    175     25     0    16 OK
+鼠疫（坟头草译）.epub                  work_camus             out-tree      1685   1685      0   120340   120340   120340   0.000   1685      0     0     0 OK
+
+NEEDS REVIEW:
+  乌略亚庄园（坟头草译）.epub  (delta=0.1660 vs work_gutenberg/ulloa)
+  双城记（坟头草译）.epub  (delta=0.0569 vs work_pub/twocities)
+  幸运的佩尔（坟头草译）.epub  (delta=0.0887 vs work_gutenberg/lykkepers)
+  庭长夫人（坟头草译）.epub  (delta=0.2023 vs work_gutenberg/regenta)
+  彩石集（坟头草译）.epub  (delta=0.1181 vs work_gutenberg/buntesteine)
+  戴安娜的交叉（坟头草译）.epub  (delta=0.1969 vs work_gutenberg/diana)
+  新诗集（坟头草译）.epub  (delta=0.0626 vs work_pub/neuegedichte)
+  晚夏（坟头草译）.epub  (delta=0.0839 vs work_gutenberg/nachsommer)
+  热尔米妮·拉瑟尔特（坟头草译）.epub  (delta=0.1008 vs work_gutenberg/germinie)
+  白鲸（坟头草译）.epub  (delta=0.1020 vs work_whale)
+  百年孤独（坟头草译）.epub  (delta=0.0246 vs work_soledad)
+  离婚之后（坟头草译）.epub  (delta=0.0766 vs work_gutenberg/dopoidivorzio)
+  索蒂莱萨（坟头草译）.epub  (delta=0.1493 vs work_gutenberg/sotileza)
+  艾菲·布里斯特（坟头草译）.epub  (delta=0.1633 vs work_gutenberg/effi)
+  草原村（坟头草译）.epub  (delta=0.4095 vs work_gutenberg/haidedorf)
+  野人旅馆（坟头草译）.epub  (delta=0.0789 vs work_gutenberg/wilderMann)
+  金人（坟头草译）.epub  (delta=0.2127 vs work_gutenberg/timar)
+  阿亚拉的天使（坟头草译）.epub  (delta=0.1655 vs work_gutenberg/ayala)
+  马亚一家（坟头草译）.epub  (delta=0.3491 vs work_gutenberg/maias)
+  马克斯·哈弗拉尔（坟头草译）.epub  (delta=0.2014 vs work_gutenberg/maxhavelaar)
+  魔戒（坟头草译）.epub  (delta=0.0323 vs work_overhaul/lotr-json)
+
+DRY RUN: nothing written. Re-run with --apply to write; old files
+are copied to E:/Translate\_bak\work_prewrite_20261029 first.

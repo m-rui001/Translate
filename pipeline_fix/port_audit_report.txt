@@ -1,0 +1,7 @@
+audit records          : 4482
+already in work        : 4227
+splices planned        : 206  (254 records)
+no match (unresolved)  : 1
+ambiguous (skipped)    : 0
+
+NO-MATCH  buddenbrooks: 去看过那幢房子，那是佩尔曼内德先生正要买下的，位于考芬格街——也就是说，离尼德保尔家很近——大部分他打算出租

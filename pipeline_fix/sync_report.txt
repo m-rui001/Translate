@@ -1,0 +1,85 @@
+======================================================================================
+SYNC EPUB -> WORK  SUMMARY
+======================================================================================
+EPUBs total             : 65
+Matched to a work book  : 64
+Unmatched (no source)   : 1
+Layouts used            : {'per-paragraph': 62, 'per-chapter': 2}
+Mirrored OK (<1pct)      : 62
+Mismatched (>1pct delta) : 2
+Pilot books written     : 5 (sandbox: E:/Translate\_sync_test)
+
+Per-book report:
+--------------------------------------------------------------------------------------
+epub                             work_book            layout       algn  uChap eChap   eHanz   mHanz  delta stat
+三个火枪手（坟头草译）.epub                 work_pub/musketeers  per-paragraph num      68    68  330565  330565  0.000 OK
+乌略亚庄园（坟头草译）.epub                 work_gutenberg/ullo  per-paragraph pos      30    30  112959  112959  0.000 OK
+乡村医生（坟头草译）.epub                  work_pub/landarzt    per-paragraph pos      14    14   20964   20964  0.000 OK
+傲慢与偏见（坟头草译）.epub                 work_pub/pride       per-paragraph num      62    62  184689  184689  0.000 OK
+判决（坟头草译）.epub                    work_pub/urteil      per-paragraph pos       1     1    6358    6358  0.000 OK
+劝导（坟头草译）.epub                    work_pub/persuasion  per-paragraph pos      24    24  124248  124248  0.000 OK
+包法利夫人（坟头草译）.epub                 work_pub/bovary      per-paragraph num      36    36  165085  165085  0.000 OK
+双城记（坟头草译）.epub                   work_pub/twocities   per-paragraph num      48    45  200391  198823  0.008 OK
+变形记（坟头草译）.epub                   work_pub/verwandlun  per-paragraph pos       3     3   28454   28454  0.000 OK
+在流放地（坟头草译）.epub                  work_pub/strafkolon  per-paragraph num       1     1   15087   15087  0.000 OK
+基督山伯爵（坟头草译）.epub                 work_pub/montecrist  per-paragraph num      32    32  179046  179046  0.000 OK
+奥尔拉（坟头草译）.epub                   work_pub/horla       per-paragraph pos      15    15   62394   62394  0.000 OK
+学生托勒斯的迷惘（坟头草译）.epub              work_pub/toerless    per-paragraph pos       4     4   82873   82873  0.000 OK
+巴黎圣母院（坟头草译）.epub                 work_pub/notredame   per-paragraph pos      29    29  124075  124075  0.000 OK
+布登勃洛克一家（坟头草译）.epub               work_pub/buddenbroo  per-paragraph pos      97    97  369801  369801  0.000 OK
+幸运的佩尔（坟头草译）.epub                 work_gutenberg/lykk  per-paragraph num       8     8  121956  121956  0.000 OK
+庭长夫人（坟头草译）.epub                  work_gutenberg/rege  per-paragraph num      31    31  412213  412213  0.000 OK
+彩石集（坟头草译）.epub                   work_gutenberg/bunt  per-paragraph num       9     9  127299  127299  0.000 OK
+德伯家的苔丝（坟头草译）.epub                work_pub/tess        per-paragraph num      60    60  224593  224593  0.000 OK
+悉达多（坟头草译）.epub                   work_pub/siddhartha  per-paragraph pos      11    11   52687   52687  0.000 OK
+悲惨世界（坟头草译）.epub                  work_pub/miserables  per-paragraph num      71    71  163530  163530  0.000 OK
+愚者与死神（坟头草译）.epub                 work_pub/torundtod   per-paragraph num       1     1    7109    7109  0.000 OK
+戴安娜的交叉（坟头草译）.epub                work_gutenberg/dian  per-paragraph pos      36    36  170695  170695  0.000 OK
+新诗集（坟头草译）.epub                   work_pub/neuegedich  per-paragraph num      18    18   18480   18480  0.000 OK
+无名的裘德（坟头草译）.epub                 work_pub/jude        per-paragraph num      54    54  212869  212869  0.000 OK
+时祷书（坟头草译）.epub                   work_pub/stundenbuc  per-paragraph pos       6     6   27186   27186  0.000 OK
+星期一或星期二（坟头草译）.epub               work_pub/mondaytues  per-paragraph pos       6     6   28011   28011  0.000 OK
+晚夏（坟头草译）.epub                    work_gutenberg/nach  per-paragraph num      18    18  329602  329602  0.000 OK
+每个人（坟头草译）.epub                   work_pub/jedermann   per-paragraph num       1     1   19288   19288  0.000 OK
+浮士德上册（坟头草译）.epub                 work_pub/faust       per-paragraph bulk      1    27   50621   50621  0.000 OK
+热尔米妮·拉瑟尔特（坟头草译）.epub             work_gutenberg/germ  per-paragraph pos      69    69   89354   89354  0.000 OK
+爱玛（坟头草译）.epub                    work_pub/emma        per-paragraph pos      55    55  236195  236195  0.000 OK
+瓜拉尼人（坟头草译）.epub                  work_gutenberg/guar  per-paragraph num      55    55  172927  172927  0.000 OK
+白鲸（坟头草译）.epub                    work_whale           per-paragraph pos     138   138  370116  370116  0.000 OK
+百年孤独（坟头草译）.epub                  work_soledad         per-paragraph num      20    20  212367  212367  0.000 OK
+福尔图娜塔与哈辛塔（坟头草译）.epub             work_gutenberg/fort  per-paragraph num      31    35  606025  529893  0.126 MISMATCH
+离婚之后（坟头草译）.epub                  work_gutenberg/dopo  per-paragraph num      18    18   85754   85754  0.000 OK
+第六病室（坟头草译）.epub                  work_chekhov         per-chapter  num      19    19   30438   30438  0.000 OK
+索蒂莱萨（坟头草译）.epub                  work_gutenberg/soti  per-paragraph num      33    33  154091  154091  0.000 OK
+红与黑（坟头草译）.epub                   work_pub/rouge       per-paragraph pos      75    75  258676  258676  0.000 OK
+艾菲·布里斯特（坟头草译）.epub               work_gutenberg/effi  per-paragraph pos      37    37  127087  127087  0.000 OK
+茵梦湖（坟头草译）.epub                   work_gutenberg/imme  per-paragraph num      11    10   14716   14716  0.000 OK
+草原村（坟头草译）.epub                   work_gutenberg/haid  per-paragraph num       9     9   12387   12387  0.000 OK
+荒凉山庄（坟头草译）.epub                  work_pub/bleakhouse  per-paragraph num      68    68  531006  531006  0.000 OK
+观察（坟头草译）.epub                    work_pub/betrachtun  per-chapter  pos      18    18    9103    9103  0.000 OK
+诉讼（坟头草译）.epub                    work_pub/prozess     per-paragraph pos      10    10  108433  108433  0.000 OK
+达洛维夫人（坟头草译）.epub                 work_pub/mrsdallowa  per-paragraph num       1     1  100346  100346  0.000 OK
+远大前程（坟头草译）.epub                  work_pub/expectatio  per-paragraph num      60    60  265863  265863  0.000 OK
+远航（坟头草译）.epub                    work_pub/voyageout   per-paragraph pos      27    27  200876  200876  0.000 OK
+追忆似水年华（坟头草译）.epub                work_proust          per-paragraph vol       5    28 1938294 1365471  0.295 MISMATCH
+都柏林人（坟头草译）.epub                  work_pub/dubliners   per-paragraph pos      15    15   97512   97512  0.000 OK
+野人旅馆（坟头草译）.epub                  work_gutenberg/wild  per-paragraph num      17    17   41863   41863  0.000 OK
+金人（坟头草译）.epub                    work_gutenberg/tima  per-paragraph num      47    47  181180  181180  0.000 OK
+阿亚拉的天使（坟头草译）.epub                work_gutenberg/ayal  per-paragraph num      65    65  263428  263428  0.000 OK
+雅各的房间（坟头草译）.epub                 work_pub/jacobsroom  per-paragraph pos      14    14   85803   85803  0.000 OK
+饥饿艺术家（坟头草译）.epub                 work_pub/hungerkuen  per-paragraph num       1     1    5701    5701  0.000 OK
+马亚一家（坟头草译）.epub                  work_gutenberg/maia  per-paragraph num      19    19  267258  267258  0.000 OK
+马克斯·哈弗拉尔（坟头草译）.epub              work_gutenberg/maxh  per-paragraph num      14    14  154490  154490  0.000 OK
+马尔特手记（坟头草译）.epub                 work_pub/malte       per-paragraph pos       3     3   93708   93708  0.000 OK
+高老头（坟头草译）.epub                   work_pub/goriot      per-paragraph num       1     1  140781  140781  0.000 OK
+魔山（坟头草译）.epub                    work_zauberberg      per-paragraph pos      10    10  510826  510826  0.000 OK
+魔法袍（坟头草译）.epub                   work_gutenberg/zaub  per-paragraph num      10    10   43994   43994  0.000 OK
+黑暗的心（坟头草译）.epub                  work_pub/darkness    per-paragraph pos       3     3   58033   58033  0.000 OK
+鼠疫（坟头草译）.epub                    work_camus           per-paragraph pos       5     5  120340  120340  0.000 OK
+
+BOOKS NEEDING MANUAL REVIEW (>1pct hanzi delta):
+  福尔图娜塔与哈辛塔（坟头草译）.epub  ->  work_gutenberg/fortunata  delta=0.1256  align=num
+  追忆似水年华（坟头草译）.epub  ->  work_proust  delta=0.2955  align=vol
+
+UNMATCHED EPUBS (no confident source work book):
+  魔戒（坟头草译）.epub  (no source (content score=0.29))

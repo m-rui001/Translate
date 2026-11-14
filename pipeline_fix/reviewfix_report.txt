@@ -1,0 +1,291 @@
+stale           62
+adjudicated     159
+rejected        145
+repaired        13
+verify_failed   1
+planned         13
+
+REJ  betrachtung/c014/c00#3 NO
+原文为反讽性虚拟语气，译文“你忘了”已传达假设意味。
+REJ  betrachtung/c014/c00#2 NO
+可引申为声名远扬，译显赫可通
+REJ  betrachtung/c014/c00#3 NO，"收拾"已译出geordnet的整饬义，改"束整"属措辞偏好。
+REJ  bleakhouse/c053/c00#2 NO
+“one other day”确有“又一天”之义，意见不成立。
+REJ  bleakhouse/c053/c00#6 NO
+⟦i⟧⟦/i⟧为排版标记，非乱码。
+REJ  bovary/c010/c01#1 NO，后半句“一个那样的丈夫”已译出。
+REJ  bovary/c010/c01#1 NO，蜂巢与蜂房均属合理译法，非误译。
+REJ  bovary/c010/c01#0 NO
+段号错位不是问题
+REJ  bleakhouse/c003/c01#0 NO
+截断可合理推断问候
+REJ  buddenbrooks/c036/c01#0 NO
+Langhals为德语姓氏，音译“朗哈尔斯”可接受，非误译。
+REJ  buddenbrooks/c036/c01#1 NO；意见所指与所引译文同为“厄弗第克”，未见不一致。
+REJ  bovary/c011/c02#0 NO
+宗教可指信仰，意译可接受
+REJ  buddenbrooks/c057/c02#0 NO；Konsulin 常指领事夫人，意见不成立。
+REJ  buddenbrooks/c057/c02#7 NO
+吐烟入室已译出，意见不成立。
+REJ  buddenbrooks/c057/c02#1 NO
+mit der Troika即带三套马车图案
+REJ  darkness/c003/c01#0 NO，鳄鱼为鳄类统称，译法可接受。
+REJ  darkness/c003/c01#0 NO
+
+理由：译文“不肯通融的力”完整对应implacable，无截断。
+REJ  darkness/c003/c01#0 NO
+half-crown即半克朗
+REJ  darkness/c004/c09#0 NO，译文与原文同义，未见重心误置。
+REJ  darkness/c004/c09#0 NO
+“什么也不留下”已含nothing but的强调，且原文为破折号停顿。
+REJ  buddenbrooks/c036/c01#0 NO
+马赫误读，应作基斯滕马克。
+REJ  dubliners/c003/c01#0 NO  
+“不完备”在罪与轻重的语境中可指不完全的罪，与imperfections的宗教含义相符。
+DROP dubliners/c003/c01#0 italic markers changed
+REJ  darkness/c004/c09#1 NO，"will"即将来时，"会"译出正确。
+REJ  dubliners/c004/c00#0 NO。“一遇”已正确传达“一次遭遇”之意，属风格偏好。
+REJ  dubliners/c004/c00#4 NO
+上下文已明确指害怕一类
+REJ  dubliners/c004/c00#2 adjudge-error:pool exhausted: csf:DeepSeek-V4.1-Flash: csf:DeepSeek-V4.1-F
+REJ  emma/c023/c01#0 NO
+原文截断处译文已完整处理，增补属正常翻译。
+FIX  emma/c023/c01#0  (YES。pretty在此意为"相当"，译"高挑"失准且添"瘦"义。)
+FIX  emma/c039/c00#5  (YES
+"town"在奥斯汀笔下常指伦敦，译"进城"易误解为本地。)
+REJ  emma/c039/c00#6 NO
+“我们这些做太太的”与“we married women”对应恰当，无补全失当。
+REJ  emma/c023/c01#0 NO
+“更可能的那一桩不好”贴合原文“likeliest evil”，非误译。
+REJ  expectations/c042/c01#4 NO
+仅见一处，无法证实前后不一致
+REJ  emma/c039/c00#6 NO
+已译“我非抗议不可”。
+REJ  expectations/c045/c01#1 NO
+“Surely it is not”反问表否定，译文“总不能是”正确。
+REJ  expectations/c045/c01#0 NO，“would not be warned”表拒绝而非假设，译文已传达。
+REJ  faust/c001/c03#2 NO；原文主语可含复数语境，“都是”不构成误译。
+REJ  expectations/c045/c01#2 NO；译文已含区分之意，未构成明显误译。
+REJ  faust/c001/c03#2 NO
+龇牙合原文，译文无误
+REJ  faust/c001/c13#2 NO
+“蘑菇”是泛指，原文Pfifferling特指鸡油菌，初审意见成立。
+REJ  faust/c001/c13#0 NO
+把嘴一歪可表撇嘴
+REJ  goriot/c001/c54#0 NO，“毁掉”已传达否则被毁之意。
+REJ  goriot/c001/c54#0 NO
+“稻草人”在法语中可指代人偶/傀儡，此处译文符合语境。
+REJ  goriot/c001/c54#0 NO。原文“s'acquittent au...”虽截断，但译文“靠宣告破产来坑骗……从中脱身”是完整语义的合理补足，非
+REJ  faust/c001/c13#2 adjudge-error:pool exhausted: csf:MiMo-V2.6-Flash: csf:MiMo-V2.6-Flash fai
+REJ  goriot/c001/c65#3 NO
+无原文佐证，疑为原文实有内容
+REJ  goriot/c001/c65#4 NO
+无原文摘录可核，无法确认系增译。
+REJ  horla/c015/c00#0 NO
+“在树林里”与“林中”义近，非误译。
+REJ  horla/c015/c00#7 NO
+无法核实前文，该专名译法本身无误。
+REJ  horla/c014/c00#4 NO
+理由：同一人名仅出现一次，不存在前后不一致。
+REJ  hungerkuenstler/c001/c00#0 NO
+原文摘录与译文片段不对应，无法判断增译。
+FIX  faust/c001/c03#2  (YES
+"geir"确系残词，译文补足了语义。)
+REJ  horla/c015/c00#7 NO
+“怕有”是自然口语，贴合原文估测语气，并不生硬。
+REJ  hungerkuenstler/c001/c00#1 NO
+
+理由：原文“nicht einmal eine Nacht”可对应“整夜不睡”的语义，非误译。
+REJ  hungerkuenstler/c001/c03#0 NO
+
+原文虽截断，但译文对应句“那你为什么别的办法没有呢”是直译，未补译未给出的内容。
+REJ  hungerkuenstler/c001/c00#1 NO
+看守为普通名词，非专名，意见与所指不符。
+REJ  jacobsroom/c012/c01#1 NO，「竟」呼应前文「无法预见」，属合理语境。
+REJ  jacobsroom/c012/c01#1 NO  
+译文后续内容对应原文后文，非擅自补译。
+REJ  jacobsroom/c012/c01#0 NO
+意见针对专名译法，但片段未涉及Jinny，无从判断。
+REJ  jacobsroom/c014/c00#0 NO。译文“第十三章”已译，无英文残留。
+REJ  jacobsroom/c014/c00#1 NO；译文已传达“当季顶点”义，属措辞偏好。
+FIX  jacobsroom/c014/c00#7  (YES
+urbane确有文雅有礼义，都市风度偏离。)
+REJ  jedermann/c001/c02#0 NO，"mit"即"随同、一起去"，原意已含。
+FIX  jedermann/c001/c01#0  (YES
+"Mutter Sohn"意为"母亲的儿子"，译文"她带来的"属误译。)
+REJ  jedermann/c001/c02#3 NO
+原文JEDERMANNS是“众人的”，非专名“耶德曼”。
+REJ  jude/c045/c00#1 adjudge-error:pool exhausted: csf:MiMo-V2.6-Flash: csf:MiMo-V2.6-Flash fai
+REJ  jedermann/c001/c01#0 NO  
+原文 derfen 疑为排版或拼写问题，非实义词语，无需体现。
+REJ  jude/c045/c00#3 NO
+理由：引语属人物话语，非无端增对话。
+REJ  jedermann/c001/c02#1 adjudge-error:pool exhausted: csf:DeepSeek-V4.1-Flash: csf:DeepSeek-V4.1-F
+REJ  jude/c045/c00#2 adjudge-error:pool exhausted: csf:DeepSeek-V4.1-Flash: csf:DeepSeek-V4.1-F
+REJ  jude/c050/c00#2 NO
+inwards在此语境指动物内脏，译文“下水”正确。
+REJ  jude/c050/c00#3 NO
+deedily此处指专注地/直勾勾地，非狡黠。
+REJ  landarzt/c013/c00#3 NO。原文截断处“gege”后文缺失，译文“砖石”属合理补全，非增译。
+REJ  landarzt/c013/c00#5 NO
+理由：译文含原文细节，非无据增译。
+REJ  landarzt/c013/c00#4 NO
+原文摘录空缺不等于原文缺失，需核对上下文再判。
+REJ  malte/c004/c16#0 NO
+“体历”虽生僻，但可理解为“亲身经历”的缩略，非生造。
+REJ  malte/c004/c16#0 NO
+理由：hinter为德语“后面”，译文“后面的车”属正常对应，非增译。
+REJ  malte/c002/c01#0 NO
+“太宽可不行”与“Zu weit”均指尺寸过宽，意思一致。
+REJ  mondaytuesday/c004/c02#2 adjudge-error:pool exhausted: csf:MiMo-V2.6-Flash: benched | csf:DeepSeek-
+REJ  mondaytuesday/c004/c02#2 adjudge-error:pool exhausted: csf:Qwen3.8-Flash-Next: benched | csf:MiMo-V
+REJ  mondaytuesday/c004/c02#2 NO
+原文Cas音译可作简，非凭空添加。
+REJ  mrsdalloway/c001/c12#0 NO。原文“confound the”虽未完，但译文“混作一处”对应的是前文完整语义，非补译成句。
+REJ  mrsdalloway/c001/c12#1 NO
+该句是原文意象的概括性衔接，非无据增译。
+REJ  mrsdalloway/c001/c35#1 NO
+理由：译文已含“身体现在必须收缩起来”，未漏译。
+REJ  mrsdalloway/c001/c35#1 NO
+理由：motor可指汽车，原文未完属摘录问题
+REJ  jude/c050/c00#1 NO
+后间即后面房间，方位无误。
+FIX  mrsdalloway/c001/c35#1  (YES
+原文无对应，确属增译。)
+REJ  musketeers/c064/c00#2 NO
+“riant”本义含笑，满面笑容可涵盖。
+REJ  musketeers/c064/c00#2 NO
+“便”已译出“就”
+FIX  musketeers/c064/c00#3  (YES
+“ou”译为“或者”准确，未改变原意。)
+REJ  neuegedichte/c018/c00#4 NO。旅棋是旅行用象棋的简称，并非误译。
+REJ  neuegedichte/c018/c00#4 NO
+译文已译出“黄色的珠子”，未漏译。
+REJ  mrsdalloway/c001/c12#2 adjudge-error:pool exhausted: csf:Qwen3.8-Flash-Next: csf:Qwen3.8-Flash-Ne
+REJ  notredame/c030/c00#4 NO
+译文“其中这两个女人”已译出“其中”，意见不成立。
+REJ  neuegedichte/c018/c00#3 NO
+娼妓可译hetären，非误译。
+REJ  notredame/c013/c00#2 NO
+
+理由：pièce在此语境可指钱币，初审意见不成立。
+REJ  persuasion/c023/c02#0 NO
+
+“颇受了一番煎熬”已含经历义，汉语无需过去持续标记；原文分词短语在此作伴随状语，非时态焦点。
+REJ  notredame/c030/c00#4 NO
+coins在袜语中指袜跟
+REJ  persuasion/c023/c02#0 NO
+译文完整对应原文，未见增补。
+REJ  notredame/c030/c00#4 NO
+“白线袜”已含白色与针织袜之意，且袜跟花纹等细节未漏。
+REJ  pride/c003/c00#4 NO
+assemblies在此语境确指舞会，意见不成立。
+REJ  pride/c003/c00#3 NO
+are not to visit 表禁止或安排，非“不打算”。
+REJ  pride/c003/c00#3 NO
+what已译，否定语气无误
+REJ  pride/c039/c00#8 NO
+原文the winter即“冬天”，译文有对应时间词。
+REJ  pride/c039/c00#4 NO
+“自以为”正体现说话者自认确信，语气未误。
+REJ  rouge/c023/c01#1 NO
+原文为感叹疑问，译文“不许他唱歌！”是感叹，非命令。
+REJ  rouge/c041/c00#2 NO
+“魔法”是“folie”的合理文学化引申，非误译。
+REJ  rouge/c041/c00#3 NO
+原文无书名号，译文未漏译
+REJ  rouge/c041/c00#4 NO  
+“ses lettres”可指自己那封信，单数“信”不误。
+REJ  rouge/c023/c01#2 NO；"tu n'en jouiras qu…"本即"只有…才能享受"，译文无误。
+REJ  siddhartha/c005/c00#1 NO
+干瘦已准确，非误译。
+REJ  pride/c039/c00#2 adjudge-error:pool exhausted: csf:Qwen3.8-Flash-Next: csf:Qwen3.8-Flash-Ne
+REJ  siddhartha/c005/c00#2 NO
+该词常指大腿，译文可接受。
+REJ  strafkolonie/c001/c02#0 NO
+REJ  strafkolonie/c001/c02#1 NO
+译名统一为绘图师，无不一致
+REJ  siddhartha/c005/c00#2 NO；Weibern 在此属文学常用词，并非贬义。
+REJ  strafkolonie/c001/c07#0 NO
+
+原文残缺处译文未增补，仅按上下文连贯处理，不构成无据增补。
+REJ  strafkolonie/c001/c07#2 NO
+无前后不一致证据
+REJ  stundenbuch/c005/c00#1 NO  
+意见针对分段，但所引片段仅为开头一句，未涉及多首诗连排。
+REJ  stundenbuch/c005/c00#1 NO
+该句是诗行首句，非标题，无需分隔。
+REJ  strafkolonie/c001/c07#1 NO
+
+理由：译文全段统一用“耙具”，未见前后不统一。
+REJ  stundenbuch/c007/c00#1 NO
+原文“sind”在此为系动词，后接表语属正常结构，初审误判。
+REJ  stundenbuch/c007/c00#1 NO
+摘录不足，无法证明多出
+REJ  tess/c006/c02#1 NO。所附原文摘录本身截断，译文该句已完整。
+REJ  tess/c006/c02#1 NO
+“应唤的人”已含“应被唤”之意，与comer（来者）的被动/主动对比未失，意见属过度区分。
+REJ  tess/c006/c02#2 NO，原文摘录已含该句，非增译。
+REJ  stundenbuch/c005/c00#1 adjudge-error:pool exhausted: csf:Qwen3.8-Flash-Next: csf:Qwen3.8-Flash-Ne
+REJ  tess/c037/c02#0 NO
+原文即为 she，译作“她”并无误。
+REJ  tess/c037/c02#0 NO  
+原文its指丈夫的心，译文“丈夫心里的苦”正确。
+REJ  toerless/c004/c00#3 NO
+“schwang”在此语境意为晃动，译文已译出。
+REJ  stundenbuch/c007/c00#1 adjudge-error:pool exhausted: csf:MiMo-V2.6-Flash: csf:MiMo-V2.6-Flash fai
+FIX  toerless/c004/c00#3  (YES
+原文merkbar未译。)
+REJ  torundtod/c001/c00#0 NO
+原文含Team，译团队合理
+FIX  toerless/c004/c00#4  (YES
+原文无人名，译文增巴西尼)
+REJ  torundtod/c001/c00#6 NO
+岛社可译Insel社，非误译。
+REJ  torundtod/c001/c00#4 NO
+Tor可指愚人，非误译
+REJ  twocities/c015/c02#1 NO
+原文未完，无法认定增译。
+REJ  twocities/c015/c02#2 NO
+有对应译文，非漏译。
+REJ  twocities/c015/c02#6 NO。⟦i⟧⟦/i⟧ 属排版标记，非乱码。
+REJ  torundtod/c001/c02#2 NO  
+“je”在疑问句中常表“曾经”，非强调“从未”。
+FIX  toerless/c002/c03#2  (YES
+“驻在那里当军官”搭配生硬不通。)
+FIX  twocities/c025/c02#1  (YES  
+hit此处指试探得手，非开枪。)
+REJ  twocities/c025/c02#1 NO
+“what he had drunk”指所喝之物，付酒钱属合理语境化。
+REJ  twocities/c025/c02#1 NO
+原文“For some minutes after he”虽似截断，但属跨段连续句，译文对应后文完整，非增补截断。
+REJ  urteil/c003/c01#1 NO
+“Ein”是德语冠词，需结合后文翻译，不能孤立断句。
+REJ  urteil/c003/c00#2 NO 原文残缺处可据语境合理补足，不属增译错误。
+REJ  urteil/c003/c01#2 NO  
+“立刻迎了上来”是动作描写，非增译。
+REJ  urteil/c003/c00#1 NO
+德语“erster Stock”在德国指中国二楼，译文“二楼”正确。
+REJ  verwandlung/c003/c03#1 NO  
+原文“die Eltern”仅指父母，未涉及妹妹关系。
+REJ  verwandlung/c003/c03#2 NO
+原文Quadratmeter即平方米，译文“平方呎”确为误译。
+REJ  verwandlung/c004/c04#0 NO
+Nachthemd可译睡裙
+FIX  verwandlung/c004/c04#1  (YES
+wehmütig意为伤感、惆怅，悲凄程度过重。)
+FIX  urteil/c003/c01#1  (YES
+译文并入下段内容)
+REJ  voyageout/c015/c01#1 NO
+“有遗嘱也就得了安慰”已准确传达“凭遗嘱得安慰”之意，初审意见属表达偏好。
+REJ  voyageout/c015/c01#1 NO
+原文“I l”是截断的残片，无法据此判定译文补译。
+REJ  verwandlung/c003/c03#0 NO
+原文虽无“沙发”一词，但上下文明确有沙发，属语境补充非增译。
+REJ  voyageout/c015/c04#10 NO
+⟦i⟧是排版标记，非残留格式错误。
+REJ  voyageout/c015/c04#9 NO
+排版标记非乱码，非错误
+REJ  voyageout/c015/c01#0 NO
+Patience 可指单人纸牌游戏，译“纸牌接龙”成立。

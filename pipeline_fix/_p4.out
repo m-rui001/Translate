@@ -1,0 +1,13 @@
+cwd E:\Translate
+g1 len 12
+   E:/Translate\work_camus
+   E:/Translate\work_chekhov
+   E:/Translate\work_freeai
+   E:/Translate\work_gutenberg
+   E:/Translate\work_mod
+---
+g2 len 65
+--- listdir work ---
+['.pi', 'A la recherche du temps perdu.pdf', 'API_STATUS.md', 'backup_out_20251024', 'backup_out_prepolish', 'Cien años de soledad.epub', 'dadeumi-repo', 'Der Zauberberg.epub', 'experience.md', 'La peste.epub', 'MEMORY.md', 'MEMORY_WHALE.md', 'Moby-Dick.epub', 'out', 'pipeline', 'pipeline_build', 'pipeline_fix', 'pipeline_gutenberg', 'pipeline_new', 'pipeline_overhaul', 'pipeline_polish', 'pipeline_private', 'pipeline_proust', 'pipeline_pub', 'PIPELINE_REVIEW.md', 'pipeline_whale', 'REPAIR_2026-10-28.md', 'REPAIR_2026-10-28b.md', 'reports', 'reports_new', 'reports_whale', 'scratch', 'The Lord of the Rings (50th Anniversary Edition) (J.R.R. Tolkien) (z-library.sk, 1lib.sk, z-lib.sk).pdf', 'work', 'work_camus', 'work_chekhov', 'work_freeai', 'work_gutenberg', 'work_mod', 'work_overhaul', 'work_polish2', 'work_proust', 'work_pub', 'work_soledad', 'work_whale', 'work_zauberberg', '_bak', '_models.json', '_smoke.out', '_smoke.py', 'Палата No 6 (Сборник).fb2', '魔戒 ([英]J.R.R.托尔金) (z-library.sk, 1lib.sk, z-lib.sk).epub']
+--- listdir work_camus ---
+['out', 'ref_peste.txt', 'src']

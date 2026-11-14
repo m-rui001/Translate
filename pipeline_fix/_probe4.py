@@ -1,0 +1,12 @@
+import os, glob
+print("cwd", os.getcwd())
+g1 = glob.glob("E:/Translate/work_*")
+print("g1 len", len(g1))
+for x in g1[:5]: print("  ", x)
+print("---")
+g2 = glob.glob("E:/Translate/out/*.epub")
+print("g2 len", len(g2))
+print("--- listdir work ---")
+print(os.listdir("E:/Translate"))
+print("--- listdir work_camus ---")
+print(os.listdir("E:/Translate/work_camus"))

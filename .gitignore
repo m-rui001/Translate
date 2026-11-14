@@ -1,0 +1,21 @@
+# Source books and intermediate work are not part of the code repo.
+/*.pdf
+/*.epub
+/*.fb2
+/work_*/
+/scratch/
+/_bak/
+/_recovered_*/
+/_sync_test/
+/node_modules/
+__pycache__/
+*.pyc
+*.bak_*
+*.bak_writer
+*.bak_xm
+*.log
+_batch*.txt
+_files.txt
+_smoke.out
+/models.json
+.env
