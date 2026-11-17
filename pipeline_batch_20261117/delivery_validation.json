@@ -1,0 +1,53 @@
+{
+  "batches": [
+    {
+      "file": "风与雾：邓萨尼短篇三则（选译）（坟头草译）.epub",
+      "works": 3,
+      "paragraphs": 27,
+      "epub_validation": {
+        "file": "风与雾：邓萨尼短篇三则（选译）（坟头草译）.epub",
+        "errors": [],
+        "warn": [],
+        "toc": 4,
+        "toc_ncx": 4,
+        "copyright_paras": 1,
+        "han": 1389,
+        "chapters": 3,
+        "size": 6691
+      }
+    },
+    {
+      "file": "无歌之国：邓萨尼短篇七则（选译）（坟头草译）.epub",
+      "works": 7,
+      "paragraphs": 43,
+      "epub_validation": {
+        "file": "无歌之国：邓萨尼短篇七则（选译）（坟头草译）.epub",
+        "errors": [],
+        "warn": [],
+        "toc": 8,
+        "toc_ncx": 8,
+        "copyright_paras": 1,
+        "han": 2307,
+        "chapters": 7,
+        "size": 10630
+      }
+    },
+    {
+      "file": "一部失落的杰作（坟头草译）.epub",
+      "works": 1,
+      "paragraphs": 50,
+      "epub_validation": {
+        "file": "一部失落的杰作（坟头草译）.epub",
+        "errors": [],
+        "warn": [],
+        "toc": 2,
+        "toc_ncx": 2,
+        "copyright_paras": 1,
+        "han": 3629,
+        "chapters": 1,
+        "size": 9848
+      }
+    }
+  ],
+  "sails_changed_documents": null
+}

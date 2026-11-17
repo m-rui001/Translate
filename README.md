@@ -5,7 +5,7 @@
 ## 仓库内容
 
 - `pipeline*/`：各阶段代码。`pipeline` 为主流水线（抽取、翻译、术语表、引号与体例修复、组装），`pipeline_new`/`pipeline_build`/`pipeline_overhaul` 为换代与整书重建，`pipeline_fix`/`pipeline_polish` 为定向校订，`pipeline_pub`/`pipeline_gutenberg`/`pipeline_private`/`pipeline_proust`/`pipeline_whale` 为具体书系的工作流。
-- `out/`：65 本成品 EPUB。
+- `out/`：68 本成品 EPUB（含两册明确标注选译的邓萨尼短篇集，共10篇，以及埃格顿完整短篇《一部失落的杰作》）。
 - `MEMORY.md`：工程日志（决策、失败模式、验收数字）；`REPAIR_2026-*.md`：逐轮修复记录；`API_STATUS.md`：模型通道实测状态；`experience.md`、`PIPELINE_REVIEW.md`：流程复盘。
 
 ## 流水线要点
@@ -33,8 +33,14 @@
 
 - 代码与文档：MIT，见 `LICENSE`。
 - 译文：原作若仍在版权保护期内，译文属于衍生作品，权利归原作者与出版方；本仓库仅作研究与备份，不主张译文版权。权利人可提交下架请求。
-- 仓库不包含原文 PDF/EPUB/FB2 等源书文件，也不包含翻译中间产物。
+- 历史原文 PDF/EPUB/FB2 等源书文件不纳入仓库。2026-11-17新增批次在 `pipeline_batch_20261117/` 保存所选公版短篇的原文、译文、采集HTML及埃格顿原刊8页扫描，以便复核和重建；其他历史工作目录仍未纳入版本管理。
 
 ## 成品
 
-`out/` 内 65 本 EPUB，文件名格式为「书名（坟头草译）.epub」。
+`out/` 内 68 本 EPUB，文件名格式为「书名（坟头草译）.epub」。
+
+2026-11-17：原文抽查6部作品41段，修复《茵梦湖》3处及《黑暗的心》1处词义/数量错误，另修《双城记》《庭长夫人》11处引号问题。详见 `QUALITY_AUDIT_2026-11-17.md`、`VALIDATION_2026-11-17.md`。
+
+新增《风与雾：邓萨尼短篇三则（选译）》及《无歌之国：邓萨尼短篇七则（选译）》。构建：`python pipeline_batch_20261117/build.py` 和 `python pipeline_batch_20261117/build.py --second`。来源与译介检索限制见该目录的QA文档；核验：`python pipeline_batch_20261117/verify_delivery.py`。额外比较旧书修复前后的精确差异可加 `--with-local-backups`，仅此选项需要本地备份。
+
+另新增埃格顿完整短篇《一部失落的杰作》，英语原刊8页、50段。构建：`python pipeline_batch_20261117/build.py --egerton`。原刊转录和扫描、对齐全文及校正说明均保存在该目录，详见 `EGERTON_QA.md`。
