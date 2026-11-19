@@ -30,3 +30,9 @@
 统一叙述中的「旅行者」「犯人」「绘图器」和「耙」。改正审问一幕里众人的目光落向谁，以及士兵和犯人是放下米粥这一动作。补回军官劝说末尾从请托转为逼迫的两句。
 
 运行 `python -X utf8 pipeline_build/build_pub.py strafkolonie` 可用随库的 `strafkolonie.json` 重建。
+
+## 《观察》
+
+十八篇共 131 个正文段落。逐篇对照德文进行两轮复校，抽查开头、结尾以及有意重复和比喻。《大路上的孩子》保留「撞穿黄昏」的动作和意象，《乘客》补入目录中的篇名，并统一正文中有吊环的电车平台称呼。书前目录与篇首标题分列，每篇正文从第一句开始。[古登堡计划德文底本](https://www.gutenberg.org/ebooks/23532)
+
+运行 `python -X utf8 pipeline_build/build_pub.py betrachtung` 可用随库的 `betrachtung.json` 重建。
