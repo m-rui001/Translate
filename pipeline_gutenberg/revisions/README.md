@@ -42,3 +42,9 @@
 对照德文复校全篇十个正文段落，恢复开演回忆与后续叙述之间、以及人物结局前的两处分节。保留四十天期限反复出现时的叙述语气，理清夜间看守、照片兜售和牌上日期停更的因果，复核最后的对话及豹子入笼一段。[古登堡计划德文底本](https://www.gutenberg.org/ebooks/30655)
 
 运行 `python -X utf8 pipeline_build/build_pub.py hungerkuenstler` 可用随库的 `hungerkuenstler.json` 重建。
+
+## 《乡村医生》
+
+按德文底本复校全书十四篇，共 120 个正文段落。篇名从正文移入标题和目录，恢复《乡村医生》里合唱的三行。《邻村》保留祖父在回忆中把一生压缩到不足以骑去邻村的说法。《一封御旨》保留使者穿过一重重宫殿时反复出现的句式。《一份为某学院而写的报告》统一开头与结尾对学院诸位先生的称呼，并改正汽船一段的船主和船舱位置。[古登堡计划德文底本](https://www.gutenberg.org/ebooks/21989)
+
+运行 `python -X utf8 pipeline_build/build_pub.py landarzt` 可用随库的 `landarzt.json` 重建。
