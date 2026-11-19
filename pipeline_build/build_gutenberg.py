@@ -25,7 +25,6 @@ from __future__ import annotations
 import glob
 import json
 import os
-from pathlib import Path
 import re
 import sys
 
@@ -40,7 +39,6 @@ import titles_src               # noqa: E402
 
 GUT = os.path.join(ROOT, "work_gutenberg")
 OUT = os.path.join(ROOT, "out")
-REVISIONS = Path(ROOT, "pipeline_gutenberg", "revisions")
 
 CJK = re.compile(r"[\u4e00-\u9fff]")
 
@@ -141,32 +139,10 @@ def strip_front(texts: list[str]) -> list[str]:
     return out[i:] if i else out
 
 
-def collect_revision(book: str, revision: Path) -> list[dict]:
-    """Load the reviewed edition in its verified chapter order."""
-    chapters = json.loads(revision.read_text(encoding="utf-8"))
-    items = []
-    for cid, chapter in chapters.items():
-        texts = chapter["paragraphs"]
-        if not texts or any(not text.strip() for text in texts):
-            raise ValueError(f"{book}/{cid}: empty body or paragraph")
-        verse_indices = set(chapter.get("verse_indices", []))
-        if not verse_indices <= set(range(len(texts))):
-            raise ValueError(f"{book}/{cid}: invalid verse index")
-        notes = chapter.get("notes", [])
-        for note in notes:
-            if sum(text.count(note["anchor"]) for text in texts) != 1:
-                raise ValueError(f"{book}/{cid}: ambiguous or missing note anchor: {note['anchor']!r}")
-        items.append({"id": cid, "texts": texts,
-                      "types": ["verse" if i in verse_indices else "p" for i in range(len(texts))],
-                      "notes": notes, "title_zh": chapter["title_zh"],
-                      "title_en": chapter["title_src"], "links": {}, "old_texts": texts})
-    return items
-
-
 def collect(book: str) -> list[dict]:
-    revision = REVISIONS / f"{book}.json"
-    if revision.is_file():
-        return collect_revision(book, revision)
+    revision = B.collect_revision(book)
+    if revision is not None:
+        return revision
 
     items = []
     for cid in chapter_ids(book):

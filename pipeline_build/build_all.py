@@ -29,6 +29,7 @@ import glob
 import html
 import json
 import os
+from pathlib import Path
 import re
 import shutil
 import sys
@@ -41,6 +42,7 @@ sys.path.insert(0, os.path.join(ROOT, "pipeline_overhaul"))
 import copyright as cpr  # noqa: E402
 
 OUT = os.path.join(ROOT, "out")
+REVISIONS = Path(ROOT, "pipeline_gutenberg", "revisions")
 
 STYLE = """body{line-height:1.85;font-family:serif;margin:0 5%}
 h1{text-align:center;margin:2.4em 0 .3em;font-size:1.45em;letter-spacing:.06em;font-weight:normal}
@@ -392,6 +394,32 @@ def volume_page(vno: str, vtitle: str) -> str:
 
 # ── text sources ────────────────────────────────────────────────────────────────
 
+def collect_revision(book: str) -> list[dict] | None:
+    """Load a source-reviewed edition when it is available in the repository."""
+    revision = REVISIONS / f"{book}.json"
+    if not revision.is_file():
+        return None
+    chapters = json.loads(revision.read_text(encoding="utf-8"))
+    items = []
+    for cid, chapter in chapters.items():
+        texts = chapter["paragraphs"]
+        if not texts or any(not text.strip() for text in texts):
+            raise ValueError(f"{book}/{cid}: empty body or paragraph")
+        verse_indices = set(chapter.get("verse_indices", []))
+        if not verse_indices <= set(range(len(texts))):
+            raise ValueError(f"{book}/{cid}: invalid verse index")
+        notes = chapter.get("notes", [])
+        for note in notes:
+            if sum(text.count(note["anchor"]) for text in texts) != 1:
+                raise ValueError(f"{book}/{cid}: ambiguous or missing note anchor: {note['anchor']!r}")
+        items.append({"id": cid, "texts": texts,
+                      "types": ["verse" if i in verse_indices else "p" for i in range(len(texts))],
+                      "notes": notes, "title_zh": chapter["title_zh"],
+                      "title_en": chapter["title_src"], "subtitle": chapter.get("subtitle", ""),
+                      "links": {}, "old_texts": texts})
+    return items
+
+
 def polished_chapter(cfg: dict, cid: str) -> list[str] | None:
     """Paragraphs of a chapter from the polished tree, or None when absent."""
     base = cfg.get("polished")
@@ -578,7 +606,9 @@ def package(cfg: dict, items: list[dict], shape: str) -> dict:
                 title = "楔子" if n == 1 else (f"第{cn_number(n-1)}章" if m else it["id"])
             else:
                 title = f"第{cn_number(int(m.group(1)))}章" if m else it["id"]
-        sub = it["title_en"] if shape == "chapters" and cfg["title"] == "白鲸" else ""
+        sub = it.get("subtitle", "")
+        if shape == "chapters" and cfg["title"] == "白鲸":
+            sub = it["title_en"]
         for special, (t, s) in {"front_ety": ("词源", "Etymology"),
                                 "front_ext": ("摘录", "Extracts"),
                                 "epi": ("尾声", "Epilogue")}.items():

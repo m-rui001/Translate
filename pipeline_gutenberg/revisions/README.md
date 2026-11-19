@@ -14,3 +14,11 @@
 - 保留德文底本的九条编注并加入双向跳转。末次散步两人认出的 Erika 译作「欧石南」。[中国科学院昆明植物研究所的欧石南属介绍](https://kbg.kib.cas.cn/kxjy/kpzs/kpwz/202303/t20230309_599513.html)
 
 运行 `python -X utf8 pipeline_build/build_gutenberg.py immensee` 重建。复校后的全文、章节标题、诗行标记和编注保存在 `immensee.json`。重建只依赖仓库文件。
+
+## 《判决》
+
+已对照德文底本复校正文 65 段和卷首题献。开场保留格奥尔格反复揣测朋友处境的长段与问句。父亲两次问被子盖严了没有，同一说法一直用到他掀被起身。原文说营业额涨到五倍，旧译的「翻了五番」已改正。
+
+把「献给 F.」单列在正文前，正文在桥上的车流处收住。旧本接在末句后面的广告和定价来自原版书末，已从小说正文移除，作者和书名保留在 EPUB 书名页。[古登堡计划德文底本](https://www.gutenberg.org/ebooks/21593)
+
+运行 `python -X utf8 pipeline_build/build_pub.py urteil` 可用随库的 `urteil.json` 重建。

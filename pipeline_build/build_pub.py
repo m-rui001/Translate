@@ -171,6 +171,10 @@ def _close(a: str, b: str) -> bool:
 
 def collect(book: str) -> tuple[list[dict], list[str]]:
     """Translated chapters, plus the ids that were skipped and why."""
+    revision = B.collect_revision(book)
+    if revision is not None:
+        return revision, []
+
     idx = index_of(book)
     items, skipped = [], []
     for c in idx["chapters"]:
