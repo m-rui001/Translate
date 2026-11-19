@@ -38,7 +38,7 @@ BOOKS = {
         "title_zh": "茵梦湖", "title_src": "Immensee",
         "author_zh": "特奥多尔·施托姆", "author_src": "Theodor Storm",
         "lang": "de", "gids": [6651], "died": 1888,
-        "note": "德语中篇名作，郭沫若旧译已过时",
+        "note": "根据 Project Gutenberg 第 6651 号德文文本译出。",
     },
     "zauberkaftan": {
         "title_zh": "魔法袍", "title_src": "Der Zauberkaftan",

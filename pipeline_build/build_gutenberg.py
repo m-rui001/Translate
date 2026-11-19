@@ -25,6 +25,7 @@ from __future__ import annotations
 import glob
 import json
 import os
+from pathlib import Path
 import re
 import sys
 
@@ -39,6 +40,7 @@ import titles_src               # noqa: E402
 
 GUT = os.path.join(ROOT, "work_gutenberg")
 OUT = os.path.join(ROOT, "out")
+REVISIONS = Path(ROOT, "pipeline_gutenberg", "revisions")
 
 CJK = re.compile(r"[\u4e00-\u9fff]")
 
@@ -139,8 +141,34 @@ def strip_front(texts: list[str]) -> list[str]:
     return out[i:] if i else out
 
 
+def collect_revision(book: str, revision: Path) -> list[dict]:
+    """Keep the verified chapter order while a literary revision is in progress."""
+    chapters = json.loads(revision.read_text(encoding="utf-8"))
+    items = []
+    for cid, chapter in chapters.items():
+        texts = chapter.get("paragraphs")
+        if texts is None:
+            legacy = chapter_texts(book, cid)
+            if legacy[:1] != [chapter["legacy_heading"]]:
+                raise ValueError(f"{book}/{cid}: missing expected legacy chapter heading")
+            texts = legacy[1:]
+        if not texts or any(not text.strip() for text in texts):
+            raise ValueError(f"{book}/{cid}: empty body or paragraph")
+        verse_indices = set(chapter.get("verse_indices", []))
+        if not verse_indices <= set(range(len(texts))):
+            raise ValueError(f"{book}/{cid}: invalid verse index")
+        items.append({"id": cid, "texts": texts,
+                      "types": ["verse" if i in verse_indices else "p" for i in range(len(texts))],
+                      "notes": [], "title_zh": chapter["title_zh"],
+                      "title_en": chapter["title_src"], "links": {}, "old_texts": None})
+    return items
+
+
 def collect(book: str) -> list[dict]:
-    meta = books_meta.BOOKS[book]
+    revision = REVISIONS / f"{book}.json"
+    if revision.is_file():
+        return collect_revision(book, revision)
+
     items = []
     for cid in chapter_ids(book):
         texts = chapter_texts(book, cid)
