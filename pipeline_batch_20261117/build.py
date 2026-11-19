@@ -44,7 +44,7 @@ def main():
         src, zh = b['source'], b['translation']
         assert len(src) == len(zh) and all(src) and all(zh)
         assert not any(re.search(r'[A-Za-z]{4,}|⟦|Sorry|抱歉', p) for p in zh)
-        assert all(p[-1] in '。！”？：—…' for p in zh)
+        assert all(p.rstrip('」』')[-1:] in ('。', '！', '”', '？', '：', '—', '…') for p in zh)
         for lang, paras in [('en', src), ('zh', zh)]:
             (WORK / f"{b['key']}.{lang}.txt").write_text('\n\n'.join(paras)+'\n', encoding='utf-8')
         (WORK / f"{b['key']}.md").write_text('# '+b['title_zh']+'\n\n'+'\n\n'.join(zh)+'\n',encoding='utf-8')
