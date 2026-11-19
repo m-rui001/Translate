@@ -54,3 +54,9 @@
 按英文底本恢复全书八篇的顺序和目录。同名篇原来接在《一个社团》末尾，《蓝与绿》接在《弦乐四重奏》末尾。现已各自成篇，234 个正文段落及原有斜体和分行均已核对保留。全书译文复校待做。
 
 运行 `python -X utf8 pipeline_build/build_pub.py mondaytuesday` 可用随库的 `mondaytuesday.json` 重建。
+
+## 《变形记》
+
+对照德文底本复校三章共 97 段。格里高尔从床上挪动时，撞的是靠床脚的床柱。末章里，格蕾特擦去的是自己落在母亲脸上的眼泪，父亲仍称格里高尔为「他」，格蕾特则试着把哥哥和眼前的动物分开。结尾保留一家人坐电车出城、格蕾特在终点第一个起身的动作。
+
+运行 `python -X utf8 pipeline_build/build_pub.py verwandlung` 可用随库的 `verwandlung.json` 重建。
