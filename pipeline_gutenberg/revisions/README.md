@@ -22,3 +22,11 @@
 把「献给 F.」单列在正文前，正文在桥上的车流处收住。旧本接在末句后面的广告和定价来自原版书末，已从小说正文移除，作者和书名保留在 EPUB 书名页。[古登堡计划德文底本](https://www.gutenberg.org/ebooks/21593)
 
 运行 `python -X utf8 pipeline_build/build_pub.py urteil` 可用随库的 `urteil.json` 重建。
+
+## 《在流放地》
+
+已对照德文底本复校全篇 49 个正文段落。合并旧稿在军官介绍「耙」时多分的一段，恢复进入茶馆前的分节。德文书名和作者保留在书名页。[古登堡计划德文底本](https://www.gutenberg.org/ebooks/25791)
+
+统一叙述中的「旅行者」「犯人」「绘图器」和「耙」。改正审问一幕里众人的目光落向谁，以及士兵和犯人是放下米粥这一动作。补回军官劝说末尾从请托转为逼迫的两句。
+
+运行 `python -X utf8 pipeline_build/build_pub.py strafkolonie` 可用随库的 `strafkolonie.json` 重建。
