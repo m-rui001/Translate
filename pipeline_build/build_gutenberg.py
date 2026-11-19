@@ -142,25 +142,24 @@ def strip_front(texts: list[str]) -> list[str]:
 
 
 def collect_revision(book: str, revision: Path) -> list[dict]:
-    """Keep the verified chapter order while a literary revision is in progress."""
+    """Load the reviewed edition in its verified chapter order."""
     chapters = json.loads(revision.read_text(encoding="utf-8"))
     items = []
     for cid, chapter in chapters.items():
-        texts = chapter.get("paragraphs")
-        if texts is None:
-            legacy = chapter_texts(book, cid)
-            if legacy[:1] != [chapter["legacy_heading"]]:
-                raise ValueError(f"{book}/{cid}: missing expected legacy chapter heading")
-            texts = legacy[1:]
+        texts = chapter["paragraphs"]
         if not texts or any(not text.strip() for text in texts):
             raise ValueError(f"{book}/{cid}: empty body or paragraph")
         verse_indices = set(chapter.get("verse_indices", []))
         if not verse_indices <= set(range(len(texts))):
             raise ValueError(f"{book}/{cid}: invalid verse index")
+        notes = chapter.get("notes", [])
+        for note in notes:
+            if sum(text.count(note["anchor"]) for text in texts) != 1:
+                raise ValueError(f"{book}/{cid}: ambiguous or missing note anchor: {note['anchor']!r}")
         items.append({"id": cid, "texts": texts,
                       "types": ["verse" if i in verse_indices else "p" for i in range(len(texts))],
-                      "notes": [], "title_zh": chapter["title_zh"],
-                      "title_en": chapter["title_src"], "links": {}, "old_texts": None})
+                      "notes": notes, "title_zh": chapter["title_zh"],
+                      "title_en": chapter["title_src"], "links": {}, "old_texts": texts})
     return items
 
 
