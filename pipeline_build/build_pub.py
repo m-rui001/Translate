@@ -352,13 +352,17 @@ def source_has_chapter_name(book: str, cid: str) -> bool:
         return True
     # Dickens sets chapter names in title case, so case alone cannot decide; a short
     # unquoted line with no sentence punctuation is the remaining shape.
-    return len(text) <= 40 and not re.search(r"[.!?;:。！？；：]$", text)
+    return len(text) <= 40 and not re.search(r"[!?;:。！？；：]$", text)
 
 
 def is_chapter_name(text: str) -> bool:
     """A short line with no sentence punctuation, sitting where a chapter name would."""
     t = text.strip()
-    return 0 < len(t) <= 30 and not re.search(r"[。！？；：，、\"”’）]$", t)
+    if 0 < len(t) <= 30 and not re.search(r"[。！？；：，、\"”’）]$", t):
+        return True
+    # Dumas and Alas punctuate their chapter names as sentences ("父亲与儿子。"), so a
+    # short line ending in 。 is still a name; anything longer is treated as prose.
+    return len(t) <= 24 and t.endswith("。")
 
 
 def load_notes(book: str, cid: str) -> list[dict]:
@@ -435,8 +439,10 @@ def collect(book: str) -> tuple[list[dict], list[str]]:
             # some chapters came back as "第五章国王的火枪手…", with the numeral glued on
             m = re.match(r"^第[一二三四五六七八九十百零\d]+章[\s　]*(.*)$", cand)
             cand = (m.group(1).strip() if m else cand)
-            if cand:
+            if cand and not re.search(r"[\[\]［］【】〔〕]|[A-Za-zÀ-ÿ]{3,}", cand):
                 title_zh = cand
+            else:
+                texts.insert(0, cand) if cand else None
         if book in VERSE:
             texts, types = verse_block(book, cid, texts, carry)
             carry = carry_tail(texts, types)

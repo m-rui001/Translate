@@ -163,7 +163,7 @@ def source_has_chapter_name(book: str, cid: str) -> bool:
         return False
     if sum(1 for c in letters if c.isupper()) / len(letters) >= 0.6:
         return True
-    return len(text) <= 40 and not text.endswith((".", "!", "?", ";", ":"))
+    return len(text) <= 40 and not text.endswith(("!", "?", ";", ":"))
 
 
 def load_notes(book: str, cid: str) -> list[dict]:
@@ -209,8 +209,10 @@ def collect(book: str) -> list[dict]:
         if (source_has_chapter_name(book, cid) and texts and PB.is_chapter_name(texts[0])
                 and not re.fullmatch(r"(?:[一二三四五六七八九十百零]+|[IVXLCDM]+|\d{1,4})", texts[0].strip())):
             cand = texts.pop(0).strip()
-            if cand:
+            if cand and not re.search(r"[\[\]［］【】〔〕]|[A-Za-zÀ-ÿ]{3,}", cand):
                 title, shown = cand, cand
+            else:
+                texts.insert(0, cand) if cand else None
         items.append({"id": cid, "texts": texts, "types": ["p"] * len(texts),
                       "notes": load_notes(book, cid), "title_zh": title, "title_en": src,
                       "links": {}, "old_texts": None})

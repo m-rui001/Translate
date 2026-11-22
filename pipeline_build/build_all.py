@@ -674,6 +674,13 @@ def package(cfg: dict, items: list[dict], shape: str) -> dict:
                 nav.append((f"{vol[0]} {vol[1]}", fn))
             book_head = BOOKNAMES[bk]
 
+        # The translated heading sometimes survives as the chapter's first paragraph as
+        # well. Exact match only: near-matching a short opening line to a short heading is
+        # how "召见" got deleted as a duplicate of "第三章" in the pub books.
+        while texts and title and texts[0].strip() == title.strip():
+            texts.pop(0)
+            types.pop(0)
+
         texts, types = drop_artifact_head(title, texts, types)
         notes = insert_notes(texts, it["notes"] or [], it.get("old_texts"))
         fn = f"c{n:03d}.xhtml"

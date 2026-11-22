@@ -1146,3 +1146,15 @@ Carmen 作卡尔门、Marcelina 作玛塞利娜、Ulloa 作乌略阿、el Gallo 
   异常被吞，函数静默返回 False，导致第一版只有白名单书生效。包住自己的新代码时只捕具体异常。
 - **两处补丁叠在同一行**，`texts.pop(0)` 执行两遍，把正文第一段吃成标题。改完必须 `collect()` 抽两章看。
 - 组装器的文件名是**位置编号**（`OEBPS/c067.xhtml` 是第 67 项，不是 id=c067），排查时别按 id 找文件。
+
+### pipeline_multilang 首跑（ok2.txt，deepseek-v4.1-flash @ ds-free）
+
+- 网关：`ds-free` → `https://ai.idcidiot.com/v1`，模型 `deepseek-v4.1-flash`，
+  密钥取自 `~/.pi/agent/models.json`，不进仓库、不落盘。
+- 规模：49 段切分（正文 44 / 代码 1 / 跳过 4），44 段分配到 44 种不重复语种，全量译完。
+- **新增参数**：`translate --ids/--force/--no-cache/--max-chunk`、`reassign` 子命令。
+- 失败模式 1：长段被截断 —— 原文 1445 字符的段落，模型只返回 8 字符，换语种无效，
+  加 `--max-chunk 400` 后正常。结论：长段必须切块。
+- 失败模式 2：语种能力缺口 —— Twi、藏语、切罗基语在该模型上稳定返回 1–11 字符；
+  `reassign` 改派到马来语后通过。`verify` 的「长度异常(<25%)」正是为此设的阈值。
+- 收尾：`verify --strict` 全绿（44 段 / 44 语种 / 无重复 / 无长度异常 / 无文字系统错配）。
