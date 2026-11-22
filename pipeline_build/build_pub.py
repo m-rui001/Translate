@@ -406,11 +406,12 @@ def collect(book: str) -> tuple[list[dict], list[str]]:
         if not re.search(r"[一-鿿]", title_zh):
             title_zh = titles_src.title_for((c.get("title") or "").strip(), ordinal)
         texts = drop_repeated_head(title_zh, texts)
-        while texts and (re.fullmatch(r"(?:[一二三四五六七八九十百零]+|[IVXLCDM]+|\d{1,4})", texts[0].strip())
-                         or re.fullmatch(r"第[一二三四五六七八九十百零\d]+章", texts[0].strip())):
-            num = texts.pop(0).strip()
-            if re.fullmatch(r"(?:[一二三四五六七八九十百零]+|[IVXLCDM]+|\d{1,4})", title_zh.strip()):
-                title_zh = num
+        while texts:
+            head = texts[0].strip()
+            if not (re.fullmatch(r"第[一二三四五六七八九十百零\d]+章", head)
+                    or re.fullmatch(r"[一二三四五六七八九十百零]+|[IVXLCDM]+|\d{1,4}", head)):
+                break
+            texts.pop(0)
         if book not in VERSE and book not in PLAY and texts and "\n" in texts[0]:
             # Sources that print the number and the chapter name on two lines of one block
             # leave them in one translated paragraph. Trust the number the book itself

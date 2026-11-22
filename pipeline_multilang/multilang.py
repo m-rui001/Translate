@@ -245,6 +245,15 @@ STYLE_PROMPTS = {
 }
 
 
+STYLE_LABELS = {
+    "symbolic": "符号语言",
+    "telegraphic": "电报体",
+    "mixed": "混合语言",
+    "gloss": "手语字面转写",
+    "abbrev": "缩写体",
+}
+
+
 def call_model(base: str, key: str, model: str, lang_desc: str, text: str,
                timeout: int = 180, sys_prompt: str | None = None) -> str:
     url = base.rstrip("/") + "/chat/completions"
@@ -565,6 +574,12 @@ def cmd_assemble(args) -> None:
         encoding="utf-8")
     print(f"装配完成 → {target}（{len(index_rows)} 段 / "
           f"{len({r[2] for r in index_rows})} 种语言）")
+    if styled:
+        (out_dir / "STYLES.md").write_text(
+            "# 语体变形\n\n| 段 | 译入语种 | 已生成语体 |\n|---|---|---|\n"
+            + "\n".join(f"| {a} | {b} | {c} |" for a, b, c in styled) + "\n",
+            encoding="utf-8")
+        print(f"语体变形 {len(styled)} 段 → {out_dir / 'STYLES.md'}")
     print(f"对照表 → {out_dir / 'INDEX.md'}")
 
 
@@ -674,7 +689,28 @@ def main() -> None:
     p.add_argument("--tag-format", default="〔{native} · {code}〕",
                    help="语种标记行模板，可用 {native} {zh} {code}")
     p.add_argument("--allow-missing", action="store_true")
+    p.add_argument("--no-styles", action="store_true", help="不输出语体变形")
+    p.add_argument("--style-tag-format", default="   └─〔{style}〕",
+                   help="语体标记行模板，可用 {style}")
     p.set_defaults(func=cmd_assemble)
+
+    p = sub.add_parser("restyle", help="随机抽段，改写成符号语言/电报体/混合语言等")
+    p.add_argument("-o", "--out", required=True)
+    p.add_argument("--styles", default="symbolic,telegraphic,mixed",
+                   help="逗号分隔；可选 " + ",".join(STYLE_PROMPTS))
+    p.add_argument("--sample", type=int, default=4, help="随机抽几段")
+    p.add_argument("--ids", default="", help="改成指定段号，逗号分隔")
+    p.add_argument("--base-text", choices=["translation", "source"],
+                   default="translation")
+    p.add_argument("--seed", type=int, default=20261122)
+    p.add_argument("--model", default="")
+    p.add_argument("--base", default="")
+    p.add_argument("--key", default="")
+    p.add_argument("--workers", type=int, default=3)
+    p.add_argument("--retries", type=int, default=3)
+    p.add_argument("--timeout", type=int, default=180)
+    p.add_argument("--no-cache", action="store_true")
+    p.set_defaults(func=cmd_restyle)
 
     p = sub.add_parser("reassign", help="把指定段改派到未使用的语种")
     p.add_argument("-o", "--out", required=True)

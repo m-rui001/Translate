@@ -201,11 +201,12 @@ def collect(book: str) -> list[dict]:
         # the heading we will print, resolved before we look for its copy in the body
         shown = title if any("\u4e00" <= c <= "\u9fff" for c in title) else titles_src.title_for(src, ordinal)
         texts = PB.drop_repeated_head(shown, texts)
-        while texts and (re.fullmatch(r"(?:[一二三四五六七八九十百零]+|[IVXLCDM]+|\d{1,4})", texts[0].strip())
-                         or re.fullmatch(r"第[一二三四五六七八九十百零\d]+章", texts[0].strip())):
-            num = texts.pop(0).strip()
-            if not any("\u4e00" <= c <= "\u9fff" for c in title):
-                title = shown = num
+        while texts:
+            head = texts[0].strip()
+            if not (re.fullmatch(r"第[一二三四五六七八九十百零\d]+章", head)
+                    or re.fullmatch(r"[一二三四五六七八九十百零]+|[IVXLCDM]+|\d{1,4}", head)):
+                break
+            texts.pop(0)
         if (source_has_chapter_name(book, cid) and texts and PB.is_chapter_name(texts[0])
                 and not re.fullmatch(r"(?:[一二三四五六七八九十百零]+|[IVXLCDM]+|\d{1,4})", texts[0].strip())):
             cand = texts.pop(0).strip()

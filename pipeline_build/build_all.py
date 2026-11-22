@@ -151,7 +151,11 @@ def cn_number(n: int) -> str:
         return "十" if n == 10 else CN[n]
     if n < 20:
         return "十" + CN[n % 10]
-    return CN[n // 10] + "十" + (CN[n % 10] if n % 10 else "")
+    if n < 100:
+        return CN[n // 10] + "十" + (CN[n % 10] if n % 10 else "")
+    # 白鲸 runs to a hundred and thirty-eight chapters; beyond the table the arabic form
+    # is both shorter and unambiguous.
+    return str(n)
 
 
 def paras(t: str) -> list[str]:
@@ -619,6 +623,7 @@ def package(cfg: dict, items: list[dict], shape: str) -> dict:
 
     cur_vol = None
     han = npara = nnote = 0
+    _SEEN_TITLES: set[str] = set()
     for n, it in enumerate(items, 1):
         texts = list(it["texts"])
         types = list(it["types"])
@@ -637,6 +642,10 @@ def package(cfg: dict, items: list[dict], shape: str) -> dict:
                 title = "楔子" if n == 1 else (f"第{cn_number(n-1)}章" if m else it["id"])
             else:
                 title = f"第{cn_number(int(m.group(1)))}章" if m else it["id"]
+        if title and title in _SEEN_TITLES:
+            title = f"第{cn_number(n)}章"
+        if title:
+            _SEEN_TITLES.add(title)
         nav_label = it.get("nav_label") or title
         if it.get("no_heading"):
             title = ""
