@@ -62,6 +62,7 @@ sup.fn a{text-decoration:none;color:#555}
 aside.footnote{margin:.6em 0 .6em 1.6em;padding-left:.7em;border-left:2px solid #ddd;font-size:.86em;line-height:1.6;color:#333}
 aside.footnote p{text-indent:0;margin:0 0 .4em}
 aside.footnote a{text-decoration:none;color:#888}
+h3.sub{font-size:1em;font-weight:700;margin:1.6em 0 .6em;letter-spacing:.06em}
 div.notes-head{margin-top:2.2em;font-size:.85em;color:#888;letter-spacing:.1em}
 div.copyright{margin-top:14%;margin-bottom:10%}
 div.copyright h1{font-size:1.3em;letter-spacing:.2em;margin:0 0 1.6em}
@@ -119,6 +120,7 @@ BOOKS = {
         "src": "Der Zauberberg", "uid": "urn:zauberberg-zh-rev",
         "note": "据一九二四年柏林S. Fischer出版社初版译出",
         "json": None, "polished": "work_zauberberg/out", "notes": "work_zauberberg/notes",
+        "subheads": True,
         "shape": "split", "pattern": "index_split_*/c*/final.txt",
     },
 }
@@ -134,6 +136,8 @@ ROMAN = ["I", "II", "III", "IV", "V", "VI", "VII", "VIII", "IX", "X", "XI",
 # A short first line is only a chapter heading if it *reads* like one. Dialogue and
 # verse also come in short lines ("“一个不大干净的理想主义者。”"), and treating every
 # short line as a heading shredded 魔山 into 14 sections instead of 8.
+SUB_TAIL = re.compile(r"[。！？…，、；：\"”’]$")
+DATE_LIKE = re.compile(r"年|月$")
 HEADING_LIKE = re.compile(
     r"^(?:前言|序言|尾声|第[一二三四五六七八九十百零\d]{1,4}章|"
     r"[\u4e00-\u9fff·]{2,12}（[上下]）$)")
@@ -224,6 +228,9 @@ def para_html(text: str, kind: str = "p") -> str:
     # A newline inside a paragraph is a line break the translator preserved (verse,
     # songs, play dialogue). HTML collapses it to a space, so print it as <br/>.
     s = s.replace("\n", "<br/>")
+    if kind == "sub":
+        # 魔山 names its subsections (抵达, 雪, 雷霆一击); they are headings, not prose.
+        return f"<h3 class='sub'>{s}</h3>"
     return f"<p{cls}>{s}</p>"
 
 
@@ -606,10 +613,21 @@ def group_split(items: list[dict], cfg: dict) -> list[dict]:
         if re.search(r"[A-Za-zÄÖÜäöüß]{4,}", head) and len(head) < 120:
             g0["texts"] = g0["texts"][1:]
             g0["title_zh"] = "楔子"
+    if cfg.get("subheads"):
+        # Der Zauberberg's subsections are short lines with no terminal punctuation and
+        # no quotation mark; nothing else in this book looks like that.
+        for g in groups:
+            g["types"] = ["sub" if (len(t) <= 14 and not SUB_TAIL.search(t)
+                                    and not t.startswith("“")
+                                    and not DATE_LIKE.search(t)
+                                    and not re.fullmatch(r"第[一二三四五六七八九十百零\d]+[章节回卷部]", t)
+                                    and not re.fullmatch(r"[一二三四五六七八九十\d]+", t))
+                          else "p" for t in g["texts"]]
     for i, g in enumerate(groups, 1):
         if not g["title_zh"]:
             g["title_zh"] = f"第{cn_number(i - 1)}章"
-        g["types"] = ["p"] * len(g["texts"])
+        if not cfg.get("subheads"):
+            g["types"] = ["p"] * len(g["texts"])
     return groups
 
 
