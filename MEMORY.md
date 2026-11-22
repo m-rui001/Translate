@@ -1453,3 +1453,39 @@ indent=2，ensure_ascii=False），正文 final.txt 一字未动。
 四本都用「部」而非「卷」，故 emma 也用「第一部 第N章」。
 脚本：`scratch/add_part1_prefix.py`（幂等：只在第一个带「第X部 」前缀的条目之前动手）。
 注：nav `<li>` 总数含 `书名页`/`版权`/`卷首`，包法利实为 38 条而非 28。
+
+---
+
+## 2026-11-22 《劝导》通读润色 batch 1（c001–c006，13 条）
+
+- 源层 `pipeline_gutenberg/revisions/persuasion.json`（CRLF + indent=2，脚本保持版式）。
+- 脚本 `scratch/rev2026/polish_persuasion.py`：13 条 before/after，条条断言全书命中 == 1，
+  幂等（before 消失而 after 已在则打印 `[skip]`）。改前备份 `scratch/rev2026/persuasion.before.json`。
+- 类型只取四类：读不通、的字定语堆叠致主语丢失、英语句法直搬、代词指代不明。不改风格不改意思。
+- 重建：`python -X utf8 pipeline_build/build_pub.py persuasion`
+  → `persuasion 24 ch 115,880 汉字 toc=26 err=0 0.40MB`。
+- 自检：nav 26 项、章名未变、c001 23 段 / c003 38 段与源层一致、无空段无重复段，
+  13 条 after 在 epub 中各命中 1 次。
+- 未动：`work_pub/persuasion/out/**`（旧草稿）。
+
+---
+
+## 2026-11-22 《达洛维夫人》通读润色 batch 1（全书唯一章 c001，12 条）
+
+- 源层 `pipeline_gutenberg/revisions/mrsdalloway.json`（indent=2，脚本保持版式）。
+- 脚本 `scratch/rev2026/polish_dalloway.py`：12 条 before/after，条条断言命中 == 1，
+  幂等（before 消失而 after 已在则记 skipped）。改前备份见 git 历史。
+- 只取四类：读不通、的字定语堆叠致主语丢失、英语句法直搬（关系从句后置）、代词指代不明。
+  每条理由都对应到英文原句。
+- 重建：`python -X utf8 pipeline_build/build_pub.py mrsdalloway`
+  → `mrsdalloway 1 ch 100,350 汉字 toc=3 err=0 0.34MB`。
+- 自检：nav 3 项（书名页/版权/达洛维夫人）、c001 页 766 段（762 正文 + 4 注）、
+  无空段无重复段（>40 汉字去重为 0）。
+- **体例未动**：留声机唱词 `咿 嗯 发 嗯 索 富 绥 图 咿姆 呜` 三处（段 290/292/297）
+  连内部空格一起原样保留 —— 这正是体检白名单里「达洛维夫人 / space between Chinese」那一条。
+- 记录一处任务前提的偏差：白名单里 **corridor/collidor 那条属于《追忆似水年华》**
+  （Françoise 把 corridor 念成 collidor），不在本书；本书英文源里 corridor 只有
+  正常用法（"the symmetry of a corridor"），已按正常译法作「走廊」，未改。
+  两处白名单均未触碰（似水年华 epub 未重建、collidor 仍在 v1_02.xhtml）。
+- 未动：`work_pub/mrsdalloway/out/**`（旧草稿）；同目录 dubliners/persuasion 的改动是
+  进场前就有的脏文件，与本轮无关。

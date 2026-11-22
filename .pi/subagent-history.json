@@ -168,5 +168,38 @@
     "summary": "完成。",
     "background": false,
     "model": "ds-free/deepseek-v4.1-flash"
+  },
+  {
+    "id": "fg-mwrssmse-na50",
+    "agent": "worker",
+    "task": "任务：对《劝导》(persuasion) 做一轮**通读润色**，只改有毛病的句子，不动意思。\n\n源层：`pipeline_gutenberg/revisions/persuasion.json`（这是发货层，改这里；不要改 `work_pub/persuasion/out/**`，那是旧草稿）。结构：{cid: {title_zh, paragraphs: [...]}}。\n\n要求：\n1. 先通读至少 6 章（c001–c006），找出真正的问题句，类型限定为：① 译文读不通或语法别扭；② 「的」字定语堆叠导致主语丢失；③ 英语句法直搬（被动、介词短语位置、进行时）；④ 代词指代不明。**不改风格，不改意思，不为了改而改。**\n2. 每条修改：用 python 脚本（写到 `scratch/rev2026/polish_persuasion.py`）带断言命中次数（必须 == 1），幂等（已改过的再跑不报错），并附一句理由。\n3. 数量控制在 10–15 条。改完用 `python -X utf8 -c \"import ast;ast.parse(open('scratch/rev2026/polish_persuasion.py',encoding='utf-8').read())\"` 自查。\n4. 重建：`python -X utf8 pipeline_build/build_pub.py persuasion`\n5. 自检：读 `out/劝导（坟头草译）.epub` 的 OEBPS/nav.xhtml 与 c001/c003 页，确认章名没变、没有重复段落、没有空段。\n\n禁止：改其他书；跑 verify_epub.py / typo_check.py / clean_check.py（我会跑）；git commit/push。\n回报：表格（有 before/after 与理由）、重建输出行、你判断过但没改的句子举例。",
+    "status": "completed",
+    "startedAt": 1795349596766,
+    "completedAt": 1795349925908,
+    "summary": "完成。下面是回报。",
+    "background": false,
+    "model": "ds-free/deepseek-v4.1-flash"
+  },
+  {
+    "id": "fg-mwrssmse-z4m4",
+    "agent": "worker",
+    "task": "任务：对《都柏林人》(dubliners) 做一轮**通读润色**，只改有毛病的句子，不动意思。\n\n源层：`pipeline_gutenberg/revisions/dubliners.json`（这是发货层）。结构：{cid: {title_zh, paragraphs: [...]}}。\n\n要求：\n1. 通读至少 6 篇（c001–c006），找问题句，类型限定：① 读不通或语法别扭；② 「的」字定语堆叠；③ 英语句法直搬；④ 代词指代不明；⑤ 引语标点与叙述交界处理不当（如提示语用逗号收尾后接引语）。**不改风格、不改意思、不为改而改。**\n2. 每条修改写成脚本 `scratch/rev2026/polish_dubliners.py`：断言命中次数 == 1、幂等、带理由。\n3. 数量 10–15 条。脚本写完用 ast.parse 自查。\n4. 重建：`python -X utf8 pipeline_build/build_pub.py dubliners`\n5. 自检：读 `out/都柏林人（坟头草译）.epub` 的 nav.xhtml 与 c001 页，确认章名未变、无重复段、无空段。\n\n禁止：改其他书；跑全局体检；commit/push。\n回报：表格（before/after/理由）、重建输出行、判过未改的例子。",
+    "status": "completed",
+    "startedAt": 1795349596766,
+    "completedAt": 1795349903379,
+    "summary": "已完成。源层只改了 15 处句子，其余字节未动（round-trip 校验通过）；重建成功。",
+    "background": false,
+    "model": "ds-free/deepseek-v4.1-flash"
+  },
+  {
+    "id": "fg-mwrssmsf-45f9",
+    "agent": "worker",
+    "task": "任务：对《达洛维夫人》(mrsdalloway) 做一轮**通读润色**，只改有毛病的句子，不动意思。\n\n源层：`pipeline_gutenberg/revisions/mrsdalloway.json`（发货层）。结构：{cid: {title_zh, paragraphs: [...]}}。注：这本书里有一处**故意的**谐音（corridor/collidor），以及留声机式的音节重复，属于原文体例，**不要改**；体检白名单里已登记。\n\n要求：\n1. 通读全书的相当一部分（至少前十章），找问题句，类型限定：① 读不通或语法别扭；② 「的」字堆叠导致主语丢失；③ 英语句法直搬（意识流长句的从句顺序）；④ 代词指代不明。**不改风格（伍尔夫的句长是风格，不要拆短）、不改意思。**\n2. 每条修改写成脚本 `scratch/rev2026/polish_dalloway.py`：断言命中 == 1、幂等、带理由。\n3. 数量 10–15 条。脚本写完 ast.parse 自查。\n4. 重建：`python -X utf8 pipeline_build/build_pub.py mrsdalloway`\n5. 自检：nav.xhtml 与任意两页，确认无重复段、无空段，谐音处与音节重复处未被改动。\n\n禁止：改其他书；跑全局体检；commit/push。\n回报：表格（before/after/理由）、重建输出行、确认白名单两处未动。",
+    "status": "completed",
+    "startedAt": 1795349596767,
+    "completedAt": 1795350350868,
+    "summary": "通读范围：本书不分章，只有一个文件 `c001`（762 段 / 115,751 字），所以我把全书从头到尾读完了（不只是前十章），问题句挑自 0–760 段。译文质量很高（全书没有出现“进行”“作为”“对于”这类翻译腔词），我只改了真正有问题的句子。",
+    "background": false,
+    "model": "ds-free/deepseek-v4.1-flash"
   }
 ]
