@@ -267,6 +267,20 @@ def _close(a: str, b: str) -> bool:
     return prev[-1] <= 3
 
 
+def load_notes(book: str, cid: str) -> list[dict]:
+    """Footnote sidecar for one chapter, or an empty list.
+
+    Same shape the older books use: {"anchor", "term", "kind", "text"}. `anchor` must be a
+    phrase of that chapter; `build_all.insert_notes` places the marker on it and reports
+    any note it could not place rather than dropping it silently.
+    """
+    path = os.path.join(PUB, book, "notes", cid + ".json")
+    if not os.path.exists(path):
+        return []
+    with open(path, encoding="utf-8") as f:
+        return json.load(f)
+
+
 def collect(book: str) -> tuple[list[dict], list[str]]:
     """Translated chapters, plus the ids that were skipped and why."""
     revision = B.collect_revision(book)
@@ -296,7 +310,7 @@ def collect(book: str) -> tuple[list[dict], list[str]]:
         else:
             types = ["p"] * len(texts)
         items.append({"id": cid, "texts": texts, "types": types,
-                      "notes": [], "title_zh": c.get("title_zh", ""),
+                      "notes": load_notes(book, cid), "title_zh": c.get("title_zh", ""),
                       "title_en": c.get("title", ""), "links": {},
                       "old_texts": None})
     if carry[0]:

@@ -111,7 +111,7 @@ BOOKS = {
         "title": "第六病室", "sub": "Палата № 6", "author": "安东·契诃夫",
         "src": "Палата № 6", "uid": "urn:palata-6-zh-rev",
         "note": "据一八九二年《俄罗斯思想》初刊本译出",
-        "json": None, "polished": "work_chekhov/out", "notes": None,
+        "json": None, "polished": "work_chekhov/out", "notes": "work_chekhov/notes",
         "shape": "flat", "pattern": "sec*/final.txt", "roman": True,
     },
     "zauberberg": {
@@ -476,6 +476,26 @@ def collect_json_book(cfg: dict) -> list[dict]:
     return items
 
 
+def sidecar_notes(cfg: dict, cid: str) -> list[dict]:
+    """Footnote sidecar for a flat book, keyed by section directory name.
+
+    The three flat volumes (鼠疫, 第六病室, 魔山) had no note mechanism at all, so their
+    cultural references could only be explained in parentheses inside the sentence. The
+    sidecar gives them the same treatment as 魔戒 and 百年孤独.
+    """
+    base = cfg.get("notes")
+    if not base:
+        return []
+    path = os.path.join(ROOT, base, cid + ".json")
+    if not os.path.exists(path):
+        return []
+    notes = json.load(open(path, encoding="utf-8"))
+    for n in notes:
+        if not (n.get("anchor") or n.get("term")):
+            raise ValueError(f"{cfg['title']}/{cid}: note without anchor or term")
+    return notes
+
+
 def collect_flat(cfg: dict) -> list[dict]:
     """Books translated straight to per-section directories with no JSON sidecar."""
     base = os.path.join(ROOT, cfg["polished"])
@@ -497,8 +517,10 @@ def collect_flat(cfg: dict) -> list[dict]:
                 texts = texts[1:]
         else:
             title = ""
+        cid = os.path.basename(os.path.dirname(f))
         items.append({"id": rel, "texts": texts, "types": ["p"] * len(texts),
-                      "notes": [], "title_zh": title, "title_en": "", "links": {},
+                      "notes": sidecar_notes(cfg, cid),
+                      "title_zh": title, "title_en": "", "links": {},
                       "ordinal": i})
     return items
 

@@ -139,6 +139,27 @@ def strip_front(texts: list[str]) -> list[str]:
     return out[i:] if i else out
 
 
+NOTES = os.path.join(GUT, "%s", "notes")
+
+
+def load_notes(book: str, cid: str) -> list[dict]:
+    """Footnote sidecar for one chapter, or an empty list.
+
+    Same shape as the older books: {"anchor", "term", "kind", "text"}, where `anchor` is
+    the phrase the note explains and must occur exactly once in the chapter. A chapter
+    without a sidecar simply has no notes -- eight of these twenty books still do not.
+    """
+    path = os.path.join(NOTES % book, cid + ".json")
+    if not os.path.exists(path):
+        return []
+    with open(path, encoding="utf-8") as f:
+        notes = json.load(f)
+    for n in notes:
+        if not isinstance(n, dict) or not (n.get("anchor") or n.get("term")):
+            raise ValueError(f"{book}/{cid}: malformed note {n!r}")
+    return notes
+
+
 def collect(book: str) -> list[dict]:
     revision = B.collect_revision(book)
     if revision is not None:
@@ -154,7 +175,7 @@ def collect(book: str) -> list[dict]:
         title = (m.get("title_zh") or "").strip()
         src = (m.get("title_src") or "").strip()
         items.append({"id": cid, "texts": texts, "types": ["p"] * len(texts),
-                      "notes": [], "title_zh": title, "title_en": src,
+                      "notes": load_notes(book, cid), "title_zh": title, "title_en": src,
                       "links": {}, "old_texts": None})
     return [it for it in items if it["texts"]]
 
