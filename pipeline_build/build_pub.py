@@ -73,6 +73,27 @@ SPEAKER = re.compile(r"^(?:[A-ZÄÖÜ][A-ZÄÖÜa-zäöüß]{2,20})\s*[:：]")
 META = {b["key"]: b for b in booklist.PUBLIC}
 
 
+
+NUMERAL_HEAD = re.compile(
+    r"[-—–−.．·\s]*"
+    r"(?:第[一-鿿\d]{1,3}[章节回篇]?|[IVXLCDM]+|[一-鿿]{1,3}|\d{1,4})"
+    r"[-—–−.．·、]*"
+    r"\s*$")
+
+
+def is_numeral_head(head: str) -> bool:
+    """True for a heading that is only a number, however it is dressed.
+
+    The chunk files carry these in every shape the sources use: `-I-` (Pérez Galdós),
+    `——X——`, `第八` with no 章, `III.`, `CHAPTER VII`. Failing to recognise one left it in
+    the body, where the builder then lifted it as the chapter's name -- so Fortunata y Jacinta
+    printed 第八 as a title while its neighbours carried 亲密生活场景.
+    """
+    head = head.strip()
+    return bool(NUMERAL_HEAD.fullmatch(head)) and any(
+        c.isdigit() or c in "IVXLCDM" + "一二三四五六七八九十百零"
+        for c in head)
+
 def chapter_ids(book: str) -> list[str]:
     return sorted(os.path.basename(f)[:-5]
                   for f in glob.glob(os.path.join(PUB, book, "src", "c*.json")))
@@ -420,8 +441,7 @@ def collect(book: str) -> tuple[list[dict], list[str]]:
         texts = drop_repeated_head(title_zh, texts)
         while texts:
             head = texts[0].strip()
-            if not (re.fullmatch(r"第[一二三四五六七八九十百零\d]+章", head)
-                    or re.fullmatch(r"[一二三四五六七八九十百零]+|[IVXLCDM]+|\d{1,4}", head)):
+            if not is_numeral_head(head):
                 break
             texts.pop(0)
         if book not in VERSE and book not in PLAY and texts and "\n" in texts[0]:

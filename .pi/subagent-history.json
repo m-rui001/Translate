@@ -69,5 +69,38 @@
     "task": "修订《戴安娜的交叉》（key=diana，英语，梅瑞狄斯）。正文：work_gutenberg/diana/out/<cid>/cNN/final.txt；原文：work_gutenberg/diana/src/*.json + chunks/*.json；重建：python -X utf8 pipeline_build/build_gutenberg.py diana\n\n抽查报告点名的三处“读不懂”的句子（逐条回英文原文，能确定原意就重写为可读中文；不能确定就只报告不改）：\n1. “他刨开坟墓，把那些安安静静、正忙着料理一具可怜和善的尸身的蛆虫，变成了带翅的毒蛇，以一阵致命的曲折飞行，像军用火箭一般，在活人中间搅得天昏地暗。” —— 二十二字的定语压在“蛆虫”上，中文喘不过气。拆成两三句：意思一点不减，只改句式。\n2. “她的性情天生要在这样的水面上游泳：那里，一种被规定、被培养出来的假正经本当假装溺水。” —— 报告说“本当+假装”叠加导致语义糊。回原文（Meredith 常作 should be drowning / ought to be ducked 之类），重写。\n3. “她们是，或者她们自知应当是；结果都一样。” —— 缺表语，回指断了。若原文是 they are, or they know they ought to be（指“美”），补成“她们是那样的美人，或者自知应当是；结果都一样”一类。\n\n其余一律不动（报告对政论段、对话段评价为 A-，不要碰）。另做一次机械扫描并在报告里记录：人名地名前后不一、外文残留、繁简混用、孤立引号。",
     "status": "interrupted",
     "startedAt": 1795325928077
+  },
+  {
+    "id": "fg-mwrq2fkw-9aje",
+    "agent": "worker",
+    "task": "书：《金人》(work_gutenberg/timar，py 关键字 timar，epub 名 金人（坟头草译）.epub)。\n\n问题：目录里大部分章有中文名（白猫、严格搜查……），但有 4 章只显示「第一章 / 第三十八章 / 第三十九章 / 第四十二章」。要补成名字。\n\n做法（务必最小改动）：\n1. 先运行这个诊断，列出「原文有 head 但 title_zh 没有汉字」的章：\n   python -X utf8 -c \"import sys,glob,json,os,re;sys.path.insert(0,'pipeline_build');exec(open('scratch/rev2026/recover_names.py').read().split('for book in BOOKS:')[0]);print([c for c in items('timar')])\"\n   或者直接看 work_gutenberg/timar/src/<cid>.json 的第一块(head)与第二块(章名) 和 work_gutenberg/timar/chunks/<cid>.json 的 title_zh。\n2. 名字优先取**译者自己写在正文里的**：看 work_gutenberg/timar/out/<cid>/c*/final.txt 的头几段，通常第一段是孤立的数字（如「三十八」），第二段就是章名。\n3. 若译文里确实没有章名，就用 src 里的英文名自己译，风格与同书已有的章名一致（简短名词短语，不加句号）。\n4. 把名字写进 work_gutenberg/timar/chunks/<cid>.json 的 title_zh（json.load / json.dump，ensure_ascii=False，indent=1）。**不要整篇重写任何 final.txt**；只有在某章正文第一段是孤立数字、而它被误当成章名时，才删除**那一段**（一次只删一段，改前先 grep 确认只有一处）。\n5. 重建：python -X utf8 pipeline_build/build_gutenberg.py timar\n6. 用 python 读 out/金人（坟头草译）.epub 的 OEBPS/nav.xhtml，确认里面不再有纯「第N章」条目（原文本来无题的章除外，如有请说明）。\n\n禁止：修改其他书；运行 verify_epub.py / typo_check.py / clean_check.py；git commit / push。\n回报：cid → 采用的中文名、来源（译者原文/我译）、以及重建后 nav 里剩余的编号条目。",
+    "status": "completed",
+    "startedAt": 1795345015136,
+    "completedAt": 1795345112999,
+    "summary": "完成。改动只有 4 个 `chunks/*.json` 的 `title_zh` 字段，未改动任何 `final.txt`，未碰其他书。",
+    "background": false,
+    "model": "ds-free/deepseek-v4.1-flash"
+  },
+  {
+    "id": "fg-mwrq2fkx-5y4c",
+    "agent": "worker",
+    "task": "书：《阿亚拉的天使》(work_gutenberg/ayala，epub 名 阿亚拉的天使（坟头草译）.epub)。\n\n问题：目录里大多数章有中文名（两姐妹、露西与多塞特姨母……），但有 9 章只显示「第十二章 / 第十四章 / 第二十五章 / 第二十六章 / 第三十四章 / 第四十一章 / 第四十三章 / 第五十一章 / 第五十二章」，另外有一章显示成「第九章 伊萨多·哈梅尔被邀午餐」（编号粘在名字前面）。要补成名字、去掉粘连的编号。\n\n做法（务必最小改动）：\n1. 对每个可疑章，读 work_gutenberg/ayala/src/<cid>.json：第一块是 head（如 CHAPTER XII），第二块是章名（特罗洛普全用大写，有时以句号结尾）。\n2. 名字优先取**译者自己写在正文里的**：看 work_gutenberg/ayala/out/<cid>/c*/final.txt 头几段，可能第一段是「第十二章」这种孤立编号，第二段就是章名。\n3. 译文里没有章名的，用 src 的英文名自译，风格与同书已有章名一致（特罗洛普的章名多是短句，可以带句号，与现有条目一致即可）。全大写的感叹句保留其语气。\n4. 把名字写进 work_gutenberg/ayala/chunks/<cid>.json 的 title_zh。**不要整篇重写 final.txt**；只有正文首段是孤立数字、被误当章名时才删**那一段**（改前 grep 确认唯一）。\n5. 重建：python -X utf8 pipeline_build/build_gutenberg.py ayala\n6. 读 out/阿亚拉的天使（坟头草译）.epub 的 OEBPS/nav.xhtml，确认没有纯「第N章」条目，也没有「第N章 XXX」这种粘连条目。\n\n禁止：修改其他书；运行 verify_epub.py / typo_check.py / clean_check.py；git commit / push。\n回报：cid → 中文名、来源、重建后 nav 里剩余的编号条目。",
+    "status": "completed",
+    "startedAt": 1795345015137,
+    "completedAt": 1795345192474,
+    "summary": "已完成，重建通过。",
+    "background": false,
+    "model": "ds-free/deepseek-v4.1-flash"
+  },
+  {
+    "id": "fg-mwrq2fkx-qntm",
+    "agent": "worker",
+    "task": "书：《戴安娜的交叉》(work_gutenberg/diana，epub 名 戴安娜的交叉（坟头草译）.epub)。\n\n问题：目录里大多数章有中文名（论女主人公的日记与日记作者、爱尔兰舞会……），但有 11 章只显示「第八章 / 第九章 / 第十一章 / 第十四章 / 第十七章 / 第二十一章 / 第二十八章 / 第二十九章 / 第三十一章 / 第三十四章 / 第三十五章」。要补成名字。\n\n做法（务必最小改动）：\n1. 对每个可疑章，读 work_gutenberg/diana/src/<cid>.json：第一块 head（如 CHAPTER XIX），第二块是章名（梅瑞狄斯多用全大写名词短语，如 A DRIVE IN SUNLIGHT AND A DRIVE IN MOONLIGHT）。\n2. 名字优先取**译者自己写在正文里的**：看 work_gutenberg/diana/out/<cid>/c*/final.txt 头几段。\n3. 译文里没有章名的，按 src 的英文名自译，风格与同书已有章名一致（如「阳光下的车程与月光下的车程」）。注意本书章名有时是短句（梅瑞狄斯爱用长句），句子式章名照译即可。\n4. 写进 work_gutenberg/diana/chunks/<cid>.json 的 title_zh。**不要整篇重写 final.txt**；只有正文首段是孤立数字、被误当章名时才删**那一段**（改前 grep 确认唯一）。\n5. 重建：python -X utf8 pipeline_build/build_gutenberg.py diana（注意构建日志会打印 diana/c002 licence page dropped，属正常）\n6. 读 out/戴安娜的交叉（坟头草译）.epub 的 OEBPS/nav.xhtml，确认没有纯「第N章」条目。\n\n禁止：修改其他书；运行 verify_epub.py / typo_check.py / clean_check.py；git commit / push。\n回报：cid → 中文名、来源、重建后 nav 里剩余的编号条目。",
+    "status": "completed",
+    "startedAt": 1795345015137,
+    "completedAt": 1795345180057,
+    "summary": "重建完成，`nav` 里已经没有纯编号条目了。核对结果如下：",
+    "background": false,
+    "model": "ds-free/deepseek-v4.1-flash"
   }
 ]

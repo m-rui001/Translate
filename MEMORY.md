@@ -1283,3 +1283,13 @@ revision 书以 revision 为基准，其余以 `out/**/final.txt` 为基准；�
 
 两个坑：脚本目录里的 `numbers.py` 会遮蔽标准库（已改名 `digit_audit.py`）；heredoc 会吃掉反斜杠，
 含 `\` 的脚本一律用 write 落文件。
+
+### 引号章名要靠 title_zh 兜底（阿亚拉的天使）
+
+特罗洛普的章名多是加引号的短句（`"WOULD YOU?"`、`"NO!"`）。`source_has_chapter_name()`
+看到原文第二块以引号开头就判「不是章名」，`is_chapter_name()` 也不收以 `！”` 结尾的短行，
+于是十章在目录里只剩「第十二章」。十处一律在 `chunks/<cid>.json` 的 `title_zh` 里手写，
+字面**与正文首段完全一致**（含“”与句末「。」「！」），`drop_repeated_head()` 的等值分支
+才会把正文里那行章名删掉——短于五字时编辑距离分支不生效，只有全等才算命中。
+原文没留章名的（c015「FRANK HOUSTON.」）自译；c020 首段是「第九章 名字」粘连的一行，
+去掉粘连编号写进 `title_zh`，并删掉 `out/c020/c00/final.txt` 首段那一行。
