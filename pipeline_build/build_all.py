@@ -432,7 +432,9 @@ def chapter_xhtml(title: str, subtitle: str, ps: list[str], types: list[str],
         body.append(f"<h1>{esc(title)}</h1>")
     if subtitle:
         body.append(f"<h2>{esc(subtitle)}</h2>")
-    body += [para_html(t, ty) for t, ty in zip(ps, types)]
+    # zip() stops at the shorter list: a chapter whose type list is one entry short would
+    # print every paragraph but the last, and nobody would notice from the table of contents.
+    body += [para_html(t, types[i] if i < len(types) else "p") for i, t in enumerate(ps)]
     if notes:
         body.append("<div class='notes-head'>注</div>")
         for k, n in enumerate(notes, 1):
@@ -495,7 +497,14 @@ def collect_json_book(cfg: dict) -> list[dict]:
     """Chapters that carry metadata in JSON plus prose in the polished tree."""
     d = os.path.join(ROOT, cfg["json"])
     items = []
-    for f in sorted(glob.glob(os.path.join(d, "*.json"))):
+    # Melville prints the Etymology and the Extracts before chapter one; sorted by file name
+    # they fell to the end of the book, after the Epilogue. Front matter goes first, in the
+    # order the author set it.
+    FRONT_ORDER = {"front_ety": 0, "front_ext": 1}
+    for f in sorted(glob.glob(os.path.join(d, "*.json")),
+                    key=lambda p: (FRONT_ORDER.get(os.path.splitext(os.path.basename(p))[0],
+                                                   9 if os.path.basename(p).startswith("front") else 2),
+                                   os.path.basename(p))):
         if f.endswith(".polished.json"):
             continue
         meta = json.load(open(f, encoding="utf-8"))
@@ -505,6 +514,16 @@ def collect_json_book(cfg: dict) -> list[dict]:
         old_texts = list(meta["texts"])
         texts = list(old_texts)
         types = list(meta.get("types") or ["p"] * len(texts))
+        if len(types) != len(texts):
+            # Sixty-one chapters of the LOTR tree carry fewer `types` entries than
+            # paragraphs -- 659 paragraphs in all -- and chapter_xhtml zips the two lists,
+            # so the tail of every such chapter was dropped from the book without a word.
+            # The type only chooses a CSS class, so padding with "p" restores the text and
+            # changes nothing else.
+            WARN.append(f"{cfg['title']} {cid}: {len(texts)} paragraphs, {len(types)} types "
+                        f"-- padding the rest as prose")
+            types = types + ["p"] * (len(texts) - len(types))
+        types = types[:len(texts)]
         pol = polished_chapter(cfg, cid)
         if pol is not None:
             if len(pol) == len(texts):
