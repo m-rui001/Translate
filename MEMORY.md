@@ -1612,3 +1612,54 @@ indent=2，ensure_ascii=False），正文 final.txt 一字未动。
 这不在本次四类之内，且要一套 termbase 才做得稳，留作独立一轮。
 
 `python -X utf8 pipeline_build/build_pub.py bleakhouse twocities` → toc 70 / 47，err=0。
+
+## 2026-11-23 推送方式（网络不稳时）
+
+```bash
+git -c http.proxy= -c http.postBuffer=524288000 -c http.lowSpeedLimit=0 -c http.lowSpeedTime=999 \
+    push origin <sha>:main
+```
+
+一次一个提交，包体小。偶发 `Recv failure: Connection was reset` / `Could not connect` 时，
+`for i in 1 2 3; do ... ; sleep 15; done` 重试即可，第二次基本能过。
+
+## 2026-11-23 新工具（scratch/rev2026/）
+
+| 脚本 | 作用 |
+|---|---|
+| `layers.py` | 给一本书的 key，返回它**所有发货层**的文件（revisions json / work_overhaul final+notes / work_pub+work_gutenberg out 的 final.txt + index + notes）。改名必须先确认这本书走哪一层，否则重建会打回原形 |
+| `name_pairs_all.py` | 从 69 本成品 epub 里找「等长、只差一字、两边都≥3 次」的专名候选；两种取词：带间隔号的名字、位于 说/答道/先生/夫人/船长 之前的 2–4 字串 |
+| `ctx_name.py` | `python -X utf8 scratch/rev2026/ctx_name.py 书名 名字…` 打 4 条上下文，判是不是同一人 |
+| `close_quotes.py` / `undo_close*.py` | 段末补收引号；错了要按「段内 ” 多于 “ 」回滚 |
+| `fix_whale_anchors.py` | 按现文重取注锚点，逐条断言新锚在该章**恰好出现一次** |
+| `parked_whale.py` / `parked_ctx.py` | 列出被塞进段末的注，并给出最像原锚的段落 |
+
+## 2026-11-23 判例：**看起来是异写，其实是两个人/两回事**
+
+| 书 | 候选 | 理由 |
+|---|---|---|
+| 德伯家的苔丝 | 德伯 / 德北 | Durbeyfield 与 d'Urberville 两家 |
+| 荒凉山庄 | 沃尔德 / 沃尔斯 | 切斯尼·沃尔德是庄园，沃尔斯是律师 Vholes |
+| 荒凉山庄 | 古皮 / 古舍 | Guppy 与 Gusher |
+| 都柏林人 | 达菲 / 达西 | Duffy 与男高音 D'Arcy |
+| 远航 | 尔弗里德 / 尔弗雷德 | 威尔弗里德·弗拉欣 与 艾尔弗雷德·佩罗特 |
+| 庭长夫人 | 帕斯 / 帕科 | 费尔明·德·帕斯 与 帕科·贝加利亚纳 |
+| 马亚一家 | 达马亚 / 达马索 | 达马亚一家 与 Dâmaso Salcede |
+| 阿亚拉 | 上尉 / 上校 | 巴茨比上尉 与 斯塔布斯上校 |
+| 三剑客 | 温特伯爵夫人 / 温特勋爵 | Lady de Winter 与 Lord de Winter |
+| 包法利 | 勒赫 / 勒鲁 | Lheureux（布料商）与 Catherine Leroux |
+| 魔戒 | 伊欧墨 / 伊欧玟 | 兄与妹 |
+| 白鲸 | 科芬 / 咖芬 | **是同一家**，已统一为科芬（科芬船长、南塔开特的科芬们） |
+
+## 2026-11-23 判例：**单引号 ‘ ’ 不是缺陷**
+
+全库 60 余本里都有 ‘ ’，那是**引号里的引号**（“他说：‘我不去。’”），以及追忆里布里肖
+满口‘能够’‘毛头兵’那种引词。不要当引号体例不统一去改。
+
+## 2026-11-23 未做，留待专门一轮
+
+- 布登勃洛克一家的官职译名：该书 Konsul=领事（511 次）、Senator=参议（470）、Senate=参议院
+  （21），另有「参事」156 次、「参事夫人」49 次、「参事会」若干，**两种职衔都在用**（让·布登
+  勃洛克在早期章节被称「参事」，托马斯当选参议员后也叫「参事」，还有「胡内乌斯参事」
+  「克勒格尔参事」「魏恩申克参事」）。要逐句判人物才能改成 领事/参议，不是一次替换能了的。
+- `neuegedichte` c006 诗界合并；`twocities` c002/c003 双译稿选哪份。
