@@ -17,7 +17,13 @@ Four things are different and each one is a real defect seen in this batch:
   * **`neuegedichte` is verse.** Its 4,747-character opening chapter mixes the title page
     with the first poems, so it *was* translated, but a paragraph count is not a line
     count. Consecutive short sentences that the translator ran together are split back
-    into lines here, at sentence boundaries only, so the page reads as a poem.
+    into lines here, at sentence boundaries only, so the page reads as a poem. A poem's
+    own title and its place line are a different kind of line (`verse-title`,
+    `verse-sub`): the source sets them as capitals blocks, the writer carried them over
+    as ordinary paragraphs, and printed as ordinary paragraphs they read as the first
+    words of the poem -- `诗人你离开我，你这时辰。`, `在一座陌生的园林里博尔盖比庄园是两条路。`
+    The writer's Chinese titles are listed per chapter in `verse_roles.json` and are
+    emitted whole, never split at their own `。`.
 
   * **Two plays, one act each.** `Jedermann` and `Tor und Tod` are dramatic text. Their
     speaker names are the only structural signal left after extraction, and they must not
@@ -86,15 +92,107 @@ def chapter_texts(book: str, cid: str) -> list[str]:
     return out
 
 
+# Brackets and quotes, so that a line break never lands inside them. `（像人们有时在康复中
+# 走着，沉思：从前这里曾有什么？）` and `（哪里有一个头脑存在并思考，好有朝一日享用它们？）`
+# are single sentences: splitting them at the `？` stranded a lone `）` on the next line.
+BRACKETS = {"（": 1, "(": 1, "【": 1, "《": 1, "“": 1,
+            "）": -1, ")": -1, "】": -1, "》": -1, "”": -1}
+
+
 def verse_lines(text: str) -> list[str]:
     """Split a run-together stanza back into lines, at sentence ends only.
 
     Rilke's lines end in `,` as often as in `.`, and joining two of them into one
     sentence is a translation decision the translator already made. So the only split
-    that is safe here is where a sentence genuinely ends.
+    that is safe here is where a sentence genuinely ends -- and not where one ends inside
+    a bracket, because the closing mark belongs with it.
     """
-    parts = re.split(r"(?<=[。！？；])", text)
-    return [p.strip() for p in parts if p.strip()]
+    balanced = sum(BRACKETS.get(c, 0) for c in text) == 0
+    out, cur, depth = [], "", 0
+    for ch in text:
+        cur += ch
+        if balanced:
+            depth += BRACKETS.get(ch, 0)
+        if ch in "。！？；" and depth <= 0:
+            out.append(cur.strip())
+            cur = ""
+    out.append(cur.strip())
+    return [p for p in out if p]
+
+
+# A source group numeral (`I`, `II`, `III`), as the writer rendered it. The chunker keeps
+# Rilke's numeral as a block of its own and it arrives as 一 / 第二 / 壹 / 第二部. Printed
+# under the chapter heading it looks like a one-word poem; it numbers a poem *group*.
+GROUP_NUM = re.compile(
+    r"^(?:[一二三四五六七八九十百]{1,3}|"
+    r"[壹贰叁肆伍陆柒捌玖拾]{1,3}|"
+    r"第[一二三四五六七八九十百0-9]{1,3}[部篇章节回卷]?|"
+    r"I{1,3}|IV|V|VI{0,3}|IX|X)$")
+
+
+def verse_roles(book: str) -> dict:
+    """The book's poem-title inventory, if it ships one."""
+    path = os.path.join(PUB, book, "verse_roles.json")
+    if not os.path.exists(path):
+        return {}
+    return json.load(open(path, encoding="utf-8"))
+
+
+def verse_block(book: str, cid: str, texts: list[str],
+                prefix: tuple[list[str], list[str]] = ([], [])) -> tuple[list[str], list[str]]:
+    """Turn one translated poem group into labelled lines: titles whole, body split.
+
+    `verse_lines` cuts at sentence ends, which is right for a stanza the translator ran
+    together and wrong for a title: `俄耳甫斯。欧律狄刻。赫尔墨斯` is one title, not three
+    lines, and `（诺娜修女旧藏）` keeps its brackets. Titles therefore bypass the splitter
+    and get their own kinds, so that `chapter_xhtml` prints them as headings instead of
+    as the poem's first line.
+
+    `prefix` holds the lines carried over from the previous chapter -- see `carry_tail`.
+    """
+    roles = verse_roles(book).get(cid, {})
+    left = {kind: list(roles.get(kind, [])) for kind in ("titles", "subs")}
+    kinds = {"titles": "verse-title", "subs": "verse-sub"}
+
+    while texts and GROUP_NUM.match(texts[0].strip()):
+        texts = texts[1:]
+
+    out: list[str] = list(prefix[0])
+    types: list[str] = list(prefix[1])
+    for t in texts:
+        t = t.strip()
+        if not t:
+            continue
+        hit = next((k for k in ("titles", "subs") if t in left[k]), None)
+        if hit:
+            left[hit].remove(t)
+            out.append(t)
+            types.append(kinds[hit])
+            continue
+        for line in verse_lines(t):
+            out.append(line)
+            types.append("verse")
+    return out, types
+
+
+TITLE_KINDS = ("verse-title", "verse-sub")
+
+
+def carry_tail(texts: list[str], types: list[str]) -> tuple[list[str], list[str]]:
+    """Move a poem's title off the end of the chapter it was cut before.
+
+    The chunker cuts Rilke's groups at a fixed size and the cut lands between a poem's
+    title and its body often enough to be the norm, not the exception: `尖端` ends the
+    chapter before the poem it names, `阿比萨格`, `大卫在扫罗面前歌唱`, `门廊`, `囚徒`,
+    `贝居安会院` + `圣伊丽莎白贝居安会院。布鲁日` likewise. Standing there alone at the foot of
+    the page a title is unreadable -- it is a word with no poem under it -- and the poem
+    in the next chapter opens titleless. So the trailing title (and the place line after
+    it) travels to the top of the next chapter, where it belongs.
+    """
+    moved: list[str] = []
+    while texts and types[-1] in TITLE_KINDS:
+        moved.insert(0, (texts.pop(), types.pop()))
+    return [t for t, _ in moved], [k for _, k in moved]
 
 
 def play_lines(texts: list[str]) -> list[str]:
@@ -177,6 +275,7 @@ def collect(book: str) -> tuple[list[dict], list[str]]:
 
     idx = index_of(book)
     items, skipped = [], []
+    carry: tuple[list[str], list[str]] = ([], [])
     for c in idx["chapters"]:
         cid = c["id"]
         texts = chapter_texts(book, cid)
@@ -187,15 +286,23 @@ def collect(book: str) -> tuple[list[dict], list[str]]:
             reason = "front matter" if run_pub.is_front_matter(feed) else "no translation"
             skipped.append(f"{cid} ({reason})")
             continue
-        if book in VERSE:
-            texts = [ln for t in texts for ln in verse_lines(t)]
-        if book in PLAY:
-            texts = play_lines(texts)
         texts = drop_repeated_head(c.get("title_zh", ""), texts)
-        items.append({"id": cid, "texts": texts, "types": ["p"] * len(texts),
+        if book in VERSE:
+            texts, types = verse_block(book, cid, texts, carry)
+            carry = carry_tail(texts, types)
+        elif book in PLAY:
+            texts = play_lines(texts)
+            types = ["p"] * len(texts)
+        else:
+            types = ["p"] * len(texts)
+        items.append({"id": cid, "texts": texts, "types": types,
                       "notes": [], "title_zh": c.get("title_zh", ""),
                       "title_en": c.get("title", ""), "links": {},
                       "old_texts": None})
+    if carry[0]:
+        # the last chapter ends on a title nothing follows: put it back rather than lose it
+        items[-1]["texts"].extend(carry[0])
+        items[-1]["types"].extend(carry[1])
     return items, skipped
 
 

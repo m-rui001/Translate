@@ -1,0 +1,73 @@
+[
+  {
+    "id": "fg-mwrdwww1-tjxs",
+    "agent": "general-purpose",
+    "task": "修订《乌略亚庄园》（key=ulloa，西班牙语，帕尔多·巴桑）。正文：work_gutenberg/ulloa/out/<cid>/cNN/final.txt；原文：work_gutenberg/ulloa/src/*.json（blocks）与 work_gutenberg/ulloa/chunks/*.json；重建：python -X utf8 pipeline_build/build_gutenberg.py ulloa\n\n抽查报告对本书的指控（必须逐条核原文后再改）：\n1. 专名 Trampeta 在正文里并存「特兰佩塔」与「特拉姆佩塔」，且两种写法出现在同一段附近。请统计全书两种写法次数，以多数为准统一（正文 + 必要时修订）。原文 trampeta 在加利西亚语兼指“喇叭/骗子”，若译文两处不一致则该双关落空；统一后可考虑在首次出现处加一句括注（本书无脚注机制，只能行内括注），或说明为何不加。\n2. 女主角昵称 Nucha 并存「努查」「努恰」，需统一。\n3. 报告称「马诺丽塔/丽塔」全称与昵称交替是原文所有、译者做对了——请核实原文（Manolita 的昵称是否为 Rita），如果是，明确写进报告作为“驳回/表扬”条目，不要动。\n4. 报告称大量“词中空格”（如「堂佩德罗看 出」「要 成家」）。注意：这很可能是评审方从 epub 剥离 HTML 标签时 <em> 边界造成的假空格。请按共享规则第 5 条验证后判定。\n5. 报告称「特拉姆佩塔仿佛化作六个人」那段有文字游戏需保留——核实原文此处是否有双关（如 seis trampetas / 六个喇叭），若译文丢失双关，给出最小改法。\n\n除上述外，请自己扫一遍本书的：外文残留（正文中夹生英文/西语但原作并非如此）、繁简混用、明显错字、引号不配对。只改证据明确的。",
+    "status": "completed",
+    "startedAt": 1795324602241,
+    "completedAt": 1795325349761,
+    "summary": "已完成《乌略亚庄园》的抽查核对与修订，重建通过（30 章 / 132,048 汉字 / toc=32 / xml_err=0；`verify_epub` 70 本 0 errors；`typo_check` 无本书条目）。只改了 `final.txt`，每处编辑都断言过「段数不变」「⟦i⟧/⟦/i⟧ 计数不变」（106/106）。报告见 `scratch/ulloa_rev/REPORT.md`…",
+    "background": false,
+    "model": "ds-free/deepseek-v4.1-flash"
+  },
+  {
+    "id": "fg-mwrdwww2-23lz",
+    "agent": "general-purpose",
+    "task": "修订《索蒂莱萨》（key=sotileza，西班牙语，佩雷达）。正文：work_gutenberg/sotileza/out/<cid>/cNN/final.txt；原文：work_gutenberg/sotileza/src/*.json 与 chunks/*.json；重建：python -X utf8 pipeline_build/build_gutenberg.py sotileza\n\n抽查报告对本书的指控（逐条核原文）：\n1. 正文夹生外文未译未注：boudoir（应译“闺房/贵妇小客厅”，因佩雷达正是在讽刺法国风）、Imperial（马德里“帝国咖啡馆”，文人聚处，是专名，可留原文但需行内括注）。请找出这几处的确切句子，判断原文是否即为外文（若原文如此，保留原文+行内括注；若原文是西班牙语而译文误留了外文，则译出）。\n2. 「拿八棍儿的命赌咒」疑为方言/誓语直译失败（原文可能是 voto a... 类粗俗誓语，或与“八”有关的俚语）。请在 src 里定位这句的原文（table 关键词：voto、ocho、garrote、brincos），给出可读的中文誓语。\n3. 「花镖」= banderillas（斗牛短标枪），报告建议加注。请核实原文用词，若是斗牛术语，加行内简短括注（如“像被扎了花镖的公牛”）。\n4. 报告称结语谚语 no es quienquiera el que infla este perro（不是谁都能把这狗吹胀）直译正确但应加注说明是桑坦德俗语——核实原文后决定是否加行内括注。\n5. 报告称「击个掌吧，因为你是我们街上的」应作「因为你是咱这条街上的人」——核原文（choca esos cinco... porque eres de nuestra calle），改顺。\n6. 报告列了大量“词中空格”，按共享规则第 5 条验证后再决定（多半是假象）。\n\n此外自查：外文残留、繁简混用、人名地名前后不一（尤其渔民绰号：Sotileza、Cleto、Muentz 之类）、引号配对。",
+    "status": "timeout",
+    "startedAt": 1795324602242,
+    "completedAt": 1795325802376,
+    "summary": "Hard timeout after 1200000ms",
+    "background": false,
+    "model": "ds-free/deepseek-v4.1-flash"
+  },
+  {
+    "id": "fg-mwrdwww2-3jr5",
+    "agent": "general-purpose",
+    "task": "修订《巴黎圣母院》（key=notredame，法语，雨果）。正文：work_pub/notredame/out/<cid>/cNN/final.txt；原文：work_pub/notredame/src/*.json；重建：python -X utf8 pipeline_build/build_pub.py notredame（注意这本走 build_pub，不是 build_gutenberg）\n\n抽查报告对本书的指控（逐条核原文）：\n1. 建筑术语并存两套译名：峨特/哥特（Gothique）；罗曼/罗马风（Roman）。请统计全书次数，统一为今通行译名（哥特式、罗马风），并在报告里说明为何选这一套；注意「罗曼带/峨特带」这类并列处要一起改。\n2. 「伏尔甘那只有生命的三脚鼎」读不通，原文应为 le trépied vivant de Vulcain（伏尔甘的活三脚鼎）。请在 src 定位原文并改为「伏尔甘那只活的三脚鼎」之类可读句子。\n3. 中世纪戏剧体裁术语混乱：moralité（道德剧）、sotie（傻剧）、mystère（神秘剧）。报告说格兰古瓦那出戏是 mystère，但正文有的地方称“道德剧”、有的称“神秘剧”，会让读者以为有两出戏。请核实原文各处用词，逐一订正，并在报告里列出每个体裁在译文中的最终统一译名。\n4. 拉丁文/外文引语一律无注（quæ mole sua terrorem incutit spectantibus / pendent opera interrupta / Currit rota, urceus exit / Salve, maris stella / Facitote caritatem / Vendidi hebdomade nuper transita meam ultimam chemisam）。其中最后两条是乞丐各操土语、格兰古瓦用蹩脚拉丁回敬的喜剧场面，不注则读者不懂他为何说“总算有一个说的是基督教的话”。本书无脚注机制：请判断能否用「行内括注」解决，至少给 Facitote caritatem 与那句蹩脚拉丁加中文意译括注；其余若不宜行内加注，在报告里列为“建议后续加脚注”。\n5. 报告的“词中空格”清单按共享规则第 5 条验证（多半是 <em> 边界造成的假象）。\n\n此外自查：人名地名不统一（Esmeralda/Gringoire/Frollo/Quasimodo/Claude 等）、外文残留、繁简混用、引号配对。",
+    "status": "failed",
+    "startedAt": 1795324602242,
+    "completedAt": 1795325522873,
+    "summary": "All available models exhausted.",
+    "background": false
+  },
+  {
+    "id": "fg-mwrdwww2-kqia",
+    "agent": "general-purpose",
+    "task": "修订《新诗集》（key=neuegedichte，德语，里尔克）。正文：work_pub/neuegedichte/out/<cid>/cNN/final.txt；原文：work_pub/neuegedichte/src/*.json（注意：每章 blocks 里 type=head 的是诗题/编号）；重建：python -X utf8 pipeline_build/build_pub.py neuegedichte（走 build_pub，且该 key 在 VERSE 集合里，组装会按句末标点重新分行——改动后务必重跑再看成品）\n\n这是本批问题最重的一本，重点两条：\n1. 【结构性】报告称“每一首诗的标题都直接焊在正文第一句上”，如「诗人你离开我，你这时辰。」「在一座陌生的园林里博尔盖比庄园是两条路。」「玫瑰码头布鲁日街巷有一种轻缓的步伐」。请核实：先看 src 里该章的 head 块与 title，再看 final.txt 首段是否把题目与首句粘在一行、and whether the chapter's title_zh also prints as <h2> in the epub（会导致题目出现两次或粘连）。给出根因（是译稿粘的还是 build_pub 的 VERSE 分行逻辑造成的），然后在不破坏其它章的范围内修正；若根因在组装器，允许改 pipeline_build/build_pub.py，但必须在报告里写清改了哪几行、影响范围（只有 VERSE 集合里的书受影响），并重跑 verify_epub.py 确认 27+ 本 epub 全部 0 error。\n2. 【可读性】报告举出多句无法解析的中文，例如「童年多想一些是好的，为了说出一点那失落了的东西」「那时我们活着，像属于人的东西，属于它们的，直到边缘都充满了形象」「在其中继续存在如今使我们困惑」「你浩大的情感，如同夹在树干与树皮之间，细小地转化着，正是朝着它而去吗？」「尖端」「一人情：摇摆不定的所有物之名」。请逐句回原文（德国原文在 src）判断：是译者照搬德语语序导致中文失衡，还是原文本身歧义。对确属中文失衡的，重写为可解析的中文（保留原意象与分行，不增添解释性文字）；对原文确实歧义无法确定的，在报告里列出、不要乱改。\n  · 「一人情」疑为「一／人情」粘连或缺字，核原文标题后修正。\n  · 「广场弗尔讷」「塔弗尔讷的圣尼古拉塔地之内部」：地名 Veurne 与题目粘连、且「地之内部」有衍字，核原文后修正。\n3. 报告称有些诗译得很好（《离别》《死亡的体验》《蓝色的绣球》），不要动它们。\n\n输出报告必须包含：标题粘连的根因与修法、逐句重写的对照表（原文 / 旧译 / 新译）、以及“原文即歧义、保留未改”的清单。",
+    "status": "completed",
+    "startedAt": 1795324602242,
+    "completedAt": 1795325652323,
+    "summary": "Done.",
+    "background": false,
+    "model": "ds-free/deepseek-v4.1-flash"
+  },
+  {
+    "id": "fg-mwrepbws-5eu5",
+    "agent": "general-purpose",
+    "task": "修订《马尔特手记》（key=malte）。正文：work_pub/malte/out/<cid>/cNN/final.txt；原文：work_pub/malte/src/*.json；重建：python -X utf8 pipeline_build/build_pub.py malte\n\n待核清单：\n1. 作者名同一书两种译名：“赖内·马利亚·里尔克”与“莱纳·马利亚·里尔克”（正文首署名 vs 书名页）。请定位两处实际文本（可能在 final.txt、build_pub 的 cfg、booklist 元数据、版权页模板里），统一为一个（建议赖内·马利亚·里尔克，Rainer 通行译法），并把改动的文件列清。注意 build_pub.py 的作者名来自 pipeline_private/books.py 或 books_meta，改那里的值要确认不会影响其它书。\n2. 长定语堆叠句：“被磨硬了的、限制于至必需之物的身体…夜醒的军械库曾借它推动自己劳作的血液”这类。只处理抽查报告明确点名的那一句（“这身体的尖锐逼人的、不断扩张的精神，比芬芳国度的香气更强”上下文里那个三层定语），回德语原文确认后拆成两三个分句；其它长句不动，列进报告。\n3. 抽查报告称“对重”（Gegengewicht）生造词可用、“命运吐出来的/唾沫”重复度高——两件都不算错，只需核实原文并写进驳回/保留清单，不要改。\n4. 自查：人名地名前后不一（Malte/马尔特、Brahe/布拉厄之类）、外文残留、繁简混用。只改证据明确的。",
+    "status": "interrupted",
+    "startedAt": 1795325928076
+  },
+  {
+    "id": "fg-mwrepbwt-7x7h",
+    "agent": "general-purpose",
+    "task": "修订《追忆似水年华》（key=proust）。正文：work_proust/v3、v4、v6、v7 的译稿（先探清楚是 out/<chunk>/final.txt 还是别的结构）；重建：python -X utf8 pipeline_proust/assemble_proust.py（注意它把成品写到 out/追忆似水年华（坟头草译）.epub）。仓库里已有 pipeline_proust/normalise_names_proust.py 和 names_proust.py，先看它们干什么、能不能复用。\n\n抽查报告点名的专名分裂（先用 grep 统计全四卷两种写法各多少次，再以多数为准统一）：\n  · 夏尔吕 / 夏吕斯（Charlus；法语 -s 不发音，夏尔吕才是对读法，若“夏尔吕”占多数就直接统一到它）\n  · 凡特伊 / 凡德伊（Vinteuil）\n  · 安德烈 / 安德蕾（Andrée）\n  · 萨尼埃特 / 萨涅特（Saniette）\n  · 布瓦耶迪厄 / 布瓦尔迪厄（Boieldieu）\n  · 维尔帕里西 / 维尔帕里西斯（Villeparisis）——这条只要求前后一致，不要凭通行译法硬改\n发现报告未列的同类型分裂（四卷内同一人物两种写法）请一并发现在报告里，改那些能确定为同一人的。\n\n另两处内容问题：\n  · “卡塔琳娜·德·富瓦、纳瓦拉王后、查理七世的孙女” —— Catherine de Foix 是查理七世的外孙女（母为 Madeleine de France）。核法文原文（petite-fille 不分内外）后改为“外孙女”。\n  · “自然，像庞贝的灾难，像仙女变形那样，把我们凝固在惯常的动作里” —— 主语脱落。核原文后改为“大自然像…那样”，若原文确实不是 Nature 作主语则不动。\n\n注意：四卷合计百万字，统一用脚本批量替换 + 断言次数，不要手改；重建后确认汉字数、nav/ncx 条数（应 24 条）与改前一致（可从 git 或备份对比）。",
+    "status": "interrupted",
+    "startedAt": 1795325928077
+  },
+  {
+    "id": "fg-mwrepbwt-7f74",
+    "agent": "general-purpose",
+    "task": "修订《热尔米妮·拉瑟尔特》（key=germinie）。正文：work_gutenberg/germinie/out/<cid>/cNN/final.txt；原文：work_gutenberg/germinie/src/*.json（法语）+ chunks/*.json；重建：python -X utf8 pipeline_build/build_gutenberg.py germinie\n\n待核清单：\n1. 书名不一致：书名页/正文标题作《热尔米妮·拉瑟尔特》，序言里写作《热尔米妮·拉瑟特》（少一字）。定位并在正文与元数据（books_meta.py 的 title_zh）里统一，确认封面/版权页/nav 三处一致。\n2. 医学术语疑似错译：“总之，胸部在疏通”。回法文原文（查 les poumons se dégagent / la poitrine se dégage 一类）确认后改成语感与准确度都对的汉语（如“肺里的壅塞在松开”），并说明为何。龚古尔兄弟以临床记录自诩，医学描写要求术语准确。\n3. 自查：人名地名不统一（Germinie/热尔米妮、Mademoiselle de Varandeuil 之类）、外文残留、繁简混用、引号配对。只改证据明确的。\n4. 抽查报告表扬的序言段落（“公众爱读虚假的小说…”“爱情的临床课”“在底层流的眼泪…”）不要动。",
+    "status": "interrupted",
+    "startedAt": 1795325928077
+  },
+  {
+    "id": "fg-mwrepbwt-jwa8",
+    "agent": "general-purpose",
+    "task": "修订《戴安娜的交叉》（key=diana，英语，梅瑞狄斯）。正文：work_gutenberg/diana/out/<cid>/cNN/final.txt；原文：work_gutenberg/diana/src/*.json + chunks/*.json；重建：python -X utf8 pipeline_build/build_gutenberg.py diana\n\n抽查报告点名的三处“读不懂”的句子（逐条回英文原文，能确定原意就重写为可读中文；不能确定就只报告不改）：\n1. “他刨开坟墓，把那些安安静静、正忙着料理一具可怜和善的尸身的蛆虫，变成了带翅的毒蛇，以一阵致命的曲折飞行，像军用火箭一般，在活人中间搅得天昏地暗。” —— 二十二字的定语压在“蛆虫”上，中文喘不过气。拆成两三句：意思一点不减，只改句式。\n2. “她的性情天生要在这样的水面上游泳：那里，一种被规定、被培养出来的假正经本当假装溺水。” —— 报告说“本当+假装”叠加导致语义糊。回原文（Meredith 常作 should be drowning / ought to be ducked 之类），重写。\n3. “她们是，或者她们自知应当是；结果都一样。” —— 缺表语，回指断了。若原文是 they are, or they know they ought to be（指“美”），补成“她们是那样的美人，或者自知应当是；结果都一样”一类。\n\n其余一律不动（报告对政论段、对话段评价为 A-，不要碰）。另做一次机械扫描并在报告里记录：人名地名前后不一、外文残留、繁简混用、孤立引号。",
+    "status": "interrupted",
+    "startedAt": 1795325928077
+  }
+]

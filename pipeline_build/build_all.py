@@ -50,6 +50,8 @@ h2{text-align:center;color:#666;font-weight:normal;font-style:italic;font-size:.
 h3.book{text-align:center;margin:3em 0 1.6em;font-size:1.2em;letter-spacing:.2em;font-weight:normal;color:#444}
 p{text-indent:2em;margin:0 0 .55em;text-align:justify}
 p.verse{text-indent:0;margin-left:2.5em;margin-bottom:.9em;line-height:1.6;white-space:pre-line}
+p.verse-title{text-indent:0;margin:2.2em 0 .55em 2.5em;line-height:1.5;font-weight:bold;letter-spacing:.04em}
+p.verse-sub{text-indent:0;margin:0 0 1.5em 2.5em;line-height:1.5;font-style:italic;font-size:.92em;color:#555}
 div.titlepage{text-align:center;margin-top:22%}
 div.titlepage .t{font-size:2.1em;letter-spacing:.3em;margin-bottom:1.4em}
 div.titlepage .s{font-size:1.05em;color:#555;margin-bottom:.5em}
@@ -196,6 +198,12 @@ def drop_artifact_head(title: str, texts: list[str], types: list[str]):
     return out, tys
 
 
+# Kinds that carry their own paragraph class. `verse` is a poetry line; the two title kinds
+# are a poem's title and its place-name/epigraph line, which must not look like a verse
+# line or the reader takes them for the first line of the poem.
+VERSE_KINDS = {"verse", "verse-title", "verse-sub"}
+
+
 def para_html(text: str, kind: str = "p") -> str:
     # Emphasis first, then escape each piece, so the <em> tags survive escaping and a
     # literal "⟦i⟧" can never reach the reader.
@@ -208,7 +216,7 @@ def para_html(text: str, kind: str = "p") -> str:
     s = "".join(parts)
     s = MARK.sub(lambda m: f'<sup class="fn"><a id="r{m.group(1)}" '
                            f'href="#n{m.group(1)}" epub:type="noteref">[{m.group(1)}]</a></sup>', s)
-    cls = ' class="verse"' if kind == "verse" else ""
+    cls = f' class="{kind}"' if kind in VERSE_KINDS else ""
     # A newline inside a paragraph is a line break the translator preserved (verse,
     # songs, play dialogue). HTML collapses it to a space, so print it as <br/>.
     s = s.replace("\n", "<br/>")
