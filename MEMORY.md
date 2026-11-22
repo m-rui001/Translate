@@ -1550,3 +1550,65 @@ indent=2，ensure_ascii=False），正文 final.txt 一字未动。
   33 处说话人独立成行未合并；逐页 `<p>` 段数与 revisions 相等、无空段；torundtod 段内
   断行数（624 行）改后不变。
 - 未跑全库体检；未 commit。
+
+## 2026-11-23 雨果两本通读润色（圣母院 / 悲惨世界）
+
+**脚本**：`scratch/rev2026/polish_hugo.py`（幂等；每组异译用正则一次替换、命中数硬断言；
+句级改动逐条 `pairs`；结尾 `ast.parse` 自查脚本自身；`newline=""` 读写真保 CRLF）。
+两本各 106 份 / 73 份 `final.txt` 是等号分隔的空行分段，段落结构零改动。
+
+- 条数：巴黎圣母院 **15**、悲惨世界 **20**。其中 ⑤ 译名统一 10 / 15 条，① 错字与引号 3 / 3 条，
+  ③ 法语句法直搬 1 条、① 主语黏连 1 条、① 数词与引文不符 1 条。
+- 典型（圣母院）：Esmeralda 四个译名（爱斯梅拉达/艾丝美拉达/翡翠圣母/拉·爱斯梅拉达，18 处）
+  归「爱斯梅拉达」，章题 c010 随之改名（nav 标签变、条目数不变）；Quasimodo 在 c013 整节作
+  「卡希魔多」(10)；Gervaise 在 c030 有「热尔维丝/热尔韦丝/熱尔韦兹」；sachette 前后作
+  「苦修女/麻袋女」；`Ce peut-être, si cher aux philosophes` 被逐字搬成「这也许，哲学家们所珍视的」。
+- 典型（悲惨世界）：Javert 在 c053 一章内「雅韦尔」16 处 + 「沙威」5 处；Champmathieu 三译
+  （商马第 20 / 尚马秋 20 / 尚马蒂厄 5）；Simplice 五译（辛普利丝/辛普丽斯/辛普丽丝/西姆普利斯/
+  散普丽斯，20 处）；「巴巴蒂丝汀」衍字；c038 电子本把 `répondit la mère, continuant sa romance`
+  并进老妇人的话里，中文跟着出现两次「母亲答道」。
+- 重建：`python -X utf8 pipeline_build/build_pub.py notredame miserables`
+  → 29 ch / 123,909 字 / toc=31；71 ch / 163,165 / toc=73，两本 err=0。
+- 自检：nav 条目 31 / 73 与改前逐条数一致；抽 4 章（大厅、玉米发酵饼的故事、一位母亲遇见
+  另一位母亲、马德兰先生在哪面镜子里看自己的头发）无空段、无重复段——玉米饼那一章「我说了不是！」
+  连出两次是雨果原文（src c030 blocks 34/36 完全相同），不是构建重复。
+- 未跑全库体检；未 commit。旁注：Bovary/Goriot 的 final.txt 与本轮无关地在 21:13 被别的进程
+  写过（本脚本只 glob 两本书的目录），其 epub 也同日 21:15 被重建，非本轮产物。
+
+## 2026-11-24 《白鲸》正文润色（ch001–ch040，首轮 40 章）
+
+**脚本**：`scratch/rev2026/polish_whale.py`（幂等；每条断言旧串在该章命中 1、全 40 章合计 1；
+旧串已去而新串在则打印 `[skip]`；结尾 `ast.parse` 自查并校验条目结构；落盘前断言各章
+`c*/final.txt` 段数合计不变）。
+
+- 只改 `work_whale/out/chNNN/c*/final.txt`。建库（`collect_json_book`）以「各 c*/final.txt
+  段数合计 == `work_overhaul/whale/final/chNNN.json` 的 `texts` 长度」为取润色稿的条件，
+  四十章改前改后都相等（ch001 15、ch016 82、ch040 94……），故无需动 JSON。
+- 条数 **28**：① 读不通/语法别扭 17、② “的”字堆叠主语读丢 1、③ 英语句法直搬 3、
+  ⑤ 术语与用字不一 7。没有 ④（未遇到真正指代不明的句子）。
+- 典型：`huzza porpoise` 目录作「欢呼海豚」、小标题作「粉嘴海豚」；`Mealy-mouthed` 同理；
+  `doubloon` 在 ch016 作「杜布朗」、ch036 作「杜伯隆」；`嘹望台`（应作瞭望，ch035 皆作瞭望）；
+  `马卡沙发油`（Macassar oil 切错）；魁魁格断字腔 ch013 用全角「杀—掉」、ch021 却用半角「他-嘞」；
+  `Not a napkin … but a buckler` 被译成自相矛盾的「不是圆盾就好，而该是一面圆盾」；
+  `shiver fifty lances` → 「交锋五十支长矛」；`not one in two` 误作「两停里占得一停」。
+- 重建：`python -X utf8 pipeline_build/build_all.py --books whale`
+  → 138 sections / 2,613 paras / 332,344 字 / **943 notes** / toc=140 / xml_err=0。
+  `~ 15 note(s) parked` 的警告是既有的（改前重建同为 15，注数与注标数都没变）。
+- 自检：nav 140 未变；`<sup class="fn"` 943 == `class='footnote'` 943；抽 c039/c083/c102
+  三章无空段、无重复段。未跑 verify_epub/typo_check/clean_check；未 commit。
+
+## 2026-11-23 狄更斯两本通读润色（荒凉山庄 12 / 双城记 15）
+
+`scratch/rev2026/polish_dickens.py`（幂等，逐条断言命中 1 次，`ast.parse` 自查）。
+只动四类：读不通、的堆叠、英语句法直搬、代词不明；长句与排比不动。
+
+**双城记第一章「这是最好的时代」**：核过 `src/c002.json` 第 2 块英文，14 组排比对
+14 组，无重复字、无漏字，`的的`/`，，` 亦无 —— 疑点不成立，只在句尾改了一处
+（`its being received ... in the superlative degree of comparison only` 的被动直搬）。
+
+**顺带发现但未动**：两本的人名译法不统一（双城记 露西117/露茜14、洛里226/罗瑞133/
+劳雷15、达尔内92/达奈8/代尔那21/达内27、卡顿50/卡尔顿98、台尔森90/泰尔森2；
+荒凉山庄 贾恩戴斯442/詹代斯28、盖皮85/格皮97、沃尔得3/沃尔德63、屠金霍恩2）。
+这不在本次四类之内，且要一套 termbase 才做得稳，留作独立一轮。
+
+`python -X utf8 pipeline_build/build_pub.py bleakhouse twocities` → toc 70 / 47，err=0。

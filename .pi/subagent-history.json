@@ -245,5 +245,49 @@
     "summary": "通读完毕（黑暗的心全读；雅各的房间 c002–c015，占 96%；远航 c001–c014，前一半 51%）。源层非常干净，我把真正有毛病的句子逐条对着英文底本核过，写成脚本。",
     "background": false,
     "model": "ds-free/deepseek-v4.1-flash"
+  },
+  {
+    "id": "fg-mwrukdgk-b89z",
+    "agent": "worker",
+    "task": "任务：《白鲸》(whale) 的**正文润色**（重头书，篇幅大，本轮只做前 40 章）。\n\n源层：`work_overhaul/whale/final/chNNN.json`（`texts` 数组）与润色稿 `work_whale/out/chNNN/c*/final.txt`。建库时：如果某章润色稿的段数与 JSON 相等，就用润色稿；否则用 JSON。**所以两处都要改，或者只改润色稿并确保段数相等。**最稳的做法：只改 `work_whale/out/chNNN/c*/final.txt`，因为那里的段数与 JSON 相等时必胜。改前先用 python 比一下两者的段数。\n\n要求：\n1. 通读 ch001–ch040（这四十章里每一段的开头段与关键长句），只改真正有毛病的地方，类型：① 读不通/语法别扭；② 「的」字堆叠导致主语丢失；③ 英语句法直搬（长定语后置、插入语、被动）；④ 代词指代不明；⑤ 术语不一致（同一鲸类/航海术语前后两种译法）。梅尔维尔的掉书袋长句、奇险比喻是风格，**不改**。\n2. 数量 25–40 处。写成幂等脚本 `scratch/rev2026/polish_whale.py`，逐条断言旧句在该章命中 == 1，带理由，ast.parse 自查。\n3. 重建：`python -X utf8 pipeline_build/build_all.py --books whale`（注意该入口会打印 parked notes 警告，属正常；若注标数量变化要报告）。\n4. 自检：`out/白鲸（坟头草译）.epub` 的 nav 条目数 140 未变；随机三章无空段/重复段；注标数（`<sup class=\"fn\"`）与注文数（`class='footnote'`）相等。\n\n禁止：改其他书；跑 verify_epub.py / typo_check.py / clean_check.py；git commit/push。\n回报：表格（章节号 + before/after + 理由）、重建输出行、注数变化。",
+    "status": "completed",
+    "startedAt": 1795352570660,
+    "completedAt": 1795353587185,
+    "summary": "改动全部只改 `work_whale/out/chNNN/c*/final.txt`。建库时，只要该章润色稿的段数合计与 `work_overhaul/whale/final/chNNN.json` 的 texts 长度相等，就会采用润色稿；因此改前改后各章段数都相等（ch001 15、ch016 82、ch040 94 等），JSON 一字未动。",
+    "background": false,
+    "model": "ds-free/deepseek-v4.1-flash"
+  },
+  {
+    "id": "fg-mwrukdgl-08ne",
+    "agent": "worker",
+    "task": "任务：《高老头》与《包法利夫人》的**通读润色**。\n\n两本都在 **work_pub**：章名/正文在 `work_pub/<book>/out/<cid>/c*/final.txt`，改那里（`src/` 是法语原文，不要改）。\n\n要求：\n1. 通读：《高老头》至少前 30%（巴尔扎克的铺陈句长，不改风格）；《包法利夫人》至少第一部全部。只改真有毛病的地方：① 读不通/语法别扭；② 「的」字堆叠；③ 法语句法直搬（长定语、分词从句、代词 on/il 混用）；④ 代词指代不明；⑤ 术语/人名前后不一。\n2. 数量：高老头 12–18、包法利 10–15。写成幂等脚本 `scratch/rev2026/polish_balzac.py`，断言命中数、带理由、ast.parse 自查。\n3. 重建：`python -X utf8 pipeline_build/build_pub.py hightopo` 不行就用 `gobsek` 之类的 key——先跑 `python -X utf8 -c \"import sys;sys.path.insert(0,'pipeline_private');import books;print([b['key'] for b in books.PUBLIC if '高老头' in b['title_zh'] or '包法利' in b['title_zh']])\"` 确认 key。然后逐本重建。\n4. 自检：两本 nav 条目数未变；任选两章无空段/重复段。\n\n禁止：改其他书；跑全局体检；commit/push。\n回报：表格、重建输出行。",
+    "status": "completed",
+    "startedAt": 1795352570661,
+    "completedAt": 1795353591830,
+    "summary": "**《高老头》17 条**（c00–c20，约前 30%；巴尔扎克长句一处未动）",
+    "background": false,
+    "model": "ds-free/deepseek-v4.1-flash"
+  },
+  {
+    "id": "fg-mwrukdgl-ivw4",
+    "agent": "worker",
+    "task": "任务：《巴黎圣母院》与《悲惨世界》的**通读润色**（第一部/前四卷为主）。\n\n两本都在 **work_pub**（正文在 `work_pub/<book>/out/<cid>/c*/final.txt`，`src/` 是法语原文不改）。雨果的长句、建筑描写、历史掉书袋是风格，不改；只改：① 读不通/语法别扭；② 「的」字堆叠导致主语丢失；③ 法语句法直搬；④ 代词指代不明；⑤ 人名/术语前后不一（同一人物两种译名）。\n\n要求：\n1. 数量：巴黎圣母院 10–15、悲惨世界 15–20。幂等脚本 `scratch/rev2026/polish_hugo.py`，断言命中数、带理由、ast.parse 自查。\n2. 重建（先用 python 查 key）：`python -X utf8 pipeline_build/build_pub.py <key>`。\n3. 自检：两本 nav 条目数与改前一致（圣母院 13 项、悲惨世界 73 项，以实际为准）；任选两章无空段/重复段。\n\n禁止：改其他书；跑全局体检；commit/push。\n回报：表格、重建输出行、条目数对比。",
+    "status": "completed",
+    "startedAt": 1795352570661,
+    "completedAt": 1795353568831,
+    "summary": "- 每组异译用**一条正则 + 硬断言命中数**替换；句级改动用 `pairs` 逐条精确替换；改后逐文件断言「旧形清零」；重跑则「命中 0 且新形已在 → 跳过」，实测 **应用 0 / 跳过 35 / 失败 0**。",
+    "background": false,
+    "model": "ds-free/deepseek-v4.1-flash"
+  },
+  {
+    "id": "fg-mwrukdgl-k7g7",
+    "agent": "worker",
+    "task": "任务：《荒凉山庄》与《双城记》的**通读润色**（双城记已有一章疑点，见下）。\n\n两本都在 **work_pub**（正文 `work_pub/<book>/out/<cid>/c*/final.txt`）。狄更斯的长句与反覆修辞是风格，不改；只改：① 读不通/语法别扭；② 「的」字堆叠；③ 英语句法直搬（插入语、被动、倒装）；④ 代词指代不明。\n\n**已知疑点（优先核）**：《双城记》第一章开头（`out/c002/c00/final.txt` 第一段）原作里是一串反复排比（“这是最好的时代…”），现译有重复字/漏字嫌疑；对比 `work_pub/twocities/src/c002.json` 的英文原文核实，若真有错漏就修，并说明。\n\n要求：\n1. 数量：荒凉山庄 12–18、双城记 10–15。幂等脚本 `scratch/rev2026/polish_dickens.py`，断言命中数、带理由、ast.parse 自查。\n2. 重建：`python -X utf8 pipeline_build/build_pub.py bleakhouse twocities`\n3. 自检：两本 nav 条目数未变（荒凉山庄 70、双城记 47）；任选两章无空段/重复段。\n\n禁止：改其他书；跑全局体检；commit/push。\n回报：表格（含双城记开头的核查结论）、重建输出行。",
+    "status": "completed",
+    "startedAt": 1795352570661,
+    "completedAt": 1795353652591,
+    "summary": "**疑点不成立**。对比 `work_pub/twocities/src/c002.json` 第 2 块英文逐句核：",
+    "background": false,
+    "model": "ds-free/deepseek-v4.1-flash"
   }
 ]
