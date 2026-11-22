@@ -1209,3 +1209,16 @@ Carmen 作卡尔门、Marcelina 作玛塞利娜、Ulloa 作乌略阿、el Gallo 
   否则「普林斯顿，一九三九年五月」会被当成小节名。
 - **不是接缝的**：`pub`/`gutenberg` 各书的段末无句号，九成是部卷标题、「T.」署名、版权行、
   诗集页码行；用「最后一行」判断会误报，要看最后一段。真正的接缝只有《鼠疫》这种行中切片的书。
+
+### 2026-11-22 重要：`pipeline_gutenberg/revisions/*.json` 会覆盖 `work_pub/out/**/final.txt`
+
+`build_all.collect_revision(book)` 先查 `pipeline_gutenberg/revisions/<book>.json`，命中就直接用这份
+"source-reviewed edition"，**根本不读 `work_pub/<book>/out/**/final.txt`**。现有 19 本走这条路：
+betrachtung, darkness, dopoidivorzio, dubliners, horla, hungerkuenstler, immensee, jacobsroom,
+jedermann, landarzt, mondaytuesday, mrsda lloway, persuasion, siddhartha, strafkolonie, stundenbuch,
+torundtod, urteil, verwandlung。
+
+**教训**：润色/改动这 19 本之前先 `ls pipeline_gutenberg/revisions`，否则改了 `final.txt` 也不进成品
+（本轮我先在 `work_pub/urteil/out`、`work_pub/hungerkuenstler/out` 上改了几处，build 后 epub 字数
+从 5,717 变成 5,036，才发现成品用的是另一份文本）。而且 revision 那份文本本身比 `out/` 里的草稿更成熟
+（判决：草稿"营业额翻了五番"，revision 已是"营业额涨到了五倍"）。
