@@ -352,6 +352,18 @@ def source_has_chapter_name(book: str, cid: str) -> bool:
         return True
     # Dickens sets chapter names in title case, so case alone cannot decide; a short
     # unquoted line with no sentence punctuation is the remaining shape.
+    # A sentence is not a name, however short. A chapter that opens "Den 30. April 1846."
+    # or "Drinnen im Eßsaale herrschte Aufbruch." was being titled by its own first
+    # sentence, which also removed that sentence from the body and left the chapter with no
+    # number at all. Prose carries at least two lowercase words; a title carries none.
+    # A date line is not a name either: Buch der Buddenbrooks opens a chapter with
+    # "Den 30. April 1846.", which the builder took for the title and thereby numbered the
+    # fourth part from two.
+    if re.search(r"\d", text) and len(text) <= 40:
+        return False
+    if text.endswith(".") and sum(
+            1 for w in re.findall(r"\b[a-zà-ÿ]{2,}\b", text)) >= 2:
+        return False
     return len(text) <= 40 and not re.search(r"[!?;:。！？；：]$", text)
 
 

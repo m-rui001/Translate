@@ -74,6 +74,43 @@ LICENCE_CH = re.compile(
     re.I | re.M)
 
 
+# Books whose first extracted chunk is the source's title page, not a chapter. The
+# extractor took the title page for a paragraph-only chunk, so there is no head block for
+# it, and the builder used to print it as 第一章 -- which also pushed every real chapter
+# one number out (the ninth chapter of Der Zauberkaftan appeared as 第十章, and the book
+# claimed a chapter more than it has). A front chunk gets a label instead of a number and
+# does not consume an ordinal.
+#
+# Detected, not declared: `_is_front_chunk` reads the source and asks whether the chunk
+# has a heading at all. The labels below only name the few that are not a title page.
+FRONT_LABELS = {
+    ("germinie", "c001"): "序言",        # the Goncourt preface to the novel
+    ("haidedorf", "c001"): "前言",        # dedication to the readers who checked the text
+    ("maias", "c001"): "版本说明",        # editor's note on the two-volume original
+    ("timar", "c001"): "插图说明",        # illustration credit
+}
+
+# Books whose last chunks are the translator's endnotes, which the extractor handed over as
+# ordinary chapters. Read as chapters they are absurd: 草原村 ends with 第五章 ［一］FLECKCHEN，一个
+# 小斑点, and 索蒂莱萨 with 第三十章 CABLE（长度单位）——一百二十浔. They are merged here into a single
+# 注释 section, unnumbered, so the novel's own last chapter keeps the number it earned.
+APPENDIX = {
+    "haidedorf": ("c006", "c007", "c008", "c009"),
+    "sotileza": ("c031", "c032", "c033"),
+}
+
+
+def source_has_head(book: str, cid: str) -> bool:
+    """True when the source prints a chapter heading for this chunk."""
+    path = os.path.join(GUT, book, "src", cid + ".json")
+    try:
+        with open(path, encoding="utf-8") as f:
+            blocks = json.load(f).get("blocks") or []
+    except (OSError, ValueError):
+        return True
+    return bool(blocks) and blocks[0].get("type") == "head"
+
+
 def chapter_ids(book: str) -> list[str]:
     fs = sorted(glob.glob(os.path.join(GUT, book, "chunks", "*.json")))
     ids = [os.path.basename(f)[:-5] for f in fs]
@@ -163,6 +200,20 @@ def source_has_chapter_name(book: str, cid: str) -> bool:
         return False
     if sum(1 for c in letters if c.isupper()) / len(letters) >= 0.6:
         return True
+    # A sentence is not a name, however short. Storm's "Das Haidehaus." and Trollope's
+    # "THERE IS SOMETHING OF THE ANGEL ABOUT HIM." are titles; Zola's "Elle devint
+    # enceinte." and Jókai's "Die Haare Poroßnokis standen zu Berge." are the chapter's
+    # opening sentence, and lifting them cost Germinie Lacerteux a chapter number and
+    # left the last chapter of Der Zauberkaftan titled by its own first line.
+    # Prose carries at least two lowercase words; titles carry none.
+    # A date line is not a name either: Buch der Buddenbrooks opens a chapter with
+    # "Den 30. April 1846.", which the builder took for the title and thereby numbered the
+    # fourth part from two.
+    if re.search(r"\d", text) and len(text) <= 40:
+        return False
+    if text.endswith(".") and sum(
+            1 for w in re.findall(r"\b[a-zà-ÿ]{2,}\b", text)) >= 2:
+        return False
     return len(text) <= 40 and not text.endswith(("!", "?", ";", ":"))
 
 
@@ -190,21 +241,38 @@ def collect(book: str) -> list[dict]:
         return revision
 
     items = []
-    for ordinal, cid in enumerate(chapter_ids(book), 1):
+    ordinal = 0
+    endnotes: list[str] = []
+    for cid in chapter_ids(book):
         texts = chapter_texts(book, cid)
         if not texts:
             continue
         texts = strip_front(texts)
+        if cid in APPENDIX.get(book, ()):
+            # the notes were extracted as four chapters, each with its own numeral on the
+            # first line; merged into one section those numerals would sit between entries
+            endnotes += [t for t in texts
+                         if not re.fullmatch(r"[一二三四五六七八九十]+[．.、]?", t.strip())]
+            continue
         m = chapter_meta(book, cid)
         title = (m.get("title_zh") or "").strip()
         src = (m.get("title_src") or "").strip()
+        front = not source_has_head(book, cid)
+        if front:
+            label = FRONT_LABELS.get((book, cid), "卷首")
+            items.append({"id": cid, "texts": texts, "types": ["p"] * len(texts),
+                          "notes": load_notes(book, cid), "title_zh": label,
+                          "title_en": src, "links": {}, "old_texts": None,
+                          "front": True})
+            continue
+        ordinal += 1
         # the heading we will print, resolved before we look for its copy in the body
         shown = title if any("\u4e00" <= c <= "\u9fff" for c in title) else titles_src.title_for(src, ordinal)
         texts = PB.drop_repeated_head(shown, texts)
         while texts:
             head = texts[0].strip()
-            if not (re.fullmatch(r"第[一二三四五六七八九十百零\d]+章", head)
-                    or re.fullmatch(r"[一二三四五六七八九十百零]+|[IVXLCDM]+|\d{1,4}", head)):
+            if not (re.fullmatch(r"第[一二三四五六七八九十百零\d]+章[．.、]?", head)
+                    or re.fullmatch(r"[一二三四五六七八九十百零]+[．.、]?|[IVXLCDM]+[．.、]?|\d{1,4}[．.、]?", head)):
                 break
             texts.pop(0)
         if (source_has_chapter_name(book, cid) and texts and PB.is_chapter_name(texts[0])
@@ -217,6 +285,10 @@ def collect(book: str) -> list[dict]:
         items.append({"id": cid, "texts": texts, "types": ["p"] * len(texts),
                       "notes": load_notes(book, cid), "title_zh": title, "title_en": src,
                       "links": {}, "old_texts": None})
+    if endnotes:
+        items.append({"id": "notes", "texts": endnotes, "types": ["p"] * len(endnotes),
+                      "notes": [], "title_zh": "注释", "title_en": "",
+                      "links": {}, "old_texts": None, "front": True})
     return [it for it in items if it["texts"]]
 
 
@@ -243,11 +315,15 @@ def build(book: str) -> dict | None:
     # are bare numerals ("-I-", "CHAPTER VII"). Both have to become readable Chinese,
     # so translate a named heading from a table and otherwise use the ordinal the
     # heading itself implies.
-    for i, it in enumerate(items, 1):
+    ordinal = 0
+    for it in items:
+        if it.get("front"):
+            continue
+        ordinal += 1
         cur = (it["title_zh"] or "").strip()
         if cur and re.search(r"[一-鿿]", cur):
             continue
-        it["title_zh"] = titles_src.title_for(it["title_en"] or cur, i)
+        it["title_zh"] = titles_src.title_for(it["title_en"] or cur, ordinal)
     # package() writes the EPUB itself and honours build_all.OUT, so point that at
     # ./out before calling it; the shared builder hard-codes nothing else.
     B.OUT = OUT
