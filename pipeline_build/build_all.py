@@ -81,7 +81,7 @@ CN = "零一二三四五六七八九"
 
 BOOKS = {
     "whale": {
-        "title": "白鲸", "sub": "莫比—迪克", "author": "赫尔曼·麦尔维尔",
+        "title": "白鲸", "sub": "莫比·迪克", "author": "赫尔曼·麦尔维尔",
         "src": "Moby-Dick; or, The Whale", "uid": "urn:moby-dick-zh-rev",
         "note": "据查尔斯·弗雷德里克·布里格斯·普特南公司一八五一年初版译出",
         "json": "work_overhaul/whale/final", "polished": "work_whale/out",
