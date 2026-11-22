@@ -381,7 +381,8 @@ def chapter_xhtml(title: str, subtitle: str, ps: list[str], types: list[str],
     body = []
     if book_head:
         body.append(f"<h3 class='book'>{esc(book_head)}</h3>")
-    body.append(f"<h1>{esc(title)}</h1>")
+    if title:
+        body.append(f"<h1>{esc(title)}</h1>")
     if subtitle:
         body.append(f"<h2>{esc(subtitle)}</h2>")
     body += [para_html(t, ty) for t, ty in zip(ps, types)]
@@ -629,13 +630,16 @@ def package(cfg: dict, items: list[dict], shape: str) -> dict:
             title = texts.pop(0)
             types = types[1:]
         m = re.search(r"0*(\d+)$", it["id"].replace(os.sep, "/"))
-        if not title:
+        if not title and not it.get("no_heading"):
             if cfg["title"] == "魔山":
                 # the first split file holds Mann's framing essay, which has no
                 # heading of its own in the source; name it rather than print a path
                 title = "楔子" if n == 1 else (f"第{cn_number(n-1)}章" if m else it["id"])
             else:
                 title = f"第{cn_number(int(m.group(1)))}章" if m else it["id"]
+        nav_label = it.get("nav_label") or title
+        if it.get("no_heading"):
+            title = ""
         sub = it.get("subtitle", "")
         if shape == "chapters" and cfg["title"] == "白鲸":
             sub = it["title_en"]
@@ -669,7 +673,7 @@ def package(cfg: dict, items: list[dict], shape: str) -> dict:
         files[fn] = chapter_xhtml(title, sub, texts, types, notes, book_head)
         manifest.append(f"<item id='c{n}' href='{fn}' media-type='application/xhtml+xml'/>")
         spine.append(f"<itemref idref='c{n}'/>")
-        nav.append(((book_head + "　" if book_head else "") + title, fn))
+        nav.append(((book_head + "　" if book_head else "") + (nav_label or title), fn))
         han += sum(1 for c in "".join(texts) if "\u4e00" <= c <= "\u9fff")
         npara += len(texts)
         nnote += len(notes)

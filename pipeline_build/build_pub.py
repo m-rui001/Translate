@@ -178,6 +178,47 @@ def verse_block(book: str, cid: str, texts: list[str],
 TITLE_KINDS = ("verse-title", "verse-sub")
 
 
+def split_poems(cid: str, texts: list[str], types: list[str]) -> list[dict]:
+    """Cut a chapter into one item per poem, so the TOC can name each poem.
+
+    The volumes of verse are chunked by size, not by poem: one chapter file holds a
+    handful of poems, and until now the TOC offered "第N首" for the whole group, which
+    is useless in a 75-poem collection. A poem starts at every `verse-title` (and its
+    optional `verse-sub` line); the lines before the first title, if any, stay with the
+    chapter title.
+    """
+    groups: list[dict] = []
+    cur = {"title": "", "sub": "", "texts": [], "types": []}
+    for t, k in zip(texts, types):
+        if k == "verse-title":
+            if cur["texts"] or cur["title"]:
+                groups.append(cur)
+            cur = {"title": t, "sub": "", "texts": [], "types": []}
+            continue
+        if k == "verse-sub" and not cur["texts"]:
+            cur["sub"] = t
+            continue
+        cur["texts"].append(t)
+        cur["types"].append(k)
+    if cur["texts"] or cur["title"]:
+        groups.append(cur)
+    out = []
+    for i, g in enumerate(groups, 1):
+        if not g["texts"]:
+            # a title with no poem under it: keep it rather than drop a poet's name
+            continue
+        g["id"] = f"{cid}s{i:02d}"
+        if not g["title"] and g["texts"]:
+            # Rilke prints no title over some poems -- the first line is the title, in
+            # the source as here. Label the TOC entry from that line instead of
+            # inventing 第N首, and print no heading above the poem.
+            first = g["texts"][0].strip().rstrip("，。；：、！？…")
+            g["nav_label"] = first[:13] + ("…" if len(first) > 13 else "")
+            g["no_heading"] = True
+        out.append(g)
+    return out or [{"id": cid, "title": "", "sub": "", "texts": texts, "types": types}]
+
+
 def carry_tail(texts: list[str], types: list[str]) -> tuple[list[str], list[str]]:
     """Move a poem's title off the end of the chapter it was cut before.
 
@@ -304,6 +345,16 @@ def collect(book: str) -> tuple[list[dict], list[str]]:
         if book in VERSE:
             texts, types = verse_block(book, cid, texts, carry)
             carry = carry_tail(texts, types)
+            for poem in split_poems(cid, texts, types):
+                items.append({"id": poem["id"], "texts": poem["texts"],
+                              "types": poem["types"],
+                              "notes": [] if poem["id"] != cid else load_notes(book, cid),
+                              "title_zh": poem["title"] or c.get("title_zh", ""),
+                              "nav_label": poem.get("nav_label", ""),
+                              "no_heading": poem.get("no_heading", False),
+                              "title_en": "", "subtitle": poem["sub"],
+                              "links": {}, "old_texts": None})
+            continue
         elif book in PLAY:
             texts = play_lines(texts)
             types = ["p"] * len(texts)
