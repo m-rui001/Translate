@@ -128,13 +128,36 @@ def check(path: str) -> list[str]:
     return [f"{name}: {p}" for p in problems]
 
 
+# Deliberate exceptions, with the reason. Anything not listed here is a defect.
+ALLOW = {
+    ("达洛维夫人", "space between Chinese"):
+        "留声机唱词按音节分行，原文 ee um fah um so 一个音一个格",
+    ("新诗集", "near-empty chapter"):
+        "里尔克的献辞页，一页只有一行",
+    ("茵梦湖", "Latin leak"):
+        "注文引用它所解释的德语动词 priesterten",
+    ("追忆似水年华", "Latin leak"):
+        "原文 corridor/collidor 的谐音玩笑，注释里必须保留",
+}
+
+
+def allowed(book: str, problem: str) -> str | None:
+    for (b, kind), reason in ALLOW.items():
+        if b in book and kind in problem:
+            return reason
+    return None
+
 def main() -> int:
     sys.stdout.reconfigure(encoding="utf-8")
     files = sorted(glob.glob(os.path.join(OUT, "*.epub")))
     total = 0
     bad_books = 0
     for f in files:
-        probs = check(f)
+        raw = check(f)
+        probs = [p for p in raw if not allowed(os.path.basename(f), p)]
+        skipped = len(raw) - len(probs)
+        if skipped:
+            print(f"[ok ] {os.path.basename(f)}: {skipped} known exception(s)")
         if probs:
             bad_books += 1
             print(f"[!! ] {os.path.basename(f)}  ({len(probs)})")
