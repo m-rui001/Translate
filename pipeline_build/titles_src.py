@@ -29,13 +29,24 @@ CN = "零一二三四五六七八九"
 # with punctuation and case normalised away.
 NAMED = {
     # Adalbert Stifter, Der Nachsommer (de)
-    "die hauslichkeit": "居家",
+    "die hauslichkeit": "家居",
     "der wanderer": "漫游者",
     "die einkehr": "投宿",
     "die beherbergung": "款待",
-    "der abschied": "告别",
-    "der besuch": "拜访",
-    "der bund": "盟约",
+    "der abschied": "辞别",
+    "der besuch": "访友",
+    "der bund": "结社",
+    # The remaining nine are the names the translator themselves printed as the first line
+    # of the chapter; the table had different wording for some of them, so the heading and
+    # the line under it disagreed.
+    "die begegnung": "相遇",
+    "die erweiterung": "拓展",
+    "die annaherung": "接近",
+    "der einblick": "一瞥",
+    "das fest": "宴会",
+    "die entfaltung": "展露",
+    "die mitteilung": "告知",
+    "der abschluss": "收束",
     "die einweihung": "入门",
     "die bestimmung": "志向",
     "das vertrauen": "信任",
@@ -52,6 +63,8 @@ NAMED = {
     "turmalin": "电气石",
     "bergkristall": "水晶",
     "katzensilber": "猫银",
+    "bergmilch": "山乳",
+    "nachwort": "后记",
     "kalkstein ": "石灰岩",
     # Storm, Immensee (de)
     "der alte": "老人",
