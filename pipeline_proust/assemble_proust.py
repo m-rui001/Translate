@@ -30,6 +30,7 @@ front section is titled from the volume name.
 """
 from __future__ import annotations
 
+import datetime
 import html
 import io
 import json
@@ -80,6 +81,11 @@ STYLE = ("body{line-height:1.9;font-family:serif} "
          "p{text-indent:2em;margin:0 0 .6em} "
          "div.titlepage{text-align:center;margin-top:30%}")
 
+
+
+def _stamp() -> str:
+    """EPUB 3 requires dcterms:modified; a hard-coded date lies about the build."""
+    return datetime.datetime.utcnow().strftime("%Y-%m-%dT%H:%M:%SZ")
 
 def vol_body(vol: str, base: str = OUT) -> list[str]:
     spec = json.load(io.open(os.path.join(CHUNKS, vol, "chunks.json"),
@@ -268,7 +274,7 @@ def main() -> int:
 <dc:contributor>坟头草 译</dc:contributor>
 <dc:language>zh-CN</dc:language>
 <dc:identifier id='uid'>urn:proust-works-v3467</dc:identifier>
-<meta property='dcterms:modified'>2026-10-25T12:00:00Z</meta>
+<meta property='dcterms:modified'>{_stamp()}</meta>
 </metadata>
 <manifest>
 <item id='ncx' href='toc.ncx' media-type='application/x-dtbncx+xml'/>

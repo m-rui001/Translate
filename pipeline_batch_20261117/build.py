@@ -8,6 +8,8 @@ import sys
 import zipfile
 from xml.etree import ElementTree as ET
 
+import datetime
+stamp = datetime.datetime.utcnow().strftime("%Y-%m-%dT%H:%M:%SZ")
 ROOT = Path(__file__).resolve().parents[1]
 WORK = ROOT / 'work_batch_20261117'
 TITLE = '风与雾：邓萨尼短篇三则（选译）'
@@ -77,7 +79,7 @@ def main():
     manifest = "<item id='nav' href='nav.xhtml' media-type='application/xhtml+xml' properties='nav'/><item id='ncx' href='toc.ncx' media-type='application/x-dtbncx+xml'/>"
     manifest += ''.join(f"<item id='b{i}' href='{n}' media-type='application/xhtml+xml'/>" for i,(n,t) in enumerate(entries))
     spine = "<itemref idref='nav'/>"+''.join(f"<itemref idref='b{i}'/>" for i in range(len(entries)))
-    files['OEBPS/content.opf'] = "<?xml version='1.0'?><package xmlns='http://www.idpf.org/2007/opf' version='3.0' unique-identifier='uid'><metadata xmlns:dc='http://purl.org/dc/elements/1.1/'><dc:identifier id='uid'>urn:translate:dunsany-three-20261117</dc:identifier><dc:title>"+TITLE+"</dc:title><dc:creator>邓萨尼勋爵</dc:creator><dc:language>zh-CN</dc:language><meta property='dcterms:modified'>2026-11-17T00:00:00Z</meta></metadata><manifest>"+manifest+"</manifest><spine toc='ncx'>"+spine+'</spine></package>'
+    files['OEBPS/content.opf'] = "<?xml version='1.0'?><package xmlns='http://www.idpf.org/2007/opf' version='3.0' unique-identifier='uid'><metadata xmlns:dc='http://purl.org/dc/elements/1.1/'><dc:identifier id='uid'>urn:translate:dunsany-three-20261117</dc:identifier><dc:title>"+TITLE+"</dc:title><dc:creator>邓萨尼勋爵</dc:creator><dc:language>zh-CN</dc:language><meta property='dcterms:modified'>"+stamp+"</meta></metadata><manifest>"+manifest+"</manifest><spine toc='ncx'>"+spine+'</spine></package>'
     files['META-INF/container.xml'] = "<?xml version='1.0'?><container xmlns='urn:oasis:names:tc:opendocument:xmlns:container' version='1.0'><rootfiles><rootfile full-path='OEBPS/content.opf' media-type='application/oebps-package+xml'/></rootfiles></container>"
     files = {name: text.replace('urn:translate:dunsany-three-20261117', uid) for name, text in files.items()}
     if egerton:

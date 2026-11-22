@@ -27,6 +27,7 @@ import argparse
 import difflib
 import glob
 import html
+import datetime
 import json
 import os
 from pathlib import Path
@@ -688,6 +689,15 @@ def _split_at_subheads(groups: list[dict]) -> list[dict]:
 
 # ── packaging ───────────────────────────────────────────────────────────────────
 
+
+def _stamp() -> str:
+    """EPUB 3 requires dcterms:modified; a hard-coded date lies about the build.
+
+    Same second for every book in a run, which is honest and keeps the bytes stable when
+    nothing changed.
+    """
+    return datetime.datetime.utcnow().strftime("%Y-%m-%dT%H:%M:%SZ")
+
 def package(cfg: dict, items: list[dict], shape: str) -> dict:
     files, manifest, spine, nav = {}, [], [], []
     files["style.css"] = STYLE
@@ -816,7 +826,7 @@ def package(cfg: dict, items: list[dict], shape: str) -> dict:
 <dc:contributor>坟头草 译</dc:contributor>
 <dc:language>zh-CN</dc:language>
 <dc:identifier id='uid'>{cfg['uid']}</dc:identifier>
-<meta property='dcterms:modified'>2026-10-26T12:00:00Z</meta>
+<meta property='dcterms:modified'>{_stamp()}</meta>
 </metadata>
 <manifest>
 {chr(10).join(manifest)}
