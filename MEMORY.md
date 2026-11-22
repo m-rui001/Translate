@@ -1489,3 +1489,64 @@ indent=2，ensure_ascii=False），正文 final.txt 一字未动。
   两处白名单均未触碰（似水年华 epub 未重建、collidor 仍在 v1_02.xhtml）。
 - 未动：`work_pub/mrsdalloway/out/**`（旧草稿）；同目录 dubliners/persuasion 的改动是
   进场前就有的脏文件，与本轮无关。
+
+## 2026-11-22 卡夫卡短篇五本 通读润色（观察/乡村医生/判决/饥饿艺术家/在流放地，共 23 条）
+
+- 源层 `pipeline_gutenberg/revisions/<book>.json`（indent=2，脚本保持版式）。
+  **注意**：这几本走 `build_all.collect_revision`，组装只读 revisions json；
+  `work_pub/<book>/out/*/final.txt` 里是更早一稿（例：`响得厉害！农人从田里回来`），
+  不参与出书，改那边没有用。
+- 脚本 `scratch/rev2026/polish_kafka.py`：23 条 before/after + 理由，断言旧句全书
+  命中 == 1、新句尚未出现（纯删字的条目允许新句是旧句子串），幂等（二次运行 0 条改动）。
+- 条数：betrachtung 4 / landarzt 6 / urteil 4 / hungerkuenstler 5 / strafkolonie 4。
+- 重建（5 行见報告）：toc 20/16/3/3/3 与改前完全一致，汉字数各 +0/+7/+4/+2/+10。
+- 自检：nav 条目未变、章页无空段、无重复段；旧句在 epub 里残留 0。
+- 最要紧的一条：乡村医生 `Rosa, in vielen Schattierungen` 的 Rosa 是**形容词「粉色」**，
+  旧译当成人名「罗莎」（女佣）搬进伤口描写，读者会以为女佣躺在伤口里。
+- 未跑 verify_epub / typo_check / clean_check；未 commit。
+
+## 2026-11-22 三本通读润色：奥尔拉 / 茵梦湖 / 每个人（共 23 条）
+
+- 源层 `pipeline_gutenberg/revisions/{horla,immensee,jedermann}.json`；
+  脚本 `scratch/rev2026/polish_batch2.py`（幂等、断言 before 命中 ==1、段数基线逐章相等、
+  剧本还断言段内断行数不变、结尾 `ast.parse` 自查）。改前副本：`scratch/rev2026/*.before.json`。
+- 条数：horla 9（通读 c004/c006/c007/c008/c009/c010/c012/c014/c019 九篇）、immensee 8（全 10 章）、
+  jedermann 6（剧本全篇 c001）。只收 ①读不通 ②的字堆叠致误读 ③法德句法直搬 ④代词不明。
+- 版式差异（脚本按书分别保持）：horla/immensee 是 indent=1 + LF 且**结尾无换行**；
+  jedermann 是 indent=2 + CRLF 且结尾带 CRLF。三者 json 行数 1680/430/1580 改后不变。
+- 重建：`pipeline_build/build_pub.py horla immensee jedermann`——**immensee 不在 books.PUBLIC
+  会被 skip**，它走 `pipeline_build/build_gutenberg.py immensee`（该入口的 `collect()` 也认
+  `collect_revision`，所以 revisions 是唯一真源）。**不要**用 `pipeline_fix/rebuild.py` 建茵梦湖：
+  它读 `work_gutenberg/immensee/out`，那里是另一份更早的译稿（"带扣的鞋…上面积着尘土"）。
+- 结果：horla 15 ch / 63,469 汉字 / toc=17 / err=0；immensee 10 ch / 13,433 / toc=12 / err=0；
+  jedermann 1 ch / 19,812 / toc=3 / err=0。immensee 目录末条本来就是"第十章"
+  （`_SEEN_TITLES` 把重复的"老人"打成编号，改前改后一致，非本轮引入）。
+- 逐章核对：epub 每页 `<p>` 段数与汉字数 == revisions（immensee 再加 notes 文本，10 章全 OK）。
+- **留待拍板（未动）**：horla 的 `c010 菲默罗尔侯爵` 与 `c011 麦拉妮` 是同一篇的两次译文
+  （段落一一对应，只换了人名：菲默罗尔/弗梅罗勒、普瓦夫龙/波瓦龙、罗歇/罗杰、梅拉妮/麦拉妮）；
+  jedermann 的说话人标签"良友/好友"混用（出场人物表作"每个人的好友"）。两者都不属四类，
+  一动就得改目录或改人名表，交人工决定。
+- 未跑全库体检；未 commit。
+
+## 2026-11-22 三本通读润色：悉达多 / 变形记 / 愚者与死神（共 22 条）
+
+- 源层 `pipeline_gutenberg/revisions/{siddhartha,verwandlung,torundtod}.json`；脚本
+  `scratch/rev2026/polish_batch3.py`（幂等：旧句在=改、新句在=跳过、都不在=报漂移；
+  旧句断言全库恰好 1 处；条数断言落在本轮区间内；结尾 `ast.parse` 自查）。改前副本
+  `scratch/rev2026/tmp/*.bak.json`，改前 epub 副本 `scratch/rev2026/tmp/before/`。
+- 条数：siddhartha 9（全 12 章通读）、verwandlung 8（三章全读）、torundtod 5（全剧 125 块 / 624 行）。
+  只收 ①读不通 ②「的」堆叠 ③德语句法直搬 ④指代不明；⑤（说话人与台词混行）**零命中**——
+  六种说话人（克劳迪奥/侍仆/死神/母亲/年轻姑娘/男子）各占独立段落。
+- 版式差异（脚本按书分别保持）：siddhartha/torundtod 是 indent=2 + 末尾换行；**verwandlung
+  是 indent=1 且结尾无换行**，且键序 title_src 在前。回写照原样，字节除改动处不动。
+- 典型改法：德文冒号列举被译成句号，后半段成了无谓语的一串名词（c009/c010/c012 三处改回
+  冒号）；`Genügte es nicht, einen Lehrjungen zu schicken` 译成「真不够派个学徒」（意思反了）；
+  `In einem ... gänzlich unbegründeten Mißtrauen` 丢了「出于疑心」，只剩悬空的「这疑心」。
+- 引号：c013 那两句本是一整段话被拆成两段，按 GB/T 15834 跨段引语规矩在第二段补前引号，
+  于是全书「371 / 」370——故意不齐（`scratch/rev2026/quote_balance.py` 只看 “ ”，不受影响）。
+- 重建：`python -X utf8 pipeline_build/build_pub.py siddhartha verwandlung torundtod`
+  → 12 ch / 50,896 字 / toc=14；3 ch / 28,053 / toc=5；1 ch / 7,375 / toc=3，全部 err=0。
+- 自检：三本 nav 条目 14/5/3 与重建前逐条相同；verwandlung 仍 3 章；torundtod 125 块、
+  33 处说话人独立成行未合并；逐页 `<p>` 段数与 revisions 相等、无空段；torundtod 段内
+  断行数（624 行）改后不变。
+- 未跑全库体检；未 commit。

@@ -201,5 +201,49 @@
     "summary": "通读范围：本书不分章，只有一个文件 `c001`（762 段 / 115,751 字），所以我把全书从头到尾读完了（不只是前十章），问题句挑自 0–760 段。译文质量很高（全书没有出现“进行”“作为”“对于”这类翻译腔词），我只改了真正有问题的句子。",
     "background": false,
     "model": "ds-free/deepseek-v4.1-flash"
+  },
+  {
+    "id": "fg-mwrtle5y-ly84",
+    "agent": "worker",
+    "task": "任务：卡夫卡短篇五本的**通读润色**。书：betrachtung（观察）、landarzt（乡村医生）、urteil（判决）、hungerkuenstler（饥饿艺术家）、strafkolonie（在流放地）。\n\n源层：`pipeline_gutenberg/revisions/<book>.json`（发货层；结构 {cid:{title_zh, paragraphs:[...]}}）。\n\n要求：\n1. 逐本通读（这几本都很短，可以全读）。只改真正有毛病的句子，类型限定：① 读不通或语法别扭；② 「的」字定语堆叠导致主语丢失；③ 德语句法直搬（框型结构、长定语后置、分词短语）；④ 代词指代不明。**不改风格（卡夫卡的干硬句长是风格）、不改意思、不为改而改。**\n2. 每条修改写成幂等脚本 `scratch/rev2026/polish_kafka.py`：断言旧句全书命中 == 1、新句尚未存在，带理由。写完用 ast.parse 自查。\n3. 数量：每本 4–8 条，五本合计 20–35 条。\n4. 重建（逐本）：`python -X utf8 pipeline_build/build_pub.py betrachtung`、`landarzt`、`urteil`、`hungerkuenstler`、`strafkolonie`\n5. 自检：每本 epub 的 nav.xhtml 条目数未变、任选一章页无空段/无重复段。\n\n禁止：改其他书；跑 verify_epub.py / typo_check.py / clean_check.py；commit/push。\n回报：每本的 before/after/理由表格（可只列代表条目，但要给出全部条数）、重建输出行。",
+    "status": "completed",
+    "startedAt": 1795350938614,
+    "completedAt": 1795351754538,
+    "summary": "五本读完、改完、重建完。下面是报告。",
+    "background": false,
+    "model": "ds-free/deepseek-v4.1-flash"
+  },
+  {
+    "id": "fg-mwrtle5y-e530",
+    "agent": "worker",
+    "task": "任务：三本中短篇的**通读润色**。书：horla（奥尔拉，莫泊桑短篇集，15 篇）、immensee（茵梦湖）、jedermann（每个人，剧本）。\n\n源层：`pipeline_gutenberg/revisions/<book>.json`（发货层）。\n\n要求：\n1. 通读：horla 至少读 6 篇，immensee 全读，jedermann 全读（剧本：保留说话人分行与口语节奏，不合并行）。只改真正有毛病的句子：① 读不通/语法别扭；② 「的」字堆叠；③ 法/德语句法直搬；④ 代词指代不明。**不改风格、不改意思。**\n2. 幂等脚本 `scratch/rev2026/polish_batch2.py`，断言行数、带理由、ast.parse 自查。\n3. 数量：每本 6–12 条。\n4. 重建：`python -X utf8 pipeline_build/build_pub.py horla immensee jedermann`\n5. 自检：horla 确认 15 篇目录完整、immensee/jedermann 条目数未变；任选两页无空段/重复段。\n\n禁止：改其他书；跑全局体检；commit/push。\n回报：表格（before/after/理由）、行数、重建输出行。",
+    "status": "completed",
+    "startedAt": 1795350938614,
+    "completedAt": 1795351814204,
+    "summary": "脚本 `scratch/rev2026/polish_batch2.py`（幂等、逐条断言 before 全书命中 == 1、段数基线逐章相等、剧本另断言**段内断行数不变**、结尾 `ast.parse` 自查）；改前副本 `scratch/rev2026/{horla,immensee,jedermann}.before.json`。",
+    "background": false,
+    "model": "ds-free/deepseek-v4.1-flash"
+  },
+  {
+    "id": "fg-mwrtle5z-vuaq",
+    "agent": "worker",
+    "task": "任务：三本德语作品的**通读润色**。书：siddhartha（悉达多）、verwandlung（变形记）、torundtod（愚者与死神，剧本）。\n\n源层：`pipeline_gutenberg/revisions/<book>.json`（发货层）。\n\n要求：\n1. 通读：siddhartha 全书（可全读）、verwandlung 全书（短）、torundtod 全读（剧本，不合并说话人行）。只改真正有毛病的句子：① 读不通/语法别扭；② 「的」字堆叠导致主语丢失；③ 德语句法直搬（框型结构、分词短语、长定语后置）；④ 代词指代不明；⑤ 剧本里的说话人与台词混行。**不改风格、不改意思。**\n2. 幂等脚本 `scratch/rev2026/polish_batch3.py`，断言命中数、带理由、ast.parse 自查。\n3. 数量：siddhartha 8–12、verwandlung 5–8、torundtod 4–8。\n4. 重建：`python -X utf8 pipeline_build/build_pub.py siddhartha verwandlung torundtod`\n5. 自检：三本 nav 条目数未变；verwandlung 仍是 3 章；torundtod 的说话人分行未被合并；任选两页无空段/重复段。\n\n禁止：改其他书；跑全局体检；commit/push。\n回报：表格、行数、重建输出行。",
+    "status": "timeout",
+    "startedAt": 1795350938615,
+    "completedAt": 1795352138749,
+    "summary": "Now wire the prepend handling into `apply_book`:",
+    "background": false,
+    "model": "ds-free/deepseek-v4.1-flash"
+  },
+  {
+    "id": "fg-mwrtle5z-8vl1",
+    "agent": "worker",
+    "task": "任务：三本英语现代小说的**通读润色**。书：jacobsroom（雅各的房间）、voyageout（远航）、darkness（黑暗的心）。\n\n源层：`pipeline_gutenberg/revisions/<book>.json`（发货层，伍尔夫两本与康拉德一本）。\n\n要求：\n1. 通读：jacobsroom 至少读三分之二，voyageout 至少读前一半，darkness 全读。只改真正有毛病的句子：① 读不通/语法别扭；② 「的」字堆叠导致主语丢失；③ 英语句法直搬（意识流长句里的从句顺序、插入语逗号、被动）；④ 代词指代不明。**不改风格（伍尔夫的句长、康拉德的叙述句都是风格），不改意思。**\n2. 幂等脚本 `scratch/rev2026/polish_batch4.py`，断言命中数、带理由、ast.parse 自查。\n3. 数量：jacobsroom 10–15、voyageout 8–12、darkness 5–8。\n4. 重建：`python -X utf8 pipeline_build/build_pub.py jacobsroom voyageout darkness`\n5. 自检：三本 nav 条目数未变；黑暗的心里『』对白内嵌“”的体例（3 处）未被改动；任选两页无空段/重复段。\n\n禁止：改其他书；跑全局体检；commit/push。\n回报：表格、行数、重建输出行。",
+    "status": "timeout",
+    "startedAt": 1795350938615,
+    "completedAt": 1795352138758,
+    "summary": "通读完毕（黑暗的心全读；雅各的房间 c002–c015，占 96%；远航 c001–c014，前一半 51%）。源层非常干净，我把真正有毛病的句子逐条对着英文底本核过，写成脚本。",
+    "background": false,
+    "model": "ds-free/deepseek-v4.1-flash"
   }
 ]
