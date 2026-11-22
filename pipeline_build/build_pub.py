@@ -388,6 +388,27 @@ def source_has_chapter_name(book: str, cid: str) -> bool:
     return len(text) <= 40 and not re.search(r"[!?;:。！？；：]$", text)
 
 
+def source_chapter_name(book: str, cid: str) -> str:
+    """The chapter's own name as the source prints it, normalised, or "".
+
+    Two chapters that the source itself gives the same name -- Dickens calls six chapters
+    of *Bleak House* `Esther's Narrative` -- are allowed to carry that name twice in the
+    table of contents. `build_all.package` renumbers a repeated heading, which is right
+    when two different chapters were translated to the same words and wrong when the
+    repetition is the author's. This key is how the builder tells the two apart.
+    """
+    if not source_has_chapter_name(book, cid):
+        return ""
+    path = os.path.join(PUB, book, "src", cid + ".json")
+    try:
+        with open(path, encoding="utf-8") as f:
+            blocks = json.load(f).get("blocks") or []
+    except (OSError, ValueError):
+        return ""
+    text = re.sub(r"⟦/?i⟧", "", blocks[1].get("text") or "")
+    return re.sub(r"\s+", " ", text).strip().lower()
+
+
 def is_chapter_name(text: str) -> bool:
     """A short line with no sentence punctuation, sitting where a chapter name would."""
     t = text.strip()
@@ -464,6 +485,15 @@ def collect(book: str) -> tuple[list[dict], list[str]]:
                     texts[0] = "\n".join(rest)
                 else:
                     texts.pop(0)
+        # "第十四章举止": the number and the name came back glued into a single paragraph
+        # instead of either two paragraphs or one paragraph split by a line break. The name
+        # is the heading now, so that line would print it a second time, still wearing the
+        # number.
+        if texts and "\n" not in texts[0]:
+            glued = re.match(r"^第[一二三四五六七八九十百零\d]+[章节卷回][\s　]*(.+)$",
+                             texts[0].strip())
+            if glued and _close(glued.group(1).strip(), title_zh):
+                texts.pop(0)
         wants_name = book in NAMED_CHAPTERS or source_has_chapter_name(book, cid)
         if wants_name and texts and is_chapter_name(texts[0]) \
                 and not texts[0].lstrip().startswith(("\u201c", "\u300c")):
@@ -497,6 +527,7 @@ def collect(book: str) -> tuple[list[dict], list[str]]:
         items.append({"id": cid, "texts": texts, "types": types,
                       "notes": load_notes(book, cid), "title_zh": title_zh,
                       "title_en": c.get("title", ""), "links": {},
+                      "src_name": source_chapter_name(book, cid),
                       "old_texts": None})
     if carry[0]:
         # the last chapter ends on a title nothing follows: put it back rather than lose it

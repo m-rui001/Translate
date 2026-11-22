@@ -113,17 +113,20 @@ NEUEGEDICHTE = {
 }
 
 # --- Kafka: Der Prozess, ten chapters ----------------------------------------------
+# Each chapter prints its number (KAPITEL) and then its name in capitals. The names are
+# Kafka's own, so they are translated rather than numbered; `build_pub` lifts the rest of
+# them out of the translated body, but the first and the fifth only reach it here.
 PROZESS = {
-    "ERSTES KAPITEL": "第一章",
-    "ZWEITES KAPITEL": "第二章",
-    "DRITTES KAPITEL": "第三章",
-    "VIERTES KAPITEL": "第四章",
-    "FÜNFTES KAPITEL": "第五章",
-    "SECHSTES KAPITEL": "第六章",
-    "SIEBENTES KAPITEL": "第七章",
-    "ACHTES KAPITEL": "第八章",
-    "NEUNTES KAPITEL": "第九章",
-    "ZEHNTES KAPITEL": "第十章",
+    "ERSTES KAPITEL": "逮捕 · 与格鲁巴赫太太的谈话 · 比珥斯特纳小姐",
+    "ZWEITES KAPITEL": "第一次调查",
+    "DRITTES KAPITEL": "空无一人的审讯庭 · 大学生 · 办公室",
+    "VIERTES KAPITEL": "比珥斯特纳小姐的女友",
+    "FÜNFTES KAPITEL": "打手",
+    "SECHSTES KAPITEL": "舅舅·莱妮",
+    "SIEBENTES KAPITEL": "律师·工厂主·画家",
+    "ACHTES KAPITEL": "布洛克律师 · 律师的解约",
+    "NEUNTES KAPITEL": "教堂",
+    "ZEHNTES KAPITEL": "结局",
 }
 
 # --- Woolf: Jacob's Room, fifteen chapters -----------------------------------------

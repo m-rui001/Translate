@@ -102,5 +102,71 @@
     "summary": "重建完成，`nav` 里已经没有纯编号条目了。核对结果如下：",
     "background": false,
     "model": "ds-free/deepseek-v4.1-flash"
+  },
+  {
+    "id": "fg-mwrq9p8v-32xe",
+    "agent": "worker",
+    "task": "任务：把《三个火枪手》与《双城记》目录里只剩编号的章补上中文名。\n\n发现：《三个火枪手》67 个有名字的章里夹了 1 个「第63章」；《双城记》42 个有名字的章里夹了 3 个（第三章/第四章/第六章）。\n\n这两本都是 **work_pub** 书，章名写在哪里很关键：建库器从 `work_pub/<book>/src/index.json` 的 `chapters[].title_zh` 读标题，**不是** chunks/。用 python json 读改写，ensure_ascii=False，indent=1。\n\n步骤（每本）：\n1. 检查：`python -X utf8 -c \"import json;d=json.load(open('work_pub/musketeers/src/index.json',encoding='utf-8'));[print(c['id'],repr(c['title_zh'])) for c in d['chapters']]\"`\n2. 对每个 title_zh 是纯「第N章」的章，看 `work_pub/<book>/src/<cid>.json` 的第一块（head，如 CHAPITRE LXIII / CHAPTER III）与第二块（章名，如 THE HOUSE OF THE PIMPERNEL / A DISAPPOINTMENT）；再看 `work_pub/<book>/out/<cid>/c*/final.txt` 的头几段——**译者往往已经把中文章名写在里面了**，优先照抄。\n3. 译文里确实没有的，按 src 的英/法文名自译，风格与同书已有章名一致（大仲马：短名词短语、可带句号；狄更斯：短名词短语）。\n4. 把中文名写进 index.json 对应的 title_zh。**不要整篇重写 final.txt**；只当正文首段是孤立编号或与章名重复且建库后目录/H1 出现两份时，才做最小修改（改前先确认该字符串在目录里唯一）。\n5. 重建：`python -X utf8 pipeline_build/build_pub.py musketeers` 与 `python -X utf8 pipeline_build/build_pub.py twocities`\n6. 读 `out/三个火枪手（坟头草译）.epub` / `out/双城记（坟头草译）.epub` 的 OEBPS/nav.xhtml，确认无纯「第N章」条目，且每个条目的文字与该页 <h1> 一致。\n\n禁止：改其他书；跑 verify_epub.py / typo_check.py / clean_check.py；git commit / push。\n回报：每本 cid → 名字 → 来源（译者原文/我译）；重建结果；nav 里是否还有编号条目。",
+    "status": "completed",
+    "startedAt": 1795345354255,
+    "completedAt": 1795345539997,
+    "summary": "完成。",
+    "background": false,
+    "model": "ds-free/deepseek-v4.1-flash"
+  },
+  {
+    "id": "fg-mwrq9p8v-9cxb",
+    "agent": "worker",
+    "task": "任务：把《基督山伯爵》目录里只剩编号的 17 章补上中文名。\n\n发现：目录里 14 条有名字（如「马赛。——到港。」），夹了 17 条纯编号（第二章/第五章/第六章/第九章……）。大仲马每章都有名。\n\n这是 **work_pub** 书：章名读自 `work_pub/montecristo/src/index.json` 的 `chapters[].title_zh`。用 python json 读改写（ensure_ascii=False，indent=1）。\n\n步骤：\n1. 列出所有 title_zh：`python -X utf8 -c \"import json;d=json.load(open('work_pub/montecristo/src/index.json',encoding='utf-8'));[print(c['id'],repr(c['title_zh'])) for c in d['chapters']]\"`\n2. 对每个纯编号的章：看 `work_pub/montecristo/src/<cid>.json` 的第一块（head，CHAPITRE …）与第二块（章名，法文大写，如 LE PROVENCAL ET LE FRANCAIS）；再看 `work_pub/montecristo/out/<cid>/c*/final.txt` 头几段，**译者写好的中文章名优先照抄**。\n3. 没有的按法文名自译，风格与同书已有章名一致（名词短语，多带句号）。\n4. 写入 index.json 的 title_zh。**不整篇重写 final.txt**。\n5. 重建：`python -X utf8 pipeline_build/build_pub.py montecristo`\n6. 读 `out/基督山伯爵（坟头草译）.epub` 的 OEBPS/nav.xhtml，确认无纯「第N章」条目、nav 与各页 <h1> 一致。\n\n禁止：改其他书；跑全局体检；commit/push。\n回报：cid → 名字 → 来源；重建结果；剩余编号条目。",
+    "status": "completed",
+    "startedAt": 1795345354255,
+    "completedAt": 1795345582145,
+    "summary": "完工。核对结果如下。",
+    "background": false,
+    "model": "ds-free/deepseek-v4.1-flash"
+  },
+  {
+    "id": "fg-mwrq9p8v-h9hx",
+    "agent": "worker",
+    "task": "任务：把《悲惨世界》（3 章）与《荒凉山庄》（12 章）目录里只剩编号的章补上中文名。\n\n发现：《悲惨世界》67 条有名章的目录里夹了「第二章/第五章/第十章」；《荒凉山庄》55 条里夹了 12 条（第十四章/第十六章/第二十章/第二十四章/第二十六章……）。雨果与狄更斯每章都有名。\n\n两本都是 **work_pub** 书：章名读自 `work_pub/<book>/src/index.json` 的 `chapters[].title_zh`（miserables / bleakhouse）。用 python json 读改写，ensure_ascii=False，indent=1。\n\n步骤（每本）：\n1. 列出所有 title_zh 找出纯「第N章」的。\n2. 对每章：看 `work_pub/<book>/src/<cid>.json` 第一块 head 与第二块章名；再看 `work_pub/<book>/out/<cid>/c*/final.txt` 头几段，**优先用译者已写好的中文章名**。\n3. 没有的按原文名自译，风格与同书已有章名一致（雨果：短名词短语可带句号；狄更斯：短名词短语）。\n4. 写入 index.json 的 title_zh。**不整篇重写 final.txt**。\n5. 重建：`python -X utf8 pipeline_build/build_pub.py miserables` 、`python -X utf8 pipeline_build/build_pub.py bleakhouse`\n6. 读对应 epub 的 OEBPS/nav.xhtml，确认无纯「第N章」条目，且 nav 与页首 <h1> 一致。\n\n禁止：改其他书；跑全局体检；commit/push。\n回报：每本 cid → 名字 → 来源；重建结果；剩余编号条目。",
+    "status": "completed",
+    "startedAt": 1795345354255,
+    "completedAt": 1795345921547,
+    "summary": "两本都已补全并重建完成。下面是逐条清单。",
+    "background": false,
+    "model": "ds-free/deepseek-v4.1-flash"
+  },
+  {
+    "id": "fg-mwrq9p8w-hnlm",
+    "agent": "worker",
+    "task": "任务：把《无名的裘德》（11 章）、《爱玛》（18 章）、《诉讼》（2 章）目录里只剩编号的章补上中文名。\n\n发现：这三本目录里大部分章有名，但裘德夹 11 条纯编号（第一章/第二章……）、爱玛夹 18 条、卡夫卡的《诉讼》夹 2 条（第一章/第五章——卡夫卡每章都有名，如「逮捕」「与格鲁巴赫太太的谈话」）。\n\n三本都是 **work_pub** 书（jude / emma / prozess），章名读自 `work_pub/<book>/src/index.json` 的 `chapters[].title_zh`。用 python json 读改写，ensure_ascii=False，indent=1。\n\n步骤（每本）：\n1. 列出所有 title_zh，找出纯「第N章」的。\n2. 对每章：看 `work_pub/<book>/src/<cid>.json` 第一块 head 与第二块章名（哈代与奥斯汀都是短名词短语，如 AT MARYGREEN / THE DANCE）；再看 `out/<cid>/c*/final.txt` 头几段，**优先用译者已写好的中文章名**。\n3. 没有的自译，风格与同书已有章名一致（爱玛的章名短、不带句号；哈代同）。\n4. 写入 index.json 的 title_zh。**不整篇重写 final.txt**。\n5. 重建：`python -X utf8 pipeline_build/build_pub.py jude`、`emma`、`prozess`\n6. 读 `out/无名的裘德（坟头草译）.epub`、`out/爱玛（坟头草译）.epub`、`out/诉讼（坟头草译）.epub` 的 OEBPS/nav.xhtml，确认无纯「第N章」条目。\n\n注意：《诉讼》只有 8 个有名字的条目，若原文有的章确实无题，保留编号并在回报里说明。\n禁止：改其他书；跑全局体检；commit/push。\n回报：每本 cid → 名字 → 来源；重建结果；剩余编号条目。",
+    "status": "completed",
+    "startedAt": 1795345354256,
+    "completedAt": 1795345702669,
+    "summary": "核对后发现，「裘德夹 11 条、爱玛夹 18 条纯编号」这个判断有误，但数字对得上错在哪：",
+    "background": false,
+    "model": "ds-free/deepseek-v4.1-flash"
+  },
+  {
+    "id": "fg-mwrq9p8w-qq5a",
+    "agent": "worker",
+    "task": "任务：把《瓜拉尼人》（4 章）、《索蒂莱萨》（1 章）、《红与黑》（1 章：第十七章）目录里只剩编号的章补上中文名。\n\n三本都是 **work_gutenberg** 书（guarany / sotileza / rouge 不是——见下），注意两套机制：\n- `work_gutenberg/<book>`（瓜拉尼人 guarany、索蒂莱萨 sotileza）：章名写进 `work_gutenberg/<book>/chunks/<cid>.json` 的 `title_zh`（json 读改写，ensure_ascii=False，indent=1）。\n- `红与黑` 在 `work_pub/rouge`：章名写进 `work_pub/rouge/src/index.json` 的 `chapters[].title_zh`。\n\n步骤：\n1. 找出纯「第N章」的章：\n   - gutenberg 书：`python -X utf8 -c \"import json,glob,os;[print(os.path.basename(f)[:-5],repr(json.load(open(f,encoding='utf-8')).get('title_zh'))) for f in sorted(glob.glob('work_gutenberg/guarany/chunks/c*.json'))]\"`\n   - rouge：`python -X utf8 -c \"import json;d=json.load(open('work_pub/rouge/src/index.json',encoding='utf-8'));[print(c['id'],repr(c['title_zh'])) for c in d['chapters']]\"`\n2. 对每章：看 src/<cid>.json 第一块 head 与第二块章名（瓜拉尼人：巴西小说，章名如 O BRACELETE；索蒂莱萨：西班牙小说；红与黑：司汤达法文章名）；再看 out/<cid>/c*/final.txt 头几段，**优先用译者已写好的中文名**。\n3. 没有的自译，风格与同书已有章名一致。红与黑已有大量名字（小城/一位市长/烦闷……），照那个风格。\n4. 写 title_zh。**不整篇重写 final.txt**；只在正文首段确实是孤立编号或编号+章名粘连、并被误当章名时才删那一行（改前确认唯一）。\n5. 重建：`python -X utf8 pipeline_build/build_gutenberg.py guarany sotileza` 与 `python -X utf8 pipeline_build/build_pub.py rouge`\n6. 读对应 epub（《瓜拉尼人（坟头草译）》《索蒂莱萨（坟头草译）》《红与黑（坟头草译）》）的 OEBPS/nav.xhtml，确认无纯「第N章」条目。\n\n禁止：改其他书；跑 verify_epub.py / typo_check.py / clean_check.py；commit/push。\n回报：每本 cid → 名字 → 来源；重建结果；剩余条目。",
+    "status": "completed",
+    "startedAt": 1795345354256,
+    "completedAt": 1795345814135,
+    "summary": "全部完成。核对结果：",
+    "background": false,
+    "model": "ds-free/deepseek-v4.1-flash"
+  },
+  {
+    "id": "fg-mwrqp5bt-r8cw",
+    "agent": "worker",
+    "task": "任务：给四本书的「第一部」各章补上「第一部 」前缀，使目录风格与后续各部一致。\n\n背景：这四本的目录里，第二部及以后写作「第二部 第一章」，但第一部的章只写「第一章」。属同一份目录两种写法。\n\n| 书 | book key | 目录条数 | 需补前缀的章 |\n|---|---|---|---|\n| 包法利夫人 | bovary | 9 | c002–c010（第一部 9 章） |\n| 布登勃洛克一家 | buddenbrooks | 10 | 第一部 10 章 |\n| 无名的裘德 | jude | 11 | 第一部 11 章 |\n| 爱玛 | emma | 18 | 第一卷 18 章 |\n\n四本都是 **work_pub** 书：章名写在 `work_pub/<book>/src/index.json` 的 `chapters[].title_zh`。\n\n要求：\n1. 先用 python 打印每本 index.json 的全部 `(id, title_zh)`，确认哪些是「第一部里只写第N章」的条目。**只改这些**，不要动第二部及以后。\n2. 改成 `第一部 第N章`（爱玛若有「卷」的既有写法则随它，先用现有目录核对：如果第二部写作「第二部」，就用「部」）。前缀后用一个半角空格，与 `第二部 第一章` 完全一致的格式。\n3. 用 `json.load`/`json.dump`（ensure_ascii=False，保持文件原有 indent；若原文件是 CRLF，用 newline='' 保持 CRLF）。改完 `assert` 每条目标都改到了。\n4. 重建：`python -X utf8 pipeline_build/build_pub.py bovary`、`buddenbrooks`、`jude`、`emma`\n5. 用 python 读各自 `out/<书名>（坟头草译）.epub` 的 OEBPS/nav.xhtml，打印前 25 条，确认第一部各章带前缀、第二部风格未变、条目数与改前相同（9/10/…对比：包法利 28 条、布登勃洛克 99 条、裘德 56 条、爱玛 57 条）。\n\n禁止：改其他书；改正文 final.txt；跑 verify_epub.py / typo_check.py / clean_check.py；git commit / push。\n回报：每本改动条数、重建输出行、nav 前几条示例、条目数是否不变。",
+    "status": "completed",
+    "startedAt": 1795346074937,
+    "completedAt": 1795346161017,
+    "summary": "完成。",
+    "background": false,
+    "model": "ds-free/deepseek-v4.1-flash"
   }
 ]

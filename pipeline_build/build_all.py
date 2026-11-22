@@ -152,15 +152,37 @@ def esc(s: str) -> str:
 
 
 def cn_number(n: int) -> str:
+    """1..9999 in Chinese numerals, the way a chapter list is printed.
+
+    Below a hundred this is unchanged. Above it the function used to return arabic digits,
+    which made Moby-Dick read 第九十九章 followed by 第100章 -- one book, two numeral systems,
+    and the same in any volume past a hundred chapters. 100 is 一百, 138 一百三十八.
+    """
+    if n < 0:
+        raise ValueError(n)
+    if n == 0:
+        return "零"
     if n <= 10:
         return "十" if n == 10 else CN[n]
-    if n < 20:
-        return "十" + CN[n % 10]
-    if n < 100:
-        return CN[n // 10] + "十" + (CN[n % 10] if n % 10 else "")
-    # 白鲸 runs to a hundred and thirty-eight chapters; beyond the table the arabic form
-    # is both shorter and unambiguous.
-    return str(n)
+    if n > 9999:
+        return str(n)
+    out = ""
+    hundreds, rest = divmod(n, 100)
+    if hundreds >= 10:
+        thousands, hundreds = divmod(hundreds, 10)
+        out += CN[thousands] + "千"
+    if hundreds:
+        out += CN[hundreds] + "百"
+    if rest and rest < 10:
+        # 一百零五, not 一百五
+        out += "零" + CN[rest]
+        return out
+    tens, ones = divmod(rest, 10)
+    if tens:
+        out += ("" if tens == 1 and not out else CN[tens]) + "十"
+    if ones:
+        out += CN[ones]
+    return out
 
 
 def paras(t: str) -> list[str]:
@@ -713,7 +735,7 @@ def package(cfg: dict, items: list[dict], shape: str) -> dict:
 
     cur_vol = None
     han = npara = nnote = 0
-    _SEEN_TITLES: set[str] = set()
+    _SEEN_TITLES: dict[str, str] = {}
     for n, it in enumerate(items, 1):
         texts = list(it["texts"])
         types = list(it["types"])
@@ -732,10 +754,19 @@ def package(cfg: dict, items: list[dict], shape: str) -> dict:
                 title = "楔子" if n == 1 else (f"第{cn_number(n-1)}章" if m else it["id"])
             else:
                 title = f"第{cn_number(int(m.group(1)))}章" if m else it["id"]
-        if title and title in _SEEN_TITLES:
+        # A repeated heading is renumbered, because two chapters with the same name in a
+        # table of contents are usually a translation collision. Not when the source repeats
+        # the name itself: Dickens titles every third chapter of Bleak House "Esther's
+        # Narrative", so six chapters really are called that, and replacing the name with a
+        # number deletes the only title those chapters have. `src_name` carries the source's
+        # own wording for the chapter (only `build_pub` supplies it), so equal non-empty keys
+        # mean the author's repetition and the name stays.
+        src_name = (it.get("src_name") or "").strip()
+        if title and title in _SEEN_TITLES and not (
+                src_name and _SEEN_TITLES[title] == src_name):
             title = f"第{cn_number(n)}章"
         if title:
-            _SEEN_TITLES.add(title)
+            _SEEN_TITLES.setdefault(title, src_name)
         nav_label = it.get("nav_label") or title
         if it.get("no_heading"):
             title = ""

@@ -58,7 +58,47 @@ def part_prefix(titles: list[str]) -> list[str]:
 
 # Chapters the extractor mislabelled and no rule can recover: Notre-Dame's file c004
 # opens with the publisher's imprint and the 1832 preface, not with Book I chapter i.
-OVERRIDE = {("notredame", "c004"): "序"}
+#
+# The rest of these are chapters whose name `build_pub` cannot lift out of the translated
+# body, because the translator never copied it there or copied it glued to the number
+# ("第十四章举止"). The names were read off the source's own chapter line and, wherever
+# the translation already carries one, taken from the translator's wording.
+OVERRIDE = {
+    ("notredame", "c004"): "序",
+    # Hugo, Les Misérables. The source numbers the chapters across eight parts without
+    # ever printing a part name, so these sixteen are the only chapters that reached the
+    # table of contents as a bare number.
+    ("miserables", "c003"): "米里哀先生成了卞福汝主教",
+    ("miserables", "c006"): "卞福汝主教让他的长袍穿得太久",
+    ("miserables", "c011"): "主教面对一种陌生的光",
+    ("miserables", "c016"): "行路一天的黄昏",
+    ("miserables", "c019"): "蓬塔利埃奶酪坊详情",
+    ("miserables", "c029"): "一八一七年",
+    ("miserables", "c031"): "四对四",
+    ("miserables", "c032"): "托洛米埃兴致极高，唱起一支西班牙歌。",
+    ("miserables", "c039"): "两个可疑人物的初步素描",
+    ("miserables", "c041"): "黑色玻璃饰品工艺进步小史",
+    ("miserables", "c048"): "维克蒂尼安夫人为了道德花了三十五法郎",
+    ("miserables", "c051"): "基督救了我们",
+    ("miserables", "c059"): "睡眠中，痛苦会以怎样的形态出现",
+    ("miserables", "c062"): "行客到了，便先为归程做打算。",
+    ("miserables", "c064"): "一个信念正在成形的地方",
+    ("miserables", "c067"): "马德兰先生在哪面镜子里看自己的头发",
+    # Dickens, Bleak House. Six chapters really are called "Esther's Narrative"; the
+    # builder keeps the repetition because the source repeats it.
+    ("bleakhouse", "c015"): "举止",
+    ("bleakhouse", "c017"): "汤姆孤零零的寓所",
+    ("bleakhouse", "c021"): "新房客",
+    ("bleakhouse", "c024"): "埃丝特的自述",
+    ("bleakhouse", "c027"): "神枪手",
+    ("bleakhouse", "c031"): "埃丝特的自述",
+    ("bleakhouse", "c044"): "埃丝特的自述",
+    ("bleakhouse", "c047"): "拦住他！",
+    ("bleakhouse", "c051"): "埃丝特的自述",
+    ("bleakhouse", "c056"): "逃亡",
+    ("bleakhouse", "c057"): "追踪",
+    ("bleakhouse", "c060"): "埃丝特的自述",
+}
 
 PART_RE = re.compile(
     r"(?i)^(?:LIVRE|TOME|PARTIE|PARTE|BUCH|TEIL|BOOK|PART|VOLUME|VOL\.?|"
