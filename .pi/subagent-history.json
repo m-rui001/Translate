@@ -289,5 +289,47 @@
     "summary": "**疑点不成立**。对比 `work_pub/twocities/src/c002.json` 第 2 块英文逐句核：",
     "background": false,
     "model": "ds-free/deepseek-v4.1-flash"
+  },
+  {
+    "id": "fg-mwrwevj9-zpj3",
+    "agent": "worker",
+    "task": "任务：《魔戒》(lotr) 的**通读润色**（本轮限卷五、卷六）。\n\n源层：`work_overhaul/lotr/final/book5c*.json` 与 `book6c*.json`（`texts` 数组）。建库入口：`python -X utf8 pipeline_build/build_all.py --books lotr`。注意：这些 JSON 的 `types` 可能比 `texts` 短，**改后若增删段落要同步修 types 长度**（最好不改段数）。\n\n要求：\n1. 通读卷五、卷六全部章节。只改真正有毛病的地方：① 读不通/语法别扭；② 「的」字堆叠导致主语丢失；③ 英语句法直搬；④ 代词指代不明；⑤ 人名/地名前后不一（尤其希优顿/希优顿、伊欧玟、法拉墨等要全卷一致）。托尔金的史诗长句与古语体是风格，不改。\n2. 数量 20–35 处。幂等脚本 `scratch/rev2026/polish_lotr56.py`，逐条断言旧句在全书命中 == 1，带理由，ast.parse 自查。\n3. 重建后自检：nav 条目 68 未变；注标数与注文数相等（改前先记基线）；任选两章无空段/重复段。\n\n禁止：改其他书；跑 verify_epub.py / typo_check.py / clean_check.py；commit/push。\n回报：表格、重建输出行、注数对比。",
+    "status": "failed",
+    "startedAt": 1795355673381,
+    "completedAt": 1795355864844,
+    "summary": "All available models exhausted.",
+    "background": false
+  },
+  {
+    "id": "fg-mwrwevjf-tirn",
+    "agent": "worker",
+    "task": "任务：《百年孤独》(soledad) 的**通读润色**（全书）。\n\n源层：润色稿 `work_soledad/out/<cid>/c*/final.txt`（**发货层**；JSON `work_overhaul/soledad/final/*.json` 只在润色稿段数不等时才用，**不要改 JSON**）。\n\n要求：\n1. 通读全书。只改真正有毛病的地方：① 读不通/语法别扭；② 「的」字堆叠导致主语丢失；③ 西语句法直搬（长定语后置、se/被动结构）；④ 代词指代不明（本书人名重复多，尤其关键）；⑤ 人名前后不一（奥雷里亚诺/乌尔苏拉/阿玛兰妲等）。马尔克斯的长句与重复人名是体例，不改。\n2. 数量 20–30 处。幂等脚本 `scratch/rev2026/polish_soledad.py`，断言命中数、带理由、ast.parse 自查。\n3. 重建：`python -X utf8 pipeline_build/build_all.py --books soledad`\n4. 自检：nav 条目数未变；注标 125 与注文 125 相等；任选两章无空段/重复段。\n\n禁止：改其他书；跑全局体检；commit/push。\n回报：表格、重建输出行、注数对比。",
+    "status": "failed",
+    "startedAt": 1795355673387,
+    "completedAt": 1795355864801,
+    "summary": "All available models exhausted.",
+    "background": false
+  },
+  {
+    "id": "fg-mwrwevjl-89if",
+    "agent": "worker",
+    "task": "任务：《白鲸》**后半**（ch041–ch100）的润色。\n\n源层：`work_whale/out/chNNN/c*/final.txt`（发货层；改前先确认该章润色稿段数与 `work_overhaul/whale/final/chNNN.json` 的 texts 长度相等，否则改的是不发货的稿）。\n前四十章上一轮已改过 28 处，**不要重复改**；脚本叫 `scratch/rev2026/polish_whale2.py`。\n\n要求：\n1. 通读 ch041–ch100。类型：① 读不通/语法别扭；② 「的」字堆叠；③ 英语句法直搬；④ 代词指代不明；⑤ 鲸类/航海术语前后不一（与本轮前四十章已统一的术语保持一致：瞭望台、杜伯隆、欢呼海豚、甜嘴海豚）。\n2. 数量 25–35 处，逐条断言、带理由、ast.parse。\n3. 重建：`python -X utf8 pipeline_build/build_all.py --books whale`\n4. 自检：nav 140 未变；注标 == 注文（应仍为 943）；任选三章无空段/重复段。\n\n禁止：改其他书；跑全局体检；commit/push。\n回报：表格、重建输出行、注数对比。",
+    "status": "failed",
+    "startedAt": 1795355673393,
+    "completedAt": 1795355866621,
+    "summary": "I'll start by understanding the project structure and the task requirements.",
+    "background": false,
+    "model": "ds-free/deepseek-v4.1-flash"
+  },
+  {
+    "id": "fg-mwrwevjp-j30a",
+    "agent": "worker",
+    "task": "任务：五本德语/英语书的人名与术语一致性清理（**只统一异译，不做句子润色**）。\n\n书与源层：horla（`pipeline_gutenberg/revisions/horla.json`，法文短篇）、siddhartha、verwandlung、torundtod、darkness。\n\n方法：\n1. 先用 python 统计每本书里「同一个人物的多种写法」：比较长度相同、仅差一二个字的字符串（≥3 次），以及「首字相同、长度差 1」的候选；逐个人工判断是否同一人。\n2. 每条统一都取**多数写法**（频次悬殊时新的让位旧的）；若两种写法在原文属不同人物（母女、不同爵位、作者故意谐音），**不统一**，写进驳回清单。\n3. 写成幂等脚本 `scratch/rev2026/unify_de.py`，逐条断言改前命中数与改后为 0。\n4. 重建：`python -X utf8 pipeline_build/build_pub.py horla siddhartha verwandlung torundtod darkness`\n5. 自检：五本 nav 条目数未变；任选一页无空段/重复段。\n\n禁止：改句子（只改专名）；改其他书；跑全局体检；commit/push。\n回报：统一表（旧→新、次数）、驳回清单（及理由）、重建输出行。",
+    "status": "failed",
+    "startedAt": 1795355673397,
+    "completedAt": 1795355866669,
+    "summary": "Connection error.: getaddrinfo ENOTFOUND ai.idcidiot.com",
+    "background": false,
+    "model": "ds-free/deepseek-v4.1-flash"
   }
 ]
