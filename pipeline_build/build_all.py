@@ -378,13 +378,26 @@ def title_page(cfg: dict) -> str:
 
 
 def copyright_page(cfg: dict) -> str:
+    """Colophon: who wrote it, what it is called in the original, who translated it, and
+    which edition this follows.
+
+    It used to print the original title where the author belongs -- "Persuasion 著" --
+    and dropped `cfg["note"]` (the edition the translation was made from) altogether.
+    """
+    author = cfg.get("author") or ""
+    sub = cfg.get("sub") or cfg.get("src") or ""
+    rows = []
+    if author:
+        rows.append(f"<p class='au'>{esc(author)}　著</p>")
+    if sub:
+        rows.append(f"<p class='src'>{esc(sub)}</p>")
+    rows.append("<p class='tr'>坟头草　译</p>")
+    if cfg.get("note"):
+        rows.append(f"<p class='ed'>{esc(cfg['note'])}</p>")
+    rows.append(f"<div class='cn'>{cpr.TEXT}</div>")
     return page("版权",
                 "<div class='copyright'>"
-                f"<h1>{esc(cfg['title'])}</h1>"
-                f"<p class='src'>{esc(cfg['src'])}　著</p>"
-                "<p class='tr'>坟头草　译</p>"
-                f"<div class='cn'>{cpr.TEXT}</div>"
-                "</div>")
+                f"<h1>{esc(cfg['title'])}</h1>" + "".join(rows) + "</div>")
 
 
 def chapter_xhtml(title: str, subtitle: str, ps: list[str], types: list[str],
