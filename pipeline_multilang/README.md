@@ -62,3 +62,32 @@ sha1(语种+原文+模型) 缓存）、`manifest.md`（人工翻译清单）、
   语种池里 **Twi(tw)、藏语(bo)、切罗基语(chr)** 在该模型上稳定失败（返回 1–11 字符），
   实测改派即可；`verify` 的「长度异常 / 文字系统不符」就是用来抓这一类的。
 - `verify --strict` 在有问题时非零退出，可直接串进 `&&` 链。
+
+## 字符级混淆：`encode.py`
+
+随机抽约 N% 的字符，逐个换成随机一种转义形式，可逆可校验。
+
+```bash
+python -X utf8 pipeline_multilang/encode.py encode IN.txt -o OUT.txt --ratio 0.10
+python -X utf8 pipeline_multilang/encode.py verify IN.txt OUT.txt
+python -X utf8 pipeline_multilang/encode.py decode OUT.txt -o BACK.txt
+```
+
+形式：`u4 \u4F60` / `u8 \U00004F60` / `html &#20320;` / `hhex &#x4F60;` /
+`pct %E4%BD%A0` / `hex \xe4\xbd\xa0` / `oct \344\275\240` / `uplus ⟨U+4F60⟩` /
+`b64 ⟦5L2g⟧`（默认八种，b64 需显式开）。空白字符不动；`--skip-code` 跳过围栏代码块。
+
+`--ratio` 的分母是**可编码字符**（默认排除空白），所以 0.10 约为全文的 8.3%；
+要全文正好 10%，用 `--ratio 0.1201`。
+
+### 两个必须知道的坑（都已在代码里堵住）
+
+1. **伪转义字面量**：原文里本来就有的 `\u4F60`、`%E4`、`&#x41;`、`⟦..⟧` 会被解码器
+   当成自己写的东西吃掉。`encode` 现在会把这些位置强制一并编码（`--no-fix-ambiguous` 可关，
+   但往返校验必然失败）。
+2. **`U+0065` 后面紧跟 `de`**：无定界的码位写法会被贪婪正则吃成 `U+0065DE`（实测踩到，
+   解出 `旞`）。所以 `uplus` 一律写成 `⟨U+0065⟩`，带定界符。
+   同理，新增编码形式时第一件事是想清楚**边界歧义**。
+
+每次 `encode` 都会写 `OUT.txt.report.json`（每个位置的原文/形式/密文），`verify` 用它出统计；
+`encode` 自身最后一步就是往返校验，不一致直接退出码 2。

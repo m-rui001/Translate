@@ -72,7 +72,9 @@ def enc_oct(ch: str) -> str:
 
 def enc_uplus(ch: str) -> str:
     cp = ord(ch)
-    return f"U+{cp:04X}" if cp < 0x10000 else f"U+{cp:06X}"
+    # 必须带定界符：无定界时 "U+0065" 会被紧跟的原文字符 "de" 吃掉，
+    # 变成 U+0065DE（第一个实测踩到的陷阱）。
+    return f"⟨U+{cp:04X}⟩" if cp < 0x10000 else f"⟨U+{cp:06X}⟩"
 
 
 def enc_b64(ch: str) -> str:
@@ -102,7 +104,7 @@ _OCTESC = re.compile(r"(?:\\[0-7]{1,3})+")
 _HHEX = re.compile(r"&#x([0-9A-Fa-f]+);")
 _HTML = re.compile(r"&#(\d+);")
 _PCT = re.compile(r"(?:%[0-9A-Fa-f]{2})+")
-_UPLUS = re.compile(r"U\+([0-9A-Fa-f]{4,6})")
+_UPLUS = re.compile(r"⟨U\+([0-9A-Fa-f]{4,6})⟩")
 _B64 = re.compile(r"⟦([A-Za-z0-9+/=]+)⟧")
 
 
@@ -122,7 +124,7 @@ def decode_all(text: str) -> str:
     i, n = 0, len(text)
     while i < n:
         ch = text[i]
-        if ch == "\\" or ch == "&" or ch == "%" or ch == "U" or ch == "⟦":
+        if ch in ("\\", "&", "%", "U", "⟦", "⟨"):
             m = _U8.match(text, i)
             if m:
                 out.append(chr(int(m.group(1), 16)))
@@ -189,7 +191,7 @@ AMBIG_PATTERNS = [
     r"&#x[0-9A-Fa-f]+;",
     r"&#[0-9]+;",
     r"(?:%[0-9A-Fa-f]{2})+",
-    r"U\+[0-9A-Fa-f]{4,6}",
+    r"⟨U\+[0-9A-Fa-f]{4,6}⟩",
     r"⟦[A-Za-z0-9+/=]+⟧",
 ]
 AMBIG_RE = [re.compile(p) for p in AMBIG_PATTERNS]
