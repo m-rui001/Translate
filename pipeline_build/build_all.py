@@ -118,7 +118,7 @@ BOOKS = {
         "title": "魔山", "sub": "Der Zauberberg", "author": "托马斯·曼",
         "src": "Der Zauberberg", "uid": "urn:zauberberg-zh-rev",
         "note": "据一九二四年柏林S. Fischer出版社初版译出",
-        "json": None, "polished": "work_zauberberg/out", "notes": None,
+        "json": None, "polished": "work_zauberberg/out", "notes": "work_zauberberg/notes",
         "shape": "split", "pattern": "index_split_*/c*/final.txt",
     },
 }
@@ -523,8 +523,12 @@ def collect_flat(cfg: dict) -> list[dict]:
         else:
             title = ""
         cid = os.path.basename(os.path.dirname(f))
+        # 魔山 is cut into index_split_NNN/cMM sections, so a bare cMM is not unique:
+        # the sidecar is looked up under the full relative path first, then under the
+        # plain section name (which is what 第六病室 uses).
+        relkey = os.path.dirname(rel).replace(os.sep, "_").replace("/", "_")
         items.append({"id": rel, "texts": texts, "types": ["p"] * len(texts),
-                      "notes": sidecar_notes(cfg, cid),
+                      "notes": sidecar_notes(cfg, relkey) or sidecar_notes(cfg, cid),
                       "title_zh": title, "title_en": "", "links": {},
                       "ordinal": i})
     return items
@@ -591,6 +595,9 @@ def group_split(items: list[dict], cfg: dict) -> list[dict]:
                 texts = texts[1:]
         cur["texts"] += texts
         cur["types"] += ["p"] * len(texts)
+        relkey = os.path.relpath(f, base).replace(os.sep, "_").replace("/", "_")
+        relkey = relkey.rsplit("_final.txt", 1)[0]
+        cur["notes"] += sidecar_notes(cfg, relkey)
     # Mann's Princeton address opens the book without a heading of its own, and its
     # first line is the German title of the lecture rather than prose to print.
     if groups:
