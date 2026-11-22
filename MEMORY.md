@@ -1222,3 +1222,11 @@ torundtod, urteil, verwandlung。
 （本轮我先在 `work_pub/urteil/out`、`work_pub/hungerkuenstler/out` 上改了几处，build 后 epub 字数
 从 5,717 变成 5,036，才发现成品用的是另一份文本）。而且 revision 那份文本本身比 `out/` 里的草稿更成熟
 （判决：草稿"营业额翻了五番"，revision 已是"营业额涨到了五倍"）。
+
+### 全库"译了但没进成品"的查法
+
+`scratch/rev2026/epub_vs_input.py`：按书比「构建实际读到的文本汉字数」与「成品 epub 里的汉字数」。
+revision 书以 revision 为基准，其余以 `out/**/final.txt` 为基准；比值 <0.97 就要查。
+《奥尔拉》那篇漏译就是这条线查出来的（比例本身不低，但按章探针一点就露）。
+探针法见 `scratch/rev2026/probe_twocities*.py`：从每个 chunk 取中段与末段各 40~60 字，
+在 epub 全文中找；找不到再看是不是 `⟦i⟧` 标记造成的假阴性（成品会剥标记，所以探针要先剥）。
