@@ -296,6 +296,10 @@ def _close(a: str, b: str) -> bool:
         return True
     if not a or not b:
         return False
+    if max(len(a), len(b)) < 5:
+        # Below five characters, an edit-distance match is meaningless: "召见" is within
+        # three edits of "第三章", and dropping it deleted the chapter's real name.
+        return False
     if abs(len(a) - len(b)) > 3 or max(len(a), len(b)) > 40:
         return False
     prev = list(range(len(b) + 1))
@@ -306,6 +310,19 @@ def _close(a: str, b: str) -> bool:
                            prev[j - 1] + (ca != cb)))
         prev = cur
     return prev[-1] <= 3
+
+
+# Books whose source prints a chapter *name* on the line after the numeral, which the
+# extractor took for prose, so the translator translated it as an ordinary paragraph. The
+# entry was checked chapter by chapter: the short line really is the chapter's name and not
+# an epigraph (Trollope) or a part title (Stendhal).
+NAMED_CHAPTERS = {"musketeers", "guarany", "sotileza", "diana", "notredame"}
+
+
+def is_chapter_name(text: str) -> bool:
+    """A short line with no sentence punctuation, sitting where a chapter name would."""
+    t = text.strip()
+    return 0 < len(t) <= 30 and not re.search(r"[。！？；：，、\"”’）]$", t)
 
 
 def load_notes(book: str, cid: str) -> list[dict]:
@@ -331,7 +348,7 @@ def collect(book: str) -> tuple[list[dict], list[str]]:
     idx = index_of(book)
     items, skipped = [], []
     carry: tuple[list[str], list[str]] = ([], [])
-    for c in idx["chapters"]:
+    for ordinal, c in enumerate(idx["chapters"], 1):
         cid = c["id"]
         texts = chapter_texts(book, cid)
         if not texts:
@@ -341,7 +358,21 @@ def collect(book: str) -> tuple[list[dict], list[str]]:
             reason = "front matter" if run_pub.is_front_matter(feed) else "no translation"
             skipped.append(f"{cid} ({reason})")
             continue
-        texts = drop_repeated_head(c.get("title_zh", ""), texts)
+        # Resolve the heading we will actually print before dropping the copy of it that
+        # the translator left in the body. Comparing against the untranslated source
+        # title ("CHAPITRE PREMIER") never matched the translated "第一章", so every one
+        # of these chapters printed its number twice.
+        title_zh = (c.get("title_zh") or "").strip()
+        if not re.search(r"[一-鿿]", title_zh):
+            title_zh = titles_src.title_for((c.get("title") or "").strip(), ordinal)
+        texts = drop_repeated_head(title_zh, texts)
+        if book in NAMED_CHAPTERS and texts and is_chapter_name(texts[0]):
+            cand = re.sub(r"\s+", " ", texts.pop(0)).strip()
+            # some chapters came back as "第五章国王的火枪手…", with the numeral glued on
+            m = re.match(r"^第[一二三四五六七八九十百零\d]+章[\s　]*(.*)$", cand)
+            cand = (m.group(1).strip() if m else cand)
+            if cand:
+                title_zh = cand
         if book in VERSE:
             texts, types = verse_block(book, cid, texts, carry)
             carry = carry_tail(texts, types)
@@ -361,7 +392,7 @@ def collect(book: str) -> tuple[list[dict], list[str]]:
         else:
             types = ["p"] * len(texts)
         items.append({"id": cid, "texts": texts, "types": types,
-                      "notes": load_notes(book, cid), "title_zh": c.get("title_zh", ""),
+                      "notes": load_notes(book, cid), "title_zh": title_zh,
                       "title_en": c.get("title", ""), "links": {},
                       "old_texts": None})
     if carry[0]:
