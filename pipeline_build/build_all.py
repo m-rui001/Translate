@@ -651,6 +651,13 @@ def package(cfg: dict, items: list[dict], shape: str) -> dict:
 
         # Seven indexes print 第31章 once past thirty and 第三十一章 below it. The rest
         # of the shelf, and the reader's expectation, is Chinese numerals throughout.
+        # A heading that carries its own number alongside a name: keep the name only.
+        # The builder prints 第N章 itself when there is no name, so "三十七章 一座牢塔"
+        # would otherwise show the number twice, with a space where a heading break was.
+        m_name = re.match(r"^第?([一二三四五六七八九十百零\d]{1,4})章[\s　]*(.+)$", title)
+        if m_name and m_name.group(2).strip():
+            title = m_name.group(2).strip()
+
         title = re.sub(r"第(\d{1,2})章", lambda g: "第" + cn_number(int(g.group(1))) + "章", title)
 
         book_head = ""

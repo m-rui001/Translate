@@ -278,6 +278,12 @@ def drop_repeated_head(title: str, texts: list[str]) -> list[str]:
         if not texts:
             break
         p = texts[0].strip()
+        first, _, rest = p.partition("\n")
+        if rest.strip() and _close(first.strip(), t):
+            # the heading shares its paragraph with the chapter name or the opening line:
+            # drop the heading line only, keep what follows
+            texts = [rest.strip()] + texts[1:]
+            return texts
         if _close(p, t):
             texts = texts[1:]
         else:
@@ -317,6 +323,36 @@ def _close(a: str, b: str) -> bool:
 # entry was checked chapter by chapter: the short line really is the chapter's name and not
 # an epigraph (Trollope) or a part title (Stendhal).
 NAMED_CHAPTERS = {"musketeers", "guarany", "sotileza", "diana", "notredame"}
+
+
+def source_has_chapter_name(book: str, cid: str) -> bool:
+    """True when the source prints a chapter name where the extractor saw prose.
+
+    The extractor takes `CHAPITRE PREMIER` as the heading and the line under it as an
+    ordinary paragraph. A name is unquoted and set in capitals; Trollope's chapter
+    epigraphs are quoted sentences and must not be lifted.
+    """
+    path = os.path.join(PUB, book, "src", cid + ".json")
+    if not os.path.exists(path):
+        return False
+    try:
+        with open(path, encoding="utf-8") as f:
+            blocks = json.load(f).get("blocks") or []
+    except (OSError, ValueError):
+        return False
+    if len(blocks) < 2 or blocks[0].get("type") != "head":
+        return False
+    text = (blocks[1].get("text") or "").strip()
+    if not text or len(text) > 70 or text[0] in "\u201c\u300c'\"":
+        return False
+    letters = [c for c in text if c.isalpha()]
+    if not letters:
+        return False
+    if sum(1 for c in letters if c.isupper()) / len(letters) >= 0.6:
+        return True
+    # Dickens sets chapter names in title case, so case alone cannot decide; a short
+    # unquoted line with no sentence punctuation is the remaining shape.
+    return len(text) <= 40 and not re.search(r"[.!?;:。！？；：]$", text)
 
 
 def is_chapter_name(text: str) -> bool:
@@ -366,8 +402,36 @@ def collect(book: str) -> tuple[list[dict], list[str]]:
         if not re.search(r"[一-鿿]", title_zh):
             title_zh = titles_src.title_for((c.get("title") or "").strip(), ordinal)
         texts = drop_repeated_head(title_zh, texts)
-        if book in NAMED_CHAPTERS and texts and is_chapter_name(texts[0]):
+        while texts and (re.fullmatch(r"(?:[一二三四五六七八九十百零]+|[IVXLCDM]+|\d{1,4})", texts[0].strip())
+                         or re.fullmatch(r"第[一二三四五六七八九十百零\d]+章", texts[0].strip())):
+            num = texts.pop(0).strip()
+            if re.fullmatch(r"(?:[一二三四五六七八九十百零]+|[IVXLCDM]+|\d{1,4})", title_zh.strip()):
+                title_zh = num
+        if book not in VERSE and book not in PLAY and texts and "\n" in texts[0]:
+            # Sources that print the number and the chapter name on two lines of one block
+            # leave them in one translated paragraph. Trust the number the book itself
+            # prints: the positional fallback is off by however much front matter the
+            # volume carries, and comparing against it left the number on the page twice.
+            lines = texts[0].split("\n")
+            head = lines[0].strip()
+            if head == title_zh.strip() or re.fullmatch(
+                    r"第[一二三四五六七八九十百零\d]+章", head):
+                rest = [l for l in lines[1:] if l.strip()]
+                name = rest[0].strip() if rest and is_chapter_name(rest[0]) else ""
+                if name:
+                    title_zh = name
+                    rest = rest[1:]
+                elif re.fullmatch(r"第[一二三四五六七八九十百零\d]+章", head):
+                    title_zh = head
+                if rest:
+                    texts[0] = "\n".join(rest)
+                else:
+                    texts.pop(0)
+        wants_name = book in NAMED_CHAPTERS or source_has_chapter_name(book, cid)
+        if wants_name and texts and is_chapter_name(texts[0]) \
+                and not texts[0].lstrip().startswith(("\u201c", "\u300c")):
             cand = re.sub(r"\s+", " ", texts.pop(0)).strip()
+            cand = re.sub(r"⟦/?i⟧", "", cand)   # a heading never carries markup
             # some chapters came back as "第五章国王的火枪手…", with the numeral glued on
             m = re.match(r"^第[一二三四五六七八九十百零\d]+章[\s　]*(.*)$", cand)
             cand = (m.group(1).strip() if m else cand)

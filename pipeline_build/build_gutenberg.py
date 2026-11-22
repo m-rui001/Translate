@@ -35,7 +35,8 @@ sys.path.insert(0, os.path.join(ROOT, "pipeline_gutenberg"))
 
 import build_all as B           # noqa: E402  (shared page/package builders)
 import books_meta               # noqa: E402
-import titles_src               # noqa: E402
+import titles_src                # noqa: E402
+import build_pub as PB           # noqa: E402  (heading helpers)
 
 GUT = os.path.join(ROOT, "work_gutenberg")
 OUT = os.path.join(ROOT, "out")
@@ -142,6 +143,29 @@ def strip_front(texts: list[str]) -> list[str]:
 NOTES = os.path.join(GUT, "%s", "notes")
 
 
+def source_has_chapter_name(book: str, cid: str) -> bool:
+    """True when the source prints a chapter name where the extractor saw prose."""
+    path = os.path.join(GUT, book, "src", cid + ".json")
+    if not os.path.exists(path):
+        return False
+    try:
+        with open(path, encoding="utf-8") as f:
+            blocks = json.load(f).get("blocks") or []
+    except (OSError, ValueError):
+        return False
+    if len(blocks) < 2 or blocks[0].get("type") != "head":
+        return False
+    text = (blocks[1].get("text") or "").strip()
+    if not text or len(text) > 70 or text[0] in "\u201c\u300c'\"":
+        return False
+    letters = [c for c in text if c.isalpha()]
+    if not letters:
+        return False
+    if sum(1 for c in letters if c.isupper()) / len(letters) >= 0.6:
+        return True
+    return len(text) <= 40 and not text.endswith((".", "!", "?", ";", ":"))
+
+
 def load_notes(book: str, cid: str) -> list[dict]:
     """Footnote sidecar for one chapter, or an empty list.
 
@@ -166,7 +190,7 @@ def collect(book: str) -> list[dict]:
         return revision
 
     items = []
-    for cid in chapter_ids(book):
+    for ordinal, cid in enumerate(chapter_ids(book), 1):
         texts = chapter_texts(book, cid)
         if not texts:
             continue
@@ -174,6 +198,19 @@ def collect(book: str) -> list[dict]:
         m = chapter_meta(book, cid)
         title = (m.get("title_zh") or "").strip()
         src = (m.get("title_src") or "").strip()
+        # the heading we will print, resolved before we look for its copy in the body
+        shown = title if any("\u4e00" <= c <= "\u9fff" for c in title) else titles_src.title_for(src, ordinal)
+        texts = PB.drop_repeated_head(shown, texts)
+        while texts and (re.fullmatch(r"(?:[一二三四五六七八九十百零]+|[IVXLCDM]+|\d{1,4})", texts[0].strip())
+                         or re.fullmatch(r"第[一二三四五六七八九十百零\d]+章", texts[0].strip())):
+            num = texts.pop(0).strip()
+            if not any("\u4e00" <= c <= "\u9fff" for c in title):
+                title = shown = num
+        if (source_has_chapter_name(book, cid) and texts and PB.is_chapter_name(texts[0])
+                and not re.fullmatch(r"(?:[一二三四五六七八九十百零]+|[IVXLCDM]+|\d{1,4})", texts[0].strip())):
+            cand = texts.pop(0).strip()
+            if cand:
+                title, shown = cand, cand
         items.append({"id": cid, "texts": texts, "types": ["p"] * len(texts),
                       "notes": load_notes(book, cid), "title_zh": title, "title_en": src,
                       "links": {}, "old_texts": None})
