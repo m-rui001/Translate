@@ -628,7 +628,49 @@ def group_split(items: list[dict], cfg: dict) -> list[dict]:
             g["title_zh"] = f"第{cn_number(i - 1)}章"
         if not cfg.get("subheads"):
             g["types"] = ["p"] * len(g["texts"])
+    if cfg.get("subheads"):
+        groups = _split_at_subheads(groups)
     return groups
+
+
+def _split_at_subheads(groups: list[dict]) -> list[dict]:
+    """One reading section per named subsection, with the chapter as its subtitle."""
+    flat: list[dict] = []
+    for g in groups:
+        chap = g["title_zh"]
+        mine: list[dict] = []
+        section = None
+        for text, kind in zip(g["texts"], g["types"]):
+            if kind == "sub":
+                section = {"id": g["id"], "texts": [], "types": [], "notes": [],
+                           "title_zh": text, "title_en": "", "subtitle": chap,
+                           "links": {}}
+                flat.append(section)
+                mine.append(section)
+                continue
+            if section is None:
+                section = {"id": g["id"], "texts": [], "types": [], "notes": [],
+                           "title_zh": chap, "title_en": "", "subtitle": "",
+                           "links": {}}
+                flat.append(section)
+                mine.append(section)
+            section["texts"].append(text)
+            section["types"].append("p")
+        # a note belongs to whichever section actually carries its anchor
+        for note in g["notes"]:
+            anchor = note.get("anchor") or note.get("term") or ""
+            target = None
+            for sec in mine:
+                if any(anchor in t for t in sec["texts"]):
+                    target = sec
+                    break
+            if target is None:
+                # no section carries the anchor verbatim (it may sit in a paragraph that
+                # was split across the boundary) -- keep it rather than lose it
+                target = mine[0] if mine else None
+            if target is not None:
+                target["notes"].append(note)
+    return [g for g in flat if g["texts"]]
 
 
 # ── packaging ───────────────────────────────────────────────────────────────────
