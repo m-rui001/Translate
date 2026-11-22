@@ -1265,3 +1265,21 @@ revision 书以 revision 为基准，其余以 `out/**/final.txt` 为基准；�
 
 `probe_all.py` 剩下的不匹配都不是缺陷：revision 层段落合并（远航）、成品按章名切开的诗（新诗集）、
 同一章的重复译稿只发货一份（双城记）。判缺章要看**内容探针**，不要看 cid。
+
+### 体检工具一览（scratch/rev2026/）
+
+| 脚本 | 查什么 |
+|---|---|
+| `probe_all.py` | 成品 vs 它真正读的那一层，逐章取中段与末段探针找缺章 |
+| `num_gaps.py` | 章号有没有跳号／重号（分部书会误报，看具体书） |
+| `short_chapter.py` | 单章「汉字/原文词数」比值远低于全书中位数（可能截断） |
+| `dup_page.py` / `dup_anywhere.py` | 两页内容雷同／同一段印两遍 |
+| `seams2.py` | 段末落在「的／而／便」这类字的段落——切块切在半句 |
+| `unterminated.py` | 段末无标点的段落（只作参考，落款、诗行、人物表都算） |
+| `foreign_inline.py` | 夹在中文里的孤立外文词（漏译的形状） |
+| `head_candidates.py` | 哪些章的标题是从原文第二块「提」上来的（句子误当章名） |
+| `jinxing.py` | 「进行+名词」这类翻译腔的分布 |
+| `dup_chapters.py` | 同一本书里有没有重复的章 |
+
+两个坑：脚本目录里的 `numbers.py` 会遮蔽标准库（已改名 `digit_audit.py`）；heredoc 会吃掉反斜杠，
+含 `\` 的脚本一律用 write 落文件。
