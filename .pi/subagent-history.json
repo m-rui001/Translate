@@ -1309,21 +1309,175 @@
     "id": "fg-mwter5ar-j6iw",
     "agent": "general-purpose",
     "task": "对象：《红与黑》（司汤达），译稿在 E:/Translate/work_pub/rouge/（out/<章>/<片>/final.txt，一行一段；源文 src/cNNN.json 法语原文）。公认参照译本：罗新璋（文气古雅、精雕细琢）、郝运（平实严谨）。本库译文署名「坟头草」。\n\n任务：通读代表章节（建议 c002 开头小镇/市长家、c003 上下文、于连初见德·雷纳尔夫人、侯爵府舞会段、终卷监狱自省章——自己按 src 索引找），逐段对照法语原文，对译本水平作**严肃批评**，写成 E:/Translate/REVIEW_2026-11-24-rouge.md。文风要求：像正式译本评介，有总体评价（定位这个译本是什么性质：语言流畅度、文学质感、句式结构、忠实度的得失）+ 分维度分析（1 语言风格与可读性 2 文学质感与韵味 3 准确性与忠实度 4 与罗新璋/郝运等主流译本对比），每条论点必须配**具体例证**（原文句子→译文→评点，可引著名译本的处理作对照；引原文属公有领域，没问题）。\n\n然后动手修改：从确认的缺陷里挑 12–20 处最站得住的，直接编辑对应 final.txt（保持行数与空行结构不变，段内一字不多删）。只修有把握的：误译、明显直译病句、俚语俗化破坏人物语域、专名错。拿不准的只写进评论不动手。修改后自检：每个改动文件行数与空行数与改前一致、无直引号、无拉丁入中文、无 markdown/工具标记残留。\n\n汇报：评价要点摘要、修改处数、最值得注意的 3–5 处（原→新+理由）、未敢动的争议点清单。",
-    "status": "running",
-    "startedAt": 1795446945171
+    "status": "completed",
+    "startedAt": 1795446945171,
+    "completedAt": 1795447180362,
+    "summary": "汇报如下。",
+    "background": false,
+    "model": "yanhuo888/glm-5.3-flash"
   },
   {
     "id": "fg-mwter5as-u810",
     "agent": "general-purpose",
     "task": "对象：《傲慢与偏见》（奥斯汀），译稿在 E:/Translate/work_pub/pride/（out/<章>/<片>/final.txt，一行一段；源文 src/cNNN.json 英语原文）。公认参照译本：王科一（典雅俏皮）、孙致礼（严谨精当）。本库译文署名「坟头草」。\n\n任务：通读代表章节（c002 开篇 universal truth 段必须细评、班纳特家对话章、柯林斯求婚章、达西第一次求婚章、凯瑟琳夫人兴师问罪章、尾声——按 src 索引找），逐段对照英文原文，对译本水平作**严肃批评**，写成 E:/Translate/REVIEW_2026-11-24-pride.md。文风要求：像正式译本评介，有总体评价（定位：这个译本的语言流畅度、文学质感、句式结构、忠实度的得失）+ 分维度分析（1 语言风格与可读性 2 文学质感与韵味——奥斯汀的反讽语调尤其要评 3 准确性与忠实度 4 与王科一/孙致礼等主流译本对比），每条论点配**具体例证**（原文→译文→评点，对照名译处理）。\n\n然后动手修改：从确认的缺陷里挑 12–20 处最站得住的，直接编辑对应 final.txt（保持行数与空行结构不变）。只修有把握的：误译、反讽丢失、直译病句、人物语域错位、专名错。拿不准的只写进评论不动手。修改后自检：行数不变、无直引号、无拉丁入中文、无工具标记残留。\n\n汇报：评价要点摘要、修改处数、最值得注意的 3–5 处（原→新+理由）、未敢动的争议点清单。",
-    "status": "running",
-    "startedAt": 1795446945172
+    "status": "completed",
+    "startedAt": 1795446945172,
+    "completedAt": 1795447247361,
+    "summary": "全部完成。汇报如下。",
+    "background": false,
+    "model": "yanhuo888/glm-5.3-flash"
   },
   {
     "id": "fg-mwter5as-ym37",
     "agent": "general-purpose",
     "task": "对象：《包法利夫人》（福楼拜），译稿在 E:/Translate/work_pub/bovary/（out/<章>/<片>/final.txt，一行一段；源文 src/cNNN.json 法语原文）。公认参照译本：李健吾（文气充沛、译笔奔放）、周克希（细腻克制）、许渊冲。本库译文署名「坟头草」。\n\n任务：通读代表章节（c002 开头夏尔进学堂、爱玛婚礼/沃比萨尔舞会、 agricultural fair 电子商务? 按原章找「农业评比会」那章、赖昂幽会章、爱玛服毒章），逐段对照法语原文，对译本水平作**严肃批评**，写成 E:/Translate/REVIEW_2026-11-24-bovary.md。文风要求：像正式译本评介，有总体评价（定位：语言流畅度、文学质感、句式结构、忠实度的得失——福楼拜的自由间接引语 style indirect libre 必须重点评）+ 分维度分析（1 语言风格与可读性 2 文学质感与韵味 3 准确性与忠实度 4 与李健吾/周克希等主流译本对比），每条论点配**具体例证**（原文→译文→评点，对照名译处理；引原文属公有领域）。\n\n然后动手修改：从确认的缺陷里挑 12–20 处最站得住的，直接编辑对应 final.txt（保持行数与空行结构不变）。只修有把握的：误译、自由间接引语被改为明确转述导致叙述味丢失、直译病句、专名错。拿不准的只写进评论不动手。修改后自检：行数不变、无直引号、无拉丁入中文、无工具标记残留。\n\n汇报：评价要点摘要、修改处数、最值得注意的 3–5 处（原→新+理由）、未敢动的争议点清单。",
-    "status": "running",
-    "startedAt": 1795446945172
+    "status": "completed",
+    "startedAt": 1795446945172,
+    "completedAt": 1795447277021,
+    "summary": "完成。汇报如下：",
+    "background": false,
+    "model": "yanhuo888/glm-5.3-flash"
+  },
+  {
+    "id": "fg-mwtewos5-wcdi",
+    "agent": "worker",
+    "task": "翻译阿尔杰农·布莱克伍德《人类的和声》The Human Chord（1910，长篇）第 1/6 片。源文：work_batch_20261124/_hc_a_paras.json（139段）。输出：work_batch_20261124/hc_a_zh.json（139段）。背景：青年斯宾罗宾应聘到威尔士山中一位怪牧师斯凯尔的宅邸任秘书，发现主人在寻找“那声音”——以人的嗓音召唤神名，重组宇宙。体例：逐段对应；引号「」（嵌套『』）；不用⟦i⟧标记；段末标点（。！？…：—…）；分节星号行作「＊　＊　＊　＊　＊」。体例样板：work_batch_20261124/ia_damned_a_zh.json、cent_g_zh.json。专名：Spinrobin 斯宾罗宾；Skale 斯凯尔；Miriam 米里亚姆；其他自定但一致，汇报末尾列专名表。自检后贴首2段与末1段。不要 commit/push/改其他文件。不要跑全球体检。",
+    "status": "completed",
+    "startedAt": 1795447203701,
+    "completedAt": 1795447481347,
+    "summary": "第 1/6 片完成：`_hc_a_paras.json`（139 段）→ `work_batch_20261124/hc_a_zh.json`（139 段）。",
+    "background": false,
+    "model": "ds-free/deepseek-v4.1-flash"
+  },
+  {
+    "id": "fg-mwtewos5-l3hx",
+    "agent": "worker",
+    "task": "翻译《人类的和声》第 2/6 片（接前片）。源文：work_batch_20261124/_hc_b_paras.json（140段）。输出：work_batch_20261124/hc_b_zh.json（140段）。体例：逐段对应；引号「」（嵌套『』）；不用⟦i⟧标记；段末标点（。！？…：—…）；星号行作「＊　＊　＊　＊　＊」。体例样板：ia_damned_a_zh.json。专名：斯宾罗宾、斯凯尔、米里亚姆（与前片一致）；其他自定但一致。自检后贴首2段与末1段。不要 commit/push/改其他文件。不要跑全球体检。",
+    "status": "completed",
+    "startedAt": 1795447203701,
+    "completedAt": 1795447492110,
+    "summary": "完成。`work_batch_20261124/hc_b_zh.json` 已写入，140 段逐段对应源文 140 段。",
+    "background": false,
+    "model": "ds-free/deepseek-v4.1-flash"
+  },
+  {
+    "id": "fg-mwtewos5-102f",
+    "agent": "worker",
+    "task": "翻译《人类的和声》第 3/6 片（接前片）。源文：work_batch_20261124/_hc_c_paras.json（131段，内含 3 处分节星号行）。输出：work_batch_20261124/hc_c_zh.json（131段）。体例：逐段对应；引号「」（嵌套『』）；不用⟦i⟧标记；段末标点（。！？…：—…）；星号行作「＊　＊　＊　＊　＊」。体例样板：ia_damned_a_zh.json。专名：斯宾罗宾、斯凯尔、米里亚姆；其他自定但一致。自检后贴首2段与末1段。不要 commit/push/改其他文件。不要跑全球体检。",
+    "status": "timeout",
+    "startedAt": 1795447203701,
+    "completedAt": 1795448403805,
+    "summary": "现在开始翻译：直接生成 `hc_c_zh.json`，共 131 段，逐段对应。",
+    "background": false,
+    "model": "ds-free/deepseek-v4.1-flash"
+  },
+  {
+    "id": "fg-mwtewos5-ecz3",
+    "agent": "worker",
+    "task": "翻译《人类的和声》第 4/6 片（接前片）。源文：work_batch_20261124/_hc_d_paras.json（114段）。输出：work_batch_20261124/hc_d_zh.json（114段）。体例：逐段对应；引号「」（嵌套『』）；不用⟦i⟧标记；段末标点（。！？…：—…）。体例样板：ia_damned_a_zh.json。专名：斯宾罗宾、斯凯尔、米里亚姆；其他自定但一致。自检后贴首2段与末1段。不要 commit/push/改其他文件。不要跑全球体检。",
+    "status": "completed",
+    "startedAt": 1795447203701,
+    "completedAt": 1795447577761,
+    "summary": "完成。`work_batch_20261124/hc_d_zh.json`（114 段，逐段对应，CRLF+单空格缩进与样板一致）。",
+    "background": false,
+    "model": "ds-free/deepseek-v4.1-flash"
+  },
+  {
+    "id": "fg-mwtewos6-bm5v",
+    "agent": "worker",
+    "task": "翻译《人类的和声》第 5/6 片（接前片）。源文：work_batch_20261124/_hc_e_paras.json（166段，含 1 处分节星号行）。输出：work_batch_20261124/hc_e_zh.json（166段）。体例：逐段对应；引号「」（嵌套『』）；不用⟦i⟧标记；段末标点（。！？…：—…）；星号行作「＊　＊　＊　＊　＊」。体例样板：ia_damned_a_zh.json。专名：斯宾罗宾、斯凯尔、米里亚姆；其他自定但一致。自检后贴首2段与末1段。不要 commit/push/改其他文件。不要跑全球体检。",
+    "status": "failed",
+    "startedAt": 1795447203702,
+    "completedAt": 1795447966206,
+    "summary": "All available models exhausted.",
+    "background": false
+  },
+  {
+    "id": "fg-mwtewos6-jdc4",
+    "agent": "worker",
+    "task": "翻译《人类的和声》第 6/6 片（末片，接前片）。源文：work_batch_20261124/_hc_f_paras.json（151段，含 1 处分节星号行。末段为全书结尾：“And Miriam, knowing the worship and protection in his delicate caress,” 之后正文即完）。输出：work_batch_20261124/hc_f_zh.json（151段）。体例：逐段对应；引号「」（嵌套『』）；不用⟦i⟧标记；段末标点（。！？…：—…）；星号行作「＊　＊　＊　＊　＊」。体例样板：ia_damned_a_zh.json。专名：斯宾罗宾、斯凯尔、米里亚姆；其他自定但一致。自检后贴首2段与末1段。不要 commit/push/改其他文件。不要跑全球体检。",
+    "status": "completed",
+    "startedAt": 1795447203702,
+    "completedAt": 1795447778075,
+    "summary": "我先查看源文件、体例样板，并检查项目状态。",
+    "background": false,
+    "model": "ds-free/deepseek-v4.1-flash"
+  },
+  {
+    "id": "fg-mwtewos6-xfu9",
+    "agent": "worker",
+    "task": "翻译布莱克伍德《吉姆博：一个奇想》Jimbo: A Fantasy（1909，长篇）第 1/5 片。源文：work_batch_20261124/_jb_a_paras.json（207段，逐段对应。注意：源片已剔去章号与章题行，正文中引号开头的段很多）。输出：work_batch_20261124/jb_a_zh.json（207段）。背景：小男孩吉姆博在一次意外中跌入“空屋”——死后灵魂的中间地带，只有他的恐惧与想象为他造出同伴。体例：逐段对应；引号「」（嵌套『』）；不用⟦i⟧标记；段末标点（。！？…：—…）。体例样板：ia_damned_a_zh.json、cent_g_zh.json。专名：Jimbo 吉姆博；Miss Lake 莱克小姐；其他自定但一致，汇报末尾列专名表。自检后贴首2段与末1段。不要 commit/push/改其他文件。不要跑全球体检。",
+    "status": "completed",
+    "startedAt": 1795447203702,
+    "completedAt": 1795447940015,
+    "summary": "译稿已完成。`work_batch_20261124/jb_a_zh.json`，207 段，与源文逐段对应（共 16,083 字）。",
+    "background": false,
+    "model": "ds-free/deepseek-v4.1-flash"
+  },
+  {
+    "id": "fg-mwtewos6-wnws",
+    "agent": "worker",
+    "task": "翻译《吉姆博》第 2/5 片（接前片）。源文：work_batch_20261124/_jb_b_paras.json（225段）。输出：work_batch_20261124/jb_b_zh.json（225段）。体例：逐段对应；引号「」（嵌套『』）；不用⟦i⟧标记；段末标点（。！？…：—…）。体例样板：ia_damned_a_zh.json。专名：吉姆博、莱克小姐（与前片一致）；其他自定但一致。自检后贴首2段与末1段。不要 commit/push/改其他文件。不要跑全球体检。",
+    "status": "completed",
+    "startedAt": 1795447203702,
+    "completedAt": 1795448140795,
+    "summary": "已完成《吉姆博》第 2/5 片翻译。",
+    "background": false,
+    "model": "ds-free/deepseek-v4.1-flash"
+  },
+  {
+    "id": "fg-mwtfn9xm-fu95",
+    "agent": "worker",
+    "task": "翻译阿尔杰农·布莱克伍德《人类的和声》第 5/6 片。源文：work_batch_20261124/_hc_e_paras.json（166段，含 1 处分节星号行，落于段 78）。输出：work_batch_20261124/hc_e_zh.json（166段）。背景：斯凯尔教导斯宾罗宾与米里亚姆组成四音和弦，逐步接近那“伟大的真名”；宅中开始出现异状。体例：逐段对应；引号「」（嵌套『』）；不用⟦i⟧标记；段末标点（。！？…：—…）；星号行作「＊　＊　＊　＊　＊」。体例样板：work_batch_20261124/hc_d_zh.json（专名必须一致：斯宾罗宾、斯凯尔、米里亚姆、莫尔太太、Winky 眨眨、真名、泛音、和弦）。自检（段数、外文、标点、无工具调用残留）后贴首2段与末1段。不要 commit/push/改其他文件。不要跑全球体检。",
+    "status": "completed",
+    "startedAt": 1795448444170,
+    "completedAt": 1795448660480,
+    "summary": "完成。`work_batch_20261124/hc_e_zh.json` 已生成（166 段）。",
+    "background": false,
+    "model": "ds-free/deepseek-v4.1-flash"
+  },
+  {
+    "id": "fg-mwtfn9xm-thci",
+    "agent": "worker",
+    "task": "翻译《人类的和声》第 6/6 片（末片）。源文：work_batch_20261124/_hc_f_paras.json（151段，含 1 处分节星号行落于段 14；末段即全书结尾）。输出：work_batch_20261124/hc_f_zh.json（151段）。背景：四音和弦终成，宇宙的名字被念出，宅中一切形体开始消解，斯宾罗宾与米里亚姆在毁灭中相拥。体例：逐段对应；引号「」（嵌套『』）；不用⟦i⟧标记；段末标点（。！？…：—…）；星号行作「＊　＊　＊　＊　＊」。体例样板：hc_d_zh.json（专名一致：斯宾罗宾、斯凯尔、米里亚姆、莫尔太太）。自检后贴首2段与末1段。不要 commit/push/改其他文件。不要跑全球体检。",
+    "status": "completed",
+    "startedAt": 1795448444170,
+    "completedAt": 1795448688441,
+    "summary": "已完成《人类的和声》第 6/6 片（末片）翻译。",
+    "background": false,
+    "model": "ds-free/deepseek-v4.1-flash"
+  },
+  {
+    "id": "fg-mwtfn9xn-dr8d",
+    "agent": "worker",
+    "task": "翻译《吉姆博》第 3/5 片（接前片）。源文：work_batch_20261124/_jb_c_paras.json（241段）。输出：work_batch_20261124/jb_c_zh.json（241段）。背景：吉姆博被困在空屋里，在古老记忆的长廊与恐惧造出的“住客”之间摸索出路。体例：逐段对应；引号「」（嵌套『』）；不用⟦i⟧标记；段末标点（。！？…：—…）；星号行作「＊　＊　＊　＊　＊」。体例样板：work_batch_20261124/jb_b_zh.json（专名必须一致：吉姆博、莱克小姐、空屋、住客、「恐怖」、詹姆斯·斯通）。自检后贴首2段与末1段。不要 commit/push/改其他文件。不要跑全球体检。",
+    "status": "completed",
+    "startedAt": 1795448444171,
+    "completedAt": 1795448853131,
+    "summary": "已翻译完成第 3/5 片，结果交付在 `work_batch_20261124/jb_c_zh.json`（241 段，段数与源文件 `_jb_c_paras.json` 逐段对应，文件为 UTF-8、格式与 `jb_b_zh.json` 一致）。",
+    "background": false,
+    "model": "ds-free/deepseek-v4.1-flash"
+  },
+  {
+    "id": "fg-mwtfn9xn-fgkp",
+    "agent": "worker",
+    "task": "翻译《吉姆博》第 4/5 片（接前片）。源文：work_batch_20261124/_jb_d_paras.json（184段）。输出：work_batch_20261124/jb_d_zh.json（184段）。背景：逃出空屋、第一次飞行。体例：逐段对应；引号「」（嵌套『』）；不用⟦i⟧标记；段末标点（。！？…：—…）；星号行作「＊　＊　＊　＊　＊」。体例样板：jb_b_zh.json（专名一致：吉姆博、莱克小姐、空屋、住客）。自检后贴首2段与末1段。不要 commit/push/改其他文件。不要跑全球体检。",
+    "status": "completed",
+    "startedAt": 1795448444171,
+    "completedAt": 1795448649994,
+    "summary": "完成。",
+    "background": false,
+    "model": "ds-free/deepseek-v4.1-flash"
+  },
+  {
+    "id": "fg-mwtfn9xn-nbti",
+    "agent": "worker",
+    "task": "翻译《吉姆博》第 5/5 片（末片）。源文：work_batch_20261124/_jb_e_paras.json（165段）。输出：work_batch_20261124/jb_e_zh.json（165段）。背景：四风之行、身体的召唤、回家。体例：逐段对应；引号「」（嵌套『』）；不用⟦i⟧标记；段末标点（。！？…：—…）；星号行作「＊　＊　＊　＊　＊」。体例样板：jb_b_zh.json（专名一致：吉姆博、莱克小姐、空屋、住客）。自检后贴首2段与末1段。不要 commit/push/改其他文件。不要跑全球体检。",
+    "status": "completed",
+    "startedAt": 1795448444171,
+    "completedAt": 1795448893230,
+    "summary": "第 5/5 片（末片）已完成。",
+    "background": false,
+    "model": "ds-free/deepseek-v4.1-flash"
   }
 ]
