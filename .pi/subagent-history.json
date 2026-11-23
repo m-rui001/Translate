@@ -386,5 +386,38 @@
     "summary": "自检通过（唯一的例外：valdemar[8] 是信末署名「瓦尔德马」，按签名惯例不加句读；island[0] 为拉丁铭文段，依体例豁免）。两文件均为合法 JSON、逐段与源文一一对应、无拉丁字母残留、无半角引号。",
     "background": false,
     "model": "yanhuo888/glm-5.3-flash"
+  },
+  {
+    "id": "fg-mwt6qfvj-5a4c",
+    "agent": "worker",
+    "task": "翻译爱伦·坡两篇：《贝蕾妮丝》（Berenice, 1835）与《埃莱奥诺拉》（Eleonora, 1842）。\n\n源文（work_batch_20261124/）：\n- `_berenice_paras.json`（26项，[0]篇名，正文[1..25]共25段；**第[1]段是拉丁铭文**「Dicebant mihi sodales...」——照 island_zh.json 的处理：译出并可含拉丁）\n- `_eleonora_paras.json`（19项，[0]篇名，正文[1..18]共18段；**第[1]段也是拉丁铭文**「Sub conservatione formae specificae salva anima.」同上处理）\n\n输出：\n- `work_batch_20261124/berenice_zh.json`（25段）\n- `work_batch_20261124/eleonora_zh.json`（18段）\n\n体例：逐段对应；引号「」（嵌套『』）；不用⟦i⟧标记；段末标点（。！？…\"：—…）；\n专名：Berenice 贝蕾妮丝、Egaeus 埃勾斯、Eleonora 埃莱奥诺拉、Ermengarde 埃尔门加德、\nValdemar 不出现；埃及意象按通行译名。\n\n自检（段数、拉丁残留除铭文段、标点除铭文段）后贴结果。不要 commit/push/改其他文件。不要跑全局体检。",
+    "status": "completed",
+    "startedAt": 1795433475295,
+    "completedAt": 1795433612383,
+    "summary": "两篇已完成并通过自检。自检结果：",
+    "background": false,
+    "model": "yanhuo888/glm-5.3-flash"
+  },
+  {
+    "id": "fg-mwt6v6ry-lsr1",
+    "agent": "worker",
+    "task": "翻译爱伦·坡《活埋》（The Premature Burial, 1844）。\n\n源文：work_batch_20261124/_premature_paras.json（47项，[0]篇名，正文[1..46]共46段）。\n输出：work_batch_20261124/premature_zh.json（46段，**不含篇名**）。\n\n体例：逐段对应；引号「」（嵌套『』）；不用⟦i⟧标记；段末标点（。！？…\"：—…）；\n专名：Buried Alive 活埋；Bowen 先生；文章中提到的诸多轶事人名（如 律师、副主教）照通译处理。\n\n自检（段数、拉丁残留、标点）后贴前3段与末1段。不要 commit/push/改其他文件。不要跑全局体检。",
+    "status": "completed",
+    "startedAt": 1795433696782,
+    "completedAt": 1795433787108,
+    "summary": "完成。已写入 `work_batch_20261124/premature_zh.json`（仅此一文件，未 commit/push）。",
+    "background": false,
+    "model": "yanhuo888/glm-5.3-flash"
+  },
+  {
+    "id": "fg-mwt6xhlz-m2b6",
+    "agent": "worker",
+    "task": "翻译爱伦·坡《失窃的信》（The Purloined Letter, 1844）。\n\n源文：work_batch_20261124/_purloined_paras.json（125项，[0]篇名，正文[1..124]共124段；**第[1]段是拉丁铭文**「Nil sapientiae odiosius acumine nimio.」——译出并附出处，可含拉丁，照 island_zh.json 体例）。\n\n输出：work_batch_20261124/purloined_zh.json（124段，不含篇名）。\n\n体例：逐段对应；引号「」（嵌套『』）；不用⟦i⟧标记；段末标点（。！？…\"：—…），铭文段除外。\n专名（通行译名）：C. Auguste Dupin→奥古斯特·杜平；G—（警察总长）→G部长或「G——」；Prefect of Police→巴黎警察总长；Minister D—→D大臣；Aristide→阿里斯蒂德；abbé→神甫。\n\n这是长文（7098词），分段落批次写，注意别丢段。自检（段数、拉丁残留除铭文段、标点除铭文段）后贴首3段与末2段。不要 commit/push/改其他文件。不要跑全局体检。",
+    "status": "completed",
+    "startedAt": 1795433804135,
+    "completedAt": 1795434153803,
+    "summary": "三处引号不闭合均为「跨段延续引语」（吝啬鬼轶事横跨两段、末段破折号引语跨到收束段），与源文结构一致，属体例内正常情况。自检通过。",
+    "background": false,
+    "model": "yanhuo888/glm-5.3-flash"
   }
 ]
