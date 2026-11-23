@@ -1692,3 +1692,30 @@ git -c http.proxy=http://127.0.0.1:7897 -c https.proxy=http://127.0.0.1:7897 \
 ```
 
 一次成功。旧的直连重试循环仍可作后备。
+
+## 2026-11-24 新书流水线（pipeline_batch_20261124/）六本坡集 + 三本比尔斯集
+
+直连 github 失败走 `git -c http.proxy=http://127.0.0.1:7897 -c https.proxy=http://127.0.0.1:7897 push origin HEAD:main`。
+gutenberg.org 维护期间用 GITenberg 镜像：`https://raw.githubusercontent.com/GITenberg/<Name>_<id>/master/<id>.txt`。
+
+**已译**（全部三绿）：
+- 黄色墙纸 266段/8,486字；枭河桥事件 39/5,363（单篇本）
+- 坡集五册（PG #2148 全卷 21 篇）：黑猫五则 22,683字、乖僻之魔四则 18,621、失窃的信四则 26,559、
+  一千零二夜四则 26,586、威廉·威尔逊三则 28,796 —— build_poe.py / poe2 / poe3 / poe4 / poe5
+- 比尔斯集三册（PG #13334）：奇卡莫加四则 18,107、死人监视者七则 30,942、窗户上的眼五则 23,971
+  —— build_bierce.py / bierce2 / bierce3
+
+**工作方式**：主线程切源文（按篇名行号，注意标题行有大写变体如 MAELSTROeM、LANDOR'S 会漏），
+dispatch 并行子代理逐篇翻译（子代理自检段数/外文/标点），主线程重建、修豁免段、
+build_NN.py 里写明各篇源区间并逐篇断言段数。
+
+**已知坑**（子代理的典型错误）：
+1. 把篇名行也写进译文文件（需要在任务里强调「不含篇名」）；
+2. 直引号 " 代替「」（需要转「」，嵌套转『』，收尾时全文件扫一遍）；
+3. 汉字间多余空格（typo_check 会抓）；
+4. 专名错译（Halcyon 太平鸟→翡翠鸟）；
+5. 引语跨段时故意不闭合是**体例**，不要补平衡；
+6. 作弊牌具 arrondees/Honour 这类法语词意译掉，否则 clean_check 报拉丁残留。
+
+**尚未译的源文**（已切好或可直接切）：PG #2148 无余篇；比尔斯 #13334 无余篇（In the Midst of Life 全卷已完）。
+其他候选：GITenberg 里 Dunsany《五十一则故事》其余 44 篇、Gilman《Herland》、Bierce vol 3/4/5 等。
