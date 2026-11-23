@@ -1921,3 +1921,21 @@ bovary 代理删了 38 处=白丢斜体（文本无损，无法回滚，work_pub
 源 129/131 为追忆的歌词残句（源无引号），译文亦不加引号。
 未 commit/push、未跑全库体检。临时生成脚本用完已删（_gen_jb_e_p1..p4.py、_jbe_p1..p4.json）。
 仍待补：`jb_c_zh.json`（第 3 片）不存在，装配前须补。
+
+## 2026-11-24 布莱克伍德《日与夜的故事》第 3/8 片
+
+`work_batch_20261124/_dn_c_paras.json`(140) → `dn_c_zh.json`(140)，逐段对应、
+段末标点齐（103/115/127 源以冒号收，按体例保留「：」）、无⟦i⟧、无 ASCII 引号、
+无残留英文、无「。。」。源 138 为 `*       *       *       *       *` → `＊　＊　＊　＊　＊`。
+源 59 为三行诗（Astarte 咏），按源行数保换行（JSON 内 `\n`；生成脚本里必须用
+`chr(10)` 拼接——直接写字面换行会报 unterminated string）。体例照 `ia_damned_a_zh.json`。
+
+**本片跨两篇**：0–2 是《荷鲁斯之翼》收尾（舞会/坠崖），3–139 是《入门》(Initiation) 全篇
+（外叔祖吉姆讲述，美国汇兑商）。
+专名定案（后续 dn 各片沿用）：基尔科夫（Khilkoff）/薇拉（Vera）/明斯基男爵（Baron Minski）/
+普利青格医生（Dr. Plitzinger）/比诺维奇（Binovitch）/「鹰」(the Hawk)/皮埃罗/堂吉诃德/
+荷鲁斯面具/莫卡坦丘陵/阿瑟（Arthur）/吉姆叔叔（Uncle Jim）/马拉海德（Malahide，学者祖先）/
+贝利奥尔（Baliol）/日光兰（asphodel）/阿施塔特（Astarte）/赫卡忒/厄瑞玻斯/雅典娜/
+普洛克涅与菲洛墨拉/忒柔斯与伊提斯/塔纳托斯与许普诺斯/塞勒涅/俄里翁/阿尔忒弥斯/伊达山/
+道利斯/刻菲索斯谷/「无人之境」(No Man's Land)/《诸神传》(Lives of the Gods)/《入门》(Initiation)。
+未 commit/push、未跑全库体检。临时生成脚本用完已删。

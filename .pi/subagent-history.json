@@ -1611,5 +1611,148 @@
     "summary": "已完成。`work_batch_20261124/eh_wood_zh.json`，共 91 段，逐段对应源文 91 段。",
     "background": false,
     "model": "ds-free/deepseek-v4.1-flash"
+  },
+  {
+    "id": "fg-mwtgtusw-n4kd",
+    "agent": "worker",
+    "task": "翻译阿尔杰农·布莱克伍德《日与夜的故事》（Day and Night Stories, 1917）第 1/8 片。源文：work_batch_20261124/_dn_a_paras.json（123段，已剔去章号与章题行）。输出：work_batch_20261124/dn_a_zh.json（123段）。背景：这是布莱克伍德十五篇短篇集的连续切片；本片包含开篇《幽会》The Tryst 与前一篇的部分。体例：逐段对应；引号「」（嵌套『』）；不用⟦i⟧标记；段末标点（。！？…：—…）；分节星号行作「＊　＊　＊　＊　＊」。体例样板：work_batch_20261124/ia_damned_a_zh.json、eh_empty_zh.json。专名自定但全文一致，汇报末尾列专名表。自检（段数、外文、标点、无工具调用残留）后贴首2段与末1段。不要 commit/push/改其他文件。不要跑全球体检。",
+    "status": "completed",
+    "startedAt": 1795450430768,
+    "completedAt": 1795450690710,
+    "summary": "已完成第 1/8 片翻译。",
+    "background": false,
+    "model": "ds-free/deepseek-v4.1-flash"
+  },
+  {
+    "id": "fg-mwtgtusx-50rr",
+    "agent": "worker",
+    "task": "翻译《日与夜的故事》第 2/8 片（接前片）。源文：work_batch_20261124/_dn_b_paras.json（169段）。输出：work_batch_20261124/dn_b_zh.json（169段）。体例：逐段对应；引号「」（嵌套『』）；不用⟦i⟧标记；段末标点（。！？…：—…）；分节星号行作「＊　＊　＊　＊　＊」。体例样板：ia_damned_a_zh.json。专名自定但一致。自检后贴首2段与末1段。不要 commit/push/改其他文件。不要跑全球体检。",
+    "status": "completed",
+    "startedAt": 1795450430769,
+    "completedAt": 1795450768879,
+    "summary": "已完成 `work_batch_20261124/dn_b_zh.json`（169 段，17,604 字，CRLF、indent=1，与样板的编码风格一致）。",
+    "background": false,
+    "model": "ds-free/deepseek-v4.1-flash"
+  },
+  {
+    "id": "fg-mwtgtusx-mlmg",
+    "agent": "worker",
+    "task": "翻译《日与夜的故事》第 3/8 片（接前片）。源文：work_batch_20261124/_dn_c_paras.json（140段）。输出：work_batch_20261124/dn_c_zh.json（140段）。体例：逐段对应；引号「」（嵌套『』）；不用⟦i⟧标记；段末标点（。！？…：—…）；分节星号行作「＊　＊　＊　＊　＊」。体例样板：ia_damned_a_zh.json。专名自定但一致。自检后贴首2段与末1段。不要 commit/push/改其他文件。不要跑全球体检。",
+    "status": "completed",
+    "startedAt": 1795450430769,
+    "completedAt": 1795450734949,
+    "summary": "已完成第 3/8 片：`work_batch_20261124/_dn_c_paras.json`(140) → `dn_c_zh.json`(140)，逐段一一对应。",
+    "background": false,
+    "model": "ds-free/deepseek-v4.1-flash"
+  },
+  {
+    "id": "fg-mwtgtusx-kawb",
+    "agent": "worker",
+    "task": "翻译《日与夜的故事》第 4/8 片（接前片）。源文：work_batch_20261124/_dn_d_paras.json（102段）。输出：work_batch_20261124/dn_d_zh.json（102段）。体例：逐段对应；引号「」（嵌套『』）；不用⟦i⟧标记；段末标点（。！？…：—…）；分节星号行作「＊　＊　＊　＊　＊」。体例样板：ia_damned_a_zh.json。专名自定但一致。自检后贴首2段与末1段。不要 commit/push/改其他文件。不要跑全球体检。",
+    "status": "completed",
+    "startedAt": 1795450430769,
+    "completedAt": 1795450794701,
+    "summary": "已完成第 4/8 片翻译。",
+    "background": false,
+    "model": "ds-free/deepseek-v4.1-flash"
+  },
+  {
+    "id": "fg-mwtgtusx-bkar",
+    "agent": "worker",
+    "task": "翻译《日与夜的故事》第 5/8 片（接前片）。源文：work_batch_20261124/_dn_e_paras.json（114段）。输出：work_batch_20261124/dn_e_zh.json（114段）。体例：逐段对应；引号「」（嵌套『』）；不用⟦i⟧标记；段末标点（。！？…：—…）；分节星号行作「＊　＊　＊　＊　＊」。体例样板：ia_damned_a_zh.json。专名自定但一致。自检后贴首2段与末1段。不要 commit/push/改其他文件。不要跑全球体检。",
+    "status": "completed",
+    "startedAt": 1795450430769,
+    "completedAt": 1795450867560,
+    "summary": "我会先看一下工作目录结构和相关文件。",
+    "background": false,
+    "model": "ds-free/deepseek-v4.1-flash"
+  },
+  {
+    "id": "fg-mwtgtusy-9t91",
+    "agent": "worker",
+    "task": "翻译《日与夜的故事》第 6/8 片（接前片）。源文：work_batch_20261124/_dn_f_paras.json（104段）。输出：work_batch_20261124/dn_f_zh.json（104段）。体例：逐段对应；引号「」（嵌套『』）；不用⟦i⟧标记；段末标点（。！？…：—…）；分节星号行作「＊　＊　＊　＊　＊」。体例样板：ia_damned_a_zh.json。专名自定但一致。自检后贴首2段与末1段。不要 commit/push/改其他文件。不要跑全球体检。",
+    "status": "completed",
+    "startedAt": 1795450430770,
+    "completedAt": 1795451097349,
+    "summary": "已完成第 6/8 片（dn_f）翻译。",
+    "background": false,
+    "model": "ds-free/deepseek-v4.1-flash"
+  },
+  {
+    "id": "fg-mwtgtusy-jw8m",
+    "agent": "worker",
+    "task": "翻译《日与夜的故事》第 7/8 片（接前片）。源文：work_batch_20261124/_dn_g_paras.json（160段）。输出：work_batch_20261124/dn_g_zh.json（160段）。体例：逐段对应；引号「」（嵌套『』）；不用⟦i⟧标记；段末标点（。！？…：—…）；分节星号行作「＊　＊　＊　＊　＊」。体例样板：ia_damned_a_zh.json。专名自定但一致。自检后贴首2段与末1段。不要 commit/push/改其他文件。不要跑全球体检。",
+    "status": "completed",
+    "startedAt": 1795450430770,
+    "completedAt": 1795451179139,
+    "summary": "第 7/8 片译完：`work_batch_20261124/dn_g_zh.json`（160 段，1:1 对应 `_dn_g_paras.json`，16,990 字）。",
+    "background": false,
+    "model": "ds-free/deepseek-v4.1-flash"
+  },
+  {
+    "id": "fg-mwtgtusy-5qvh",
+    "agent": "worker",
+    "task": "翻译《日与夜的故事》第 8/8 片（末片，接前片）。源文：work_batch_20261124/_dn_h_paras.json（77段，末篇《传统》The Tradition）。输出：work_batch_20261124/dn_h_zh.json（77段）。体例：逐段对应；引号「」（嵌套『』）；不用⟦i⟧标记；段末标点（。！？…：—…）；分节星号行作「＊　＊　＊　＊　＊」。体例样板：ia_damned_a_zh.json。专名自定但一致。自检后贴首2段与末1段。不要 commit/push/改其他文件。不要跑全球体检。",
+    "status": "completed",
+    "startedAt": 1795450430770,
+    "completedAt": 1795450955456,
+    "summary": "第 8/8 片已完成：`work_batch_20261124/dn_h_zh.json`，共 77 段，与源文 `_dn_h_paras.json` 段段对应（`assert len` 校验通过）。",
+    "background": false,
+    "model": "ds-free/deepseek-v4.1-flash"
+  },
+  {
+    "id": "fg-mwtha7ga-h84j",
+    "agent": "worker",
+    "task": "翻译布莱克伍德《日与夜的故事》（Day and Night Stories, 1917）第 5/8 片。源文：work_batch_20261124/_dn_e_paras.json（114段，已剔去章号与章题行）。输出：work_batch_20261124/dn_e_zh.json（114段，逐段对应）。背景：本篇集十五个短篇的连续切片；本片接《浪》《另一翼》之后，含《房中的占有者》The Occupant of the Room 等。体例：逐段对应；引号「」（嵌套『』）；不用⟦i⟧标记；段末标点（。！？…：—…）；分节星号行作「＊　＊　＊　＊　＊」。体例样板：work_batch_20261124/dn_d_zh.json、dn_f_zh.json（专名如「蒂姆」「里弗斯」「赫卢安」「德莱恩」「塞伦斯」「米利根」「拉森」若出现，须与这两片一致）。自检（段数、外文、标点、无工具调用残留、无空格夹汉字）后贴首2段与末1段。不要 commit/push/改其他文件。不要跑全球体检。",
+    "status": "completed",
+    "startedAt": 1795451193658,
+    "completedAt": 1795451360458,
+    "summary": "我先查看输入文件和体例样板。",
+    "background": false,
+    "model": "ds-free/deepseek-v4.1-flash"
+  },
+  {
+    "id": "fg-mwthe4cw-r7pu",
+    "agent": "worker",
+    "task": "任务：把英文短篇片段译成中文，写入一个 JSON 文件。\n\n第一步（必须做）：读 E:/Translate/work_batch_20261124/_dn_e_paras.json。这是一个 JSON 数组，共 114 个英文字符串，每个字符串是一个自然段。\n\n第二步：写出 E:/Translate/work_batch_20261124/dn_e_zh.json，也是一个 JSON 数组，恰好 114 个中文字符串，逐段一一对应（第 n 个中文段就是第 n 个英文段的译文）。用 Python 写文件：json.dump(list, open(path,'w',encoding='utf-8'), ensure_ascii=False, indent=1)。\n\n体例要求：\n- 引号用「」，引语里再套引语用『』；不要用 ASCII 双引号。\n- 不要插入 ⟦i⟧ 之类的标记。\n- 每段末字必须是 。！？…：— 之一，或以 」 收尾。\n- 独立的 `*       *       *       *       *` 分节行译作 `＊　＊　＊　＊　＊`。\n- 专名先读 E:/Translate/work_batch_20261124/dn_d_zh.json 和 dn_f_zh.json 里的既有译法（蒂姆、里弗斯、赫卢安、德莱恩、塞伦斯、米利根、拉森 等），若本片出现同名人物，必须沿用。\n\n第三步：自检并报告：段数是否 114/114；有无拉丁字母残留；有无段末标点失守；有无汉字之间多余空格。贴出译文首 2 段与末 1 段。\n\n只写这一个文件，不要 commit/push，不要跑全局检查，不要改其他任何文件。",
+    "status": "completed",
+    "startedAt": 1795451376272,
+    "completedAt": 1795451549251,
+    "summary": "我先读取源文件和已有的译文文件。",
+    "background": false,
+    "model": "ds-free/deepseek-v4.1-flash"
+  },
+  {
+    "id": "fg-mwthhy96-fsto",
+    "agent": "general-purpose",
+    "task": "任务：把英文短篇片段译成中文，写入一个 JSON 文件。\n\n第一步（必须做）：读 E:/Translate/work_batch_20261124/_dn_e_paras.json。这是一个 JSON 数组，共 114 个英文字符串，每个字符串是一个自然段（Blackwood《Day and Night Stories》的一批短篇连续切片）。\n\n第二步：写出 E:/Translate/work_batch_20261124/dn_e_zh.json，也是一个 JSON 数组，恰好 114 个中文字符串，逐段一一对应。用 Python 落盘：json.dump(list, open(path,'w',encoding='utf-8'), ensure_ascii=False, indent=1)。\n\n体例要求：\n- 引号用「」，引语里再套引语用『』；不要用 ASCII 双引号。\n- 不要插入 ⟦i⟧ 之类标记。\n- 每段末字必须是 。！？…：— 之一，或以 」 收尾。\n- 独立的 `*       *       *       *       *` 分节行译作 `＊　＊　＊　＊　＊`。\n- 专名先读 E:/Translate/work_batch_20261124/dn_d_zh.json 与 dn_f_zh.json 的既有译法（蒂姆、里弗斯、赫卢安、德莱恩、塞伦斯、米利根、拉森 等），本片若出现同名人物必须沿用。\n\n第三步：自检并报告：段数是否 114/114、有无拉丁字母残留、有无段末标点失守、有无汉字之间多余空格；贴译文首 2 段与末 1 段。\n\n只写这一个文件。不要 commit/push，不要跑全局检查，不要改其他文件。",
+    "status": "completed",
+    "startedAt": 1795451554986,
+    "completedAt": 1795451727056,
+    "summary": "我先读取源文件和术语参考。",
+    "background": false,
+    "model": "ds-free/deepseek-v4.1-flash"
+  },
+  {
+    "id": "fg-mwthlvvf-ep8w",
+    "agent": "worker",
+    "task": "只做一件事，做完立刻报告：用 bash 运行 python -X utf8 -c \"import json;d=json.load(open('work_batch_20261124/_dn_e_paras.json',encoding='utf-8'));print(len(d));print(d[0][:200])\"，把输出原样贴回来。不要读其他文件，不要写任何文件。",
+    "status": "completed",
+    "startedAt": 1795451738523,
+    "completedAt": 1795451749678,
+    "summary": "命令已执行，输出原样如下：",
+    "background": false,
+    "model": "ds-free/deepseek-v4.1-flash"
+  },
+  {
+    "id": "fg-mwthmeaf-6iii",
+    "agent": "worker",
+    "task": "翻译 114 段英文成中文，分三批落盘再合并，避免一次输出过长。\n\n源：work_batch_20261124/_dn_e_paras.json（114 段，布莱克伍德《日与夜的故事》连续切片）。\n产物：work_batch_20261124/dn_e_zh.json（114 段，逐段对应）。\n\n做法：先读源文件；把 0–37 段译好写入 dn_e_p1.json，38–75 段写 dn_e_p2.json，76–113 段写 dn_e_p3.json（都是 JSON 数组，ensure_ascii=False, indent=1）；最后用 Python 把三份拼成 dn_e_zh.json，并 assert 总长 114、无空段。\n\n体例：引号「」、嵌套『』；无 ⟦i⟧；段末标点 。！？…：— 或以 」 收；独立星号行作「＊　＊　＊　＊　＊」；专名沿用 work_batch_20261124/dn_d_zh.json 与 dn_f_zh.json（蒂姆、里弗斯、赫卢安、德莱恩、塞伦斯、米利根、拉森）。\n\n最后报告：段数、有无拉丁残留/标点失守/汉字夹空格，贴首 2 段与末 1 段。不要 commit/push，不要跑全局体检，不要改其他文件。",
+    "status": "completed",
+    "startedAt": 1795451762391,
+    "completedAt": 1795452095256,
+    "summary": "三批都写好了，也已合并。",
+    "background": false,
+    "model": "ds-free/deepseek-v4.1-flash"
   }
 ]
