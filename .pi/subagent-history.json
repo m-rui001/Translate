@@ -760,5 +760,136 @@
     "summary": "自检通过：五文件 JSON 合法，段数 18/8/6/12/17 与要求一致（均较源文少一项即篇名行）；无 ⟦i⟧ 标记、无残留英文正文（仅尾注中的文件名 8395.txt/8395.zip 与 Gutenberg URL 按原文保留）。",
     "background": false,
     "model": "yanhuo888/glm-5.3-flash"
+  },
+  {
+    "id": "fg-mwtb4f0f-2k5l",
+    "agent": "worker",
+    "task": "翻译阿尔杰农·布莱克伍德《约翰·塞伦斯医生奇案》第一案《灵异入侵》A Psychical Invasion 第一部分。源文：work_batch_20261124/_js_invasion_a_paras.json（229段，[0]=CASE I，[1]=篇名，均不译不输出，正文[2..228]）。输出：work_batch_20261124/js_inv_a_zh.json（227段）。背景：约翰·塞伦斯医生是通晓灵学的心灵侦探，本案件中他调查诗人卡苏莱尔（Casual）因服用帕斯卡尔-阿布加速效灵药而引来的灵体入侵。体例：逐段对应；引号「」（嵌套『』）；不用⟦i⟧标记；段末标点（。！？…：—…）。体例样板：work_batch_20261124/dt_yann_zh.json、bierce_ck_zh.json。专名：Dr. John Silence 约翰·塞伦斯医生；Casual 卡苏莱尔；Hubbard 哈伯德；Mrs. Sivendel 西文德尔太太；其他自定但全文一致，并在汇报末尾列出专名表（原文→译名），以便主线程跨片统一。自检后贴首2段与末1段。不要 commit/push/改其他文件。不要跑全球体检。",
+    "status": "completed",
+    "startedAt": 1795440845823,
+    "completedAt": 1795441032905,
+    "summary": "翻译完成，自检通过。",
+    "background": false,
+    "model": "yanhuo888/glm-5.3-flash"
+  },
+  {
+    "id": "fg-mwtb4f0g-y9dm",
+    "agent": "worker",
+    "task": "翻译布莱克伍德《约翰·塞伦斯医生奇案》第一案第二、三部分（同一案的后两个小节，与前片相接）。源文：work_batch_20261124/_js_invasion_b_paras.json（113段，[0]是小节号 II，不译不输出）与 _js_invasion_c_paras.json（23段，[0]=III 同样不输出）。输出：work_batch_20261124/js_inv_b_zh.json（112段）、js_inv_c_zh.json（22段）。背景：接前片，卡苏莱尔的屋子夜里闹鬼升级，塞伦斯医生坐镇驱灵。体例：逐段对应；引号「」（嵌套『』）；不用⟦i⟧标记；段末标点（。！？…：—…）。体例样板：work_batch_20261124/dt_yann_zh.json、bierce_ck_zh.json。专名：Dr. John Silence 约翰·塞伦斯医生；Casual 卡苏莱尔；Hubbard 哈伯德；Mrs. Sivendel 西文德尔太太；其他自定但一致，汇报末尾列专名表。自检后贴每文件首2段。不要 commit/push/改其他文件。不要跑全球体检。",
+    "status": "completed",
+    "startedAt": 1795440845824,
+    "completedAt": 1795440984697,
+    "summary": "翻译完成，自检通过（段数 112/22、逐段对应、段末标点、引号「」体例、无 ⟦i⟧ 标记），未 commit、未动其他文件、未跑全球体检。",
+    "background": false,
+    "model": "yanhuo888/glm-5.3-flash"
+  },
+  {
+    "id": "fg-mwtb4f0g-roct",
+    "agent": "worker",
+    "task": "翻译布莱克伍德《约翰·塞伦斯医生奇案》第二案《古老巫术》Ancient Sorceries 第一、二节。源文：work_batch_20261124/_js_sorceries_a_paras.json（59段，[0]=篇名不输出，[1]=小节号 I 不输出，正文[2..58]）、_js_sorceries_b_paras.json（43段，[0]=II 不输出，正文[1..42]）。输出：work_batch_20261124/js_sor_ab_zh.json（57段+42段，即两个文件：js_sor_a_zh.json 57段、js_sor_b_zh.json 42段）。背景：游客维济尼（Vezzini）滞留死气沉沉的法国小镇，镇上 cat 女巫与古老巫术。体例：逐段对应；引号「」（嵌套『』）；不用⟦i⟧标记；段末标点（。！？…：—…）。体例样板：work_batch_20261124/dt_yann_zh.json。专名：Dr. John Silence 约翰·塞伦斯医生；Vezzini 维济尼；Miss Medaw 梅多小姐；其他自定但一致，汇报末尾列专名表。自检后贴每文件首2段。不要 commit/push/改其他文件。不要跑全球体检。",
+    "status": "completed",
+    "startedAt": 1795440845824,
+    "completedAt": 1795440966416,
+    "summary": "自检通过：两文件 JSON 合法、段数 57/42、逐段对应、段末标点合规（A 文件 48/49/52 为源文跨段的连续引语，保持开引号不闭合，忠实原文；B 文件 idx17 为分节号 III）。未 commit/push，未改动其他文件，未跑全球体检。",
+    "background": false,
+    "model": "yanhuo888/glm-5.3-flash"
+  },
+  {
+    "id": "fg-mwtb4f0g-azk9",
+    "agent": "worker",
+    "task": "翻译布莱克伍德《约翰·塞伦斯医生奇案》第二案第三至六节（接前片）。源文：work_batch_20261124/_js_sorceries_c_paras.json（123段，[0]=IV 不输出）、_js_sorceries_d_paras.json（41段，[0]=VI 不输出）。输出：work_batch_20261124/js_sor_c_zh.json（122段）、js_sor_d_zh.json（40段）。背景：接前片，维济尼在镇上越陷越深，最终夜逃。体例：逐段对应；引号「」（嵌套『』）；不用⟦i⟧标记；段末标点（。！？…：—…）。体例样板：work_batch_20261124/dt_yann_zh.json。专名：与前片一致：塞伦斯、维济尼、梅多小姐；其他自定但一致，汇报末尾列专名表。自检后贴每文件首2段。不要 commit/push/改其他文件。不要跑全球体检。",
+    "status": "completed",
+    "startedAt": 1795440845824,
+    "completedAt": 1795441079466,
+    "summary": "Both files complete and clean.",
+    "background": false,
+    "model": "yanhuo888/glm-5.3-flash"
+  },
+  {
+    "id": "fg-mwtb4f0g-f3lk",
+    "agent": "worker",
+    "task": "翻译布莱克伍德《约翰·塞伦斯医生奇案》第三案《火的报复》The Nemesis of Fire 第一节。源文：work_batch_20261124/_js_nemesis_a_paras.json（186段，[0]=篇名、[1]=I 均不输出，正文[2..185]）。输出：work_batch_20261124/js_nem_a_zh.json（184段）。背景：乔治·英格利斯（George Inglis）在埃及娶妻后带回一颗带火精灵的绿宝石，其兄家宅闹火。体例：逐段对应；引号「」（嵌套『』）；不用⟦i⟧标记；段末标点（。！？…：—…）。体例样板：work_batch_20261124/dt_yann_zh.json。专名：塞伦斯；George Inglis 乔治·英格利斯；Colonel 兄长上校；Hubbard 哈伯德；其他自定但一致，汇报末尾列专名表。自检后贴首2段与末1段。不要 commit/push/改其他文件。不要跑全球体检。",
+    "status": "completed",
+    "startedAt": 1795440845824,
+    "completedAt": 1795441490286,
+    "summary": "自检全部通过。任务完成情况汇报：",
+    "background": false,
+    "model": "yanhuo888/glm-5.3-flash"
+  },
+  {
+    "id": "fg-mwtb4f0h-bc0n",
+    "agent": "worker",
+    "task": "翻译布莱克伍德《约翰·塞伦斯医生奇案》第三案第二节（接前片）。源文：work_batch_20261124/_js_nemesis_b_paras.json（150段，[0]=II 不输出）。输出：work_batch_20261124/js_nem_b_zh.json（149段）。背景：接前片，塞伦斯医生夜探闹火的宅子。体例：逐段对应；引号「」（嵌套『』）；不用⟦i⟧标记；段末标点（。！？…：—…）。体例样板：work_batch_20261124/dt_yann_zh.json。专名：与前片一致（塞伦斯、英格利斯、哈伯德）；其他自定但一致，汇报末尾列专名表。自检后贴首2段。不要 commit/push/改其他文件。不要跑全球体检。",
+    "status": "completed",
+    "startedAt": 1795440845825,
+    "completedAt": 1795441187250,
+    "summary": "翻译已完成并通过自检。自检结果：149段与源文逐段对应；段末均为句末标点（。！？…：—）；引号使用「」/『』嵌套；第105–106段存在跨段引语（源文即如此），故「」总数差1属跨段续引的排版惯例，与源文标点方式一致；无残留英文（第5段的「S湾」为源文本身的隐名写法「S---- Bay」，予以保留）；全文未跑全局体检，未触碰其他文件。",
+    "background": false,
+    "model": "yanhuo888/glm-5.3-flash"
+  },
+  {
+    "id": "fg-mwtb4f0h-emyy",
+    "agent": "worker",
+    "task": "翻译布莱克伍德《约翰·塞伦斯医生奇案》第三案第三、四节（接前片）。源文：work_batch_20261124/_js_nemesis_c_paras.json（102段，[0]=III 不输出）、_js_nemesis_d_paras.json（92段，[0]=IV 不输出）。输出：work_batch_20261124/js_nem_c_zh.json（101段）、js_nem_d_zh.json（91段）。背景：接前片，火精灵真身毕现，绿宝石的来历揭开。体例：逐段对应；引号「」（嵌套『』）；不用⟦i⟧标记；段末标点（。！？…：—…）。体例样板：work_batch_20261124/dt_yann_zh.json。专名：与前片一致；其他自定但一致，汇报末尾列专名表。自检后贴每文件首2段。不要 commit/push/改其他文件。不要跑全球体检。",
+    "status": "failed",
+    "startedAt": 1795440845825,
+    "completedAt": 1795441294264,
+    "summary": "All available models exhausted.",
+    "background": false
+  },
+  {
+    "id": "fg-mwtb4f0h-8eks",
+    "agent": "worker",
+    "task": "翻译布莱克伍德《约翰·塞伦斯医生奇案》第四案《秘传的崇拜》Secret Worship（全篇）。源文：work_batch_20261124/_js_worship_paras.json（221段，[0]=篇名不输出，正文[1..220]）。输出：work_batch_20261124/js_worship_zh.json（220段）。背景：丝商哈里斯与两个女孩在德国南部小镇旅行，投宿古老的圣者旅店，夜遇古老异教的地下崇拜。体例：逐段对应；引号「」（嵌套『』）；不用⟦i⟧标记；段末标点（。！？…：—…）。体例样板：work_batch_20261124/dt_yann_zh.json。专名：塞伦斯；Harris 哈里斯；Millie 米莉；Sinmere 辛米尔牧师；其他自定但一致，汇报末尾列专名表。自检后贴首2段与末1段。不要 commit/push/改其他文件。不要跑全球体检。",
+    "status": "completed",
+    "startedAt": 1795440845825,
+    "completedAt": 1795441230383,
+    "summary": "完成。全文 220 段已译毕，写入 `work_batch_20261124/js_worship_zh.json`，与源文 `_js_worship_paras.json` 正文 [1..220] 逐段对应。自检结果：段数 220 ✓；段末标点合格（唯一例外为段[180]场景分隔线「＊　　＊…」，属体例分隔符）；「」引号配对全部平衡；保留拉丁字母仅 Opfer 一词（原文刻意反复、主角译不出的…",
+    "background": false,
+    "model": "yanhuo888/glm-5.3-flash"
+  },
+  {
+    "id": "fg-mwtbitfx-jqri",
+    "agent": "worker",
+    "task": "失败的项重派：翻译布莱克伍德《约翰·塞伦斯医生奇案》第三案《火的报复》第三、四节。源文：work_batch_20261124/_js_nemesis_c_paras.json（102段，[0]=III 不输出，正文101段）、_js_nemesis_d_paras.json（92段，[0]=IV 不输出，正文91段）。输出：work_batch_20261124/js_nem_c_zh.json（101段）、js_nem_d_zh.json（91段）。背景：接前片，火精灵真身毕现，绿宝石的来历揭开。体例：逐段对应；引号「」（嵌套『』）；不用⟦i⟧标记；段末标点（。！？…：—…）。体例样板：work_batch_20261124/dt_yann_zh.json。专名：John Silence 塞伦斯；Hubbard 哈伯德；Colonel Wragge 雷奇上校；Miss Wragge 雷奇小姐；Horace 霍勒斯；Anderson 安德森上尉；Stride 斯特赖德；Twelve Acre Plantation 十二英亩林；其他自定但一致，汇报末尾列专名表。自检后贴每文件首2段。不要 commit/push/改其他文件。不要跑全局体检。",
+    "status": "completed",
+    "startedAt": 1795441517709,
+    "completedAt": 1795441686332,
+    "summary": "自检通过：两文件段数正确（101/91），无英文残留、无⟦i⟧标记，段末均以中文标点收尾，引号体例与样板一致。",
+    "background": false,
+    "model": "yanhuo888/glm-5.3-flash"
+  },
+  {
+    "id": "fg-mwtbmltc-zxgu",
+    "agent": "worker",
+    "task": "翻译布莱克伍德《约翰·塞伦斯医生奇案》第五案《狗营》The Camp of the Dog 第一、二节。源文：work_batch_20261124/_js_dog_a_paras.json（74段，[0]=篇名不输出，[1]=I 不输出，正文72段）、_js_dog_b_paras.json（47段，[0]=II 不输出，正文46段）。输出：work_batch_20261124/js_dog_a_zh.json（72段）、js_dog_b_zh.json（46段）。背景：瑞典青年桑格里（Sangree）迷恋牧师的女儿琼（Joan），随露营团到荒岛，狼人附体。体例：逐段对应；引号「」（嵌套『』）；不用⟦i⟧标记；段末标点（。！？…：—…）。体例样板：work_batch_20261124/dt_yann_zh.json。专名：塞伦斯；Sangree 桑格里；Joan 琼；Maloney 马洛尼（叙述者）；Pender 彭德；其他自定但一致，汇报末尾列专名表。自检后贴每文件首2段。不要 commit/push/改其他文件。不要跑全球体检。",
+    "status": "completed",
+    "startedAt": 1795441694448,
+    "completedAt": 1795441934331,
+    "summary": "自检通过：A=72 段、B=46 段，逐段对应；引号全部用「」（嵌套备好『』，本两节未出现嵌套）；段末标点齐全（唯一例外 B[28] 为原文的分隔星号段）；无⟦i⟧标记、无残留英文引号。未 commit/push，未改动其他文件。",
+    "background": false,
+    "model": "yanhuo888/glm-5.3-flash"
+  },
+  {
+    "id": "fg-mwtbmltc-1l97",
+    "agent": "worker",
+    "task": "翻译布莱克伍德《约翰·塞伦斯医生奇案》第五案第三节（接前片）。源文：work_batch_20261124/_js_dog_c_paras.json（167段，[0]=III 不输出，正文166段）。输出：work_batch_20261124/js_dog_c_zh.json（166段）。背景：接前片，营地里怪事升级，夜里狼嘨。体例：逐段对应；引号「」（嵌套『』）；不用⟦i⟧标记；段末标点（。！？…：—…）。体例样板：work_batch_20261124/dt_yann_zh.json。专名：与前片一致（塞伦斯、桑格里、琼、马洛尼、彭德）；其他自定但一致，汇报末尾列专名表。自检后贴首2段与末1段。不要 commit/push/改其他文件。不要跑全球体检。",
+    "status": "completed",
+    "startedAt": 1795441694448,
+    "completedAt": 1795441816510,
+    "summary": "翻译完成，自检通过（166段，逐段对应，标点合规，\"IV\"及三处「* * *」分隔行为原文体例保留）。",
+    "background": false,
+    "model": "yanhuo888/glm-5.3-flash"
+  },
+  {
+    "id": "fg-mwtbmltd-x5p2",
+    "agent": "worker",
+    "task": "翻译布莱克伍德《约翰·塞伦斯医生奇案》第五案第五节（接前片；第四节 IV 的译文已由他人完成，本片从 V 开始）。源文：work_batch_20261124/_js_dog_d_paras.json（217段，[0]=V 不输出，正文216段）。输出：work_batch_20261124/js_dog_d_zh.json（216段）。背景：接前片，狼人真身毕现，桑格里获救。体例：逐段对应；引号「」（嵌套『』）；不用⟦i⟧标记；段末标点（。！？…：—…）。体例样板：work_batch_20261124/dt_yann_zh.json。专名：与前片一致（塞伦斯、桑格里、琼、马洛尼、彭德）；其他自定但一致，汇报末尾列专名表。自检后贴首2段与末1段。不要 commit/push/改其他文件。不要跑全球体检。",
+    "status": "completed",
+    "startedAt": 1795441694449,
+    "completedAt": 1795442570119,
+    "summary": "完成。输出 `work_batch_20261124/js_dog_d_zh.json`，216 段，与源文 [1]–[216] 逐段对应（源 [0]=\"V\" 未输出，按要求）。",
+    "background": false,
+    "model": "yanhuo888/glm-5.3-flash"
   }
 ]
