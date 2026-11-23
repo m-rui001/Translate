@@ -913,5 +913,199 @@
     "summary": "完成。汇报：",
     "background": false,
     "model": "yanhuo888/glm-5.3-flash"
+  },
+  {
+    "id": "fg-mwtct4sd-bsx8",
+    "agent": "worker",
+    "task": "翻译阿尔杰农·布莱克伍德《马人》The Centaur（1911，长篇）第 1/9 片。源文：work_batch_20261124/_cent_a_paras.json（156项，含 6 个分节号的罗马数字独立行——凡独立成段的罗马数字 I/II/III…一律不要输出；开头的题铭引文段（威廉·詹姆斯、惠特曼、爱默生、阿米尔、叔本华、费希纳等）按段译出，署名行（以 — 人名开头）译作「——威廉·詹姆斯」式，段末标点豁免）。输出：work_batch_20261124/cent_a_zh.json（去除罗马数字行后的全部段落）。背景：爱尔兰人奥马利在轮船上遇到神秘的俄罗斯农夫父子——其实是远古马人种族的幸存者——随他们走向高加索，最后目睹马人夫妇回归宇宙本体。体例：逐段对应；引号「」（嵌套『』）；不用⟦i⟧标记；段末标点（。！？…：—…），题铭署名行除外。体例样板：work_batch_20261124/dt_yann_zh.json、js_dog_a_zh.json。专名：O'Malley 奥马利；Stahl 施塔尔；其他自定但全文一致，汇报末尾列专名表。自检（段数=源段数−罗马数字行数、外文、标点）后贴首2段与末1段。不要 commit/push/改其他文件。不要跑全球体检。",
+    "status": "interrupted",
+    "startedAt": 1795443678589
+  },
+  {
+    "id": "fg-mwtct4sd-v3ry",
+    "agent": "worker",
+    "task": "翻译布莱克伍德《马人》第 2/9 片（接前片）。源文：work_batch_20261124/_cent_b_paras.json（226项，罗马数字独立行不输出，题铭引文段照译，署名行译作「——人名」式豁免段末标点）。输出：work_batch_20261124/cent_b_zh.json。背景：轮船航行地中海，奥马利与神秘父子渐生感应；斯坦尔医生以理性解释一切。体例：逐段对应；引号「」（嵌套『』）；不用⟦i⟧标记；段末标点（。！？…：—…），署名行除外。体例样板：work_batch_20261124/dt_yann_zh.json。专名：奥马利、施塔尔；其他自定但一致，汇报末尾列专名表。自检后贴首2段与末1段。不要 commit/push/改其他文件。不要跑全球体检。",
+    "status": "interrupted",
+    "startedAt": 1795443678589
+  },
+  {
+    "id": "fg-mwtct4sd-l4f5",
+    "agent": "worker",
+    "task": "翻译布莱克伍德《马人》第 3/9 片（接前片）。源文：work_batch_20261124/_cent_c_paras.json（160项，罗马数字独立行不输出，题铭引文段照译）。输出：work_batch_20261124/cent_c_zh.json。背景：轮船停靠巴统，进入高加索山野。体例：逐段对应；引号「」（嵌套『』）；不用⟦i⟧标记；段末标点（。！？…：—…），署名行除外。体例样板：work_batch_20261124/dt_yann_zh.json。专名：奥马利、施塔尔；Batoum 巴统；Caucasus 高加索；其他自定但一致，汇报末尾列专名表。自检后贴首2段与末1段。不要 commit/push/改其他文件。不要跑全球体检。",
+    "status": "interrupted",
+    "startedAt": 1795443678589
+  },
+  {
+    "id": "fg-mwtct4sd-99gy",
+    "agent": "worker",
+    "task": "翻译布莱克伍德《马人》第 4/9 片（接前片）。源文：work_batch_20261124/_cent_d_paras.json（138项，罗马数字独立行不输出，题铭引文段照译）。输出：work_batch_20261124/cent_d_zh.json。背景：山野中的萨基安镇与古代石柱村，奥马利随父子深入荒野。体例：逐段对应；引号「」（嵌套『』）；不用⟦i⟧标记；段末标点（。！？…：—…），署名行除外。体例样板：work_batch_20261124/dt_yann_zh.json。专名：奥马利、施塔尔；其他自定但一致，汇报末尾列专名表。自检后贴首2段与末1段。不要 commit/push/改其他文件。不要跑全球体检。",
+    "status": "interrupted",
+    "startedAt": 1795443678589
+  },
+  {
+    "id": "fg-mwtd7gkg-v4mv",
+    "agent": "worker",
+    "task": "翻译阿尔杰农·布莱克伍德《马人》The Centaur（1911，长篇）第 1/9 片。源文：work_batch_20261124/_centc_a_paras.json（151段；已清理，无罗马数字分节行）。输出：work_batch_20261124/cent_a_zh.json（151段，逐段对应）。背景：爱尔兰人特伦斯·奥马利在轮船上结识斯坦尔医生，讲起他在高加索遇到的俄国农夫父子——那是远古马人种族的最后幸存者。注：本文大量插入题铭引文（詹姆斯、惠特曼、卡彭特等）与署名行（源文以 -- 开头，如 --WHITMAN），署名行译作「——惠特曼《书名》。」，以句号收尾。体例：逐段对应；引号「」（嵌套『』）；不用⟦i⟧标记；段末标点（。！？…：—…）。体例样板：work_batch_20261124/dt_yann_zh.json、js_dog_a_zh.json。专名：O'Malley 奥马利；Terence O'Malley 特伦斯·奥马利；Stahl 施塔尔；其他自定但一致，汇报末尾列专名表。自检（段数、外文、标点、无工具调用残留）后贴首2段与末1段。不要 commit/push/改其他文件。不要跑全球体检。",
+    "status": "completed",
+    "startedAt": 1795444347040,
+    "completedAt": 1795444672885,
+    "summary": "完成。`work_batch_20261124/cent_a_zh.json` 已生成：151 段，逐段与 `_centc_a_paras.json` 对应，共 18510 字。",
+    "background": false,
+    "model": "ds-free/deepseek-v4.1-flash"
+  },
+  {
+    "id": "fg-mwtd7gkg-d1gh",
+    "agent": "worker",
+    "task": "翻译布莱克伍德《马人》第 2/9 片（接前片）。源文：work_batch_20261124/_centc_b_paras.json（220段，已清理）。输出：work_batch_20261124/cent_b_zh.json（220段）。背景：轮船航行地中海，奥马利与神秘父子渐生感应；斯坦尔医生以理性解释一切。插入的题铭引文与署名行（源以 -- 开头）照译，署名行作「——某人《书名》。」。体例：逐段对应；引号「」（嵌套『』）；不用⟦i⟧标记；段末标点（。！？…：—…）。体例样板：work_batch_20261124/dt_yann_zh.json。专名：奥马利、施塔尔；其他自定但一致，汇报末尾列专名表。自检后贴首2段与末1段。不要 commit/push/改其他文件。不要跑全球体检。",
+    "status": "completed",
+    "startedAt": 1795444347040,
+    "completedAt": 1795444798042,
+    "summary": "已完成。输出 `work_batch_20261124/cent_b_zh.json`，220 段，与源 `_centc_b_paras.json` 逐段对应（源 220 段，无罗马数字分节行）。",
+    "background": false,
+    "model": "ds-free/deepseek-v4.1-flash"
+  },
+  {
+    "id": "fg-mwtd7gkh-8pg1",
+    "agent": "worker",
+    "task": "翻译布莱克伍德《马人》第 3/9 片（接前片）。源文：work_batch_20261124/_centc_c_paras.json（155段，已清理）。输出：work_batch_20261124/cent_c_zh.json（155段）。背景：轮船停靠巴统，进入高加索山野。插入的题铭引文与署名行照译，署名行作「——某人《书名》。」。体例：逐段对应；引号「」（嵌套『』）；不用⟦i⟧标记；段末标点（。！？…：—…）。体例样板：work_batch_20261124/dt_yann_zh.json。专名：奥马利、施塔尔；Batoum 巴统；Caucasus 高加索；其他自定但一致，汇报末尾列专名表。自检后贴首2段与末1段。不要 commit/push/改其他文件。不要跑全球体检。",
+    "status": "completed",
+    "startedAt": 1795444347041,
+    "completedAt": 1795444721002,
+    "summary": "《马人》第三片（3/9）译毕，155/155 段对应，已写入 `work_batch_20261124/cent_c_zh.json`。",
+    "background": false,
+    "model": "ds-free/deepseek-v4.1-flash"
+  },
+  {
+    "id": "fg-mwtd7gkh-xqm3",
+    "agent": "worker",
+    "task": "翻译布莱克伍德《马人》第 4/9 片（接前片）。源文：work_batch_20261124/_centc_d_paras.json（132段，已清理）。输出：work_batch_20261124/cent_d_zh.json（132段）。背景：山野中的萨基安镇与古代石柱村，奥马利随父子深入荒野。插入的题铭引文与署名行照译，署名行作「——某人《书名》。」。体例：逐段对应；引号「」（嵌套『』）；不用⟦i⟧标记；段末标点（。！？…：—…）。体例样板：work_batch_20261124/dt_yann_zh.json。专名：奥马利、施塔尔；其他自定但一致，汇报末尾列专名表。自检后贴首2段与末1段。不要 commit/push/改其他文件。不要跑全球体检。",
+    "status": "completed",
+    "startedAt": 1795444347041,
+    "completedAt": 1795444633783,
+    "summary": "完成。第 4/9 片已译出：`work_batch_20261124/cent_d_zh.json`，132 段落，逐段对应。",
+    "background": false,
+    "model": "ds-free/deepseek-v4.1-flash"
+  },
+  {
+    "id": "fg-mwtd7gkh-xxd0",
+    "agent": "worker",
+    "task": "翻译布莱克伍德《马人》第 5/9 片（接前片）。源文：work_batch_20261124/_centc_e_paras.json（147段，已清理）。输出：work_batch_20261124/cent_e_zh.json（147段）。背景：与马人父子同宿荒野，感受大地意识。插入的题铭引文与署名行照译，署名行作「——某人《书名》。」。体例：逐段对应；引号「」（嵌套『』）；不用⟦i⟧标记；段末标点（。！？…：—…）。体例样板：work_batch_20261124/dt_yann_zh.json。专名：奥马利、施塔尔；其他自定但一致，汇报末尾列专名表。自检后贴首2段与末1段。不要 commit/push/改其他文件。不要跑全球体检。",
+    "status": "completed",
+    "startedAt": 1795444347041,
+    "completedAt": 1795444909519,
+    "summary": "译文已完成并通过检查。",
+    "background": false,
+    "model": "ds-free/deepseek-v4.1-flash"
+  },
+  {
+    "id": "fg-mwtd7gkh-wk1g",
+    "agent": "worker",
+    "task": "翻译布莱克伍德《马人》第 6/9 片（接前片）。源文：work_batch_20261124/_centc_f_paras.json（119段，已清理）。输出：work_batch_20261124/cent_f_zh.json（119段）。背景：荒野里的歌舞与幻象，马人真身显现。插入的题铭引文与署名行照译，署名行作「——某人《书名》。」。体例：逐段对应；引号「」（嵌套『』）；不用⟦i⟧标记；段末标点（。！？…：—…）。体例样板：work_batch_20261124/dt_yann_zh.json。专名：奥马利、施塔尔；其他自定但一致，汇报末尾列专名表。自检后贴首2段与末1段。不要 commit/push/改其他文件。不要跑全球体检。",
+    "status": "completed",
+    "startedAt": 1795444347041,
+    "completedAt": 1795445015604,
+    "summary": "已完成第 6/9 片：`work_batch_20261124/cent_f_zh.json`，119 段，逐段与 `_centc_f_paras.json` 一一对应。",
+    "background": false,
+    "model": "ds-free/deepseek-v4.1-flash"
+  },
+  {
+    "id": "fg-mwtd7gki-ocjr",
+    "agent": "worker",
+    "task": "翻译布莱克伍德《马人》第 7/9 片（接前片）。源文：work_batch_20261124/_centc_g_paras.json（150段，已清理）。输出：work_batch_20261124/cent_g_zh.json（150段）。背景：父子与奥马利深入无人之境；父亲讲述种族的历史。插入的题铭引文与署名行照译，署名行作「——某人《书名》。」。体例：逐段对应；引号「」（嵌套『』）；不用⟦i⟧标记；段末标点（。！？…：—…）。体例样板：work_batch_20261124/dt_yann_zh.json。专名：奥马利、施塔尔；其他自定但一致，汇报末尾列专名表。自检后贴首2段与末1段。不要 commit/push/改其他文件。不要跑全球体检。",
+    "status": "completed",
+    "startedAt": 1795444347042,
+    "completedAt": 1795444870350,
+    "summary": "我先查看源材料和样式模板。",
+    "background": false,
+    "model": "ds-free/deepseek-v4.1-flash"
+  },
+  {
+    "id": "fg-mwtd7gki-aop2",
+    "agent": "worker",
+    "task": "翻译布莱克伍德《马人》第 8/9 片（接前片）。源文：work_batch_20261124/_centc_h_paras.json（148段，已清理）。输出：work_batch_20261124/cent_h_zh.json（148段）。背景：星空下的告别与回归。插入的题铭引文与署名行照译，署名行作「——某人《书名》。」。体例：逐段对应；引号「」（嵌套『』）；不用⟦i⟧标记；段末标点（。！？…：—…）。体例样板：work_batch_20261124/dt_yann_zh.json。专名：奥马利、施塔尔；其他自定但一致，汇报末尾列专名表。自检后贴首2段与末1段。不要 commit/push/改其他文件。不要跑全球体检。",
+    "status": "completed",
+    "startedAt": 1795444347042,
+    "completedAt": 1795445052422,
+    "summary": "完成。`work_batch_20261124/cent_h_zh.json` 已生成（148 段，逐段对应 `_centc_h_paras.json`，1.64 万汉字）。",
+    "background": false,
+    "model": "ds-free/deepseek-v4.1-flash"
+  },
+  {
+    "id": "fg-mwtdn1o7-dvbr",
+    "agent": "worker",
+    "task": "翻译布莱克伍德《马人》第 7/9 片。源文：work_batch_20261124/_centc_g_paras.json（150段，已清理）。输出：work_batch_20261124/cent_g_zh.json（150段）。背景：奥马利随父子与向导罗斯托姆深入高加索无人之境，逐渐被大地意识吞没。插入的题铭引文与署名行（源以 -- 开头）照译，署名行作「——某人《书名》。」（无书名则仅作「——某人。」）。体例：逐段对应；引号「」（嵌套『』）；不用⟦i⟧标记；段末标点（。！？…：—…）；分节星号行译作「＊　＊　＊　＊　＊」。体例样板：work_batch_20261124/dt_yann_zh.json，以及同书已完成的 cent_f_zh.json、cent_h_zh.json（专名必须一致：奥马利、施塔尔、罗斯托姆、巴什利克、巴统、第弗利斯、卡赫季酒、Soho 索霍、Urwelt 原初世界）。自检后贴首2段与末1段。不要 commit/push/改其他文件。不要跑全球体检。",
+    "status": "completed",
+    "startedAt": 1795445074231,
+    "completedAt": 1795445415017,
+    "summary": "翻译已完成并通过自检。输出文件为 `work_batch_20261124/cent_g_zh.json`（150 段，UTF-8，indent 2，与同书已完成章节格式一致；工作用的临时分段文件已删除，未改动其他文件，未跑体检、未 commit）。",
+    "background": false,
+    "model": "ds-free/deepseek-v4.1-flash"
+  },
+  {
+    "id": "fg-mwtdn1o8-48f8",
+    "agent": "worker",
+    "task": "翻译布莱克伍德《马人》第 9/9 片（末片）。源文：work_batch_20261124/_centc_i_paras.json（204段，已清理）。输出：work_batch_20261124/cent_i_zh.json（204段）。背景：奥马利归来后的追述，斯坦尔医生以理性/病理学解释，笔记体收尾；马人夫妇在暴风雨之夜完成最后的回归与离别。插入的题铭引文与署名行（源以 -- 开头）照译，署名行作「——某人《书名》。」（无书名则仅作「——某人。」）。体例：逐段对应；引号「」（嵌套『』）；不用⟦i⟧标记；段末标点（。！？…：—…）；分节星号行译作「＊　＊　＊　＊　＊」。体例样板：work_batch_20261124/dt_yann_zh.json，以及同书已完成的 cent_f_zh.json、cent_h_zh.json（专名必须一致：奥马利、斯坦尔→施塔尔、罗斯托姆、巴什利克、Urwelt 原初世界、大地意识、宇宙意识）。自检后贴首2段与末1段。不要 commit/push/改其他文件。不要跑全球体检。",
+    "status": "completed",
+    "startedAt": 1795445074232,
+    "completedAt": 1795445429676,
+    "summary": "译稿完成：`work_batch_20261124/cent_i_zh.json`，共 **198 段**。",
+    "background": false,
+    "model": "ds-free/deepseek-v4.1-flash"
+  },
+  {
+    "id": "fg-mwtdvqbo-3ddg",
+    "agent": "general-purpose",
+    "task": "通读并润色一篇中译小说章：文件 cent_a_zh.json（译文，JSON 数组，每元素一段）+ _centc_a_paras.json（英文源文，逐段对应，151 段）。\n\n做法：通读源文与译文，逐段对照，对译文做**保守润色**——消除生硬直译、理顺病句、调整虚词与语序使节奏自然、修明显误译（以源文为准，不添不减改含义）。\n硬性约束：\n1. 段落数必须保持 151，顺序不变，逐段对应；严禁合并/拆分/增删/重排段。\n2. 体例：引号一律「」（嵌套『』），全角标点；段末标点 ∈ {。！？…：—}，对话段以 」 收尾属正常体例，不要\"补平衡\"。\n3. 专名沿用既有译名不得改动：施塔尔（Stahl）、奥马利（O'Malley）、费希纳（Fechner）、原初世界（Urwelt）、罗斯托姆（Rostom）、高加索（Caucasus）、潘（Pan）。\n4. 严禁在任何中文句子里引入拉丁字母词；严禁直引号 \" '；严禁 markdown、工具标记、代码围栏。\n5. 不要重写整段，只做必要的句子级修饰；个别句子若已流畅，不动。\n\n写回：直接编辑 cent_a_zh.json（保持 JSON 数组格式、UTF-8、与源文件一致的转义风格——段内换行用 \\n）。写完自检：\n- python json.load 可解析；长度==151；\n- 全文无 \" ' \" * ``` oldText newText 字样（正则扫一遍）；\n- 逐段核对首尾无异常。\n\n汇报：改了多少处、列出 3–5 处最值得注意的改动（原句→新句）、发现的可疑点（源文歧义等）。",
+    "status": "running",
+    "startedAt": 1795445479428
+  },
+  {
+    "id": "fg-mwtdvqbx-r03c",
+    "agent": "general-purpose",
+    "task": "通读并润色一篇中译小说章：文件 cent_b_zh.json（译文，JSON 数组，每元素一段）+ _centc_b_paras.json（英文源文，逐段对应，220 段）。\n\n做法：通读源文与译文，逐段对照，对译文做**保守润色**——消除生硬直译、理顺病句、调整虚词与语序使节奏自然、修明显误译（以源文为准，不添不减改含义）。\n硬性约束：\n1. 段落数必须保持 220，顺序不变，逐段对应；严禁合并/拆分/增删/重排段。\n2. 体例：引号一律「」（嵌套『』），全角标点；段末标点 ∈ {。！？…：—}，对话段以 」 收尾属正常体例，不要\"补平衡\"。\n3. 专名沿用既有译名不得改动：施塔尔（Stahl）、奥马利（O'Malley）、费希纳（Fechner）、原初世界（Urwelt）、罗斯托姆（Rostom）、高加索（Caucasus）、潘（Pan）。\n4. 严禁在任何中文句子里引入拉丁字母词；严禁直引号 \" '；严禁 markdown、工具标记、代码围栏。\n5. 不要重写整段，只做必要的句子级修饰；个别句子若已流畅，不动。\n\n写回：直接编辑 cent_b_zh.json（保持 JSON 数组格式、UTF-8、与源文件一致的转义风格——段内换行用 \\n）。写完自检：\n- python json.load 可解析；长度==220；\n- 全文无 \" ' \" * ``` oldText newText 字样（正则扫一遍）；\n- 逐段核对首尾无异常。\n\n汇报：改了多少处、列出 3–5 处最值得注意的改动（原句→新句）、发现的可疑点（源文歧义等）。",
+    "status": "running",
+    "startedAt": 1795445479437
+  },
+  {
+    "id": "fg-mwtdvqc3-cf83",
+    "agent": "general-purpose",
+    "task": "通读并润色一篇中译小说章：文件 cent_c_zh.json（译文，JSON 数组，每元素一段）+ _centc_c_paras.json（英文源文，逐段对应，155 段）。\n\n做法：通读源文与译文，逐段对照，对译文做**保守润色**——消除生硬直译、理顺病句、调整虚词与语序使节奏自然、修明显误译（以源文为准，不添不减改含义）。\n硬性约束：\n1. 段落数必须保持 155，顺序不变，逐段对应；严禁合并/拆分/增删/重排段。\n2. 体例：引号一律「」（嵌套『』），全角标点；段末标点 ∈ {。！？…：—}，对话段以 」 收尾属正常体例，不要\"补平衡\"。\n3. 专名沿用既有译名不得改动：施塔尔（Stahl）、奥马利（O'Malley）、费希纳（Fechner）、原初世界（Urwelt）、罗斯托姆（Rostom）、高加索（Caucasus）、潘（Pan）。\n4. 严禁在任何中文句子里引入拉丁字母词；严禁直引号 \" '；严禁 markdown、工具标记、代码围栏。\n5. 不要重写整段，只做必要的句子级修饰；个别句子若已流畅，不动。\n\n写回：直接编辑 cent_c_zh.json（保持 JSON 数组格式、UTF-8、与源文件一致的转义风格——段内换行用 \\n）。写完自检：\n- python json.load 可解析；长度==155；\n- 全文无 \" ' \" * ``` oldText newText 字样（正则扫一遍）；\n- 逐段核对首尾无异常。\n\n汇报：改了多少处、列出 3–5 处最值得注意的改动（原句→新句）、发现的可疑点（源文歧义等）。",
+    "status": "running",
+    "startedAt": 1795445479443
+  },
+  {
+    "id": "fg-mwtdvqc8-6v1j",
+    "agent": "general-purpose",
+    "task": "通读并润色一篇中译小说章：文件 cent_d_zh.json（译文，JSON 数组，每元素一段）+ _centc_d_paras.json（英文源文，逐段对应，132 段）。\n\n做法：通读源文与译文，逐段对照，对译文做**保守润色**——消除生硬直译、理顺病句、调整虚词与语序使节奏自然、修明显误译（以源文为准，不添不减改含义）。\n硬性约束：\n1. 段落数必须保持 132，顺序不变，逐段对应；严禁合并/拆分/增删/重排段。\n2. 体例：引号一律「」（嵌套『』），全角标点；段末标点 ∈ {。！？…：—}，对话段以 」 收尾属正常体例，不要\"补平衡\"。\n3. 专名沿用既有译名不得改动：施塔尔（Stahl）、奥马利（O'Malley）、费希纳（Fechner）、原初世界（Urwelt）、罗斯托姆（Rostom）、高加索（Caucasus）、潘（Pan）。\n4. 严禁在任何中文句子里引入拉丁字母词；严禁直引号 \" '；严禁 markdown、工具标记、代码围栏。\n5. 不要重写整段，只做必要的句子级修饰；个别句子若已流畅，不动。\n\n写回：直接编辑 cent_d_zh.json（保持 JSON 数组格式、UTF-8、与源文件一致的转义风格——段内换行用 \\n）。写完自检：\n- python json.load 可解析；长度==132；\n- 全文无 \" ' \" * ``` oldText newText 字样（正则扫一遍）；\n- 逐段核对首尾无异常。\n\n汇报：改了多少处、列出 3–5 处最值得注意的改动（原句→新句）、发现的可疑点（源文歧义等）。",
+    "status": "running",
+    "startedAt": 1795445479448
+  },
+  {
+    "id": "fg-mwtdvqcd-lojy",
+    "agent": "general-purpose",
+    "task": "通读并润色一篇中译小说章：文件 cent_e_zh.json（译文，JSON 数组，每元素一段）+ _centc_e_paras.json（英文源文，逐段对应，147 段）。\n\n做法：通读源文与译文，逐段对照，对译文做**保守润色**——消除生硬直译、理顺病句、调整虚词与语序使节奏自然、修明显误译（以源文为准，不添不减改含义）。\n硬性约束：\n1. 段落数必须保持 147，顺序不变，逐段对应；严禁合并/拆分/增删/重排段。\n2. 体例：引号一律「」（嵌套『』），全角标点；段末标点 ∈ {。！？…：—}，对话段以 」 收尾属正常体例，不要\"补平衡\"。\n3. 专名沿用既有译名不得改动：施塔尔（Stahl）、奥马利（O'Malley）、费希纳（Fechner）、原初世界（Urwelt）、罗斯托姆（Rostom）、高加索（Caucasus）、潘（Pan）。\n4. 严禁在任何中文句子里引入拉丁字母词；严禁直引号 \" '；严禁 markdown、工具标记、代码围栏。\n5. 不要重写整段，只做必要的句子级修饰；个别句子若已流畅，不动。\n\n写回：直接编辑 cent_e_zh.json（保持 JSON 数组格式、UTF-8、与源文件一致的转义风格——段内换行用 \\n）。写完自检：\n- python json.load 可解析；长度==147；\n- 全文无 \" ' \" * ``` oldText newText 字样（正则扫一遍）；\n- 逐段核对首尾无异常。\n\n汇报：改了多少处、列出 3–5 处最值得注意的改动（原句→新句）、发现的可疑点（源文歧义等）。",
+    "status": "running",
+    "startedAt": 1795445479453
+  },
+  {
+    "id": "fg-mwtdvqci-c8c9",
+    "agent": "general-purpose",
+    "task": "通读并润色一篇中译小说章：文件 cent_f_zh.json（译文，JSON 数组，每元素一段）+ _centc_f_paras.json（英文源文，逐段对应，119 段）。\n\n做法：通读源文与译文，逐段对照，对译文做**保守润色**——消除生硬直译、理顺病句、调整虚词与语序使节奏自然、修明显误译（以源文为准，不添不减改含义）。\n硬性约束：\n1. 段落数必须保持 119，顺序不变，逐段对应；严禁合并/拆分/增删/重排段。\n2. 体例：引号一律「」（嵌套『』），全角标点；段末标点 ∈ {。！？…：—}，对话段以 」 收尾属正常体例，不要\"补平衡\"。\n3. 专名沿用既有译名不得改动：施塔尔（Stahl）、奥马利（O'Malley）、费希纳（Fechner）、原初世界（Urwelt）、罗斯托姆（Rostom）、高加索（Caucasus）、潘（Pan）。\n4. 严禁在任何中文句子里引入拉丁字母词；严禁直引号 \" '；严禁 markdown、工具标记、代码围栏。\n5. 不要重写整段，只做必要的句子级修饰；个别句子若已流畅，不动。\n\n写回：直接编辑 cent_f_zh.json（保持 JSON 数组格式、UTF-8、与源文件一致的转义风格——段内换行用 \\n）。写完自检：\n- python json.load 可解析；长度==119；\n- 全文无 \" ' \" * ``` oldText newText 字样（正则扫一遍）；\n- 逐段核对首尾无异常。\n\n汇报：改了多少处、列出 3–5 处最值得注意的改动（原句→新句）、发现的可疑点（源文歧义等）。",
+    "status": "running",
+    "startedAt": 1795445479458
+  },
+  {
+    "id": "fg-mwtdvqco-8tb0",
+    "agent": "general-purpose",
+    "task": "通读并润色一篇中译小说章：文件 cent_g_zh.json（译文，JSON 数组，每元素一段）+ _centc_g_paras.json（英文源文，逐段对应，150 段）。\n\n做法：通读源文与译文，逐段对照，对译文做**保守润色**——消除生硬直译、理顺病句、调整虚词与语序使节奏自然、修明显误译（以源文为准，不添不减改含义）。\n硬性约束：\n1. 段落数必须保持 150，顺序不变，逐段对应；严禁合并/拆分/增删/重排段。\n2. 体例：引号一律「」（嵌套『』），全角标点；段末标点 ∈ {。！？…：—}，对话段以 」 收尾属正常体例，不要\"补平衡\"。\n3. 专名沿用既有译名不得改动：施塔尔（Stahl）、奥马利（O'Malley）、费希纳（Fechner）、原初世界（Urwelt）、罗斯托姆（Rostom）、高加索（Caucasus）、潘（Pan）。\n4. 严禁在任何中文句子里引入拉丁字母词；严禁直引号 \" '；严禁 markdown、工具标记、代码围栏。\n5. 不要重写整段，只做必要的句子级修饰；个别句子若已流畅，不动。\n\n写回：直接编辑 cent_g_zh.json（保持 JSON 数组格式、UTF-8、与源文件一致的转义风格——段内换行用 \\n）。写完自检：\n- python json.load 可解析；长度==150；\n- 全文无 \" ' \" * ``` oldText newText 字样（正则扫一遍）；\n- 逐段核对首尾无异常。\n\n汇报：改了多少处、列出 3–5 处最值得注意的改动（原句→新句）、发现的可疑点（源文歧义等）。",
+    "status": "running",
+    "startedAt": 1795445479464
+  },
+  {
+    "id": "fg-mwtdvqct-1psz",
+    "agent": "general-purpose",
+    "task": "通读并润色一篇中译小说章：文件 cent_h_zh.json（译文，JSON 数组，每元素一段）+ _centc_h_paras.json（英文源文，逐段对应，148 段）。\n\n做法：通读源文与译文，逐段对照，对译文做**保守润色**——消除生硬直译、理顺病句、调整虚词与语序使节奏自然、修明显误译（以源文为准，不添不减改含义）。\n硬性约束：\n1. 段落数必须保持 148，顺序不变，逐段对应；严禁合并/拆分/增删/重排段。\n2. 体例：引号一律「」（嵌套『』），全角标点；段末标点 ∈ {。！？…：—}，对话段以 」 收尾属正常体例，不要\"补平衡\"。\n3. 专名沿用既有译名不得改动：施塔尔（Stahl）、奥马利（O'Malley）、费希纳（Fechner）、原初世界（Urwelt）、罗斯托姆（Rostom）、高加索（Caucasus）、潘（Pan）。\n4. 严禁在任何中文句子里引入拉丁字母词；严禁直引号 \" '；严禁 markdown、工具标记、代码围栏。\n5. 不要重写整段，只做必要的句子级修饰；个别句子若已流畅，不动。\n\n写回：直接编辑 cent_h_zh.json（保持 JSON 数组格式、UTF-8、与源文件一致的转义风格——段内换行用 \\n）。写完自检：\n- python json.load 可解析；长度==148；\n- 全文无 \" ' \" * ``` oldText newText 字样（正则扫一遍）；\n- 逐段核对首尾无异常。\n\n汇报：改了多少处、列出 3–5 处最值得注意的改动（原句→新句）、发现的可疑点（源文歧义等）。",
+    "status": "running",
+    "startedAt": 1795445479469
   }
 ]
