@@ -1681,3 +1681,14 @@ git -c http.proxy= -c http.postBuffer=524288000 -c http.lowSpeedLimit=0 -c http.
 要做的是：像魔山那样 `_split_at_subheads()`（但那套在 `build_all`，本书走 `build_pub`，
 需先在 build_pub 里加同样能力），按这 96 行切章、以诗题作目录项与 `<h2>`。
 备份在 `_bak/neuegedichte_20261123.tar.gz`。没做，因为要改构建器、影响 38 本。
+
+## 2026-11-24 推送方式更新：本地代理 7897
+
+直连 github.com 失败率升高（Recv failure / Could not connect 反复出现）时，走本地代理：
+
+```bash
+git -c http.proxy=http://127.0.0.1:7897 -c https.proxy=http://127.0.0.1:7897 \
+    -c http.postBuffer=524288000 push origin HEAD:main
+```
+
+一次成功。旧的直连重试循环仍可作后备。
