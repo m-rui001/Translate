@@ -683,5 +683,38 @@
     "summary": "自检通过：98 段与源文逐段对应（源 99 项含篇名[0]，未纳入输出）；引号「」配对完整；无 ⟦i⟧ 标记；段末标点符合体例（对话段以 」收尾，与样板 dw_gibbelins_zh.json 中「在塔门口吹号角」段的处理一致）；星号分节行原样保留。",
     "background": false,
     "model": "yanhuo888/glm-5.3-flash"
+  },
+  {
+    "id": "fg-mwtanl73-jt2v",
+    "agent": "worker",
+    "task": "翻译邓萨尼《三半球的传说》（Tales of Three Hemispheres, 1919）第一组四篇：《布沃纳·库布拉的最后一梦》The Last Dream of Bwona Khubla（30段）、《布布·阿希拉的祈祷》The Prayer of Boob Aheera（11段）、《东方与西方》East and West（12段）、《一场漂亮的争吵》A Pretty Quarrel（14段）。源文：work_batch_20261124/_bwona_paras.json（31项）、_boob_paras.json（12项）、_eastwest_paras.json（13项）、_quarrel_paras.json（15项），各 [0] 为篇名。输出：work_batch_20261124/dth_bwona_zh.json（30段）、dth_boob_zh.json（11段）、dth_eastwest_zh.json（12段）、dth_quarrel_zh.json（14段），均不含篇名。体例：逐段对应；引号「」（嵌套『』）；不用⟦i⟧标记；段末标点（。！？…：—…）。体例样板：work_batch_20261124/dw_gibbelins_zh.json、dt_yann_zh.json。专名：Bwona Khubla 布沃纳·库布拉；Boob Aheera 布布·阿希拉；其他照通译。自检后贴每篇首段。不要 commit/push/改其他文件。不要跑全球体检。",
+    "status": "completed",
+    "startedAt": 1795440060687,
+    "completedAt": 1795440323259,
+    "summary": "完成，自检通过（四个文件段数 30/11/12/14，与源对应减篇名一致；无 ⟦i⟧ 标记；唯一无段末标点的段是《布沃纳》文件内第 20 段——即书中第二篇的内标题「奥特福德-洼地的邮差之职如何出缺」，与源文标题段对应）。未动其他文件，未提交。",
+    "background": false,
+    "model": "yanhuo888/glm-5.3-flash"
+  },
+  {
+    "id": "fg-mwtanl74-1qm9",
+    "agent": "worker",
+    "task": "翻译邓萨尼《三半球的传说》第二组六篇：《诸神如何为牟尔吉宁复仇》How the Gods Avenged Meoul Ki Ning（7段）、《诸神的恩赐》The Gift of the Gods（13段）、《绿宝石的劫掠》The Sack of Emeralds（24段）、《旧棕大衣》The Old Brown Coat（21段）、《更古的秘辛档案》An Archive of the Older Mysteries（5段）、《惊奇之城》A City of Wonder（7段）。源文：work_batch_20261124/_meoul_paras.json（8项）、_gift_paras.json（14项）、_sack_emeralds_paras.json（25项）、_brown_coat_paras.json（22项）、_archive_paras.json（6项）、_city_wonder_paras.json（8项），各 [0] 为篇名。输出：work_batch_20261124/dth_meoul_zh.json（7段）、dth_gift_zh.json（13段）、dth_sack_emeralds_zh.json（24段）、dth_brown_coat_zh.json（21段）、dth_archive_zh.json（5段）、dth_city_wonder_zh.json（7段），均不含篇名。体例：逐段对应；引号「」（嵌套『』）；不用⟦i⟧标记；段末标点（。！？…：—…）。体例样板：work_batch_20261124/dw_gibbelins_zh.json、dt_yann_zh.json。专名：Meoul Ki Ning 牟尔吉宁；Wiltshire 威尔特郡；Sir James Barrie 詹姆斯·巴里爵士；其他照通译。自检后贴每篇首段。不要 commit/push/改其他文件。不要跑全球体检。",
+    "status": "completed",
+    "startedAt": 1795440060688,
+    "completedAt": 1795440132480,
+    "summary": "自检通过：六篇段数全部与源文对应（7/13/24/21/5/7），JSON 有效，段末标点或为句末符号或为引号收尾（」），无标记符残留。",
+    "background": false,
+    "model": "yanhuo888/glm-5.3-flash"
+  },
+  {
+    "id": "fg-mwtanl74-4hqv",
+    "agent": "worker",
+    "task": "翻译邓萨尼《三半球的传说》第三组两篇：《高拜街的一家铺子》A Shop in Go-By Street（43段）、《佩尔多达里斯的复仇者》The Avenger of Perdondaris（46段）。这两篇是《雅恩河上的闲日》的续篇，作者以同一叙事者身份继续讲他在梦幻之地的旅程。源文：work_batch_20261124/_goby_paras.json（44项）、_avenger_paras.json（47项），各 [0] 为篇名。输出：work_batch_20261124/dth_goby_zh.json（43段）、dth_avenger_zh.json（46段），均不含篇名。体例：逐段对应；引号「」（嵌套『』）；不用⟦i⟧标记；段末标点（。！？…：—…）。体例样板：work_batch_20261124/dt_yann_zh.json（同一叙事者，专名应一致：Yann 雅恩河、Perdóndaris 佩尔多达里斯、Bird of the River 河上之鸟号；其馀照该样板）。自检后贴每篇首段。不要 commit/push/改其他文件。不要跑全球体检。",
+    "status": "completed",
+    "startedAt": 1795440060688,
+    "completedAt": 1795440369829,
+    "summary": "自检通过：逐段数一致、引号配对、段末标点合规、无残留西文。已按要求只新建/修改这两个译文文件，未 commit、未动其他文件。",
+    "background": false,
+    "model": "yanhuo888/glm-5.3-flash"
   }
 ]
