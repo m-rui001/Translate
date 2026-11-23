@@ -353,5 +353,38 @@
     "summary": "全部完成。汇报如下：",
     "background": false,
     "model": "yanhuo888/glm-5.3-flash"
+  },
+  {
+    "id": "fg-mwt69w2w-tv3m",
+    "agent": "worker",
+    "task": "翻译爱伦·坡《恶魔》（The Imp of the Perverse, 1845）。\n\n源文：work_batch_20261124/_imp_paras.json（16段，第[0]段是篇名，正文是[1..15]共15段）。\n参考体例（先读 work_batch_20261124/pit_zh.json 第1段、bierce_ck_zh.json 第1段各一段作为样板）：\n- 逐段对应，输出 work_batch_20261124/imp_zh.json，**15段**（不含篇名）\n- 引号「」；不用⟦i⟧标记；段末必须有标点（。！？…\"：—…）\n- 不得留任何 [A-Za-z]{2,} 英文\n- 专名参考：pit_zh.json 用过的「宗教法庭」等；坡本文无专名，注意不出现人名\n\n要求：写完后自检（段数、拉丁残留、标点），贴结果。不要 commit/push/改其他文件。不要跑全局体检。",
+    "status": "completed",
+    "startedAt": 1795432703144,
+    "completedAt": 1795432788382,
+    "summary": "全部自检通过。说明与结果如下：",
+    "background": false,
+    "model": "yanhuo888/glm-5.3-flash"
+  },
+  {
+    "id": "fg-mwt6byfj-k3nn",
+    "agent": "worker",
+    "task": "翻译爱伦·坡《雷格广场》（The Assignation, 1834）。\n\n源文：work_batch_20261124/_assignation_paras.json（38段，第[0]段是篇名，正文是[1..37]共37段）。\n注意：第[1]段是引文诗行（两行短句：\"Stay for me there! I will not fail / To meet thee in that hollow vale.\"），\n第[2]段可能是 Its 括注——**照原样译，诗歌允许按行断行（内部用 \\n），段末标点可放宽为诗句允许的任意标点或省略**；其余正文段落严格：引号「」、段末有标点、无[A-Za-z]{2,}遗留。\n\n参考体例（先读 work_batch_20261124/pit_zh.json 第1段与第2段、bierce_ck_zh.json 第1段各一段作为样板）：\n- 逐段对应，输出 work_batch_20261124/assignation_zh.json，**37段**（不含篇名）\n- 人名地名：威尼斯 Venice→威尼斯；Brantz Mayer 布兰茨·梅尔；Aphrodite 阿佛洛狄忒；Metzengerstein 已有先例可不出现\n- 威尼斯地名照音译：Rialto→里亚尔托，Molo→莫洛，Arsenale→兵工厂，Riva degli Schiavoni→斯基亚沃尼滨河街\n- 剧中演员的艺名照原文戏称意译即可\n\n自检（段数、拉丁残留、标点）后贴结果。不要 commit/push/改其他文件。不要跑全局体检。",
+    "status": "completed",
+    "startedAt": 1795432799503,
+    "completedAt": 1795433047609,
+    "summary": "自检全部通过：38段与源正文逐段对应（源文件实际正文为38段，此前体例说明的37段与文件不符，按实际为准）、无拉丁残留（铭文 ΑΑΕΜ / ΠΕΑΑΕΜΑ 用希腊原字母，非 A-Za-z）、引号「」体例内用弯引号与体例样板一致、段末均有标点（第1段为括注以\"]\"收，第11/28段为 \\*　\\*　\\* 分隔行）。已输出 `work_batch_20261124/assignation_zh.jso…",
+    "background": false,
+    "model": "yanhuo888/glm-5.3-flash"
+  },
+  {
+    "id": "fg-mwt6htz7-n4cq",
+    "agent": "worker",
+    "task": "翻译爱伦·坡两篇：《费岛》（The Island of the Fay, 1841）与《M. 瓦尔德马案实录》（The Facts in the Case of M. Valdemar, 1845）。\n\n源文：\n- work_batch_20261124/_island_paras.json（14段，[0]篇名，正文[1..13]共13段。第[1]段是拉丁铭文 \"Nullus enim locus sine genio est.--Servius.\"，照 pit_zh.json 的拉丁题铭处理：译出，允许段内字母）\n- work_batch_20261124/_valdemar_paras.json（51段，[0]篇名，正文[1..50]共50段；注意对话多，引号「」）\n\n输出：\n- work_batch_20261124/island_zh.json（13段）\n- work_batch_20261124/valdemar_zh.json（50段）\n\n体例：逐段对应；引号「」；不用⟦i⟧标记；段末标点（。！？…\"：—…）；《费岛》拉丁铭文段除外（可含拉丁字母）。\n《瓦尔德马案》专名：M. Valdemar→瓦尔德马先生；M. Ernest Valdemar→埃内斯特·瓦尔德马先生；D. F. Stanton F. →斯丹顿；催眠术 mesmerism→催眠术；Lacédaire→拉塞代尔；Hervey→赫尔维。\n\n自检（各文件段数、拉丁残留、标点）后贴结果。不要 commit/push/改其他文件。不要跑全局体检。",
+    "status": "completed",
+    "startedAt": 1795433073667,
+    "completedAt": 1795433182921,
+    "summary": "自检通过（唯一的例外：valdemar[8] 是信末署名「瓦尔德马」，按签名惯例不加句读；island[0] 为拉丁铭文段，依体例豁免）。两文件均为合法 JSON、逐段与源文一一对应、无拉丁字母残留、无半角引号。",
+    "background": false,
+    "model": "yanhuo888/glm-5.3-flash"
   }
 ]
