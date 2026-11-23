@@ -595,5 +595,49 @@
     "summary": "自检通过（段数 15/1，段末标点合规，无英文/占位符/直引号残留）。两篇全文如下：",
     "background": false,
     "model": "yanhuo888/glm-5.3-flash"
+  },
+  {
+    "id": "fg-mwta0fxw-kf92",
+    "agent": "worker",
+    "task": "翻译邓萨尼《一个做梦人的故事集》（A Dreamer's Tales, 1910）第一组四篇：《波尔塔尼斯，海洋的旁观者》Poltarnees, Beholder of Ocean（52段）、《布拉格达罗斯》Blagdaross（14段）、《安德斯普鲁兹的疯狂》The Madness of Andelsprutz（18段）、《潮起潮落之处》Where the Tides Ebb and Flow（28段）。源文：work_batch_20261124/_poltarnees_paras.json（53项，[0]篇名）、_blagdaross_paras.json（15项）、_andelsprutz_paras.json（19项）、_tides_paras.json（29项）。输出：work_batch_20261124/dt_poltarnees_zh.json（52段）、dt_blagdaross_zh.json（14段）、dt_andelsprutz_zh.json（18段）、dt_tides_zh.json（28段），均不含篇名。体例：逐段对应；引号「」（嵌套『』）；不用⟦i⟧标记；段末标点（。！？…：—…）。体例样板：work_batch_20261124/dw_gibbelins_zh.json、bierce_ck_zh.json。专名：Poltarnees 波尔塔尼斯；Blagdaross 布拉格达罗斯；Andelsprutz 安德斯普鲁兹；Bethmoora 贝斯穆拉；Yann 雅恩河；Carcassonne 卡卡松；其他照通译。自检后贴每篇首段。不要 commit/push/改其他文件。不要跑全局体检。",
+    "status": "completed",
+    "startedAt": 1795438980788,
+    "completedAt": 1795439166926,
+    "summary": "样板的段末分布同样是「。」「」」混合，与我的输出一致，全部合格。四篇均已完成并通过自检：段数正确（52/14/18/28，不含篇名）、逐段对应、无 ASCII 引号、无 ⟦i⟧ 标记、专名采用指定译名。",
+    "background": false,
+    "model": "yanhuo888/glm-5.3-flash"
+  },
+  {
+    "id": "fg-mwta0fxw-k315",
+    "agent": "worker",
+    "task": "翻译邓萨尼《一个做梦人的故事集》第二组四篇：《贝斯穆拉》Bethmoora（19段）、《雅恩河上的闲日》Idle Days on the Yann（63段）、《剑与偶像》The Sword and the Idol（38段）、《闲城》The Idle City（39段）。源文：work_batch_20261124/_bethmoora_paras.json（20项）、_yann_paras.json（64项）、_sword_idol_paras.json（39项）、_idle_city_paras.json（40项）。输出：work_batch_20261124/dt_bethmoora_zh.json（19段）、dt_yann_zh.json（63段）、dt_sword_idol_zh.json（38段）、dt_idle_city_zh.json（39段），均不含篇名。体例：逐段对应；引号「」（嵌套『』）；不用⟦i⟧标记；段末标点（。！？…：—…）。体例样板：work_batch_20261124/dw_gibbelins_zh.json、bierce_ck_zh.json。专名：Yann 雅恩河；Perdóndaris 佩尔多达里斯；其他照通译。自检后贴每篇首段。不要 commit/push/改其他文件。不要跑全局体检。",
+    "status": "completed",
+    "startedAt": 1795438980788,
+    "completedAt": 1795439493518,
+    "summary": "四篇全部通过自检：段数与源文逐段对应、无⟦⟧标记、无乱码、段末标点合规、「」引号体例正确（Idle City 中骆驼客跨段引语按源文体例仅末段闭合）。以下为各篇首段：",
+    "background": false,
+    "model": "yanhuo888/glm-5.3-flash"
+  },
+  {
+    "id": "fg-mwta0fxx-se0c",
+    "agent": "worker",
+    "task": "翻译邓萨尼《一个做梦人的故事集》第三组四篇：《食大麻者》The Hashish Man（17段）、《可怜的老比尔》Poor Old Bill（26段）、《乞丂》The Beggars（26段）、《卡卡松》Carcassonne（64段）。源文：work_batch_20261124/_hashish_paras.json（18项）、_poor_bill_paras.json（27项）、_beggars_paras.json（27项）、_carcassonne_paras.json（65项）。输出：work_batch_20261124/dt_hashish_zh.json（17段）、dt_poor_bill_zh.json（26段）、dt_beggars_zh.json（26段）、dt_carcassonne_zh.json（64段），均不含篇名。体例：逐段对应；引号「」（嵌套『』）；不用⟦i⟧标记；段末标点（。！？…：—…）。体例样板：work_batch_20261124/dw_gibbelins_zh.json、bierce_ck_zh.json。专名：Carcassonne 卡卡松；Camorak 卡莫拉克；Arn 阿恩；其他照通译。自检后贴每篇首段。不要 commit/push/改其他文件。不要跑全局体检。",
+    "status": "completed",
+    "startedAt": 1795438980789,
+    "completedAt": 1795439157135,
+    "summary": "自检通过：四篇段数 17/26/26/64 全部对应，无拉丁残文（beggars 第6段保留原词 \"Taxicab\"，因原文是在嘲弄这个词本身）、无遗留英文、引号统一「」『』、段末标点合规（第3段末尾的\"）\"为括号句收尾，属正常）。",
+    "background": false,
+    "model": "yanhuo888/glm-5.3-flash"
+  },
+  {
+    "id": "fg-mwta0fxx-e6if",
+    "agent": "worker",
+    "task": "翻译邓萨尼《一个做梦人的故事集》第四组四篇：《在萨克卡拉特》In Zaccarath（21段）、《田野》The Field（27段）、《选举日》The Day of the Poll（10段）、《不幸的身体》The Unhappy Body（25段）。源文：work_batch_20261124/_zaccarath_paras.json（22项）、_field_paras.json（28项）、_poll_paras.json（11项）、_body_paras.json（26项）。输出：work_batch_20261124/dt_zaccarath_zh.json（21段）、dt_field_zh.json（27段）、dt_poll_zh.json（10段）、dt_body_zh.json（25段），均不含篇名。体例：逐段对应；引号「」（嵌套『』）；不用⟦i⟧标记；段末标点（。！？…：—…）。体例样板：work_batch_20261124/dw_gibbelins_zh.json、bierce_ck_zh.json。专名：Zaccarath 萨克卡拉特；其他照通译。自检后贴每篇首段。不要 commit/push/改其他文件。不要跑全局体检。",
+    "status": "completed",
+    "startedAt": 1795438980789,
+    "completedAt": 1795439083997,
+    "summary": "自检通过：四份文件均为合法 JSON，段数 21/27/10/25 与源文一一对应，无英文残留、无⟦⟧标记，引号「」配对无误，段末标点均落在句末（含收于」的情况，符合体例）。未触碰其他文件，未 commit。",
+    "background": false,
+    "model": "yanhuo888/glm-5.3-flash"
   }
 ]
