@@ -1769,3 +1769,14 @@ build_dw.py / build_dt.py / build_dsw.py / build_dth.py / build_dg.py。
 
 下一批候选：邓萨尼 Five Plays / Plays of Gods and Men（剧）、Tales of Wonder（长篇+短篇混合）、
 The King of Elfland's Daughter（长篇）；或 W. H. Hudson、Machen、Blackwood 等。
+
+## 2026-11-24 第三回合：布莱克伍德《约翰·塞伦斯医生奇案》1 册（156,481 字）
+
+`build_js.py`；源 `blackwood_js.txt`（PG #49222-0.txt）。五案 108,343 词 → 156,481 汉字。
+11 个子代理两波；长案切 2–4 片。**新记录**：
+1. 子代理会把未闭合的工具调用写进译文（js_inv_a[84] 泄漏 `》`前有 heredoc 式标记）——
+   每批新译文必须跑 `for f in …: if re.search(r'write|tool|```|oldText|newText', x)` 扫描。
+2. GITenberg 文件名可能是 `<id>-0.txt`。
+3. nav.xhtml 必须 properties='nav' **且**在 spine 里（verify_epub 会查）；manifest 里
+   不能同时有 id='nav' 和 id='iN' 两个同 href 条目，否则 verify 取第一个 id 判断。
+4. 跨片专名统一靠子代理汇报专名表 + 主线程全局 grep 替换（本册 7 组 41 处）。
