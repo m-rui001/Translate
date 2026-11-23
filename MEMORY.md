@@ -1738,3 +1738,34 @@ build_NN.py 里写明各篇源区间并逐篇断言段数。
 自检：json 可解析、段数 21/24/24/25/8 与源一致、0 西式引号、0 拉丁残留标记。
 未 commit/push，未动其他文件。至此《惊奇之书》十四篇 + 尾声中译齐备，
 组装成册待后续（可仿 build_bierce.py 路数）。
+
+## 2026-11-24 第二回合：邓萨尼全卷 7 册完成
+
+`work_batch_20261124/` 新增：`dw_*`（惊奇之书 15 篇）、`dt_*`（故事集 16 篇）、
+`dsw_*`（维勒兰之剑 12 篇）、`dth_*`（三半球 12 篇）、`dg_*`（佩加纳诸神 29 节）。
+build_dw.py / build_dt.py / build_dsw.py / build_dth.py / build_dg.py。
+邓萨尼合计 7 册：佩加纳诸神 + 无歌之国七则 + 风与雾三则 + 维勒兰之剑十二则 + 惊奇之书十五则
++ 故事集十六则 + 三半球十二则 ≈ 23.8 万汉字。
+
+**GITenberg 取书 URL 格式**：`https://raw.githubusercontent.com/GITenberg/<RepoName>_<id>/master/<id>.txt`
+——RepoName 必须逐字匹配（连字符会双写转义：`The-Gods-of-Peg--ana_8395` 不存在，实际是
+`The-Gods-of-Pegana_8395`）；有的 repo 是空壳（A-Dreamer-s-Tales_57277 404，要用 _8129）。
+
+**源文切片惯用坑（每次都会遇到，主线程必查）**：
+1. 切片尾部混入古腾堡尾注（"Produced by ..." / "End of the Project Gutenberg" 行起）——
+   裁到正文最后一段；
+2. 切片内嵌下一篇的篇名行（目录行号切分时下一篇标题在间隔行里）——拆成两片；
+3. 篇名行大写变体（MAELSTROeM、LANDOR'S COTTAGE）会被全大写正则漏掉——切完先扫一遍
+   `<60 字符全大写段`；
+4. 出版社栏外脚注（＊＊ BEYOND THE FIELDS WE KNOW ＊＊）不算正文；
+5. 译文里会出现「。。」连标（typo_check 抓）。
+
+**豁免类型累积**：题铭/题诗、拉丁引文、`＊`分节行、信末署名、篇内小标题、括注小题（以）收尾）、
+被当作词语引用的外文词、欧几里得顶点字母/代数记号。
+
+**clean_check 白名单**：其 LEAK 规则只抓「汉字+空格+小写3-12词+空格+汉字」。大写词
+（Taxicab、AED）不算泄漏，不要白加白名单条目。已有 4 条：达洛维夫人（唱词分行）、新诗集
+（献辞页）、茵梦湖（priesterten）、追忆（corridor 谐音）。
+
+下一批候选：邓萨尼 Five Plays / Plays of Gods and Men（剧）、Tales of Wonder（长篇+短篇混合）、
+The King of Elfland's Daughter（长篇）；或 W. H. Hudson、Machen、Blackwood 等。
