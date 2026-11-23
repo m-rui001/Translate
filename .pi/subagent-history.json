@@ -1952,5 +1952,181 @@
     "summary": "《仙境囚徒》第 14/16 片译完并已分批保存到文件。",
     "background": false,
     "model": "ds-free/deepseek-v4.1-flash"
+  },
+  {
+    "id": "fg-mwtixywn-0xil",
+    "agent": "worker",
+    "task": "翻译阿尔杰农·布莱克伍德《光明的使者》（The Bright Messenger, 1921）第 1/14 片。源文：work_batch_20261124/_bm_a_paras.json（147 段）。输出：work_batch_20261124/bm_a_zh.json（147 段）。**分批落盘**：前 74 段写 bm_a_p1.json，余下写 bm_a_p2.json，合并 assert 147。体例：逐段对应；引号「」（嵌套『』）；不用⟦i⟧标记；段末标点（。！？…：—…）；题铭署名行可豁免；星号行作「＊　＊　＊　＊　＊」。体例样板：work_batch_20261124/pf_m_zh.json、dn_d_zh.json。背景：心理学家爱德华·芬顿（Fenton）收治一个双重人格的青年朱利安·莱斯特（Julian LeStrange），其第二人格自称来自另一个世界。专名自定但全文一致，汇报末尾列专名表。自检（段数、外文、标点、汉字夹空格）后贴首 2 段与末 1 段。不要 commit/push/改其他文件。不要跑全球体检。",
+    "status": "completed",
+    "startedAt": 1795453981943,
+    "completedAt": 1795454292834,
+    "summary": "《光明的使者》第 1/14 片已完成。",
+    "background": false,
+    "model": "ds-free/deepseek-v4.1-flash"
+  },
+  {
+    "id": "fg-mwtixywn-w2ie",
+    "agent": "worker",
+    "task": "翻译《光明的使者》第 2/14 片（接前片）。源文：work_batch_20261124/_bm_b_paras.json（184 段）。输出：work_batch_20261124/bm_b_zh.json（184 段）。**分批落盘**：分三次写 bm_b_p1/p2/p3.json，合并 assert 184。体例：逐段对应；引号「」（嵌套『』）；不用⟦i⟧标记；段末标点（。！？…：—…）；题铭署名行可豁免；星号行作「＊　＊　＊　＊　＊」。体例样板：pf_m_zh.json。专名：芬顿、朱利安·莱斯特；其他自定但一致。自检后贴首 2 段与末 1 段。不要 commit/push/改其他文件。不要跑全球体检。",
+    "status": "completed",
+    "startedAt": 1795453981943,
+    "completedAt": 1795454292665,
+    "summary": "任务已完成并保存到文件。",
+    "background": false,
+    "model": "ds-free/deepseek-v4.1-flash"
+  },
+  {
+    "id": "fg-mwtixywo-x8wh",
+    "agent": "worker",
+    "task": "翻译《光明的使者》第 3/14 片（接前片）。源文：work_batch_20261124/_bm_c_paras.json（170 段）。输出：work_batch_20261124/bm_c_zh.json（170 段）。**分批落盘**：分三次写 bm_c_p1/p2/p3.json，合并 assert 170。体例：逐段对应；引号「」（嵌套『』）；不用⟦i⟧标记；段末标点（。！？…：—…）；题铭署名行可豁免；星号行作「＊　＊　＊　＊　＊」。体例样板：pf_m_zh.json。专名：芬顿、朱利安·莱斯特；其他自定但一致。自检后贴首 2 段与末 1 段。不要 commit/push/改其他文件。不要跑全球体检。",
+    "status": "completed",
+    "startedAt": 1795453981944,
+    "completedAt": 1795454356330,
+    "summary": "第 3/14 片已完成（未 commit/push，未跑全球体检，未改其他正文文件）。",
+    "background": false,
+    "model": "ds-free/deepseek-v4.1-flash"
+  },
+  {
+    "id": "fg-mwtixywo-tw2c",
+    "agent": "worker",
+    "task": "翻译《光明的使者》第 4/14 片（接前片）。源文：work_batch_20261124/_bm_d_paras.json（186 段）。输出：work_batch_20261124/bm_d_zh.json（186 段）。**分批落盘**：分三次写 bm_d_p1/p2/p3.json，合并 assert 186。体例：逐段对应；引号「」（嵌套『』）；不用⟦i⟧标记；段末标点（。！？…：—…）；题铭署名行可豁免；星号行作「＊　＊　＊　＊　＊」。体例样板：pf_m_zh.json。专名：芬顿、朱利安·莱斯特；其他自定但一致。自检后贴首 2 段与末 1 段。不要 commit/push/改其他文件。不要跑全球体检。",
+    "status": "completed",
+    "startedAt": 1795453981944,
+    "completedAt": 1795454270775,
+    "summary": "《光明的使者》第 4/14 片已完成，分批写入文件并合并完毕。",
+    "background": false,
+    "model": "ds-free/deepseek-v4.1-flash"
+  },
+  {
+    "id": "fg-mwtixywo-ilf1",
+    "agent": "worker",
+    "task": "翻译《光明的使者》第 5/14 片（接前片）。源文：work_batch_20261124/_bm_e_paras.json（168 段）。输出：work_batch_20261124/bm_e_zh.json（168 段）。**分批落盘**：分三次写 bm_e_p1/p2/p3.json，合并 assert 168。体例：逐段对应；引号「」（嵌套『』）；不用⟦i⟧标记；段末标点（。！？…：—…）；题铭署名行可豁免；星号行作「＊　＊　＊　＊　＊」。体例样板：pf_m_zh.json。专名：芬顿、朱利安·莱斯特；其他自定但一致。自检后贴首 2 段与末 1 段。不要 commit/push/改其他文件。不要跑全球体检。",
+    "status": "completed",
+    "startedAt": 1795453981944,
+    "completedAt": 1795454447157,
+    "summary": "《光明的使者》第 5/14 片已完成，并分批保存。",
+    "background": false,
+    "model": "ds-free/deepseek-v4.1-flash"
+  },
+  {
+    "id": "fg-mwtixywo-japb",
+    "agent": "worker",
+    "task": "翻译《光明的使者》第 6/14 片（接前片）。源文：work_batch_20261124/_bm_f_paras.json（156 段）。输出：work_batch_20261124/bm_f_zh.json（156 段）。**分批落盘**：分三次写 bm_f_p1/p2/p3.json，合并 assert 156。体例：逐段对应；引号「」（嵌套『』）；不用⟦i⟧标记；段末标点（。！？…：—…）；题铭署名行可豁免；星号行作「＊　＊　＊　＊　＊」。体例样板：pf_m_zh.json。专名：芬顿、朱利安·莱斯特；其他自定但一致。自检后贴首 2 段与末 1 段。不要 commit/push/改其他文件。不要跑全球体检。",
+    "status": "completed",
+    "startedAt": 1795453981944,
+    "completedAt": 1795454469253,
+    "summary": "(no output)",
+    "background": false,
+    "model": "ds-free/deepseek-v4.1-flash"
+  },
+  {
+    "id": "fg-mwtixywp-t4bb",
+    "agent": "worker",
+    "task": "翻译《光明的使者》第 7/14 片（接前片）。源文：work_batch_20261124/_bm_g_paras.json（131 段）。输出：work_batch_20261124/bm_g_zh.json（131 段）。**分批落盘**：分两次写 bm_g_p1/p2.json，合并 assert 131。体例：逐段对应；引号「」（嵌套『』）；不用⟦i⟧标记；段末标点（。！？…：—…）；题铭署名行可豁免；星号行作「＊　＊　＊　＊　＊」。体例样板：pf_m_zh.json。专名：芬顿、朱利安·莱斯特；其他自定但一致。自检后贴首 2 段与末 1 段。不要 commit/push/改其他文件。不要跑全球体检。",
+    "status": "completed",
+    "startedAt": 1795453981945,
+    "completedAt": 1795454536043,
+    "summary": "已完成 bm_g（第 7/14 片）翻译与落盘，未 commit、未改其他文件、未跑全球体检。",
+    "background": false,
+    "model": "ds-free/deepseek-v4.1-flash"
+  },
+  {
+    "id": "fg-mwtixywp-aabg",
+    "agent": "worker",
+    "task": "翻译《光明的使者》第 8/14 片（接前片）。源文：work_batch_20261124/_bm_h_paras.json（193 段）。输出：work_batch_20261124/bm_h_zh.json（193 段）。**分批落盘**：分三次写 bm_h_p1/p2/p3.json，合并 assert 193。体例：逐段对应；引号「」（嵌套『』）；不用⟦i⟧标记；段末标点（。！？…：—…）；题铭署名行可豁免；星号行作「＊　＊　＊　＊　＊」。体例样板：pf_m_zh.json。专名：芬顿、朱利安·莱斯特；其他自定但一致。自检后贴首 2 段与末 1 段。不要 commit/push/改其他文件。不要跑全球体检。",
+    "status": "completed",
+    "startedAt": 1795453981945,
+    "completedAt": 1795454635823,
+    "summary": "已完成第 8/14 片（《光明的使者》），分三批写入并合并，assert 193 通过。",
+    "background": false,
+    "model": "ds-free/deepseek-v4.1-flash"
+  },
+  {
+    "id": "fg-mwtjd7gm-qucw",
+    "agent": "worker",
+    "task": "翻译《光明的使者》第 6/14 片。源文：work_batch_20261124/_bm_f_paras.json（156 段）。输出：work_batch_20261124/bm_f_zh.json（156 段）。**必须分批落盘**：分三次写 bm_f_p1/p2/p3.json，再合并 assert 156。体例：逐段对应；引号「」（嵌套『』）；不用⟦i⟧标记；段末标点（。！？…：—…）；题铭署名行可豁免；星号行作「＊　＊　＊　＊　＊」。体例样板：work_batch_20261124/bm_e_zh.json、bm_g_zh.json。专名必须严格沿用：菲利里（Fillery，医生）、德文汉姆、梅森、莱斯特（LeVallon）、娜扬·基尔科夫、索姆斯太太、罗宾斯护士、普罗米修斯社、「N. H.」、「秀丽者」、卡赫季、萨克岛。自检后贴首 2 段与末 1 段。不要 commit/push/改其他文件。不要跑全球体检。",
+    "status": "completed",
+    "startedAt": 1795454692870,
+    "completedAt": 1795454979742,
+    "summary": "《光明的使者》第 6/14 片已译完（源文 156 段，译文 156 段）。",
+    "background": false,
+    "model": "ds-free/deepseek-v4.1-flash"
+  },
+  {
+    "id": "fg-mwtjd7gm-t7s8",
+    "agent": "worker",
+    "task": "翻译《光明的使者》第 9/14 片。源文：work_batch_20261124/_bm_i_paras.json（125 段）。输出：work_batch_20261124/bm_i_zh.json（125 段）。**分批落盘**：分两次写 bm_i_p1/p2.json，合并 assert 125。体例：逐段对应；引号「」（嵌套『』）；不用⟦i⟧标记；段末标点（。！？…：—…）；星号行作「＊　＊　＊　＊　＊」。体例样板：bm_e_zh.json、bm_g_zh.json。专名严格沿用：菲利里（Fillery，医生）、德文汉姆、梅森、莱斯特（LeVallon）、娜扬·基尔科夫、索姆斯太太、普罗米修斯社、「N. H.」、「秀丽者」、卡赫季、萨克岛。自检后贴首 2 段与末 1 段。不要 commit/push/改其他文件。不要跑全球体检。",
+    "status": "completed",
+    "startedAt": 1795454692870,
+    "completedAt": 1795454907802,
+    "summary": "第 9/14 片完成，125 段逐段对应，已分两批落盘并合并。",
+    "background": false,
+    "model": "ds-free/deepseek-v4.1-flash"
+  },
+  {
+    "id": "fg-mwtjd7gn-fdrq",
+    "agent": "worker",
+    "task": "翻译《光明的使者》第 10/14 片。源文：work_batch_20261124/_bm_j_paras.json（166 段）。输出：work_batch_20261124/bm_j_zh.json（166 段）。**分批落盘**：分三次写 bm_j_p1/p2/p3.json，合并 assert 166。体例：逐段对应；引号「」（嵌套『』）；不用⟦i⟧标记；段末标点（。！？…：—…）；星号行作「＊　＊　＊　＊　＊」。体例样板：bm_e_zh.json、bm_g_zh.json。专名严格沿用：菲利里、德文汉姆、梅森、莱斯特、娜扬·基尔科夫、索姆斯太太、普罗米修斯社、「N. H.」、「秀丽者」。自检后贴首 2 段与末 1 段。不要 commit/push/改其他文件。不要跑全球体检。",
+    "status": "completed",
+    "startedAt": 1795454692871,
+    "completedAt": 1795454875551,
+    "summary": "完成。《光明的使者》第 10/14 片翻译完成，分三次保存：",
+    "background": false,
+    "model": "ds-free/deepseek-v4.1-flash"
+  },
+  {
+    "id": "fg-mwtjd7gn-oy43",
+    "agent": "worker",
+    "task": "翻译《光明的使者》第 11/14 片。源文：work_batch_20261124/_bm_k_paras.json（165 段）。输出：work_batch_20261124/bm_k_zh.json（165 段）。**分批落盘**：分三次写 bm_k_p1/p2/p3.json，合并 assert 165。体例：逐段对应；引号「」（嵌套『』）；不用⟦i⟧标记；段末标点（。！？…：—…）；星号行作「＊　＊　＊　＊　＊」。体例样板：bm_e_zh.json、bm_g_zh.json。专名严格沿用：菲利里、德文汉姆、梅森、莱斯特、娜扬·基尔科夫、普罗米修斯社、「N. H.」、「秀丽者」。自检后贴首 2 段与末 1 段。不要 commit/push/改其他文件。不要跑全球体检。",
+    "status": "completed",
+    "startedAt": 1795454692871,
+    "completedAt": 1795454916622,
+    "summary": "翻译已完成并写入文件：`bm_k_p1.json`(0–59) + `bm_k_p2.json`(60–119) + `bm_k_p3.json`(120–164) → 合并 `bm_k_zh.json`，**assert 165 通过**（三个分片拼接结果与合并文件逐字一致）。",
+    "background": false,
+    "model": "ds-free/deepseek-v4.1-flash"
+  },
+  {
+    "id": "fg-mwtjd7gn-dchq",
+    "agent": "worker",
+    "task": "翻译《光明的使者》第 12/14 片。源文：work_batch_20261124/_bm_l_paras.json（182 段）。输出：work_batch_20261124/bm_l_zh.json（182 段）。**分批落盘**：分三次写 bm_l_p1/p2/p3.json，合并 assert 182。体例：逐段对应；引号「」（嵌套『』）；不用⟦i⟧标记；段末标点（。！？…：—…）；星号行作「＊　＊　＊　＊　＊」。体例样板：bm_e_zh.json、bm_g_zh.json。专名严格沿用：菲利里、德文汉姆、梅森、莱斯特、娜扬·基尔科夫、普罗米修斯社、「N. H.」、「秀丽者」。自检后贴首 2 段与末 1 段。不要 commit/push/改其他文件。不要跑全球体检。",
+    "status": "completed",
+    "startedAt": 1795454692871,
+    "completedAt": 1795455147061,
+    "summary": "《光明的使者》第 12/14 片已完成。",
+    "background": false,
+    "model": "ds-free/deepseek-v4.1-flash"
+  },
+  {
+    "id": "fg-mwtjd7gn-h2rh",
+    "agent": "worker",
+    "task": "翻译《光明的使者》第 13/14 片。源文：work_batch_20261124/_bm_m_paras.json（156 段）。输出：work_batch_20261124/bm_m_zh.json（156 段）。**分批落盘**：分三次写 bm_m_p1/p2/p3.json，合并 assert 156。体例：逐段对应；引号「」（嵌套『』）；不用⟦i⟧标记；段末标点（。！？…：—…）；星号行作「＊　＊　＊　＊　＊」。体例样板：bm_e_zh.json、bm_g_zh.json。专名严格沿用：菲利里、德文汉姆、梅森、莱斯特、娜扬·基尔科夫、普罗米修斯社、「N. H.」、「秀丽者」。自检后贴首 2 段与末 1 段。不要 commit/push/改其他文件。不要跑全球体检。",
+    "status": "completed",
+    "startedAt": 1795454692871,
+    "completedAt": 1795455214721,
+    "summary": "完成。第 13/14 片（下文称「本片」）已分批写入文件并合并。",
+    "background": false,
+    "model": "ds-free/deepseek-v4.1-flash"
+  },
+  {
+    "id": "fg-mwtjd7go-9wsz",
+    "agent": "worker",
+    "task": "翻译《光明的使者》第 14/14 片（末片）。源文：work_batch_20261124/_bm_n_paras.json（148 段）。输出：work_batch_20261124/bm_n_zh.json（148 段）。**分批落盘**：分两次写 bm_n_p1/p2.json，合并 assert 148。体例：逐段对应；引号「」（嵌套『』）；不用⟦i⟧标记；段末标点（。！？…：—…）；星号行作「＊　＊　＊　＊　＊」。体例样板：bm_e_zh.json、bm_g_zh.json。专名严格沿用：菲利里、德文汉姆、梅森、莱斯特、娜扬·基尔科夫、普罗米修斯社、「N. H.」、「秀丽者」。自检后贴首 2 段与末 2 段。不要 commit/push/改其他文件。不要跑全球体检。",
+    "status": "completed",
+    "startedAt": 1795454692872,
+    "completedAt": 1795455070061,
+    "summary": "我先查看工作目录和样式文件。",
+    "background": false,
+    "model": "ds-free/deepseek-v4.1-flash"
+  },
+  {
+    "id": "fg-mwtjormp-0xun",
+    "agent": "worker",
+    "task": "翻译《光明的使者》第 14/14 片（末片）。源文：work_batch_20261124/_bm_n_paras.json（148 段）。输出：work_batch_20261124/bm_n_zh.json（148 段）。**必须分批落盘**：分两次（前 74 段、后 74 段）写 bm_n_p1.json / bm_n_p2.json，再合并 assert 148。体例：逐段对应；引号「」（嵌套『』）；不用⟦i⟧标记；段末标点（。！？…：—…）；星号行作「＊　＊　＊　＊　＊」。体例样板：work_batch_20261124/bm_m_zh.json、bm_l_zh.json。专名严格沿用：菲利里（Fillery，医生）、德文汉姆、梅森、莱斯特（LeVallon）、娜扬·基尔科夫、索姆斯太太、普罗米修斯社、「N. H.」、「秀丽者」、「花山」。自检后贴首 2 段与末 2 段。不要 commit/push/改其他文件。不要跑全球体检。",
+    "status": "completed",
+    "startedAt": 1795455232225,
+    "completedAt": 1795455416539,
+    "summary": "《光明的使者》第 14/14 片（末片）翻译完成。",
+    "background": false,
+    "model": "ds-free/deepseek-v4.1-flash"
   }
 ]
