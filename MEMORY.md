@@ -1780,3 +1780,35 @@ The King of Elfland's Daughter（长篇）；或 W. H. Hudson、Machen、Blackwo
 3. nav.xhtml 必须 properties='nav' **且**在 spine 里（verify_epub 会查）；manifest 里
    不能同时有 id='nav' 和 id='iN' 两个同 href 条目，否则 verify 取第一个 id 判断。
 4. 跨片专名统一靠子代理汇报专名表 + 主线程全局 grep 替换（本册 7 组 41 处）。
+
+## 2026-11-24 第四回合：《半人马》a–h 章通读润色（work_batch_20261124/）
+
+今日新译=布莱克伍德《半人马》前 8 章（cent_a..cent_h_zh.json，共 1,222 段 ≈12.4 万字；
+i–k 章切片 _tmp_i_*.txt/_gz_*.json 已切好待译）。8 个并行子代理逐章润色，主线程只做
+派工+全局校验。**派工必带约束**：段数不变（151/220/155/132/147/119/150/148）、「」体例、
+专名锁死（施塔尔/奥马利/费希纳/原初世界/罗斯托姆/高加索/潘）、禁拉丁入中文句、禁直引号。
+
+子代理修的典型误译（审后认可）：
+- b:161 「对方常人格」→「反常人格」（abnormal）；b:19 who left him alone 主语是小人物们不是他；
+- d:31 「施塔尔在心里造成的」→「心灵上」（clairvoyant 误作人名，硬伤）；
+- f:90 「又一人马？」→「又一匹马？」（Another—horse? 主题诱导加字）；
+- h:49 「他用眼看，但用的是心」→「他能看见，但凭的是心」（saw but with the heart 译反）；
+- e:20 "that is" 插入语＝「也就是说」，原译「那毕竟是语言」；
+- f:64 裹尸布方向 from feet to shoulders（原译 foot）；
+- e:64 源文漏排 of（"being conscious it"），只能据语境补。
+- Urwelt 各章译名漂移（太初世界/原始世界）→ 统一「原初世界」。
+
+分节行统一为全角＊（e:66 原为 ASCII *，其余章已全角；主线程正则替换，段数复验不变）。
+豁免保留：b 章 unheimlich（原文自引德语词）、U.C.B.（署名）、f 章 de l'ancien monde/C'est moi
+（法语照录）、直引号仅存于法语引文内。
+序列化：这些 json 是 CRLF + 缩进风格，主线程重写时须 json.dumps(...,indent=1).replace('\n','\r\n')
++newline=''，否则文件风格被改成 LF。
+校验脚本沿用 typo_check/clean_check 口径：无 leak（小写拉丁夹在汉字间）、段末标点合规、
+0 工具标记。未 commit/push。
+
+## 2026-11-24 布莱克伍德《不可思议的冒险》第四篇《下降埃及》a 片（1/3）
+work_batch_20261124/_ia_egypta_paras.json(90) → ia_egypt_a_zh.json(90)，逐段对应，
+「」体例（本片无嵌套，故未用『』），无⟦i⟧标记，分节行用全角＊。专名与既有
+ia_egypt_c_zh.json 已对齐：乔治·伊斯利/赫勒万/萨卡拉/达舒尔/吉萨/孟菲斯/底比斯/
+帝王谷/塞拉皮雍/贝德拉希恩/苏伊士/皮卡迪利/阿拉伯沙漠/利比亚沙漠/武仙座/斯芬克斯。
+未 commit/push。

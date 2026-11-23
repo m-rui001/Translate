@@ -1056,56 +1056,274 @@
     "id": "fg-mwtdvqbo-3ddg",
     "agent": "general-purpose",
     "task": "通读并润色一篇中译小说章：文件 cent_a_zh.json（译文，JSON 数组，每元素一段）+ _centc_a_paras.json（英文源文，逐段对应，151 段）。\n\n做法：通读源文与译文，逐段对照，对译文做**保守润色**——消除生硬直译、理顺病句、调整虚词与语序使节奏自然、修明显误译（以源文为准，不添不减改含义）。\n硬性约束：\n1. 段落数必须保持 151，顺序不变，逐段对应；严禁合并/拆分/增删/重排段。\n2. 体例：引号一律「」（嵌套『』），全角标点；段末标点 ∈ {。！？…：—}，对话段以 」 收尾属正常体例，不要\"补平衡\"。\n3. 专名沿用既有译名不得改动：施塔尔（Stahl）、奥马利（O'Malley）、费希纳（Fechner）、原初世界（Urwelt）、罗斯托姆（Rostom）、高加索（Caucasus）、潘（Pan）。\n4. 严禁在任何中文句子里引入拉丁字母词；严禁直引号 \" '；严禁 markdown、工具标记、代码围栏。\n5. 不要重写整段，只做必要的句子级修饰；个别句子若已流畅，不动。\n\n写回：直接编辑 cent_a_zh.json（保持 JSON 数组格式、UTF-8、与源文件一致的转义风格——段内换行用 \\n）。写完自检：\n- python json.load 可解析；长度==151；\n- 全文无 \" ' \" * ``` oldText newText 字样（正则扫一遍）；\n- 逐段核对首尾无异常。\n\n汇报：改了多少处、列出 3–5 处最值得注意的改动（原句→新句）、发现的可疑点（源文歧义等）。",
-    "status": "running",
-    "startedAt": 1795445479428
+    "status": "completed",
+    "startedAt": 1795445479428,
+    "completedAt": 1795445584410,
+    "summary": "自检通过：json.load 可解析、151 段、顺序未动、无直引号/拉丁字母/markdown/工具标记、引号全为「」（嵌套『』原样保留）、段末标点合规（59–61 段为诗节，段内 \\n 为原有转义，未动）。仅第 37 段以全角＊结尾，属星号线体例。",
+    "background": false,
+    "model": "yanhuo888/glm-5.3-flash"
   },
   {
     "id": "fg-mwtdvqbx-r03c",
     "agent": "general-purpose",
     "task": "通读并润色一篇中译小说章：文件 cent_b_zh.json（译文，JSON 数组，每元素一段）+ _centc_b_paras.json（英文源文，逐段对应，220 段）。\n\n做法：通读源文与译文，逐段对照，对译文做**保守润色**——消除生硬直译、理顺病句、调整虚词与语序使节奏自然、修明显误译（以源文为准，不添不减改含义）。\n硬性约束：\n1. 段落数必须保持 220，顺序不变，逐段对应；严禁合并/拆分/增删/重排段。\n2. 体例：引号一律「」（嵌套『』），全角标点；段末标点 ∈ {。！？…：—}，对话段以 」 收尾属正常体例，不要\"补平衡\"。\n3. 专名沿用既有译名不得改动：施塔尔（Stahl）、奥马利（O'Malley）、费希纳（Fechner）、原初世界（Urwelt）、罗斯托姆（Rostom）、高加索（Caucasus）、潘（Pan）。\n4. 严禁在任何中文句子里引入拉丁字母词；严禁直引号 \" '；严禁 markdown、工具标记、代码围栏。\n5. 不要重写整段，只做必要的句子级修饰；个别句子若已流畅，不动。\n\n写回：直接编辑 cent_b_zh.json（保持 JSON 数组格式、UTF-8、与源文件一致的转义风格——段内换行用 \\n）。写完自检：\n- python json.load 可解析；长度==220；\n- 全文无 \" ' \" * ``` oldText newText 字样（正则扫一遍）；\n- 逐段核对首尾无异常。\n\n汇报：改了多少处、列出 3–5 处最值得注意的改动（原句→新句）、发现的可疑点（源文歧义等）。",
-    "status": "running",
-    "startedAt": 1795445479437
+    "status": "completed",
+    "startedAt": 1795445479437,
+    "completedAt": 1795445852314,
+    "summary": "润色完成，写回 `cent_b_zh.json`。",
+    "background": false,
+    "model": "yanhuo888/glm-5.3-flash"
   },
   {
     "id": "fg-mwtdvqc3-cf83",
     "agent": "general-purpose",
     "task": "通读并润色一篇中译小说章：文件 cent_c_zh.json（译文，JSON 数组，每元素一段）+ _centc_c_paras.json（英文源文，逐段对应，155 段）。\n\n做法：通读源文与译文，逐段对照，对译文做**保守润色**——消除生硬直译、理顺病句、调整虚词与语序使节奏自然、修明显误译（以源文为准，不添不减改含义）。\n硬性约束：\n1. 段落数必须保持 155，顺序不变，逐段对应；严禁合并/拆分/增删/重排段。\n2. 体例：引号一律「」（嵌套『』），全角标点；段末标点 ∈ {。！？…：—}，对话段以 」 收尾属正常体例，不要\"补平衡\"。\n3. 专名沿用既有译名不得改动：施塔尔（Stahl）、奥马利（O'Malley）、费希纳（Fechner）、原初世界（Urwelt）、罗斯托姆（Rostom）、高加索（Caucasus）、潘（Pan）。\n4. 严禁在任何中文句子里引入拉丁字母词；严禁直引号 \" '；严禁 markdown、工具标记、代码围栏。\n5. 不要重写整段，只做必要的句子级修饰；个别句子若已流畅，不动。\n\n写回：直接编辑 cent_c_zh.json（保持 JSON 数组格式、UTF-8、与源文件一致的转义风格——段内换行用 \\n）。写完自检：\n- python json.load 可解析；长度==155；\n- 全文无 \" ' \" * ``` oldText newText 字样（正则扫一遍）；\n- 逐段核对首尾无异常。\n\n汇报：改了多少处、列出 3–5 处最值得注意的改动（原句→新句）、发现的可疑点（源文歧义等）。",
-    "status": "running",
-    "startedAt": 1795445479443
+    "status": "completed",
+    "startedAt": 1795445479443,
+    "completedAt": 1795445624534,
+    "summary": "全部完成，自检通过。汇报如下：",
+    "background": false,
+    "model": "yanhuo888/glm-5.3-flash"
   },
   {
     "id": "fg-mwtdvqc8-6v1j",
     "agent": "general-purpose",
     "task": "通读并润色一篇中译小说章：文件 cent_d_zh.json（译文，JSON 数组，每元素一段）+ _centc_d_paras.json（英文源文，逐段对应，132 段）。\n\n做法：通读源文与译文，逐段对照，对译文做**保守润色**——消除生硬直译、理顺病句、调整虚词与语序使节奏自然、修明显误译（以源文为准，不添不减改含义）。\n硬性约束：\n1. 段落数必须保持 132，顺序不变，逐段对应；严禁合并/拆分/增删/重排段。\n2. 体例：引号一律「」（嵌套『』），全角标点；段末标点 ∈ {。！？…：—}，对话段以 」 收尾属正常体例，不要\"补平衡\"。\n3. 专名沿用既有译名不得改动：施塔尔（Stahl）、奥马利（O'Malley）、费希纳（Fechner）、原初世界（Urwelt）、罗斯托姆（Rostom）、高加索（Caucasus）、潘（Pan）。\n4. 严禁在任何中文句子里引入拉丁字母词；严禁直引号 \" '；严禁 markdown、工具标记、代码围栏。\n5. 不要重写整段，只做必要的句子级修饰；个别句子若已流畅，不动。\n\n写回：直接编辑 cent_d_zh.json（保持 JSON 数组格式、UTF-8、与源文件一致的转义风格——段内换行用 \\n）。写完自检：\n- python json.load 可解析；长度==132；\n- 全文无 \" ' \" * ``` oldText newText 字样（正则扫一遍）；\n- 逐段核对首尾无异常。\n\n汇报：改了多少处、列出 3–5 处最值得注意的改动（原句→新句）、发现的可疑点（源文歧义等）。",
-    "status": "running",
-    "startedAt": 1795445479448
+    "status": "completed",
+    "startedAt": 1795445479448,
+    "completedAt": 1795445605239,
+    "summary": "自检全部通过：`json.load` 可解析、长度 132、段末体例正常、无直引号/ASCII 星号/代码围栏、全文无拉丁字母（连原有的 \"U.",
+    "background": false,
+    "model": "yanhuo888/glm-5.3-flash"
   },
   {
     "id": "fg-mwtdvqcd-lojy",
     "agent": "general-purpose",
     "task": "通读并润色一篇中译小说章：文件 cent_e_zh.json（译文，JSON 数组，每元素一段）+ _centc_e_paras.json（英文源文，逐段对应，147 段）。\n\n做法：通读源文与译文，逐段对照，对译文做**保守润色**——消除生硬直译、理顺病句、调整虚词与语序使节奏自然、修明显误译（以源文为准，不添不减改含义）。\n硬性约束：\n1. 段落数必须保持 147，顺序不变，逐段对应；严禁合并/拆分/增删/重排段。\n2. 体例：引号一律「」（嵌套『』），全角标点；段末标点 ∈ {。！？…：—}，对话段以 」 收尾属正常体例，不要\"补平衡\"。\n3. 专名沿用既有译名不得改动：施塔尔（Stahl）、奥马利（O'Malley）、费希纳（Fechner）、原初世界（Urwelt）、罗斯托姆（Rostom）、高加索（Caucasus）、潘（Pan）。\n4. 严禁在任何中文句子里引入拉丁字母词；严禁直引号 \" '；严禁 markdown、工具标记、代码围栏。\n5. 不要重写整段，只做必要的句子级修饰；个别句子若已流畅，不动。\n\n写回：直接编辑 cent_e_zh.json（保持 JSON 数组格式、UTF-8、与源文件一致的转义风格——段内换行用 \\n）。写完自检：\n- python json.load 可解析；长度==147；\n- 全文无 \" ' \" * ``` oldText newText 字样（正则扫一遍）；\n- 逐段核对首尾无异常。\n\n汇报：改了多少处、列出 3–5 处最值得注意的改动（原句→新句）、发现的可疑点（源文歧义等）。",
-    "status": "running",
-    "startedAt": 1795445479453
+    "status": "completed",
+    "startedAt": 1795445479453,
+    "completedAt": 1795445602313,
+    "summary": "润色完成，写回 `cent_e_zh.json`，自检全部通过（json.load 可解析、段数 147、无直引号/星号残留——第 66 段的 `* * * *` 分隔线系原文体例保留、段末标点合规、无拉丁字母词、括号配对无误）。",
+    "background": false,
+    "model": "yanhuo888/glm-5.3-flash"
   },
   {
     "id": "fg-mwtdvqci-c8c9",
     "agent": "general-purpose",
     "task": "通读并润色一篇中译小说章：文件 cent_f_zh.json（译文，JSON 数组，每元素一段）+ _centc_f_paras.json（英文源文，逐段对应，119 段）。\n\n做法：通读源文与译文，逐段对照，对译文做**保守润色**——消除生硬直译、理顺病句、调整虚词与语序使节奏自然、修明显误译（以源文为准，不添不减改含义）。\n硬性约束：\n1. 段落数必须保持 119，顺序不变，逐段对应；严禁合并/拆分/增删/重排段。\n2. 体例：引号一律「」（嵌套『』），全角标点；段末标点 ∈ {。！？…：—}，对话段以 」 收尾属正常体例，不要\"补平衡\"。\n3. 专名沿用既有译名不得改动：施塔尔（Stahl）、奥马利（O'Malley）、费希纳（Fechner）、原初世界（Urwelt）、罗斯托姆（Rostom）、高加索（Caucasus）、潘（Pan）。\n4. 严禁在任何中文句子里引入拉丁字母词；严禁直引号 \" '；严禁 markdown、工具标记、代码围栏。\n5. 不要重写整段，只做必要的句子级修饰；个别句子若已流畅，不动。\n\n写回：直接编辑 cent_f_zh.json（保持 JSON 数组格式、UTF-8、与源文件一致的转义风格——段内换行用 \\n）。写完自检：\n- python json.load 可解析；长度==119；\n- 全文无 \" ' \" * ``` oldText newText 字样（正则扫一遍）；\n- 逐段核对首尾无异常。\n\n汇报：改了多少处、列出 3–5 处最值得注意的改动（原句→新句）、发现的可疑点（源文歧义等）。",
-    "status": "running",
-    "startedAt": 1795445479458
+    "status": "completed",
+    "startedAt": 1795445479458,
+    "completedAt": 1795445637643,
+    "summary": "自检全部通过：`json.load` 可解析、长度 119、CRLF 行尾与源文件一致、段末标点均为。！？…：」、无 markdown/工具标记；仅剩的两处撇号是第 83、85 段原文法语引用（de l'ancien monde / C'est moi）自带的省字符，属原文照录。",
+    "background": false,
+    "model": "yanhuo888/glm-5.3-flash"
   },
   {
     "id": "fg-mwtdvqco-8tb0",
     "agent": "general-purpose",
     "task": "通读并润色一篇中译小说章：文件 cent_g_zh.json（译文，JSON 数组，每元素一段）+ _centc_g_paras.json（英文源文，逐段对应，150 段）。\n\n做法：通读源文与译文，逐段对照，对译文做**保守润色**——消除生硬直译、理顺病句、调整虚词与语序使节奏自然、修明显误译（以源文为准，不添不减改含义）。\n硬性约束：\n1. 段落数必须保持 150，顺序不变，逐段对应；严禁合并/拆分/增删/重排段。\n2. 体例：引号一律「」（嵌套『』），全角标点；段末标点 ∈ {。！？…：—}，对话段以 」 收尾属正常体例，不要\"补平衡\"。\n3. 专名沿用既有译名不得改动：施塔尔（Stahl）、奥马利（O'Malley）、费希纳（Fechner）、原初世界（Urwelt）、罗斯托姆（Rostom）、高加索（Caucasus）、潘（Pan）。\n4. 严禁在任何中文句子里引入拉丁字母词；严禁直引号 \" '；严禁 markdown、工具标记、代码围栏。\n5. 不要重写整段，只做必要的句子级修饰；个别句子若已流畅，不动。\n\n写回：直接编辑 cent_g_zh.json（保持 JSON 数组格式、UTF-8、与源文件一致的转义风格——段内换行用 \\n）。写完自检：\n- python json.load 可解析；长度==150；\n- 全文无 \" ' \" * ``` oldText newText 字样（正则扫一遍）；\n- 逐段核对首尾无异常。\n\n汇报：改了多少处、列出 3–5 处最值得注意的改动（原句→新句）、发现的可疑点（源文歧义等）。",
-    "status": "running",
-    "startedAt": 1795445479464
+    "status": "completed",
+    "startedAt": 1795445479464,
+    "completedAt": 1795445613465,
+    "summary": "全部自检通过：",
+    "background": false,
+    "model": "yanhuo888/glm-5.3-flash"
   },
   {
     "id": "fg-mwtdvqct-1psz",
     "agent": "general-purpose",
     "task": "通读并润色一篇中译小说章：文件 cent_h_zh.json（译文，JSON 数组，每元素一段）+ _centc_h_paras.json（英文源文，逐段对应，148 段）。\n\n做法：通读源文与译文，逐段对照，对译文做**保守润色**——消除生硬直译、理顺病句、调整虚词与语序使节奏自然、修明显误译（以源文为准，不添不减改含义）。\n硬性约束：\n1. 段落数必须保持 148，顺序不变，逐段对应；严禁合并/拆分/增删/重排段。\n2. 体例：引号一律「」（嵌套『』），全角标点；段末标点 ∈ {。！？…：—}，对话段以 」 收尾属正常体例，不要\"补平衡\"。\n3. 专名沿用既有译名不得改动：施塔尔（Stahl）、奥马利（O'Malley）、费希纳（Fechner）、原初世界（Urwelt）、罗斯托姆（Rostom）、高加索（Caucasus）、潘（Pan）。\n4. 严禁在任何中文句子里引入拉丁字母词；严禁直引号 \" '；严禁 markdown、工具标记、代码围栏。\n5. 不要重写整段，只做必要的句子级修饰；个别句子若已流畅，不动。\n\n写回：直接编辑 cent_h_zh.json（保持 JSON 数组格式、UTF-8、与源文件一致的转义风格——段内换行用 \\n）。写完自检：\n- python json.load 可解析；长度==148；\n- 全文无 \" ' \" * ``` oldText newText 字样（正则扫一遍）；\n- 逐段核对首尾无异常。\n\n汇报：改了多少处、列出 3–5 处最值得注意的改动（原句→新句）、发现的可疑点（源文歧义等）。",
+    "status": "completed",
+    "startedAt": 1795445479469,
+    "completedAt": 1795445593974,
+    "summary": "自检全部通过：`json.load` 可解析、长度 148、逐段顺序与源文对应、无 ASCII 引号/星号/代码围栏/拉丁字母、段末标点合规（仅 6 个「＊＊＊」分隔段以＊收尾，属全文既定体例，与原文件一致）。",
+    "background": false,
+    "model": "yanhuo888/glm-5.3-flash"
+  },
+  {
+    "id": "fg-mwtdx5z6-2tl9",
+    "agent": "worker",
+    "task": "翻译阿尔杰农·布莱克伍德《不可思议的冒险》（Incredible Adventures, 1914）第一篇《厄尼勋爵的再生》The Regeneration of Lord Ernie 第 1/3 片。源文：work_batch_20261124/_ia_ernie_a_paras.json（151段）。输出：work_batch_20261124/ia_ernie_a_zh.json（151段）。背景：厌倦了书本的少年厄尼勋爵随导师到阿尔卑斯山中一个古老村庄疗愈，接触到山民狂热的春之祭仪。体例：逐段对应；引号「」（嵌套『』）；不用⟦i⟧标记；段末标点（。！？…：—…）；分节星号行译作「＊　＊　＊　＊　＊」。体例样板：work_batch_20261124/cent_g_zh.json、dt_yann_zh.json。专名：Lord Ernie 厄尼勋爵；Hibbert 希伯特；其他自定但一致，汇报末尾列专名表。自检（段数、外文、标点、无工具调用残留）后贴首2段与末1段。不要 commit/push/改其他文件。不要跑全球体检。",
+    "status": "completed",
+    "startedAt": 1795445546370,
+    "completedAt": 1795445800752,
+    "summary": "《厄尼勋爵的再生》第 1/3 片译毕。",
+    "background": false,
+    "model": "ds-free/deepseek-v4.1-flash"
+  },
+  {
+    "id": "fg-mwtdx5z6-uz2v",
+    "agent": "worker",
+    "task": "翻译《厄尼勋爵的再生》第 2/3 片（接前片）。源文：work_batch_20261124/_ia_ernie_b_paras.json（139段）。输出：work_batch_20261124/ia_ernie_b_zh.json（139段）。体例：逐段对应；引号「」（嵌套『』）；不用⟦i⟧标记；段末标点（。！？…：—…）；分节星号行作「＊　＊　＊　＊　＊」。体例样板：cent_g_zh.json。专名：厄尼勋爵、希伯特；其他自定但一致。自检后贴首2段与末1段。不要 commit/push/改其他文件。不要跑全球体检。",
+    "status": "completed",
+    "startedAt": 1795445546370,
+    "completedAt": 1795445819703,
+    "summary": "已完成。输出文件：`work_batch_20261124/ia_ernie_b_zh.json`（139 段，17,062 字）。",
+    "background": false,
+    "model": "ds-free/deepseek-v4.1-flash"
+  },
+  {
+    "id": "fg-mwtdx5z7-7qao",
+    "agent": "worker",
+    "task": "翻译《厄尼勋爵的再生》第 3/3 片（接前片）。源文：work_batch_20261124/_ia_ernie_c_paras.json（56段）。输出：work_batch_20261124/ia_ernie_c_zh.json（56段）。体例：逐段对应；引号「」（嵌套『』）；不用⟦i⟧标记；段末标点（。！？…：—…）。体例样板：cent_g_zh.json。专名：厄尼勋爵、希伯特；其他自定但一致。自检后贴首2段与末1段。不要 commit/push/改其他文件。不要跑全球体检。",
+    "status": "completed",
+    "startedAt": 1795445546371,
+    "completedAt": 1795445774323,
+    "summary": "任务已完成。",
+    "background": false,
+    "model": "ds-free/deepseek-v4.1-flash"
+  },
+  {
+    "id": "fg-mwtdx5z7-8fy7",
+    "agent": "worker",
+    "task": "翻译布莱克伍德《不可思议的冒险》第二篇《牺牲》The Sacrifice（全篇）。源文：work_batch_20261124/_ia_sacrifice_a_paras.json（123段）。输出：work_batch_20261124/ia_sacrifice_zh.json（123段）。背景：伦敦一家旅馆里，一个男人与神秘同伴往阿尔卑斯去赴一场命中注定的献祭。体例：逐段对应；引号「」（嵌套『』）；不用⟦i⟧标记；段末标点（。！？…：—…）。体例样板：cent_g_zh.json。专名：自定但全文一致，汇报末尾列专名表。自检后贴首2段与末1段。不要 commit/push/改其他文件。不要跑全球体检。",
+    "status": "completed",
+    "startedAt": 1795445546371,
+    "completedAt": 1795445788462,
+    "summary": "已完成。文件：`work_batch_20261124/ia_sacrifice_zh.json`（123 段，逐段对应源文 123 段）。",
+    "background": false,
+    "model": "ds-free/deepseek-v4.1-flash"
+  },
+  {
+    "id": "fg-mwtdx5z7-mgq5",
+    "agent": "worker",
+    "task": "翻译布莱克伍德《不可思议的冒险》第三篇《诅咒者》The Damned 第 1/4 片。源文：work_batch_20261124/_ia_damned_a_paras.json（92段）。输出：work_batch_20261124/ia_damned_a_zh.json（92段）。背景：一位作家受邀到一座荒原古宅做客，宅中人与孩子被「他们」（清教徒祖先的诅咒）纠缠，最后看见那群灰色的人影。体例：逐段对应；引号「」（嵌套『』）；不用⟦i⟧标记；段末标点（。！？…：—…）。体例样板：cent_g_zh.json。专名：自定但全文一致，汇报末尾列专名表。自检后贴首2段与末1段。不要 commit/push/改其他文件。不要跑全球体检。",
+    "status": "completed",
+    "startedAt": 1795445546371,
+    "completedAt": 1795446080107,
+    "summary": "翻译完成，自检通过。",
+    "background": false,
+    "model": "ds-free/deepseek-v4.1-flash"
+  },
+  {
+    "id": "fg-mwtdx5z8-bgje",
+    "agent": "worker",
+    "task": "翻译《诅咒者》第 2/4 片（接前片）。源文：work_batch_20261124/_ia_damned_b_paras.json（145段）。输出：work_batch_20261124/ia_damned_b_zh.json（145段）。体例：逐段对应；引号「」（嵌套『』）；不用⟦i⟧标记；段末标点（。！？…：—…）。体例样板：cent_g_zh.json。专名与前片一致。自检后贴首2段与末1段。不要 commit/push/改其他文件。不要跑全球体检。",
+    "status": "completed",
+    "startedAt": 1795445546372,
+    "completedAt": 1795446009091,
+    "summary": "I'll start by examining the source files and the style template.",
+    "background": false,
+    "model": "ds-free/deepseek-v4.1-flash"
+  },
+  {
+    "id": "fg-mwtdx5z8-bfn1",
+    "agent": "worker",
+    "task": "翻译《诅咒者》第 3/4 片（接前片）。源文：work_batch_20261124/_ia_damned_c_paras.json（125段）。输出：work_batch_20261124/ia_damned_c_zh.json（125段）。体例：逐段对应；引号「」（嵌套『』）；不用⟦i⟧标记；段末标点（。！？…：—…）。体例样板：cent_g_zh.json。专名与前片一致。自检后贴首2段与末1段。不要 commit/push/改其他文件。不要跑全球体检。",
+    "status": "completed",
+    "startedAt": 1795445546372,
+    "completedAt": 1795446135541,
+    "summary": "已完成第 3/4 片的翻译。",
+    "background": false,
+    "model": "ds-free/deepseek-v4.1-flash"
+  },
+  {
+    "id": "fg-mwtdx5z8-fjo1",
+    "agent": "worker",
+    "task": "翻译《诅咒者》第 4/4 片（末片，接前片）。源文：work_batch_20261124/_ia_damned_d_paras.json（52段）。输出：work_batch_20261124/ia_damned_d_zh.json（52段）。体例：逐段对应；引号「」（嵌套『』）；不用⟦i⟧标记；段末标点（。！？…：—…）。体例样板：cent_g_zh.json。专名与前片一致。自检后贴首2段与末1段。不要 commit/push/改其他文件。不要跑全球体检。",
+    "status": "completed",
+    "startedAt": 1795445546372,
+    "completedAt": 1795446310929,
+    "summary": "已完成《诅咒者》第 4/4 片区翻译。",
+    "background": false,
+    "model": "ds-free/deepseek-v4.1-flash"
+  },
+  {
+    "id": "fg-mwtee08x-jh0b",
+    "agent": "worker",
+    "task": "翻译布莱克伍德《诅咒者》The Damned 第 2/4 片。源文：work_batch_20261124/_ia_damnedb_paras.json（145段）。输出：work_batch_20261124/ia_damned_b_zh.json（145段）。背景：接前片，叙述者比尔住进萨塞克斯的塔楼庄，女的叫梅布尔·弗兰克林，她的丈夫塞缪尔是清教徒派传教士，宅子里的人与孩子都被祖先的诅咒纏住。体例：逐段对应；引号「」（嵌套『』）；不用⟦i⟧标记；段末标点（。！？…：—…）；分隔星号行作「＊　＊　＊　＊　＊」。体例样板：work_batch_20261124/ia_damned_a_zh.json、ia_damned_c_zh.json（专名必须与这两片一致：比尔、弗朗西丝、梅布尔、弗兰克林太太、塔楼庄、马什太太、掷弹兵、『他们』、那影子、威灵顿巨杉、猴谜树）。自检（段数、外文、标点、无工具调用残留）后贴首2段与末1段。不要 commit/push/改其他文件。不要跑全球体检。",
+    "status": "completed",
+    "startedAt": 1795446332097,
+    "completedAt": 1795446571567,
+    "summary": "本片（第 2/4 片）已完成。",
+    "background": false,
+    "model": "ds-free/deepseek-v4.1-flash"
+  },
+  {
+    "id": "fg-mwtee08y-qn7r",
+    "agent": "worker",
+    "task": "翻译布莱克伍德《不可思议的冒险》第四篇《下降埃及》A Descent into Egypt 第 1/3 片。源文：work_batch_20261124/_ia_egypta_paras.json（90段）。输出：work_batch_20261124/ia_egypt_a_zh.json（90段）。背景：一名埃及学家（法国人）开罗住了多年后逐渐被古埃及的「时间」与神庙的黑暗之神吞没，最终画下去死后的画。体例：逐段对应；引号「」（嵌套『』）；不用⟦i⟧标记；段末标点（。！？…：—…）。体例样板：work_batch_20261124/ia_damned_a_zh.json、cent_g_zh.json。专名：自定但全文一致，汇报末尾列专名表。自检后贴首2段与末1段。不要 commit/push/改其他文件。不要跑全球体检。",
+    "status": "completed",
+    "startedAt": 1795446332098,
+    "completedAt": 1795446578309,
+    "summary": "已完成《下降埃及》A 片（1/3）翻译：`work_batch_20261124/_ia_egypta_paras.json`（90 段）→ `work_batch_20261124/ia_egypt_a_zh.json`（90 段，逐段对应，JSON `indent=1` 与原样板一致）。",
+    "background": false,
+    "model": "ds-free/deepseek-v4.1-flash"
+  },
+  {
+    "id": "fg-mwtee08y-93h2",
+    "agent": "worker",
+    "task": "翻译《下降埃及》第 2/3 片（接前片）。源文：work_batch_20261124/_ia_egyptb_paras.json（92段）。输出：work_batch_20261124/ia_egypt_b_zh.json（92段）。体例：逐段对应；引号「」（嵌套『』）；不用⟦i⟧标记；段末标点（。！？…：—…）。体例样板：ia_damned_a_zh.json。专名与前片一致。自检后贴首2段与末1段。不要 commit/push/改其他文件。不要跑全球体检。",
+    "status": "completed",
+    "startedAt": 1795446332098,
+    "completedAt": 1795446712465,
+    "summary": "翻译完成，自检通过。",
+    "background": false,
+    "model": "ds-free/deepseek-v4.1-flash"
+  },
+  {
+    "id": "fg-mwtee08z-e0fy",
+    "agent": "worker",
+    "task": "翻译《下降埃及》第 3/3 片（接前片）。源文：work_batch_20261124/_ia_egyptc_paras.json（103段）。输出：work_batch_20261124/ia_egypt_c_zh.json（103段）。体例：逐段对应；引号「」（嵌套『』）；不用⟦i⟧标记；段末标点（。！？…：—…）。体例样板：ia_damned_a_zh.json。专名与前片一致。自检后贴首2段与末1段。不要 commit/push/改其他文件。不要跑全球体检。",
+    "status": "completed",
+    "startedAt": 1795446332099,
+    "completedAt": 1795446595696,
+    "summary": "《下降埃及》（A Descent into Egypt，布莱克伍德）第 3/3 片的翻译已完成，已写入 `work_batch_20261124/ia_egypt_c_zh.json`。",
+    "background": false,
+    "model": "ds-free/deepseek-v4.1-flash"
+  },
+  {
+    "id": "fg-mwtee08z-k4lf",
+    "agent": "worker",
+    "task": "翻译布莱克伍德《不可思议的冒险》第五篇《行路人》Wayfarers（全篇）。源文：work_batch_20261124/_ia_wayfarersa_paras.json（138段）。输出：work_batch_20261124/ia_wayfarers_zh.json（138段）。背景：一位伦敦人在乡间小路上遇到一队神秘的朝圣者（各地归来的人们在暮色中赶路），最终发现自己也在其中。体例：逐段对应；引号「」（嵌套『』）；不用⟦i⟧标记；段末标点（。！？…：—…）。体例样板：ia_damned_a_zh.json、cent_g_zh.json。专名：自定但全文一致，汇报末尾列专名表。自检后贴首2段与末1段。不要 commit/push/改其他文件。不要跑全球体检。",
+    "status": "completed",
+    "startedAt": 1795446332099,
+    "completedAt": 1795446788374,
+    "summary": "完成。`work_batch_20261124/ia_wayfarers_zh.json`：138 段，逐段对应源文 138 段。",
+    "background": false,
+    "model": "ds-free/deepseek-v4.1-flash"
+  },
+  {
+    "id": "fg-mwteoivz-yxma",
+    "agent": "worker",
+    "task": "翻译阿尔杰农·布莱克伍德《柳林》The Willows（1907，中篇）第 1/2 片。源文：work_batch_20261124/_willows_a_paras.json（132段）。输出：work_batch_20261124/willows_a_zh.json（132段）。背景：叙述者与同伴在乡间小屋里度过一夜，周围是无穷无尽的柳林与两条大河（多瑶河与伊瑟尔河）——柳林里住着不属于人类的古老存在。体例：逐段对应；引号「」（嵌套『』）；不用⟦i⟧标记；段末标点（。！？…：—…）；分节星号行作「＊　＊　＊　＊　＊」。体例样板：work_batch_20261124/ia_damned_a_zh.json、cent_g_zh.json。专名：the Danube 多瑶河；the Inn 伊瑟尔河；其他自定但全文一致，汇报末尾列专名表。自检后贴首2段与末1段。不要 commit/push/改其他文件。不要跑全球体检。",
+    "status": "completed",
+    "startedAt": 1795446822815,
+    "completedAt": 1795447015658,
+    "summary": "自检通过：132 段逐段对应，比例 0.24–0.35 全文均匀，无 ⟦i⟧，引号「」配平（嵌套用『』），段末标点合规，无残留拉丁文（仅地图词 Sumpfe 保留原字）。",
+    "background": false,
+    "model": "ds-free/deepseek-v4.1-flash"
+  },
+  {
+    "id": "fg-mwteoiw0-5cov",
+    "agent": "worker",
+    "task": "翻译布莱克伍德《柳林》第 2/2 片（接前片）。源文：work_batch_20261124/_willows_b_paras.json（201段）。输出：work_batch_20261124/willows_b_zh.json（201段）。背景：接前片，夜里柳林中的存在逐渐显现，同伴的桨被偷走，他们拼死逃出。体例：逐段对应；引号「」（嵌套『』）；不用⟦i⟧标记；段末标点（。！？…：—…）；星号行作「＊　＊　＊　＊　＊」。体例样板：ia_damned_a_zh.json。专名：与前片一致（多瑶河、伊瑟尔河）；其他自定但一致。自检后贴首2段与末1段。不要 commit/push/改其他文件。不要跑全球体检。",
+    "status": "completed",
+    "startedAt": 1795446822816,
+    "completedAt": 1795447077093,
+    "summary": "《柳林》第 2/2 片译毕，输出 `work_batch_20261124/willows_b_zh.json`。",
+    "background": false,
+    "model": "ds-free/deepseek-v4.1-flash"
+  },
+  {
+    "id": "fg-mwter5ar-j6iw",
+    "agent": "general-purpose",
+    "task": "对象：《红与黑》（司汤达），译稿在 E:/Translate/work_pub/rouge/（out/<章>/<片>/final.txt，一行一段；源文 src/cNNN.json 法语原文）。公认参照译本：罗新璋（文气古雅、精雕细琢）、郝运（平实严谨）。本库译文署名「坟头草」。\n\n任务：通读代表章节（建议 c002 开头小镇/市长家、c003 上下文、于连初见德·雷纳尔夫人、侯爵府舞会段、终卷监狱自省章——自己按 src 索引找），逐段对照法语原文，对译本水平作**严肃批评**，写成 E:/Translate/REVIEW_2026-11-24-rouge.md。文风要求：像正式译本评介，有总体评价（定位这个译本是什么性质：语言流畅度、文学质感、句式结构、忠实度的得失）+ 分维度分析（1 语言风格与可读性 2 文学质感与韵味 3 准确性与忠实度 4 与罗新璋/郝运等主流译本对比），每条论点必须配**具体例证**（原文句子→译文→评点，可引著名译本的处理作对照；引原文属公有领域，没问题）。\n\n然后动手修改：从确认的缺陷里挑 12–20 处最站得住的，直接编辑对应 final.txt（保持行数与空行结构不变，段内一字不多删）。只修有把握的：误译、明显直译病句、俚语俗化破坏人物语域、专名错。拿不准的只写进评论不动手。修改后自检：每个改动文件行数与空行数与改前一致、无直引号、无拉丁入中文、无 markdown/工具标记残留。\n\n汇报：评价要点摘要、修改处数、最值得注意的 3–5 处（原→新+理由）、未敢动的争议点清单。",
     "status": "running",
-    "startedAt": 1795445479469
+    "startedAt": 1795446945171
+  },
+  {
+    "id": "fg-mwter5as-u810",
+    "agent": "general-purpose",
+    "task": "对象：《傲慢与偏见》（奥斯汀），译稿在 E:/Translate/work_pub/pride/（out/<章>/<片>/final.txt，一行一段；源文 src/cNNN.json 英语原文）。公认参照译本：王科一（典雅俏皮）、孙致礼（严谨精当）。本库译文署名「坟头草」。\n\n任务：通读代表章节（c002 开篇 universal truth 段必须细评、班纳特家对话章、柯林斯求婚章、达西第一次求婚章、凯瑟琳夫人兴师问罪章、尾声——按 src 索引找），逐段对照英文原文，对译本水平作**严肃批评**，写成 E:/Translate/REVIEW_2026-11-24-pride.md。文风要求：像正式译本评介，有总体评价（定位：这个译本的语言流畅度、文学质感、句式结构、忠实度的得失）+ 分维度分析（1 语言风格与可读性 2 文学质感与韵味——奥斯汀的反讽语调尤其要评 3 准确性与忠实度 4 与王科一/孙致礼等主流译本对比），每条论点配**具体例证**（原文→译文→评点，对照名译处理）。\n\n然后动手修改：从确认的缺陷里挑 12–20 处最站得住的，直接编辑对应 final.txt（保持行数与空行结构不变）。只修有把握的：误译、反讽丢失、直译病句、人物语域错位、专名错。拿不准的只写进评论不动手。修改后自检：行数不变、无直引号、无拉丁入中文、无工具标记残留。\n\n汇报：评价要点摘要、修改处数、最值得注意的 3–5 处（原→新+理由）、未敢动的争议点清单。",
+    "status": "running",
+    "startedAt": 1795446945172
+  },
+  {
+    "id": "fg-mwter5as-ym37",
+    "agent": "general-purpose",
+    "task": "对象：《包法利夫人》（福楼拜），译稿在 E:/Translate/work_pub/bovary/（out/<章>/<片>/final.txt，一行一段；源文 src/cNNN.json 法语原文）。公认参照译本：李健吾（文气充沛、译笔奔放）、周克希（细腻克制）、许渊冲。本库译文署名「坟头草」。\n\n任务：通读代表章节（c002 开头夏尔进学堂、爱玛婚礼/沃比萨尔舞会、 agricultural fair 电子商务? 按原章找「农业评比会」那章、赖昂幽会章、爱玛服毒章），逐段对照法语原文，对译本水平作**严肃批评**，写成 E:/Translate/REVIEW_2026-11-24-bovary.md。文风要求：像正式译本评介，有总体评价（定位：语言流畅度、文学质感、句式结构、忠实度的得失——福楼拜的自由间接引语 style indirect libre 必须重点评）+ 分维度分析（1 语言风格与可读性 2 文学质感与韵味 3 准确性与忠实度 4 与李健吾/周克希等主流译本对比），每条论点配**具体例证**（原文→译文→评点，对照名译处理；引原文属公有领域）。\n\n然后动手修改：从确认的缺陷里挑 12–20 处最站得住的，直接编辑对应 final.txt（保持行数与空行结构不变）。只修有把握的：误译、自由间接引语被改为明确转述导致叙述味丢失、直译病句、专名错。拿不准的只写进评论不动手。修改后自检：行数不变、无直引号、无拉丁入中文、无工具标记残留。\n\n汇报：评价要点摘要、修改处数、最值得注意的 3–5 处（原→新+理由）、未敢动的争议点清单。",
+    "status": "running",
+    "startedAt": 1795446945172
   }
 ]
