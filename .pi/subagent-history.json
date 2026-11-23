@@ -518,5 +518,38 @@
     "summary": "第三部分（催眠术对话部分，正文第149–223段）已译完并输出到 `work_batch_20261124/thousand_c_zh.json`。",
     "background": false,
     "model": "yanhuo888/glm-5.3-flash"
+  },
+  {
+    "id": "fg-mwt96ylq-f0w2",
+    "agent": "worker",
+    "task": "翻译爱伦·坡《兰多的小屋》（Landor's Cottage, 1849）。源文：work_batch_20261124/_landor_paras.json（38段，[0]是篇名行，已由构建的h1承担，正文[1..37]共37段）。输出：work_batch_20261124/poe_landor_zh.json（37段，不含篇名）。体例：逐段对应；引号「」（嵌套『』）；不用⟦i⟧标记；段末标点（。！？…：—…）。体例样板：work_batch_20261124/pit_zh.json、poe_thousand_zh.json。专名：Landor 兰多；Petersburg 彼得斯堡；其他照通译。自检后贴首2段与末1段。不要 commit/push/改其他文件。不要跑全局体检。",
+    "status": "completed",
+    "startedAt": 1795437605294,
+    "completedAt": 1795437694271,
+    "summary": "翻译完成。自检结果：",
+    "background": false,
+    "model": "yanhuo888/glm-5.3-flash"
+  },
+  {
+    "id": "fg-mwt96ylr-yunl",
+    "agent": "worker",
+    "task": "翻译爱伦·坡《威廉·威尔逊》（William Wilson, 1839）。源文：work_batch_20261124/_wilson_paras.json（57段，[0]是篇名行，正文[1..56]共56段；正文内有一个拉丁题铭段（以「Quid?」或类似开头），译出并可含拉丁；末段是英文诗句引文，按行保留\\n，豁免标点断言）。输出：work_batch_20261124/poe_wilson_zh.json（56段，不含篇名）。体例：逐段对应；引号「」（嵌套『』）；不用⟦i⟧标记；段末标点（。！？…：—…），题铭段除外。体例样板：work_batch_20261124/pit_zh.json、poe_thousand_zh.json。专名：William Wilson 威廉·威尔逊；Eton 伊顿；Oxford 牛津；Dr. Bransby 布兰斯比牧师；其他照通译。自检后贴首3段与末1段。不要 commit/push/改其他文件。不要跑全局体检。",
+    "status": "completed",
+    "startedAt": 1795437605295,
+    "completedAt": 1795437753961,
+    "summary": "剩余空格均为保留拉丁/法语词（arrondees、Honour、le bon temps）两侧的隔断，属正常。任务完成：",
+    "background": false,
+    "model": "yanhuo888/glm-5.3-flash"
+  },
+  {
+    "id": "fg-mwt96yls-qsee",
+    "agent": "worker",
+    "task": "翻译爱伦·坡《阿恩海姆领地》（The Domain of Arnheim, 1847）。源文：work_batch_20261124/_arnheim_paras.json（30段，[0]是题诗（Wadsworth Longfellow 四行诗，按行保留\\n，段末豁免标点断言），正文[1..29]共29段）。输出：work_batch_20261124/poe_arnheim_zh.json（30段，含题诗段）。体例：逐段对应；引号「」（嵌套『』）；不用⟦i⟧标记；段末标点（。！？…：—…），题诗段除外。体例样板：work_batch_20261124/pit_zh.json、poe_thousand_zh.json。专名：Arnheim 阿恩海姆；Pompeii 庞贝；Ellison 埃利森；其他照通译。自检后贴首2段与末1段。不要 commit/push/改其他文件。不要跑全局体检。",
+    "status": "completed",
+    "startedAt": 1795437605296,
+    "completedAt": 1795437919989,
+    "summary": "翻译完成，自检全部通过。",
+    "background": false,
+    "model": "yanhuo888/glm-5.3-flash"
   }
 ]
