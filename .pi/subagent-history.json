@@ -485,5 +485,38 @@
     "summary": "翻译完成，输出至 `work_batch_20261124/bierce_redhorse_zh.json`（JSON 数组，34 段，UTF-8）。",
     "background": false,
     "model": "yanhuo888/glm-5.3-flash"
+  },
+  {
+    "id": "fg-mwt8pcor-tlqr",
+    "agent": "worker",
+    "task": "翻译爱伦·坡《一千零二夜的故事》（The Thousand-and-Second Tale of Scheherazade, 1845）第一部分。源文：work_batch_20261124/_thousand_a_paras.json（74段，为正文第1–74段；第[0]段是题句 \"Truth is stranger than fiction.\"，译作首段「事实比虚构更离奇。」）。输出：work_batch_20261124/thousand_a_zh.json（74段）。背景：山鲁佐德在讲完一千零一夜之后又多讲一夜，讲辛巴达第八次航海，在「库坎渣号」大船遇难后漂到一片镶嵌水晶的海底大陆，遇到靠玻璃为生的多杰帕人，最后被一个多杰帕人缠住要听雪橇、热气球之类，国王大怒。体例：逐段对应；引号「」（嵌套『』）；不用⟦i⟧标记；段末标点（。！？…：—…）；被引用的外文词豁免无外文断言。专名：Scheherazade 山鲁佐德；Sinbad 辛巴达；库坎渣号；其他照通译。自检（段数、拉丁残留、标点）后贴首2段与末1段。不要 commit/push/改其他文件。不要跑全局体检。",
+    "status": "completed",
+    "startedAt": 1795436783739,
+    "completedAt": 1795436908728,
+    "summary": "自检通过：74段对齐、无拉丁残留（注号（*N）除外）、标点均在段末合规。贴首2段与末1段：",
+    "background": false,
+    "model": "yanhuo888/glm-5.3-flash"
+  },
+  {
+    "id": "fg-mwt8pcos-fsla",
+    "agent": "worker",
+    "task": "翻译爱伦·坡《一千零二夜的故事》第二部分。源文：work_batch_20261124/_thousand_b_paras.json（74段，正文第75–148段；首段以 These words, as I learn from the \"Isitsoornot,\" 开头，Isitsoornot 是多杰帕人的典籍名，译作「伊西托诺书」）。输出：work_batch_20261124/thousand_b_zh.json（74段）。背景：辛巴达继续讲第八次航海见闻：会说话的鸟、聪明的猩猩、会飞的巨垫、装满药的气球等，国王越听越恼火。体例：逐段对应；引号「」（嵌套『』）；不用⟦i⟧标记；段末标点（。！？…：—…）；被引用的外文词豁免。专名：同前一部分；其余照通译。自检（段数、拉丁残留、标点）后贴首2段与末1段。不要 commit/push/改其他文件。不要跑全局体检。",
+    "status": "completed",
+    "startedAt": 1795436783740,
+    "completedAt": 1795437084577,
+    "summary": "批次核对无误：`_thousand_b_paras.json` 首段正是 \"These words, as I learn from the 'Isitsoornot'…\"，对应正文第 75–148 段，翻译对象正确（需要说明：本段实际内容为《坠入迈尔斯特罗姆大漩涡》《冯·肯佩伦及其发现》《催眠术启示》三篇，简报中「辛巴达第八次航海」的背景描述与该区间文本不符，我按文件实际内容译出）。",
+    "background": false,
+    "model": "yanhuo888/glm-5.3-flash"
+  },
+  {
+    "id": "fg-mwt8pcot-pvy9",
+    "agent": "worker",
+    "task": "翻译爱伦·坡《一千零二夜的故事》第三部分。源文：work_batch_20261124/_thousand_c_paras.json（75段，正文第149–223段；首段以 I say that these--which are the laws of mesmerism in its general features 开头，辛巴达讲催眠术）。输出：work_batch_20261124/thousand_c_zh.json（75段）。背景：接前文，辛巴达讲到催眠术与灵魂等话题，国王终于忍无可忍下令处死兄妹二人。体例：逐段对应；引号「」（嵌套『』）；不用⟦i⟧标记；段末标点（。！？…：—…）；被引用的外文词豁免。专名：同前；Domdaniel 多姆达尼尔；其余照通译。自检（段数、拉丁残留、标点）后贴首2段与末1段。不要 commit/push/改其他文件。不要跑全局体检。",
+    "status": "completed",
+    "startedAt": 1795436783741,
+    "completedAt": 1795436884239,
+    "summary": "第三部分（催眠术对话部分，正文第149–223段）已译完并输出到 `work_batch_20261124/thousand_c_zh.json`。",
+    "background": false,
+    "model": "yanhuo888/glm-5.3-flash"
   }
 ]
