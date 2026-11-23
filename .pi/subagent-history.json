@@ -419,5 +419,38 @@
     "summary": "三处引号不闭合均为「跨段延续引语」（吝啬鬼轶事横跨两段、末段破折号引语跨到收束段），与源文结构一致，属体例内正常情况。自检通过。",
     "background": false,
     "model": "yanhuo888/glm-5.3-flash"
+  },
+  {
+    "id": "fg-mwt7aie8-amw1",
+    "agent": "worker",
+    "task": "翻译安布罗斯·比尔斯《鼻子外的人》（The Man Out of the Nose, 1891）。\n\n源文：work_batch_20261124/_nose_paras.json（77项，[0]篇名，正文[1..76]共76段）。\n输出：work_batch_20261124/bierce_nose_zh.json（76段，不含篇名）。\n\n体例：逐段对应；引号「」（嵌套『』）；不用⟦i⟧标记；段末标点（。！？…\"：—…）；\n专名：San Francisco 旧金山；North Beach 北滩；Marsh 玛什；Hyde 海德；其他专名照通译。\n本文写旧金山北滩一户穷人家的鼻子，魔幻写实，节奏轻快，注意保留比尔斯那种冷峻的幽默。\n\n自检（段数、拉丁残留、标点）后贴首2段与末1段。不要 commit/push/改其他文件。不要跑全局体检。",
+    "status": "completed",
+    "startedAt": 1795434411680,
+    "completedAt": 1795434600412,
+    "summary": "完成。**bierce_nose_zh.json** 已生成（76段）。",
+    "background": false,
+    "model": "yanhuo888/glm-5.3-flash"
+  },
+  {
+    "id": "fg-mwt7gevw-v5cp",
+    "agent": "worker",
+    "task": "翻译安布罗斯·比尔斯两篇：《死人监视者》（A Watcher by the Dead, 1889）与《人与蛇》（The Man and the Snake, 1890）。\n\n源文（work_batch_20261124/）：\n- `_watcher_paras.json`（85项，[0]篇名，正文[1..84]共84段；**含罗马数字分节 I/II/III/IV 四个单段**，照 owl_zh.json 的处理：单独成段、不加标点）\n- `_snake_paras.json`（31项，[0]篇名，正文[1..30]共30段；**第[1]段是中古英语体题铭**「It is of veritabyll report...」——译出，豁免外文断言；本文另含罗马数字分节）\n\n输出：\n- `work_batch_20261124/bierce_watcher_zh.json`（84段）\n- `work_batch_20261124/bierce_snake_zh.json`（30段）\n\n体例：逐段对应；引号「」（嵌套『』）；不用⟦i⟧标记；段末标点（。！？…\"：—…），分节符与题铭段除外。\n专名：Dr. Druring 德鲁林医生；Dr. Murlin 默林医生；John Hinckley 威·欣克利；Fresno 弗雷斯诺；其他照通译。\n《人与蛇》的蛇学引文（红 oubli 等）注意别留外文。\n\n自检（段数、分节符计数、拉丁残留、标点）后贴首2段与末1段。不要 commit/push/改其他文件。不要跑全局体检。",
+    "status": "completed",
+    "startedAt": 1795434687068,
+    "completedAt": 1795434902044,
+    "summary": "两篇翻译完成，自检全部通过。",
+    "background": false,
+    "model": "yanhuo888/glm-5.3-flash"
+  },
+  {
+    "id": "fg-mwt7mvj4-lrjh",
+    "agent": "worker",
+    "task": "翻译安布罗斯·比尔斯三篇：《著名的吉尔森遗赠》（The Famous Gilson Bequest, 1907）、《申请者》（The Applicant, 1908）、《嘲鸟》（The Mocking-Bird, 1891）。\n\n源文（work_batch_20261124/）：\n- `_gilson_paras.json`（21项，[0]篇名，正文[1..20]共20段）\n- `_applicant_paras.json`（16项，[0]篇名，正文[1..15]共15段）\n- `_mockingbird_paras.json`（17项，[0]篇名，正文[1..16]共16段）\n\n输出：\n- `work_batch_20261124/bierce_gilson_zh.json`（20段）\n- `work_batch_20261124/bierce_applicant_zh.json`（15段）\n- `work_batch_20261124/bierce_mockingbird_zh.json`（16段）\n\n体例：逐段对应；引号「」（嵌套『』）；不用⟦i⟧标记；段末标点（。！？…\"：—…）。\n专名：Gilson 吉尔森；Barksdale 巴克斯代尔；Parloe 帕洛；Grayrock 格雷罗克；Mrs. Laster 拉斯特太太；Yosemite 约塞米蒂；其他照通译。\n《嘲鸟》是美国内战背景（奇卡莫加战役后续），与 chickamauga 同一场战役，人名 Grayrock 延用。\n\n自检（各文件段数、拉丁残留、标点）后贴每篇首1段。不要 commit/push/改其他文件。不要跑全局体检。",
+    "status": "completed",
+    "startedAt": 1795434988576,
+    "completedAt": 1795435180477,
+    "summary": "三篇完成并通过自检。",
+    "background": false,
+    "model": "yanhuo888/glm-5.3-flash"
   }
 ]
