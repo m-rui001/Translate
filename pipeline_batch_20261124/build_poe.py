@@ -18,9 +18,9 @@ from xml.etree import ElementTree as ET
 stamp = datetime.datetime.now(datetime.UTC).strftime("%Y-%m-%dT%H:%M:%SZ")
 ROOT = Path(__file__).resolve().parents[1]
 WORK = ROOT / "work_batch_20261124"
-TITLE = "黑猫：爱伦·坡短篇四则"
+TITLE = "黑猫：爱伦·坡短篇五则"
 OUT = ROOT / "out" / f"{TITLE}（坟头草译）.epub"
-UID = "urn:translate:poe-four-tales-20261124"
+UID = "urn:translate:poe-five-tales-20261124"
 
 # (label, source paragraphs file, chinese paragraphs file, year)
 TALES = [
@@ -28,6 +28,7 @@ TALES = [
     ("泄密的心", "_poe_tell_tale_paras.json", "poe_tt_zh.json", "1843"),
     ("黑猫", "_poe_black_cat_paras.json", "poe_bc_zh.json", "1843"),
     ("一桶阿蒙蒂亚多酒", "_poe_cask_paras.json", "poe_cask_zh.json", "1846"),
+    ("陷阱与钟摆", "_pit_paras.json", "pit_zh.json", "1842"),
 ]
 
 
@@ -54,9 +55,12 @@ def main():
         zh = json.loads((WORK / zh_file).read_text(encoding="utf-8"))
         en = json.loads((WORK / src_file).read_text(encoding="utf-8"))[1:]  # drop the heading
         assert len(zh) == len(en) and all(zh) and all(en), (label, len(zh), len(en))
-        assert not any(re.search(r"[A-Za-z]{2,}", p) for p in zh), label
+        # the Pit opens with a Latin epigraph and its bracketed note; they carry letters
+        # and a "。]" ending, so those two paragraphs are exempt from the usual asserts
+        skip = 2 if label == "陷阱与钟摆" else 0
+        assert not any(re.search(r"[A-Za-z]{2,}", p) for p in zh[skip:]), label
         tail = ("。", "！", "”", "？", "：", "—", "…", "）")
-        assert all(p.rstrip("」』")[-1:] in tail for p in zh), label
+        assert all(p.rstrip("」』")[-1:] in tail for p in zh[skip:]), label
 
         body = "<h1>" + label + "</h1>" + "".join(
             "<p>" + html.escape(p).replace("\n", "<br/>") + "</p>" for p in zh)
@@ -78,7 +82,7 @@ def main():
         "英文据 Project Gutenberg 第2148号《坡全集》第二卷（Raven Edition）转录本"
         "（gutenberg.org 当次维护，取自 GITenberg 镜像）。原作属公版文本；"
         "中文由本项目直接据英文翻译、逐段校订，段落与原文一一对应。"
-        "这四篇皆有不止一种中文译介，本译文未据任何既有中译本转译。"
+        "这这五篇皆有不止一种中文译介，本译文未据任何既有中译本转译。"
         "原文：https://www.gutenberg.org/ebooks/2148。"
     )
     files["OEBPS/copyright.xhtml"] = xhtml(
