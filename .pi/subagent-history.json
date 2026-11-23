@@ -1754,5 +1754,203 @@
     "summary": "三批都写好了，也已合并。",
     "background": false,
     "model": "ds-free/deepseek-v4.1-flash"
+  },
+  {
+    "id": "fg-mwthw23k-hrne",
+    "agent": "worker",
+    "task": "翻译阿尔杰农·布莱克伍德《仙境囚徒》（A Prisoner in Fairyland, 1913，长篇）第 1/16 片。源文：work_batch_20261124/_pf_a_paras.json（110 段）。输出：work_batch_20261124/pf_a_zh.json（110 段）。体例：逐段对应；引号「」（嵌套『』）；不用⟦i⟧标记；段末标点（。！？…：—…）；星号行作「＊　＊　＊　＊　＊」。体例样板：work_batch_20261124/dn_d_zh.json、ia_damned_a_zh.json。背景：中年实业家亨利·罗杰斯·森、罗杰斯（Rogers）重访童年故乡，被“星洞”里的孩子们（“星光”的仙子们）拉进梦境。专名：Rogers 罗杰斯；Henry Rogers；其他自定但全文一致，汇报末尾列专名表。自检（段数、外文、标点、汉字夹空格）后贴首2段与末1段。不要 commit/push/改其他文件。不要跑全球体检。",
+    "status": "completed",
+    "startedAt": 1795452213152,
+    "completedAt": 1795452512212,
+    "summary": "翻译已完成。`work_batch_20261124/pf_a_zh.json`，110 段逐段对应（生成脚本 `_pf_a_gen.py`、自检脚本 `_pf_a_check.py` 同在目录内，未改动其他文件，未 commit）。",
+    "background": false,
+    "model": "ds-free/deepseek-v4.1-flash"
+  },
+  {
+    "id": "fg-mwthw23k-g2yp",
+    "agent": "worker",
+    "task": "翻译《仙境囚徒》第 2/16 片（接前片）。源文：work_batch_20261124/_pf_b_paras.json（162 段）。输出：work_batch_20261124/pf_b_zh.json（162 段）。任务较长，请**分批落盘**：先译前 80 段写 pf_b_p1.json，再译余下写 pf_b_p2.json，最后合并成 pf_b_zh.json 并 assert 总长 162。体例：逐段对应；引号「」（嵌套『』）；不用⟦i⟧标记；段末标点（。！？…：—…）；星号行作「＊　＊　＊　＊　＊」。体例样板：dn_d_zh.json。专名：罗杰斯；其他自定但一致。自检后贴首2段与末1段。不要 commit/push/改其他文件。不要跑全球体检。",
+    "status": "completed",
+    "startedAt": 1795452213152,
+    "completedAt": 1795452525301,
+    "summary": "分批翻译并写入文件已完成，现汇报结果。",
+    "background": false,
+    "model": "ds-free/deepseek-v4.1-flash"
+  },
+  {
+    "id": "fg-mwthw23l-zjk2",
+    "agent": "worker",
+    "task": "翻译《仙境囚徒》第 3/16 片（接前片）。源文：work_batch_20261124/_pf_c_paras.json（152 段）。输出：work_batch_20261124/pf_c_zh.json（152 段）。请**分批落盘**：前 76 段写 pf_c_p1.json，余下写 pf_c_p2.json，合并并 assert 152。体例：逐段对应；引号「」（嵌套『』）；不用⟦i⟧标记；段末标点（。！？…：—…）；星号行作「＊　＊　＊　＊　＊」。体例样板：dn_d_zh.json。专名：罗杰斯；其他自定但一致。自检后贴首2段与末1段。不要 commit/push/改其他文件。不要跑全球体检。",
+    "status": "completed",
+    "startedAt": 1795452213153,
+    "completedAt": 1795452515053,
+    "summary": "已完成《仙境囚徒》第 3/16 片（152 段）的翻译，分批保存为：",
+    "background": false,
+    "model": "ds-free/deepseek-v4.1-flash"
+  },
+  {
+    "id": "fg-mwthw23l-iq6r",
+    "agent": "worker",
+    "task": "翻译《仙境囚徒》第 4/16 片（接前片）。源文：work_batch_20261124/_pf_d_paras.json（169 段）。输出：work_batch_20261124/pf_d_zh.json（169 段）。请**分批落盘**：前 85 段写 pf_d_p1.json，余下写 pf_d_p2.json，合并并 assert 169。体例：逐段对应；引号「」（嵌套『』）；不用⟦i⟧标记；段末标点（。！？…：—…）；星号行作「＊　＊　＊　＊　＊」。体例样板：dn_d_zh.json。专名：罗杰斯；其他自定但一致。自检后贴首2段与末1段。不要 commit/push/改其他文件。不要跑全球体检。",
+    "status": "completed",
+    "startedAt": 1795452213153,
+    "completedAt": 1795452511842,
+    "summary": "《仙境囚徒》第 4/16 片（169 段）已译完并分两批落盘。",
+    "background": false,
+    "model": "ds-free/deepseek-v4.1-flash"
+  },
+  {
+    "id": "fg-mwthw23l-qls4",
+    "agent": "worker",
+    "task": "翻译《仙境囚徒》第 5/16 片（接前片）。源文：work_batch_20261124/_pf_e_paras.json（130 段）。输出：work_batch_20261124/pf_e_zh.json（130 段）。请**分批落盘**：前 65 段写 pf_e_p1.json，余下写 pf_e_p2.json，合并并 assert 130。体例：逐段对应；引号「」（嵌套『』）；不用⟦i⟧标记；段末标点（。！？…：—…）；星号行作「＊　＊　＊　＊　＊」。体例样板：dn_d_zh.json。专名：罗杰斯；其他自定但一致。自检后贴首2段与末1段。不要 commit/push/改其他文件。不要跑全球体检。",
+    "status": "completed",
+    "startedAt": 1795452213153,
+    "completedAt": 1795452888452,
+    "summary": "分段写入、合并、自检均已完成。",
+    "background": false,
+    "model": "ds-free/deepseek-v4.1-flash"
+  },
+  {
+    "id": "fg-mwthw23l-lvej",
+    "agent": "worker",
+    "task": "翻译《仙境囚徒》第 6/16 片（接前片）。源文：work_batch_20261124/_pf_f_paras.json（242 段，较长）。输出：work_batch_20261124/pf_f_zh.json（242 段）。**必须分批落盘**：分三次，各 80 段左右，写 pf_f_p1/p2/p3.json，合并 assert 242。体例：逐段对应；引号「」（嵌套『』）；不用⟦i⟧标记；段末标点（。！？…：—…）；星号行作「＊　＊　＊　＊　＊」。体例样板：dn_d_zh.json。专名：罗杰斯；其他自定但一致。自检后贴首2段与末1段。不要 commit/push/改其他文件。不要跑全球体检。",
+    "status": "completed",
+    "startedAt": 1795452213153,
+    "completedAt": 1795452915951,
+    "summary": "完成。三批已落盘并合并校验。",
+    "background": false,
+    "model": "ds-free/deepseek-v4.1-flash"
+  },
+  {
+    "id": "fg-mwthw23l-k7ln",
+    "agent": "worker",
+    "task": "翻译《仙境囚徒》第 7/16 片（接前片）。源文：work_batch_20261124/_pf_g_paras.json（141 段）。输出：work_batch_20261124/pf_g_zh.json（141 段）。请**分批落盘**：前 70 段写 pf_g_p1.json，余下写 pf_g_p2.json，合并 assert 141。体例：逐段对应；引号「」（嵌套『』）；不用⟦i⟧标记；段末标点（。！？…：—…）；星号行作「＊　＊　＊　＊　＊」。体例样板：dn_d_zh.json。专名：罗杰斯；其他自定但一致。自检后贴首2段与末1段。不要 commit/push/改其他文件。不要跑全球体检。",
+    "status": "completed",
+    "startedAt": 1795452213153,
+    "completedAt": 1795452865162,
+    "summary": "第 7/16 片已完成，分两批保存文件，并已合并校验。",
+    "background": false,
+    "model": "ds-free/deepseek-v4.1-flash"
+  },
+  {
+    "id": "fg-mwthw23m-ljv2",
+    "agent": "worker",
+    "task": "翻译《仙境囚徒》第 8/16 片（接前片）。源文：work_batch_20261124/_pf_h_paras.json（147 段）。输出：work_batch_20261124/pf_h_zh.json（147 段）。请**分批落盘**：前 73 段写 pf_h_p1.json，余下写 pf_h_p2.json，合并 assert 147。体例：逐段对应；引号「」（嵌套『』）；不用⟦i⟧标记；段末标点（。！？…：—…）；星号行作「＊　＊　＊　＊　＊」。体例样板：dn_d_zh.json。专名：罗杰斯；其他自定但一致。自检后贴首2段与末1段。不要 commit/push/改其他文件。不要跑全球体检。",
+    "status": "completed",
+    "startedAt": 1795452213154,
+    "completedAt": 1795452807391,
+    "summary": "落盘与自检已完成。",
+    "background": false,
+    "model": "ds-free/deepseek-v4.1-flash"
+  },
+  {
+    "id": "fg-mwtic1qs-o26q",
+    "agent": "worker",
+    "task": "翻译阿尔杰农·布莱克伍德《仙境囚徒》（A Prisoner in Fairyland, 1913）第 9/16 片。源文：work_batch_20261124/_pf_i_paras.json（148 段）。输出：work_batch_20261124/pf_i_zh.json（148 段）。**请分批落盘**：前 74 段写 pf_i_p1.json，余下写 pf_i_p2.json，再合并并 assert 148。体例：逐段对应；引号「」（嵌套『』）；不用⟦i⟧标记；段末标点（。！？…：—…）；题铭署名行可作「——某某」并以句号或 ］ 收（属豁免）；星号行作「＊　＊　＊　＊　＊」。体例样板：work_batch_20261124/pf_h_zh.json、pf_d_zh.json。专名必须沿用：罗杰斯、明克斯、金宝、猴儿、简·安妮（金妮）、热基耶寡妇、沃格霍恩小姐、勒梅尔小姐、布尔塞勒、星窟、星网、星光快车、撒尘人、乱缠（wumbled）、表哥利（Cousinenry）。自检（段数、外文、标点、汉字夹空格）后贴首2段与末1段。不要 commit/push/改其他文件。不要跑全球体检。",
+    "status": "completed",
+    "startedAt": 1795452959188,
+    "completedAt": 1795453180066,
+    "summary": "已完成第 9/16 片翻译并分批落盘。",
+    "background": false,
+    "model": "ds-free/deepseek-v4.1-flash"
+  },
+  {
+    "id": "fg-mwtic1qs-70y0",
+    "agent": "worker",
+    "task": "翻译《仙境囚徒》第 10/16 片（接前片）。源文：work_batch_20261124/_pf_j_paras.json（171 段）。输出：work_batch_20261124/pf_j_zh.json（171 段）。**请分批落盘**：分三次（约 57 段一批）写 pf_j_p1/p2/p3.json，合并 assert 171。体例：逐段对应；引号「」（嵌套『』）；不用⟦i⟧标记；段末标点（。！？…：—…）；题铭署名行豁免；星号行作「＊　＊　＊　＊　＊」。体例样板：pf_h_zh.json。专名沿用：罗杰斯、明克斯、金宝、猴儿、简·安妮、热基耶寡妇、星窟、星网、星光快车、撒尘人、乱缠。自检后贴首2段与末1段。不要 commit/push/改其他文件。不要跑全球体检。",
+    "status": "completed",
+    "startedAt": 1795452959188,
+    "completedAt": 1795453174597,
+    "summary": "I'll start by examining the project structure and reference files.",
+    "background": false,
+    "model": "ds-free/deepseek-v4.1-flash"
+  },
+  {
+    "id": "fg-mwtic1qs-icbd",
+    "agent": "worker",
+    "task": "翻译《仙境囚徒》第 11/16 片（接前片）。源文：work_batch_20261124/_pf_k_paras.json（167 段）。输出：work_batch_20261124/pf_k_zh.json（167 段）。**请分批落盘**：分三次写 pf_k_p1/p2/p3.json，合并 assert 167。体例：逐段对应；引号「」（嵌套『』）；不用⟦i⟧标记；段末标点（。！？…：—…）；题铭署名行豁免；星号行作「＊　＊　＊　＊　＊」。体例样板：pf_h_zh.json。专名沿用：罗杰斯、明克斯、金宝、猴儿、简·安妮、热基耶寡妇、星窟、星网、星光快车、撒尘人、乱缠。自检后贴首2段与末1段。不要 commit/push/改其他文件。不要跑全球体检。",
+    "status": "completed",
+    "startedAt": 1795452959188,
+    "completedAt": 1795453231131,
+    "summary": "已完成第 11/16 片（`_pf_k_paras.json` 167 段）的翻译，并分三批写入文件后合并。",
+    "background": false,
+    "model": "ds-free/deepseek-v4.1-flash"
+  },
+  {
+    "id": "fg-mwtic1qs-z2r4",
+    "agent": "worker",
+    "task": "翻译《仙境囚徒》第 12/16 片（接前片）。源文：work_batch_20261124/_pf_l_paras.json（179 段）。输出：work_batch_20261124/pf_l_zh.json（179 段）。**请分批落盘**：分三次写 pf_l_p1/p2/p3.json，合并 assert 179。体例：逐段对应；引号「」（嵌套『』）；不用⟦i⟧标记；段末标点（。！？…：—…）；题铭署名行豁免；星号行作「＊　＊　＊　＊　＊」。体例样板：pf_h_zh.json。专名沿用：罗杰斯、明克斯、金宝、猴儿、简·安妮、热基耶寡妇、星窟、星网、星光快车、撒尘人、乱缠。自检后贴首2段与末1段。不要 commit/push/改其他文件。不要跑全球体检。",
+    "status": "completed",
+    "startedAt": 1795452959188,
+    "completedAt": 1795453233231,
+    "summary": "第 12/16 片已经译完，并分三次写入文件后合并。",
+    "background": false,
+    "model": "ds-free/deepseek-v4.1-flash"
+  },
+  {
+    "id": "fg-mwtic1qt-3pyf",
+    "agent": "worker",
+    "task": "翻译《仙境囚徒》第 13/16 片（接前片）。源文：work_batch_20261124/_pf_m_paras.json（124 段）。输出：work_batch_20261124/pf_m_zh.json（124 段）。**请分批落盘**：分两次写 pf_m_p1/p2.json，合并 assert 124。体例：逐段对应；引号「」（嵌套『』）；不用⟦i⟧标记；段末标点（。！？…：—…）；题铭署名行豁免；星号行作「＊　＊　＊　＊　＊」。体例样板：pf_h_zh.json。专名沿用：罗杰斯、明克斯、金宝、猴儿、简·安妮、热基耶寡妇、星窟、星网、星光快车、撒尘人、乱缠。自检后贴首2段与末1段。不要 commit/push/改其他文件。不要跑全球体检。",
+    "status": "completed",
+    "startedAt": 1795452959189,
+    "completedAt": 1795453427935,
+    "summary": "已完成第 13/16 片（`pf_m`）的翻译，并分两批分别写入文件。",
+    "background": false,
+    "model": "ds-free/deepseek-v4.1-flash"
+  },
+  {
+    "id": "fg-mwtic1qt-f3qr",
+    "agent": "worker",
+    "task": "翻译《仙境囚徒》第 14/16 片（接前片）。源文：work_batch_20261124/_pf_n_paras.json（191 段）。输出：work_batch_20261124/pf_n_zh.json（191 段）。**请分批落盘**：分三次写 pf_n_p1/p2/p3.json，合并 assert 191。体例：逐段对应；引号「」（嵌套『』）；不用⟦i⟧标记；段末标点（。！？…：—…）；题铭署名行豁免；星号行作「＊　＊　＊　＊　＊」。体例样板：pf_h_zh.json。专名沿用：罗杰斯、明克斯、金宝、猴儿、简·安妮、热基耶寡妇、星窟、星网、星光快车、撒尘人、乱缠。自检后贴首2段与末1段。不要 commit/push/改其他文件。不要跑全球体检。",
+    "status": "completed",
+    "startedAt": 1795452959189,
+    "completedAt": 1795453378567,
+    "summary": "我先检查工作文件并理解任务。",
+    "background": false,
+    "model": "ds-free/deepseek-v4.1-flash"
+  },
+  {
+    "id": "fg-mwtic1qt-lqb0",
+    "agent": "worker",
+    "task": "翻译《仙境囚徒》第 15/16 片（接前片）。源文：work_batch_20261124/_pf_o_paras.json（183 段）。输出：work_batch_20261124/pf_o_zh.json（183 段）。**请分批落盘**：分三次写 pf_o_p1/p2/p3.json，合并 assert 183。体例：逐段对应；引号「」（嵌套『』）；不用⟦i⟧标记；段末标点（。！？…：—…）；题铭署名行豁免；星号行作「＊　＊　＊　＊　＊」。体例样板：pf_h_zh.json。专名沿用：罗杰斯、明克斯、金宝、猴儿、简·安妮、热基耶寡妇、星窟、星网、星光快车、撒尘人、乱缠。自检后贴首2段与末1段。不要 commit/push/改其他文件。不要跑全球体检。",
+    "status": "completed",
+    "startedAt": 1795452959189,
+    "completedAt": 1795453550959,
+    "summary": "第 15/16 片（`_pf_o_paras.json`，183 段）已译完并分批写入。",
+    "background": false,
+    "model": "ds-free/deepseek-v4.1-flash"
+  },
+  {
+    "id": "fg-mwtic1qt-g2q9",
+    "agent": "worker",
+    "task": "翻译《仙境囚徒》第 16/16 片（末片）。源文：work_batch_20261124/_pf_p_paras.json（113 段）。输出：work_batch_20261124/pf_p_zh.json（113 段）。**请分批落盘**：分两次写 pf_p_p1/p2.json，合并 assert 113。体例：逐段对应；引号「」（嵌套『』）；不用⟦i⟧标记；段末标点（。！？…：—…）；题铭署名行豁免；星号行作「＊　＊　＊　＊　＊」。体例样板：pf_h_zh.json。专名沿用：罗杰斯、明克斯、金宝、猴儿、简·安妮、热基耶寡妇、星窟、星网、星光快车、撒尘人、乱缠。自检后贴首2段与末2段。不要 commit/push/改其他文件。不要跑全球体检。",
+    "status": "completed",
+    "startedAt": 1795452959189,
+    "completedAt": 1795453493869,
+    "summary": "翻译已完成：`work_batch_20261124/pf_p_zh.json` 是第 16/16 片（末片）的译文，共 **113 段**；翻译结果已分两次写入 `pf_p_p1.json`，包含第 0–60 段，第 61 段起写入 `pf_p_p2.json`，合并后校验段落数为 113 且通过。",
+    "background": false,
+    "model": "ds-free/deepseek-v4.1-flash"
+  },
+  {
+    "id": "fg-mwtip2kf-cbjp",
+    "agent": "worker",
+    "task": "翻译《仙境囚徒》第 10/16 片。源文：work_batch_20261124/_pf_j_paras.json（171 段）。输出：work_batch_20261124/pf_j_zh.json（171 段）。**必须分批落盘**：分三次（约 57 段一批）写 pf_j_p1/p2/p3.json，再合并 assert 171。体例：逐段对应；引号「」（嵌套『』）；不用⟦i⟧标记；段末标点（。！？…：—…）；题铭署名行可豁免；星号行作「＊　＊　＊　＊　＊」。体例样板：work_batch_20261124/pf_h_zh.json、pf_m_zh.json。专名沿用：罗杰斯、明克斯、金宝、猴儿、简·安妮（金妮）、热基耶寡妇、沃格霍恩小姐、勒梅尔小姐、布尔塞勒、星窟、星网、星光快车、撒尘人、乱缠、表哥利、图案。自检后贴首2段与末1段。不要 commit/push/改其他文件。不要跑全球体检。",
+    "status": "completed",
+    "startedAt": 1795453566783,
+    "completedAt": 1795453776996,
+    "summary": "《仙境囚徒》第 10/16 片已完成。",
+    "background": false,
+    "model": "ds-free/deepseek-v4.1-flash"
+  },
+  {
+    "id": "fg-mwtip2kg-qlpk",
+    "agent": "worker",
+    "task": "翻译《仙境囚徒》第 14/16 片。源文：work_batch_20261124/_pf_n_paras.json（191 段）。输出：work_batch_20261124/pf_n_zh.json（191 段）。**必须分批落盘**：分三次写 pf_n_p1/p2/p3.json，合并 assert 191。体例：逐段对应；引号「」（嵌套『』）；不用⟦i⟧标记；段末标点（。！？…：—…）；题铭署名行可豁免；星号行作「＊　＊　＊　＊　＊」。体例样板：pf_h_zh.json、pf_m_zh.json。专名沿用：罗杰斯、明克斯、金宝、猴儿、简·安妮（金妮）、热基耶寡妇、沃格霍恩小姐、勒梅尔小姐、布尔塞勒、星窟、星网、星光快车、撒尘人、乱缠、表哥利、图案。自检后贴首2段与末1段。不要 commit/push/改其他文件。不要跑全球体检。",
+    "status": "completed",
+    "startedAt": 1795453566784,
+    "completedAt": 1795453841468,
+    "summary": "《仙境囚徒》第 14/16 片译完并已分批保存到文件。",
+    "background": false,
+    "model": "ds-free/deepseek-v4.1-flash"
   }
 ]
