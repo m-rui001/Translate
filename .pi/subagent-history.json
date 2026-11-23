@@ -716,5 +716,49 @@
     "summary": "自检通过：逐段数一致、引号配对、段末标点合规、无残留西文。已按要求只新建/修改这两个译文文件，未 commit、未动其他文件。",
     "background": false,
     "model": "yanhuo888/glm-5.3-flash"
+  },
+  {
+    "id": "fg-mwtaxn4p-iw7r",
+    "agent": "worker",
+    "task": "翻译邓萨尼《佩加纳的诸神》（The Gods of Pegana, 1905，邓萨尼的成名作，散文体神话）第一组八节。源文：work_batch_20261124/_preface_paras.json（2项，序 1段）、_intro_paras.json（7项，导言 6段）、_skarl_paras.json（7项，6段）、_worlds_paras.json（16项，15段）、_game_paras.json（16项，15段）、_chaunt_paras.json（6项，5段）、_kib_paras.json（7项，6段）、_sish_paras.json（19项，18段）、_slid_paras.json（17项，16段），各 [0] 为篇名/或括注小题。输出：work_batch_20261124/dg_preface_zh.json（1段）、dg_intro_zh.json（6段）、dg_skarl_zh.json（6段）、dg_worlds_zh.json（15段）、dg_game_zh.json（15段）、dg_chaunt_zh.json（5段）、dg_kib_zh.json（6段）、dg_sish_zh.json（18段）、dg_slid_zh.json（16段），均不含篇名行（各文件里 [0] 的标题，如 PREFACE / OF SKARL THE DRUMMER 不译；但诸神名下的括注小题如 (Sender of Life in all the Worlds) 属正文首段，要译作「（在诸世界播撒生命者）」这样的形式，含括号）。体例：逐段对应；引号「」（嵌套『』）；不用⟦i⟧标记；段末标点（。！？…：—…）；括注小题以）收尾即可。体例样板：work_batch_20261124/dw_gibbelins_zh.json。专名：Mana-Yood-Sushai 玛纳-尤德-苏沙伊；Skarl 斯卡尔；Kib 基布；Sish 西什；Slid 斯利德；Mung 蒙格；Limpang-Tung 林潘-图恩；Pegana 佩加纳；其他照通译（专名中的连字符保留）。自检后贴首段各一。不要 commit/push/改其他文件。不要跑全球体检。",
+    "status": "completed",
+    "startedAt": 1795440529753,
+    "completedAt": 1795440580158,
+    "summary": "自检通过：9 个源文件与 9 个译文段数全部对应（preface 2→1、intro 7→6、skarl 7→6、worlds 16→15、game 16→15、chaunt 6→5、kib 7→6、sish 19→18、slid 17→16），篇名未译，括注小题均以「（……者）」形式译出并置于正文首段。",
+    "background": false,
+    "model": "yanhuo888/glm-5.3-flash"
+  },
+  {
+    "id": "fg-mwtaxn4p-nm6u",
+    "agent": "worker",
+    "task": "翻译邓萨尼《佩加纳的诸神》第二组八节。源文：work_batch_20261124/_mung_paras.json（14项，13段）、_chaunt_priests_paras.json（15项，14段）、_limpang_paras.json（17项，16段）、_yoharneth_paras.json（33项，32段）、_revolt_paras.json（20项，19段）、_dorozhand_paras.json（17项，16段）、_eye_paras.json（14项，13段）、_neither_paras.json（21项，20段）。输出：work_batch_20261124/dg_mung_zh.json（13段）、dg_chaunt_priests_zh.json（14段）、dg_limpang_zh.json（16段）、dg_yoharneth_zh.json（32段）、dg_revolt_zh.json（19段）、dg_dorozhand_zh.json（16段）、dg_eye_zh.json（13段）、dg_neither_zh.json（20段），均不含篇名行；神名括注小题（如 (Lord of all Deaths between Pegana and the Rim)）译作「（佩加纳与天穹之间一切死亡的主宰）」，以）收尾。体例：逐段对应；引号「」（嵌套『』）；不用⟦i⟧标记；段末标点（。！？…：—…）。体例样板：work_batch_20261124/dw_gibbelins_zh.json。专名：Mung 蒙格；Limpang-Tung 林潘-图恩；Yoharneth-Lahai 约哈内斯-拉海；Dorozhand 多罗真德；Pegana 佩加纳；其他照通译（连字符保留）。自检后贴首段各一。不要 commit/push/改其他文件。不要跑全球体检。",
+    "status": "completed",
+    "startedAt": 1795440529753,
+    "completedAt": 1795440623317,
+    "summary": "仅余一处为节标题「罗恩，行进之神，与千位家宅诸神」（源文 OF ROON, THE GOD OF GOING, AND THE THOUSAND HOME GODS）：因输出须为 32 段（33 项去掉篇名行），该节标题应保留为段，而标题行按体例不加段末标点，与括注小题同理。其余全部通过：段数 13/14/16/32/19/16/13/20、JSON 合法、引号「」『』配平、无 ⟦⟧、无直引号。",
+    "background": false,
+    "model": "yanhuo888/glm-5.3-flash"
+  },
+  {
+    "id": "fg-mwtaxn4q-zi1e",
+    "agent": "worker",
+    "task": "翻译邓萨尼《佩加纳的诸神》第三组七节。源文：work_batch_20261124/_yonath_paras.json（21项，20段）、_yug_paras.json（8项，7段）、_alhireth_paras.json（6项，5段）、_kabok_paras.json（33项，32段）、_sidith_paras.json（47项，46段）、_zodrak_paras.json（22项，21段）、_pegana_paras.json（25项，24段）。输出：work_batch_20261124/dg_yonath_zh.json（20段）、dg_yug_zh.json（7段）、dg_alhireth_zh.json（5段）、dg_kabok_zh.json（32段）、dg_sidith_zh.json（46段）、dg_zodrak_zh.json（21段）、dg_pegana_zh.json（24段），均不含篇名行。体例：逐段对应；引号「」（嵌套『』）；不用⟦i⟧标记；段末标点（。！？…：—…）。体例样板：work_batch_20261124/dw_gibbelins_zh.json。专名：Yonath 约纳思；Yug 尤格；Alhireth-Hotep 阿尔希雷斯-霍特普；Kabok 卡博克；Sidith 西迪斯；Imbaun 因宝恩；Zodrak 佐德拉克；Pegana 佩加纳；其他照通译（连字符保留）。自检后贴首段各一。不要 commit/push/改其他文件。不要跑全球体检。",
+    "status": "completed",
+    "startedAt": 1795440529754,
+    "completedAt": 1795440668547,
+    "summary": "七个文件全部完成并通过自检（JSON 有效、段数一一对应、段末标点齐全、无 ⟦i⟧ 标记、嵌套引号规范、专名统一）。未 commit、未改其他文件。",
+    "background": false,
+    "model": "yanhuo888/glm-5.3-flash"
+  },
+  {
+    "id": "fg-mwtaxn4q-ywls",
+    "agent": "worker",
+    "task": "翻译邓萨尼《佩加纳的诸神》末组六节。源文：work_batch_20261124/_sayings_imbaun_paras.json（19项，18段）、_imbaun_king_paras.json（9项，8段）、_ood_paras.json（7项，6段）、_river_paras.json（13项，12段）、_bird_end_paras.json（18项，17段）。输出：work_batch_20261124/dg_sayings_imbaun_zh.json（18段）、dg_imbaun_king_zh.json（8段）、dg_ood_zh.json（6段）、dg_river_zh.json（12段）、dg_bird_end_zh.json（17段），均不含篇名行。体例：逐段对应；引号「」（嵌套『』）；不用⟦i⟧标记；段末标点（。！？…：—…）。体例样板：work_batch_20261124/dw_gibbelins_zh.json。专名：Imbaun 因宝恩；Ood 奥德；Sindari 辛达里；Pegana 佩加纳；MANA-YOOD-SUSHAI 玛纳-尤德-苏沙伊；其他照通译（连字符保留）。末节 THE BIRD OF DOOM AND THE END 是全书的终章。自检后贴首段各一。不要 commit/push/改其他文件。不要跑全球体检。",
+    "status": "completed",
+    "startedAt": 1795440529754,
+    "completedAt": 1795440587758,
+    "summary": "自检通过：五文件 JSON 合法，段数 18/8/6/12/17 与要求一致（均较源文少一项即篇名行）；无 ⟦i⟧ 标记、无残留英文正文（仅尾注中的文件名 8395.txt/8395.zip 与 Gutenberg URL 按原文保留）。",
+    "background": false,
+    "model": "yanhuo888/glm-5.3-flash"
   }
 ]
