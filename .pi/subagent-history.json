@@ -452,5 +452,38 @@
     "summary": "三篇完成并通过自检。",
     "background": false,
     "model": "yanhuo888/glm-5.3-flash"
+  },
+  {
+    "id": "fg-mwt7zisy-1cc2",
+    "agent": "worker",
+    "task": "翻译安布罗斯·比尔斯两篇：《可怕的家伙》（A Holy Terror, 1889）与《窗户上的眼》（The Eyes of the Panther, 1891）。\n\n源文（work_batch_20261124/）：\n- `_holyster_paras.json`（51项，[0]篇名，正文[1..50]共50段；含罗马数字分节 I/II/III/IV/V 五个单段，单独成段不加标点）\n- `_panther_paras.json`（57项，[0]篇名，正文[1..56]共56段；含罗马数字分节 I/II 两个单段）\n\n输出：\n- `work_batch_20261124/bierce_holyster_zh.json`（50段）\n- `work_batch_20261124/bierce_panther_zh.json`（56段）\n\n体例：逐段对应；引号「」（嵌套『』）；不用⟦i⟧标记；段末标点（。！？…\"：—…），分节符除外。\n专名：Jefferson Doman 杰斐逊·多曼；Ellis Usher 埃利斯·厄舍；Gen. H. R. Starbottle H. R. 斯塔博特尔将军；Chrysanthemum 克丽桑特姆（或照上下文处理）；Brading 布雷丁；Jenner 詹纳；其他照通译。\n\n自检（段数、分节符位置、拉丁残留、标点）后贴首2段与末1段。不要 commit/push/改其他文件。不要跑全局体检。",
+    "status": "completed",
+    "startedAt": 1795435578610,
+    "completedAt": 1795435687282,
+    "summary": "自检通过。分节符位置与源文逐一对齐（篇甲：0/4/8/19/31 ↔ 源1/5/9/20/32；篇乙：0/17/33/49 ↔ 源1/18/34/50）；拉丁残留仅一处——篇甲首段的「quien sabe」为原文引用的西班牙语，属有意保留。篇乙的四行大写题辞（源文即无标点的标题式段落）未加句末标点，与分节符同例。",
+    "background": false,
+    "model": "yanhuo888/glm-5.3-flash"
+  },
+  {
+    "id": "fg-mwt82io8-fvmg",
+    "agent": "worker",
+    "task": "翻译安布罗斯·比尔斯两篇：《合宜的环境》（The Suitable Surroundings, 1889）与《钉死的窗户》（The Boarded Window, 1891）。\n\n源文（work_batch_20261124/）：\n- `_suitable_paras.json`（41项，[0]篇名，正文[1..40]共40段；**含小节标题** THE NIGHT / THE DAY BEFORE / THE DAY AFTER / THE MANUSCRIPT（均为大写单段），照原文单独成段不加标点）\n- `_boarded_paras.json`（14项，[0]篇名，正文[1..13]共13段）\n\n输出：\n- `work_batch_20261124/bierce_suitable_zh.json`（40段）\n- `work_batch_20261124/bierce_boarded_zh.json`（13段）\n\n体例：逐段对应；引号「」（嵌套『』）；不用⟦i⟧标记；段末标点（。！？…\"：—…），小节标题段除外。\n专名：Col. Briscoe 布里斯科上校；Grossman 格罗斯曼；其他照通译。\n\n自检（段数、拉丁残留、标点）后贴首2段与末1段。不要 commit/push/改其他文件。不要跑全局体检。",
+    "status": "completed",
+    "startedAt": 1795435718408,
+    "completedAt": 1795435887739,
+    "summary": "自检通过：两篇段数 40/13；拉丁残留仅为署名 J.R.C.",
+    "background": false,
+    "model": "yanhuo888/glm-5.3-flash"
+  },
+  {
+    "id": "fg-mwt88p89-uspy",
+    "agent": "worker",
+    "task": "翻译安布罗斯·比尔斯《雷德霍斯的贵妇》（A Lady from Redhorse, 1892）。\n\n源文：work_batch_20261124/_redhorse_paras.json（35项，[0]篇名，正文[1..34]共34段）。\n输出：work_batch_20261124/bierce_redhorse_zh.json（34段，不含篇名）。\n\n体例：逐段对应；引号「」（嵌套『』）；不用⟦i⟧标记；段末标点（。！？…\"：—…）。\n开头是电报日期行「CORONADO, JUNE 20.」——单独成段照译（「科罗纳多，六月二十日。」）。\n专名：Coronado 科罗纳多；Redhorse 雷德霍斯；San Diego 圣迭戈；Baldwin 鲍德温；Brimmer 布里默；其他照通译。\n\n自检（段数、拉丁残留、标点）后贴首3段与末1段。不要 commit/push/改其他文件。不要跑全局体检。",
+    "status": "completed",
+    "startedAt": 1795436006841,
+    "completedAt": 1795436118986,
+    "summary": "翻译完成，输出至 `work_batch_20261124/bierce_redhorse_zh.json`（JSON 数组，34 段，UTF-8）。",
+    "background": false,
+    "model": "yanhuo888/glm-5.3-flash"
   }
 ]
