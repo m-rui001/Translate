@@ -1479,5 +1479,137 @@
     "summary": "第 5/5 片（末片）已完成。",
     "background": false,
     "model": "ds-free/deepseek-v4.1-flash"
+  },
+  {
+    "id": "fg-mwtfzf8j-k5ro",
+    "agent": "worker",
+    "task": "翻译阿尔杰农·布莱克伍德《空屋及其他鬼故事》（The Empty House and Other Ghost Stories, 1906）第一组三篇：《空屋》The Empty House（114段）、《闹鬼的岛》A Haunted Island（74段）、《窃听一例》A Case of Eavesdropping（113段）。源文：work_batch_20261124/_eh_empty_paras.json、_eh_island_paras.json、_eh_eaves_paras.json（均不含篇名）。输出：work_batch_20261124/eh_empty_zh.json（114段）、eh_island_zh.json（74段）、eh_eaves_zh.json（113段）。体例：逐段对应；引号「」（嵌套『』）；不用⟦i⟧标记；段末标点（。！？…：—…）。体例样板：work_batch_20261124/ia_damned_a_zh.json。专名自定但三篇彼此一致，汇报末尾列专名表。自检后贴每篇首段。不要 commit/push/改其他文件。不要跑全球体检。",
+    "status": "completed",
+    "startedAt": 1795449010915,
+    "completedAt": 1795449248299,
+    "summary": "我先查看源文件和体例样板文件。",
+    "background": false,
+    "model": "ds-free/deepseek-v4.1-flash"
+  },
+  {
+    "id": "fg-mwtfzf8j-89ba",
+    "agent": "worker",
+    "task": "翻译布莱克伍德《空屋及其他鬼故事》第二组三篇：《守信》Keeping His Promise（117段）、《蓄意窃取》With Intent to Steal（132段）、《死者之林》The Wood of the Dead（91段）。源文：work_batch_20261124/_eh_promise_paras.json、_eh_steal_paras.json、_eh_wood_paras.json。输出：work_batch_20261124/eh_promise_zh.json（117段）、eh_steal_zh.json（132段）、eh_wood_zh.json（91段）。体例：逐段对应；引号「」（嵌套『』）；不用⟦i⟧标记；段末标点（。！？…：—…）。体例样板：ia_damned_a_zh.json。专名自定但三篇一致，汇报末尾列专名表。自检后贴每篇首段。不要 commit/push/改其他文件。不要跑全球体检。",
+    "status": "completed",
+    "startedAt": 1795449010915,
+    "completedAt": 1795449125500,
+    "summary": "我先查看工作目录和参考文件。",
+    "background": false,
+    "model": "ds-free/deepseek-v4.1-flash"
+  },
+  {
+    "id": "fg-mwtfzf8j-trgf",
+    "agent": "worker",
+    "task": "翻译布莱克伍德《空屋及其他鬼故事》第三组两篇：《史密斯：一间公寓里的插曲》Smith: An Episode in a Lodging-House（94段）、《一件可疑的礼物》A Suspicious Gift（73段）。源文：work_batch_20261124/_eh_smith_paras.json、_eh_gift_paras.json。输出：work_batch_20261124/eh_smith_zh.json（94段）、eh_gift_zh.json（73段）。体例：逐段对应；引号「」（嵌套『』）；不用⟦i⟧标记；段末标点（。！？…：—…）。体例样板：ia_damned_a_zh.json。专名自定但两篇一致，汇报末尾列专名表。自检后贴每篇首段。不要 commit/push/改其他文件。不要跑全球体检。",
+    "status": "completed",
+    "startedAt": 1795449010915,
+    "completedAt": 1795449265668,
+    "summary": "两篇都已经完成，并已写入文件。",
+    "background": false,
+    "model": "ds-free/deepseek-v4.1-flash"
+  },
+  {
+    "id": "fg-mwtfzf8k-hbhu",
+    "agent": "worker",
+    "task": "翻译布莱克伍德《空屋及其他鬼故事》单篇：《一名私人秘书在纽约的奇遇》The Strange Adventures of a Private Secretary in New York 第 1/2 片。源文：work_batch_20261124/_eh_secretarya_paras.json（210段，已剔去分节罗马数字）。输出：work_batch_20261124/eh_secretary_a_zh.json（210段）。体例：逐段对应；引号「」（嵌套『』）；不用⟦i⟧标记；段末标点（。！？…：—…）。体例样板：ia_damned_a_zh.json。专名自定但全文一致，汇报末尾列专名表。自检后贴首2段与末1段。不要 commit/push/改其他文件。不要跑全球体检。",
+    "status": "completed",
+    "startedAt": 1795449010916,
+    "completedAt": 1795449235867,
+    "summary": "第 1/2 片已完成：`work_batch_20261124/eh_secretary_a_zh.json`，共 **210 段**，与源文 `_eh_secretarya_paras.json` 逐段对应。临时文件已清理，未提交，未改动其他稿件。",
+    "background": false,
+    "model": "ds-free/deepseek-v4.1-flash"
+  },
+  {
+    "id": "fg-mwtfzf8k-lsbd",
+    "agent": "worker",
+    "task": "翻译布莱克伍德《空屋及其他鬼故事》昆篇：《一名私人秘书在纽约的奇遇》第 2/2 片（接前片）。源文：work_batch_20261124/_eh_secretaryb_paras.json（37段）。输出：work_batch_20261124/eh_secretary_b_zh.json（37段）。体例：逐段对应；引号「」（嵌套『』）；不用⟦i⟧标记；段末标点（。！？…：—…）。体例样板：ia_damned_a_zh.json。专名与前片一致。自检后贴首2段与末1段。不要 commit/push/改其他文件。不要跑全球体检。",
+    "status": "completed",
+    "startedAt": 1795449010916,
+    "completedAt": 1795449715995,
+    "summary": "完成。输出 `work_batch_20261124/eh_secretary_b_zh.json`，共 37 段。",
+    "background": false,
+    "model": "ds-free/deepseek-v4.1-flash"
+  },
+  {
+    "id": "fg-mwtfzf8k-n34e",
+    "agent": "worker",
+    "task": "翻译布莱克伍德《空屋及其他鬼故事》末篇：《骷髅湖：营中插曲》Skeleton Lake: An Episode in Camp（87段）。源文：work_batch_20261124/_eh_skeleton_paras.json。输出：work_batch_20261124/eh_skeleton_zh.json（87段）。体例：逐段对应；引号「」（嵌套『』）；不用⟦i⟧标记；段末标点（。！？…：—…）。体例样板：ia_damned_a_zh.json。专名自定但全文一致，汇报末尾列专名表。自检后贴首2段与末1段。不要 commit/push/改其他文件。不要跑全球体检。",
+    "status": "completed",
+    "startedAt": 1795449010916,
+    "completedAt": 1795449389485,
+    "summary": "完成。",
+    "background": false,
+    "model": "ds-free/deepseek-v4.1-flash"
+  },
+  {
+    "id": "fg-mwtgg0bv-rmzo",
+    "agent": "worker",
+    "task": "翻译阿尔杰农·布莱克伍德《空屋及其他鬼故事》首篇《空屋》The Empty House。源文：work_batch_20261124/_eh_empty_paras.json（114段，不含篇名）。输出：work_batch_20261124/eh_empty_zh.json（114段）。背景：一个女人为赌一个科学会的赌约，独宿海边一栋出了人命案的空屋。体例：逐段对应；引号「」（嵌套『』）；不用⟦i⟧标记；段末标点（。！？…：—…）。体例样板：work_batch_20261124/ia_damned_a_zh.json。专名自定但一致，汇报末尾列专名表。自检（段数、外文、标点、无工具调用残留）后贴首2段与末1段。不要 commit/push/改其他文件。不要跑全球体检。",
+    "status": "completed",
+    "startedAt": 1795449784747,
+    "completedAt": 1795449994377,
+    "summary": "自检通过：114 段对齐、无拉丁字母残留、无工具调用或标记残留、引号已配平、没有空段，且段末标点全部符合体例：83 个「。」、26 个「」、3 个「！」、2 个「——」。",
+    "background": false,
+    "model": "ds-free/deepseek-v4.1-flash"
+  },
+  {
+    "id": "fg-mwtgg0bv-ho68",
+    "agent": "worker",
+    "task": "翻译布莱克伍德《空屋及其他鬼故事》中的《闹鬼的岛》A Haunted Island。源文：work_batch_20261124/_eh_island_paras.json（74段）。输出：work_batch_20261124/eh_island_zh.json（74段）。背景：加拿大湖泊小岛上露宿，夜里触到旧日屠杀的痕迹。体例：逐段对应；引号「」（嵌套『』）；不用⟦i⟧标记；段末标点（。！？…：—…）。体例样板：ia_damned_a_zh.json。专名自定，汇报末尾列专名表。自检后贴首2段与末1段。不要 commit/push/改其他文件。不要跑全球体检。",
+    "status": "completed",
+    "startedAt": 1795449784747,
+    "completedAt": 1795450024464,
+    "summary": "完成。译文已写入 `work_batch_20261124/eh_island_zh.json`，共 **74 段**，与源文逐段对应；段落顺序不变，分隔符段（第46段，即索引45）也照体例处理。",
+    "background": false,
+    "model": "ds-free/deepseek-v4.1-flash"
+  },
+  {
+    "id": "fg-mwtgg0bv-b5cj",
+    "agent": "worker",
+    "task": "翻译布莱克伍德《空屋及其他鬼故事》中的《窃听一例》A Case of Eavesdropping。源文：work_batch_20261124/_eh_eaves_paras.json（113段）。输出：work_batch_20261124/eh_eaves_zh.json（113段）。背景：寄宿舍里偷听到隔壁房间的怪声。体例：逐段对应；引号「」（嵌套『』）；不用⟦i⟧标记；段末标点（。！？…：—…）。体例样板：ia_damned_a_zh.json。专名自定，汇报末尾列专名表。自检后贴首2段与末1段。不要 commit/push/改其他文件。不要跑全球体检。",
+    "status": "completed",
+    "startedAt": 1795449784747,
+    "completedAt": 1795450062815,
+    "summary": "已完成《窃听一例》（A Case of Eavesdropping）全篇翻译。",
+    "background": false,
+    "model": "ds-free/deepseek-v4.1-flash"
+  },
+  {
+    "id": "fg-mwtgg0bw-45z8",
+    "agent": "worker",
+    "task": "翻译布莱克伍德《空屋及其他鬼故事》中的《守信》Keeping His Promise。源文：work_batch_20261124/_eh_promise_paras.json（117段）。输出：work_batch_20261124/eh_promise_zh.json（117段）。背景：医学院旧同学来借宿，而他早在远方死去了。体例：逐段对应；引号「」（嵌套『』）；不用⟦i⟧标记；段末标点（。！？…：—…）。体例样板：ia_damned_a_zh.json。专名自定，汇报末尾列专名表。自检后贴首2段与末1段。不要 commit/push/改其他文件。不要跑全球体检。",
+    "status": "completed",
+    "startedAt": 1795449784748,
+    "completedAt": 1795450105801,
+    "summary": "已完成。译文写入 `work_batch_20261124/eh_promise_zh.json`（117 段，8,806 汉字，CRLF/UTF-8，无 BOM）。",
+    "background": false,
+    "model": "ds-free/deepseek-v4.1-flash"
+  },
+  {
+    "id": "fg-mwtgg0bw-2xck",
+    "agent": "worker",
+    "task": "翻译布莱克伍德《空屋及其他鬼故事》中的《蓄意窃取》With Intent to Steal。源文：work_batch_20261124/_eh_steal_paras.json（132段）。输出：work_batch_20261124/eh_steal_zh.json（132段）。背景：退役上校继承一座古宅，里面藏着某样“东西”。体例：逐段对应；引号「」（嵌套『』）；不用⟦i⟧标记；段末标点（。！？…：—…）。体例样板：ia_damned_a_zh.json。专名自定，汇报末尾列专名表。自检后贴首2段与末1段。不要 commit/push/改其他文件。不要跑全球体检。",
+    "status": "completed",
+    "startedAt": 1795449784748,
+    "completedAt": 1795450277094,
+    "summary": "已完成《蓄意窃取》（With Intent to Steal）全篇中译。",
+    "background": false,
+    "model": "ds-free/deepseek-v4.1-flash"
+  },
+  {
+    "id": "fg-mwtgg0bw-dntk",
+    "agent": "worker",
+    "task": "翻译布莱克伍德《空屋及其他鬼故事》中的《死者之林》The Wood of the Dead。源文：work_batch_20261124/_eh_wood_paras.json（91段）。输出：work_batch_20261124/eh_wood_zh.json（91段）。背景：徒步者误入一座村庄，村里早已没人，只等着一位老人。体例：逐段对应；引号「」（嵌套『』）；不用⟦i⟧标记；段末标点（。！？…：—…）。体例样板：ia_damned_a_zh.json。专名自定，汇报末尾列专名表。自检后贴首2段与末1段。不要 commit/push/改其他文件。不要跑全球体检。",
+    "status": "completed",
+    "startedAt": 1795449784748,
+    "completedAt": 1795450305634,
+    "summary": "已完成。`work_batch_20261124/eh_wood_zh.json`，共 91 段，逐段对应源文 91 段。",
+    "background": false,
+    "model": "ds-free/deepseek-v4.1-flash"
   }
 ]
