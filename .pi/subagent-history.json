@@ -639,5 +639,49 @@
     "summary": "自检通过：四份文件均为合法 JSON，段数 21/27/10/25 与源文一一对应，无英文残留、无⟦⟧标记，引号「」配对无误，段末标点均落在句末（含收于」的情况，符合体例）。未触碰其他文件，未 commit。",
     "background": false,
     "model": "yanhuo888/glm-5.3-flash"
+  },
+  {
+    "id": "fg-mwtad8ad-7flt",
+    "agent": "worker",
+    "task": "翻译邓萨尼《维勒兰之剑》（The Sword of Welleran and Other Stories, 1908）第一组三篇：《维勒兰之剑》The Sword of Welleran（59段）、《巴布尔昆德的陷落》The Fall of Babbulkund（41段）、《大盗》The Highwaymen（23段）。源文：work_batch_20261124/_welleran_paras.json（60项）、_babbulkund_paras.json（42项）、_highwaymen_paras.json（24项），各 [0] 为篇名。输出：work_batch_20261124/dsw_welleran_zh.json（59段）、dsw_babbulkund_zh.json（41段）、dsw_highwaymen_zh.json（23段），均不含篇名。体例：逐段对应；引号「」（嵌套『』）；不用⟦i⟧标记；段末标点（。！？…：—…）。体例样板：work_batch_20261124/dw_gibbelins_zh.json、dt_yann_zh.json。专名：Welleran 维勒兰；Merimna 梅里姆纳；Babbulkund 巴布尔昆德；其他照通译。自检后贴每篇首段。不要 commit/push/改其他文件。不要跑全局体检。",
+    "status": "completed",
+    "startedAt": 1795439577397,
+    "completedAt": 1795439927562,
+    "summary": "三个文件已完成、自检通过（段数、引号体例、段末标点、无拉丁残留、无⟦i⟧标记），未 commit、未改动其他文件。",
+    "background": false,
+    "model": "yanhuo888/glm-5.3-flash"
+  },
+  {
+    "id": "fg-mwtad8ae-z7ek",
+    "agent": "worker",
+    "task": "翻译邓萨尼《维勒兰之剑》单篇：《精灵之族》The Kith of the Elf Folk（148段，多为短段对话）。源文：work_batch_20261124/_elf_folk_paras.json（149项，[0]篇名，正文内有两个小标题段 Chapter I / Chapter II，译作「第一章」「第二章」照常输出）。输出：work_batch_20261124/dsw_elf_folk_zh.json（148段，不含篇名）。体例：逐段对应；引号「」（嵌套『』）；不用⟦i⟧标记；段末标点（。！？…：—…）。体例样板：work_batch_20261124/dw_gibbelins_zh.json、dt_yann_zh.json。专名：the Marsh-stork 泽鹳；其他照通译。自检后贴首2段与末1段。不要 commit/push/改其他文件。不要跑全局体检。",
+    "status": "completed",
+    "startedAt": 1795439577398,
+    "completedAt": 1795439643942,
+    "summary": "已完成《精灵之族》（The Kith of the Elf Folk）的翻译。",
+    "background": false,
+    "model": "yanhuo888/glm-5.3-flash"
+  },
+  {
+    "id": "fg-mwtad8ae-mhez",
+    "agent": "worker",
+    "task": "翻译邓萨尼《维勒兰之剑》第二组七篇：《暮色中》In The Twilight（6段）、《幽灵》The Ghosts（7段）、《漩涡》The Whirlpool（7段）、《飓风》The Hurricane（8段）、《众城之主》The Lord of Cities（19段）、《茶花女的末路》The Doom of La Traviata（4段）、《在干地上》On The Dry Land（20段）。源文：work_batch_20261124/_twilight_paras.json（7项）、_ghosts_paras.json（8项）、_whirlpool_paras.json（8项）、_hurricane_paras.json（9项）、_cities_paras.json（20项）、_traviata_paras.json（5项）、_dry_land_paras.json（21项），各 [0] 为篇名。输出：work_batch_20261124/dsw_twilight_zh.json（6段）、dsw_ghosts_zh.json（7段）、dsw_whirlpool_zh.json（7段）、dsw_hurricane_zh.json（8段）、dsw_cities_zh.json（19段）、dsw_traviata_zh.json（4段）、dsw_dry_land_zh.json（20段），均不含篇名。体例：逐段对应；引号「」（嵌套『』）；不用⟦i⟧标记；段末标点（。！？…：—…），末段若以——收束除外。体例样板：work_batch_20261124/dw_gibbelins_zh.json、dt_yann_zh.json。专名：La Traviata《茶花女》；其他照通译。自检后贴每篇首段。不要 commit/push/改其他文件。不要跑全局体检。",
+    "status": "completed",
+    "startedAt": 1795439577398,
+    "completedAt": 1795439754273,
+    "summary": "七个文件全部通过自检（JSON 合法、逐段对应、段末标点齐备、无 ⟦i⟧ 标记）。`dsw_dry_land_zh.json` 的第 18–20 段为古腾堡尾注，按逐段对应译出。",
+    "background": false,
+    "model": "yanhuo888/glm-5.3-flash"
+  },
+  {
+    "id": "fg-mwtad8af-fcbt",
+    "agent": "worker",
+    "task": "翻译邓萨尼《维勒兰之剑》单篇：《萨克斯诺特无敌的堡垒》The Fortress Unvanquishable, Save For Sacnoth（98段）。源文：work_batch_20261124/_sacnoth_paras.json（99项，[0]篇名）。输出：work_batch_20261124/dsw_sacnoth_zh.json（98段，不含篇名）。体例：逐段对应；引号「」（嵌套『』）；不用⟦i⟧标记；段末标点（。！？…：—…）。体例样板：work_batch_20261124/dw_gibbelins_zh.json、dt_yann_zh.json。专名：Sacnoth 萨克斯诺特；Leothold 利奥索尔德；其他照通译。自检后贴首2段与末1段。不要 commit/push/改其他文件。不要跑全局体检。",
+    "status": "completed",
+    "startedAt": 1795439577399,
+    "completedAt": 1795439691585,
+    "summary": "自检通过：98 段与源文逐段对应（源 99 项含篇名[0]，未纳入输出）；引号「」配对完整；无 ⟦i⟧ 标记；段末标点符合体例（对话段以 」收尾，与样板 dw_gibbelins_zh.json 中「在塔门口吹号角」段的处理一致）；星号分节行原样保留。",
+    "background": false,
+    "model": "yanhuo888/glm-5.3-flash"
   }
 ]
