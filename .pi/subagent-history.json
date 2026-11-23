@@ -551,5 +551,49 @@
     "summary": "翻译完成，自检全部通过。",
     "background": false,
     "model": "yanhuo888/glm-5.3-flash"
+  },
+  {
+    "id": "fg-mwt9njrp-ki3v",
+    "agent": "worker",
+    "task": "翻译邓萨尼《惊奇之书》（The Book of Wonder, 1912）前五篇：《马骑士的新娘》The Bride of the Man-Horse、《珠宝匠桑戈布林的不幸遭遇》The Distressing Tale of Thangobrind the Jeweller、《狮身人面女之家》The House of the Sphinx、《三位文人可能的奇遇》The Probable Adventure of the Three Literary Men、《偶像崇拜者蓬博的不智祈祷》The Injudicious Prayers of Pombo the Idolater。源文：work_batch_20261124/_bride_paras.json（19项，[0]篇名，正文18段）、_thangobrind_paras.json（9项，8段）、_sphinx_paras.json（12项，11段）、_litmen_paras.json（14项，13段）、_pombo_paras.json（6项，5段）。输出：work_batch_20261124/dw_bride_zh.json（18段）、dw_thangobrind_zh.json（8段）、dw_sphinx_zh.json（11段）、dw_litmen_zh.json（13段）、dw_pombo_zh.json（5段），均不含篇名。体例：逐段对应；引号「」（嵌套『』）；不用⟦i⟧标记；段末标点（。！？…：—…）。体例样板：work_batch_20261124/bierce_ck_zh.json、bierce_nose_zh.json。专名：Thangobrind 桑戈布林；Pombo 蓬博；Ammuz 阿穆兹；Bombasharna 邦巴沙尔纳；其他照通译（人名可意译处照原文气质意译，如 One-Merchants）。自检各文件段数/外文/标点后贴每篇首段。不要 commit/push/改其他文件。不要跑全局体检。",
+    "status": "completed",
+    "startedAt": 1795438379221,
+    "completedAt": 1795438550303,
+    "summary": "五个文件已完成，自检通过：段数全部符合（18/8/11/13/5），无残留外文、无⟦⟧标记、段末标点合规，引号统一「」（嵌套『』备用）。专名按指定及意译处理（Shepperalk 谢珀拉克、Sombelene 桑贝琳、剑名 Mouse「小鼠」、One-Merchants 类气质意译照原文）。",
+    "background": false,
+    "model": "yanhuo888/glm-5.3-flash"
+  },
+  {
+    "id": "fg-mwt9njrq-sxyy",
+    "agent": "worker",
+    "task": "翻译邓萨尼《惊奇之书》中四篇：《邦巴沙尔纳的战利品》The Loot of Bombasharna、《卡比奇小姐与浪漫之龙》Miss Cubbidge and the Dragon of Romance、《王后的泪之寻》The Quest of the Queen's Tears、《吉贝林人的宝藏》The Hoard of the Gibbelins。源文：work_batch_20261124/_bombasharna_paras.json（15项，14段）、_cubbidge_paras.json（10项，9段）、_queens_tears_paras.json（27项，26段）、_gibbelins_paras.json（20项，19段）。输出：work_batch_20261124/dw_bombasharna_zh.json（14段）、dw_cubbidge_zh.json（9段）、dw_queens_tears_zh.json（26段）、dw_gibbelins_zh.json（19段），均不含篇名。体例：逐段对应；引号「」（嵌套『』）；不用⟦i⟧标记；段末标点（。！？…：—…）。体例样板：work_batch_20261124/bierce_ck_zh.json、bierce_nose_zh.json。专名：Shard 沙尔德；Cubbidge 卡比奇；Sylvia 西尔维娅；Gibbelins 吉贝林人；其他照通译。自检后贴每篇首段。不要 commit/push/改其他文件。不要跑全局体检。",
+    "status": "completed",
+    "startedAt": 1795438379222,
+    "completedAt": 1795438479504,
+    "summary": "段末检查命中的几条实际都是「……的脾气。」这类以句号收尾后接闭引号」，符合体例。自检通过：四篇段数 14/9/26/19 与源文一致，无英文残留，引号配对无误。",
+    "background": false,
+    "model": "yanhuo888/glm-5.3-flash"
+  },
+  {
+    "id": "fg-mwt9njrq-aodj",
+    "agent": "worker",
+    "task": "翻译邓萨尼《惊奇之书》后五篇：《努特如何对格诺尔施展他的手艺》How Nuth Would Have Practised His Art Upon the Gnoles、《一言成谶，进城名“永不在”》How One Came, As Was Foretold, to the City of Never、《丘布与希米什》Chu-Bu and Sheemish、《奇妙的窗》The Wonderful Window、《尾声》Epilogue。源文：work_batch_20261124/_gnoles_paras.json（22项，21段）、_never_paras.json（25项，24段）、_chubu_paras.json（25项，24段）、_window_paras.json（26项，25段）、_epilogue_paras.json（9项，8段）。输出：work_batch_20261124/dw_gnoles_zh.json（21段）、dw_never_zh.json（24段）、dw_chubu_zh.json（24段）、dw_window_zh.json（25段）、dw_epilogue_zh.json（8段），均不含篇名。体例：逐段对应；引号「」（嵌套『』）；不用⟦i⟧标记；段末标点（。！？…：—…）。体例样板：work_batch_20261124/bierce_ck_zh.json、bierce_nose_zh.json。专名：Nuth 努特；Gnoles 格诺尔；Chu-Bu 丘布；Sheemish 希米什；其他照通译。《尾声》里出现《惊奇之书》各篇篇名，可意译。自检后贴每篇首段。不要 commit/push/改其他文件。不要跑全局体检。",
+    "status": "completed",
+    "startedAt": 1795438379222,
+    "completedAt": 1795438669331,
+    "summary": "五篇译毕，自检全绿（JSON 可解析、段数 21/24/24/25/8 与源逐段对应、无西式引号、无 ⟦i⟧、段末标点合规，对话段以 」 收尾与全库惯例一致）。MEMORY.md 已补记。未 commit/push、未动其他文件。",
+    "background": false,
+    "model": "yanhuo888/glm-5.3-flash"
+  },
+  {
+    "id": "fg-mwt9wphu-trza",
+    "agent": "worker",
+    "task": "翻译邓萨尼《惊奇之书》补遗两篇。1）《托马斯·夏普先生的加冕》The Coronation of Mr. Thomas Shap（已译主体可参考：你只需另译新切片）。源文：work_batch_20261124/_shap_paras.json（16项，[0]篇名，正文15段）。输出：work_batch_20261124/dw_shap_zh.json（15段，不含篇名）。2）《尾声》Epilogue 重译：源文 work_batch_20261124/_epilogue_paras.json 已清理为只剩 1 段真正的英文正文（其余是古腾堡档案尾注，之前有子代理误把尾注也译了）。输出覆盖写：work_batch_20261124/dw_epilogue_zh.json（1段）。体例：逐段对应；引号「」（嵌套『』）；不用⟦i⟧标记；段末标点（。！？…：—…）。体例样板：work_batch_20261124/bierce_ck_zh.json、dw_gnoles_zh.json。专名：Thomas Shap 托马斯·夏普；Thuls 图尔人。自检后贴两篇全文。不要 commit/push/改其他文件。不要跑全局体检。",
+    "status": "completed",
+    "startedAt": 1795438806546,
+    "completedAt": 1795438861198,
+    "summary": "自检通过（段数 15/1，段末标点合规，无英文/占位符/直引号残留）。两篇全文如下：",
+    "background": false,
+    "model": "yanhuo888/glm-5.3-flash"
   }
 ]

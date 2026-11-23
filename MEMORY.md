@@ -1719,3 +1719,22 @@ build_NN.py 里写明各篇源区间并逐篇断言段数。
 
 **尚未译的源文**（已切好或可直接切）：PG #2148 无余篇；比尔斯 #13334 无余篇（In the Midst of Life 全卷已完）。
 其他候选：GITenberg 里 Dunsany《五十一则故事》其余 44 篇、Gilman《Herland》、Bierce vol 3/4/5 等。
+
+## 2026-11-24 邓萨尼《惊奇之书》后五篇（work_batch_20261124/）
+
+接续前五篇（gibbelins 等），本批译完全书余下五篇，输出 `dw_*_zh.json`：
+- dw_gnoles_zh.json 21段（努特/格诺尔；Slith→斯利斯、Tonker→汤克）
+- dw_never_zh.json 24段（永不在城；**注意源文件内嵌第二篇题
+  "THE CORONATION OF MR. THOMAS SHAP"，按用户口径 24 段将其保留为一段
+  "托马斯·夏普先生的加冕"**，仅首题去除；Larkar→拉卡尔、Toldenarba→托尔登纳巴、
+  Under Pits→地底巨坑、abyx→阿比克斯）
+- dw_chubu_zh.json 24段（丘布/希米什；Ting→廷）
+- dw_window_zh.json 25段（奇妙的窗；Sladden→斯拉登、金龙之城）
+- dw_epilogue_zh.json 8段（尾声正文1段 + 古腾堡档案尾注7段**全部意译**，
+  篇名提及处按用户许可意译；段末标点按体例补 。）
+
+体例：逐段对应、「」引号（本批无嵌套）、无 ⟦i⟧、段末标点 ∈ ｛。！？…：—｝
+（对话段以 」 收尾为全库既有惯例，417 例，不算异常）。
+自检：json 可解析、段数 21/24/24/25/8 与源一致、0 西式引号、0 拉丁残留标记。
+未 commit/push，未动其他文件。至此《惊奇之书》十四篇 + 尾声中译齐备，
+组装成册待后续（可仿 build_bierce.py 路数）。
