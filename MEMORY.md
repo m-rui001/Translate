@@ -1979,3 +1979,36 @@ bovary 代理删了 38 处=白丢斜体（文本无损，无法回滚，work_pub
 
 **子代理回来的数字要核**：常报「已完成」但某一小片根本没写（bm_f）；或报「某片缺稿」而实际
 不缺（jb_d）。**并行批次结束先 ls + 逐文件段数与断言。**
+
+## 2026-11-24 邓萨尼《时间与诸神》第三组九篇（work_batch_20261124/）
+
+`_tg_*_paras.json` → `tg_*_zh.json`，逐段对应、不含篇名：
+
+| 篇 | 段 | 汉字 |
+|---|---|---|
+| 夜与晨 tg_night | 4 | 1,341 |
+| 高利贷 tg_usury | 7 | 1,400 |
+| 姆利丁 tg_mlideen | 7 | 773 |
+| 诸神的秘密 tg_secret | 13 | 1,228 |
+| 南风 tg_southwind | 7 | 1,460 |
+| 时间之地 tg_landtime | 45 | 4,708 |
+| 萨尼达克的回心 tg_sarnidac | 26 | 2,752 |
+| 诸神的玩笑 tg_jest | 2 | 426 |
+| 先知之梦 tg_dreams | 22 | 1,458 |
+
+体例照 `dg_sidith_zh.json`：「」/嵌套『』、无 ⟦i⟧、段末标点齐。
+**两处例外**：tg_dreams 段 0 与段 18 是源文的 `I` / `II` 分节数字 → 「一」「二」，
+属篇内小标题豁免，不以标点收尾。
+
+自检：json 可解析、段数与源一致、0 西文引号、0 拉丁残留、0「。。」、
+逐段引号栈平衡（『』只在 「」 内）、无汉字间空格、无重复标点。
+
+专名（本组定案，后续 tg 各篇沿用）：暮色之野（Fields of Twilight）/「边缘」(the Rim)/
+亚恩 Yahn / 佐努 Zonu / 姆利丁 Mlideen / 莫拉·纳伍特 Mowrah Nawut /「妙构之书」/
+乌尔敦 Uldoon / 齐尼·莫 Zyni Moe / 晨之宰 Morning Zai / 河畔城 the City by the River /
+命运 Fate / 机运 Chance / 先知奥尔 Ord / 卡尼斯 Karnith / 卡尼斯·佐 Karnith Zo /
+阿拉塔 Alatta / 宗恩 Zoon / 泽纳尔 Zeenar / 艾迪斯 Eidis / 伊斯塔恩 Istahn /
+阿格尼德 Agnid / 卡玛赞 Khamazan / 尼敦 Nydoon / 波佩伊德斯 Pompeides / 萨尼达克 Sarnidac /
+莫拉见上 / 塔尔西·扎洛 Tarsi Zalo / 阿尔德隆 Alderon /「较古的诸神」the Older gods。
+
+未 commit/push，未动其他文件，未跑全库体检。
