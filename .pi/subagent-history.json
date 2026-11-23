@@ -891,5 +891,27 @@
     "summary": "完成。输出 `work_batch_20261124/js_dog_d_zh.json`，216 段，与源文 [1]–[216] 逐段对应（源 [0]=\"V\" 未输出，按要求）。",
     "background": false,
     "model": "yanhuo888/glm-5.3-flash"
+  },
+  {
+    "id": "fg-mwtcfxr6-0hs4",
+    "agent": "worker",
+    "task": "翻译阿尔杰农·布莱克伍德《温迪戈》The Wendigo（1907，单篇中篇）第一部分。源文：work_batch_20261124/_wendigo_a_paras.json（128段，[0]=罗马数字 I 分节号，不译不输出，正文127段）。输出：work_batch_20261124/wendigo_a_zh.json（127段）。背景：加拿大荒原狩猎，向导迪法尤（Defago）被温迪戈——大北方的风之灵——掠走，灵魂被以每秒一千里的速度拖着周游世界，归来后疯癫至死。体例：逐段对应；引号「」（嵌套『』）；不用⟦i⟧标记；段末标点（。！？…：—…）；＊分节行保留为段。体例样板：work_batch_20261124/dt_yann_zh.json、js_dog_a_zh.json。专名：Wendigo 温迪戈；Defago 迪法尤；Hank 辛普森·汉克；Dr. Cathcart 卡瑟卡特医生；Simpson 辛普森；Punk 帕克；其他自定但一致，汇报末尾列专名表。自检后贴首2段与末1段。不要 commit/push/改其他文件。不要跑全球体检。",
+    "status": "completed",
+    "startedAt": 1795443062946,
+    "completedAt": 1795443176743,
+    "summary": "自检通过：源 128 段（含分节号 I）→ 译文 127 段，逐段对应；引号统一「」『』；段末标点合规；＊分节行与分节号 II/III/IV 按段保留。",
+    "background": false,
+    "model": "yanhuo888/glm-5.3-flash"
+  },
+  {
+    "id": "fg-mwtcfxr6-njp3",
+    "agent": "worker",
+    "task": "翻译布莱克伍德《温迪戈》第二部分（接前片）。源文：work_batch_20261124/_wendigo_b_paras.json（131段，[0]=罗马数字 II 分节号，不译不输出，正文130段）。输出：work_batch_20261124/wendigo_b_zh.json（130段）。体例：逐段对应；引号「」（嵌套『』）；不用⟦i⟧标记；段末标点（。！？…：—…）；＊分节行保留为段。体例样板：work_batch_20261124/dt_yann_zh.json、js_dog_a_zh.json。专名：与前片一致（温迪戈、迪法尤、汉克、卡瑟卡特、辛普森、帕克）；其他自定但一致，汇报末尾列专名表。自检后贴首2段与末1段。不要 commit/push/改其他文件。不要跑全球体检。",
+    "status": "completed",
+    "startedAt": 1795443062946,
+    "completedAt": 1795443363933,
+    "summary": "完成。汇报：",
+    "background": false,
+    "model": "yanhuo888/glm-5.3-flash"
   }
 ]
