@@ -1,5 +1,27 @@
 [
   {
+    "id": "fg-mwutgebi-u5fu",
+    "agent": "general-purpose",
+    "task": "工作目录 E:/Translate。任务小：读 work_proust/out/v4/chunk129 到 chunk135（7 个 final.txt），按 E:/Translate/POLISH_BRIEF_2026-11-25.md 的七类准则润色。专名不得改，不拆长句，不增删段。每条 assert 单文件 count==1，改前 cp .bak_20261125（已存在则不覆），行数不变。读得通的不改。汇报改了哪几处。",
+    "status": "completed",
+    "startedAt": 1795532104062,
+    "completedAt": 1795532246422,
+    "summary": "已核对完毕。汇报如下：",
+    "background": false,
+    "model": "ds-free/deepseek-v4.1-flash"
+  },
+  {
+    "id": "fg-mwutgebh-9pfl",
+    "agent": "general-purpose",
+    "task": "工作目录 E:/Translate。任务小：读 work_proust/out/v3/chunk172 到 chunk178（7 个 final.txt），按 E:/Translate/POLISH_BRIEF_2026-11-25.md 的七类准则润色。专名不得改，不拆长句，不增删段。每条 assert 单文件 count==1，改前 cp .bak_20261125（已存在则不覆），行数不变。读得通的不改。汇报改了哪几处。",
+    "status": "completed",
+    "startedAt": 1795532104061,
+    "completedAt": 1795532284220,
+    "summary": "完成。7 个文件都逐段读完了（172–178，共 36188 汉字、21 段），对照 `chunks/v3/chunk*.json` 的法文原文核了所有疑点，改了 **10 处**。",
+    "background": false,
+    "model": "ds-free/deepseek-v4.1-flash"
+  },
+  {
     "id": "fg-mwut7q73-4rb3",
     "agent": "general-purpose",
     "task": "工作目录 E:/Translate。任务小：读 work_proust/out/v4/chunk122 到 chunk128（7 个 final.txt），按 E:/Translate/POLISH_BRIEF_2026-11-25.md 的七类准则润色。专名不得改，不拆长句，不增删段。每条 assert 单文件 count==1，改前 cp .bak_20261125（已存在则不覆），行数不变。读得通的不改。汇报改了哪几处。",
@@ -2126,28 +2148,6 @@
     "startedAt": 1795452213153,
     "completedAt": 1795452915951,
     "summary": "完成。三批已落盘并合并校验。",
-    "background": false,
-    "model": "ds-free/deepseek-v4.1-flash"
-  },
-  {
-    "id": "fg-mwthw23l-qls4",
-    "agent": "worker",
-    "task": "翻译《仙境囚徒》第 5/16 片（接前片）。源文：work_batch_20261124/_pf_e_paras.json（130 段）。输出：work_batch_20261124/pf_e_zh.json（130 段）。请**分批落盘**：前 65 段写 pf_e_p1.json，余下写 pf_e_p2.json，合并并 assert 130。体例：逐段对应；引号「」（嵌套『』）；不用⟦i⟧标记；段末标点（。！？…：—…）；星号行作「＊　＊　＊　＊　＊」。体例样板：dn_d_zh.json。专名：罗杰斯；其他自定但一致。自检后贴首2段与末1段。不要 commit/push/改其他文件。不要跑全球体检。",
-    "status": "completed",
-    "startedAt": 1795452213153,
-    "completedAt": 1795452888452,
-    "summary": "分段写入、合并、自检均已完成。",
-    "background": false,
-    "model": "ds-free/deepseek-v4.1-flash"
-  },
-  {
-    "id": "fg-mwthw23l-k7ln",
-    "agent": "worker",
-    "task": "翻译《仙境囚徒》第 7/16 片（接前片）。源文：work_batch_20261124/_pf_g_paras.json（141 段）。输出：work_batch_20261124/pf_g_zh.json（141 段）。请**分批落盘**：前 70 段写 pf_g_p1.json，余下写 pf_g_p2.json，合并 assert 141。体例：逐段对应；引号「」（嵌套『』）；不用⟦i⟧标记；段末标点（。！？…：—…）；星号行作「＊　＊　＊　＊　＊」。体例样板：dn_d_zh.json。专名：罗杰斯；其他自定但一致。自检后贴首2段与末1段。不要 commit/push/改其他文件。不要跑全球体检。",
-    "status": "completed",
-    "startedAt": 1795452213153,
-    "completedAt": 1795452865162,
-    "summary": "第 7/16 片已完成，分两批保存文件，并已合并校验。",
     "background": false,
     "model": "ds-free/deepseek-v4.1-flash"
   }
