@@ -1,23 +1,45 @@
 [
   {
-    "id": "fg-mwumknc1-5iex",
+    "id": "fg-mwumwiot-ch1i",
     "agent": "general-purpose",
-    "task": "工作目录 E:/Translate。任务小：读 work_proust/out/v4/chunk087 到 chunk093（7 个 final.txt），按 E:/Translate/POLISH_BRIEF_2026-11-25.md 的七类准则润色。专名不得改，不拆长句。每条 assert 单文件 count==1，改前 cp .bak_20261125（已存在则不覆），行数不变。读得通的不改。汇报改了哪几处。",
+    "task": "工作目录 E:/Translate。任务小：读 work_proust/out/v4/chunk108 到 chunk114（7 个 final.txt），按 E:/Translate/POLISH_BRIEF_2026-11-25.md 的七类准则润色。专名不得改，不拆长句，不增删段。每条 assert 单文件 count==1，改前 cp .bak_20261125（已存在则不覆），行数不变。读得通的不改。汇报改了哪几处。",
     "status": "completed",
-    "startedAt": 1795520545057,
-    "completedAt": 1795520724418,
-    "summary": "```",
+    "startedAt": 1795521098909,
+    "completedAt": 1795521535314,
+    "summary": "七份文件读完后，我按你说的范围做了 22 处改动，全部按「定位唯一子串 → `assert count==1` → 替换」的方式写入文件（脚本 `work_proust/polish_108_114.py`，可重复运行且幂等，第二次运行 0 改动），没有重写整个文件，没有拆段或并段，行数全部不变。",
     "background": false,
     "model": "ds-free/deepseek-v4.1-flash"
   },
   {
-    "id": "fg-mwumknc1-co4s",
+    "id": "fg-mwumwioq-lssj",
     "agent": "general-purpose",
-    "task": "工作目录 E:/Translate。任务小：读 work_proust/out/v4/chunk094 到 chunk100（7 个 final.txt），按 E:/Translate/POLISH_BRIEF_2026-11-25.md 的七类准则润色。专名不得改，不拆长句。每条 assert 单文件 count==1，改前 cp .bak_20261125（已存在则不覆），行数不变。读得通的不改。汇报改了哪几处。",
+    "task": "工作目录 E:/Translate。任务小：读 work_proust/out/v4/chunk101 到 chunk107（7 个 final.txt），按 E:/Translate/POLISH_BRIEF_2026-11-25.md 的七类准则润色。专名不得改，不拆长句，不增删段。每条 assert 单文件 count==1，改前 cp .bak_20261125（已存在则不覆），行数不变。读得通的不改。汇报改了哪几处。",
     "status": "completed",
-    "startedAt": 1795520545057,
-    "completedAt": 1795520821137,
-    "summary": "七个 final.txt 已通读，并对照 `src/v4.txt`（Sodome et Gomorrhe，约 6580–7100 行）核对疑点后完成润色。",
+    "startedAt": 1795521098906,
+    "completedAt": 1795521481465,
+    "summary": "已按准则读完 101–107 全部 7 个 `final.txt`（101／105／106 读通即放过），改前 `cp` 建了 103、107 的 `.bak_20261125`；102、104 早有的备份未覆盖。",
+    "background": false,
+    "model": "ds-free/deepseek-v4.1-flash"
+  },
+  {
+    "id": "fg-mwumwion-y34e",
+    "agent": "general-purpose",
+    "task": "工作目录 E:/Translate。任务小：读 work_proust/out/v3/chunk151 到 chunk157（7 个 final.txt），按 E:/Translate/POLISH_BRIEF_2026-11-25.md 的七类准则润色。专名不得改，不拆长句，不增删段。每条 assert 单文件 count==1，改前 cp .bak_20261125（已存在则不覆），行数不变。读得通的不改。汇报改了哪几处。",
+    "status": "completed",
+    "startedAt": 1795521098903,
+    "completedAt": 1795521244425,
+    "summary": "已完成 chunk151–157 七文件的通读润色，共 **15 处**改动；行数、段数、空行结构全部未变。",
+    "background": false,
+    "model": "ds-free/deepseek-v4.1-flash"
+  },
+  {
+    "id": "fg-mwumwiol-iwwt",
+    "agent": "general-purpose",
+    "task": "工作目录 E:/Translate。任务小：读 work_proust/out/v3/chunk144 到 chunk150（7 个 final.txt），按 E:/Translate/POLISH_BRIEF_2026-11-25.md 的七类准则润色。专名不得改，不拆长句，不增删段。每条 assert 单文件 count==1，改前 cp .bak_20261125（已存在则不覆），行数不变。读得通的不改。汇报改了哪几处。",
+    "status": "completed",
+    "startedAt": 1795521098901,
+    "completedAt": 1795521267364,
+    "summary": "**book: proust / v3 chunk144–150（7 个文件）**",
     "background": false,
     "model": "ds-free/deepseek-v4.1-flash"
   },
@@ -33,6 +55,17 @@
     "model": "ds-free/deepseek-v4.1-flash"
   },
   {
+    "id": "fg-mwumknc1-co4s",
+    "agent": "general-purpose",
+    "task": "工作目录 E:/Translate。任务小：读 work_proust/out/v4/chunk094 到 chunk100（7 个 final.txt），按 E:/Translate/POLISH_BRIEF_2026-11-25.md 的七类准则润色。专名不得改，不拆长句。每条 assert 单文件 count==1，改前 cp .bak_20261125（已存在则不覆），行数不变。读得通的不改。汇报改了哪几处。",
+    "status": "completed",
+    "startedAt": 1795520545057,
+    "completedAt": 1795520821137,
+    "summary": "七个 final.txt 已通读，并对照 `src/v4.txt`（Sodome et Gomorrhe，约 6580–7100 行）核对疑点后完成润色。",
+    "background": false,
+    "model": "ds-free/deepseek-v4.1-flash"
+  },
+  {
     "id": "fg-mwumknbz-3x4g",
     "agent": "general-purpose",
     "task": "工作目录 E:/Translate。任务小：读 work_proust/out/v3/chunk130 到 chunk136（7 个 final.txt），按 E:/Translate/POLISH_BRIEF_2026-11-25.md 的七类准则润色。专名不得改，不拆长句。每条 assert 单文件 count==1，改前 cp .bak_20261125（已存在则不覆），行数不变。读得通的不改。汇报改了哪几处。",
@@ -40,6 +73,17 @@
     "startedAt": 1795520545055,
     "completedAt": 1795520769130,
     "summary": "七份 final.txt 已通读、按七类准则润色落盘。",
+    "background": false,
+    "model": "ds-free/deepseek-v4.1-flash"
+  },
+  {
+    "id": "fg-mwumknc1-5iex",
+    "agent": "general-purpose",
+    "task": "工作目录 E:/Translate。任务小：读 work_proust/out/v4/chunk087 到 chunk093（7 个 final.txt），按 E:/Translate/POLISH_BRIEF_2026-11-25.md 的七类准则润色。专名不得改，不拆长句。每条 assert 单文件 count==1，改前 cp .bak_20261125（已存在则不覆），行数不变。读得通的不改。汇报改了哪几处。",
+    "status": "completed",
+    "startedAt": 1795520545057,
+    "completedAt": 1795520724418,
+    "summary": "```",
     "background": false,
     "model": "ds-free/deepseek-v4.1-flash"
   },
@@ -2120,50 +2164,6 @@
     "startedAt": 1795451554986,
     "completedAt": 1795451727056,
     "summary": "我先读取源文件和术语参考。",
-    "background": false,
-    "model": "ds-free/deepseek-v4.1-flash"
-  },
-  {
-    "id": "fg-mwthe4cw-r7pu",
-    "agent": "worker",
-    "task": "任务：把英文短篇片段译成中文，写入一个 JSON 文件。\n\n第一步（必须做）：读 E:/Translate/work_batch_20261124/_dn_e_paras.json。这是一个 JSON 数组，共 114 个英文字符串，每个字符串是一个自然段。\n\n第二步：写出 E:/Translate/work_batch_20261124/dn_e_zh.json，也是一个 JSON 数组，恰好 114 个中文字符串，逐段一一对应（第 n 个中文段就是第 n 个英文段的译文）。用 Python 写文件：json.dump(list, open(path,'w',encoding='utf-8'), ensure_ascii=False, indent=1)。\n\n体例要求：\n- 引号用「」，引语里再套引语用『』；不要用 ASCII 双引号。\n- 不要插入 ⟦i⟧ 之类的标记。\n- 每段末字必须是 。！？…：— 之一，或以 」 收尾。\n- 独立的 `*       *       *       *       *` 分节行译作 `＊　＊　＊　＊　＊`。\n- 专名先读 E:/Translate/work_batch_20261124/dn_d_zh.json 和 dn_f_zh.json 里的既有译法（蒂姆、里弗斯、赫卢安、德莱恩、塞伦斯、米利根、拉森 等），若本片出现同名人物，必须沿用。\n\n第三步：自检并报告：段数是否 114/114；有无拉丁字母残留；有无段末标点失守；有无汉字之间多余空格。贴出译文首 2 段与末 1 段。\n\n只写这一个文件，不要 commit/push，不要跑全局检查，不要改其他任何文件。",
-    "status": "completed",
-    "startedAt": 1795451376272,
-    "completedAt": 1795451549251,
-    "summary": "我先读取源文件和已有的译文文件。",
-    "background": false,
-    "model": "ds-free/deepseek-v4.1-flash"
-  },
-  {
-    "id": "fg-mwtha7ga-h84j",
-    "agent": "worker",
-    "task": "翻译布莱克伍德《日与夜的故事》（Day and Night Stories, 1917）第 5/8 片。源文：work_batch_20261124/_dn_e_paras.json（114段，已剔去章号与章题行）。输出：work_batch_20261124/dn_e_zh.json（114段，逐段对应）。背景：本篇集十五个短篇的连续切片；本片接《浪》《另一翼》之后，含《房中的占有者》The Occupant of the Room 等。体例：逐段对应；引号「」（嵌套『』）；不用⟦i⟧标记；段末标点（。！？…：—…）；分节星号行作「＊　＊　＊　＊　＊」。体例样板：work_batch_20261124/dn_d_zh.json、dn_f_zh.json（专名如「蒂姆」「里弗斯」「赫卢安」「德莱恩」「塞伦斯」「米利根」「拉森」若出现，须与这两片一致）。自检（段数、外文、标点、无工具调用残留、无空格夹汉字）后贴首2段与末1段。不要 commit/push/改其他文件。不要跑全球体检。",
-    "status": "completed",
-    "startedAt": 1795451193658,
-    "completedAt": 1795451360458,
-    "summary": "我先查看输入文件和体例样板。",
-    "background": false,
-    "model": "ds-free/deepseek-v4.1-flash"
-  },
-  {
-    "id": "fg-mwtgtusy-jw8m",
-    "agent": "worker",
-    "task": "翻译《日与夜的故事》第 7/8 片（接前片）。源文：work_batch_20261124/_dn_g_paras.json（160段）。输出：work_batch_20261124/dn_g_zh.json（160段）。体例：逐段对应；引号「」（嵌套『』）；不用⟦i⟧标记；段末标点（。！？…：—…）；分节星号行作「＊　＊　＊　＊　＊」。体例样板：ia_damned_a_zh.json。专名自定但一致。自检后贴首2段与末1段。不要 commit/push/改其他文件。不要跑全球体检。",
-    "status": "completed",
-    "startedAt": 1795450430770,
-    "completedAt": 1795451179139,
-    "summary": "第 7/8 片译完：`work_batch_20261124/dn_g_zh.json`（160 段，1:1 对应 `_dn_g_paras.json`，16,990 字）。",
-    "background": false,
-    "model": "ds-free/deepseek-v4.1-flash"
-  },
-  {
-    "id": "fg-mwtgtusy-9t91",
-    "agent": "worker",
-    "task": "翻译《日与夜的故事》第 6/8 片（接前片）。源文：work_batch_20261124/_dn_f_paras.json（104段）。输出：work_batch_20261124/dn_f_zh.json（104段）。体例：逐段对应；引号「」（嵌套『』）；不用⟦i⟧标记；段末标点（。！？…：—…）；分节星号行作「＊　＊　＊　＊　＊」。体例样板：ia_damned_a_zh.json。专名自定但一致。自检后贴首2段与末1段。不要 commit/push/改其他文件。不要跑全球体检。",
-    "status": "completed",
-    "startedAt": 1795450430770,
-    "completedAt": 1795451097349,
-    "summary": "已完成第 6/8 片（dn_f）翻译。",
     "background": false,
     "model": "ds-free/deepseek-v4.1-flash"
   }
