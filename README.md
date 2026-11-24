@@ -5,7 +5,7 @@
 ## 仓库内容
 
 - `pipeline*/`：各阶段代码。`pipeline` 为主流水线（抽取、翻译、术语表、引号与体例修复、组装），`pipeline_new`/`pipeline_build`/`pipeline_overhaul` 为换代与整书重建，`pipeline_fix`/`pipeline_polish` 为定向校订，`pipeline_pub`/`pipeline_gutenberg`/`pipeline_private`/`pipeline_proust`/`pipeline_whale` 为具体书系的工作流。
-- `out/`：69 本 EPUB（含邓萨尼短篇十篇、埃格顿完整短篇《一部失落的杰作》和施沃布短篇三篇）。
+- `out/`：96 本 EPUB（长篇 40 余种、短篇集 50 余种，含邓萨尼、布莱克伍德、坡、比尔斯诸家的分册选译）。
 - `MEMORY.md`：工程日志（决策、失败模式、验收数字）；`REPAIR_2026-*.md`：逐轮修复记录；`API_STATUS.md`：模型通道实测状态；`experience.md`、`PIPELINE_REVIEW.md`：流程复盘。
 
 ## 流水线要点
@@ -37,7 +37,13 @@
 
 ## 成品
 
-`out/` 内 69 本 EPUB，文件名格式为「书名（坟头草译）.epub」。
+`out/` 内 96 本 EPUB，文件名格式为「书名（坟头草译）.epub」。
+
+2026-11-25：全库「通读 → 严肃文学批评 → 逐段润色」一轮，四十余册修订。主要收获不在句子，
+而在**工程**——分片作业造成的专名分裂（《德伯家的苔丝》把 Durbeyfield 与 d'Urberville
+译成同名，《荒凉山庄》把 Bagnet 与 Bucket 并成一个姓，《追忆似水年华》七卷分成两套译名），
+以及法语式破折号对白与双引号体在全库并存。均已收口，判例见 `MEMORY.md`，
+作业准则见 `POLISH_BRIEF_2026-11-25.md`，逐册进度见 `POLISH_LEDGER.md`。
 
 2026-11-17：原文抽查6部作品41段，修复《茵梦湖》3处及《黑暗的心》1处词义/数量错误，另修《双城记》《庭长夫人》11处引号问题。详见 `QUALITY_AUDIT_2026-11-17.md`、`VALIDATION_2026-11-17.md`。
 
