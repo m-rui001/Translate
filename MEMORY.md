@@ -2173,3 +2173,24 @@ musketeers、bleakhouse、buddenbrooks、expectations、toerless、whale）。�
   是邓萨尼原作的整段复沓，非缺陷。
 - `魔戒` 构建时的「N paragraphs, M types -- padding」警告是**改前既有**（types 数组本来就短于 texts），
   与本轮润色无关；但确实意味着部分诗行被当散文排，属组装层待修项。
+
+### 2026-11-25 续三：普鲁斯特专名收口 + 脚注锚点修复 + 推送
+
+**普鲁斯特**：`work_proust/out/v3|v4|v6|v7` 共 632 个 final.txt，专名按 `scratch/rev2026/proust_canon_1125.md`
+归一（v6/v7 全轮完成，v3/v4 部分完成）。收尾脚本 `polish_proust_canon_finish_20261125.py` 再清 136 处
+残余少数派（拉斯佩利埃→拉斯普利埃、凡特伊→凡德伊、库尔瓦西埃→库尔瓦西耶、夏特罗/沙特勒罗→沙泰勒罗、
+维尔邦→瓦朗邦、叙尔吉斯→絮尔吉、朗布雷萨克→昂布勒萨克、圣路→圣卢、阿尔帕容→阿尔帕戎、
+阿尔库尔→达尔让库尔、孔布雷→贡布雷）；替换顺序造成 7 处「德尚普普」，已单独回修。
+重建 `pipeline_proust/assemble_proust.py` → 1,938,128 汉字 / 8 卷 / 33 条目录 / xml 0。
+
+**脚注锚点「parked」已清零**：白鲸 ch087 的锚点「生铅条与固定生铁」在润色后变成
+「无用的生铅条与固定生铁」，百年孤独 capitulo001 的「五个雷阿尔」被专名归一成「五个里亚尔」
+（连 term 一并改）。改 `work_overhaul/{whale,soledad}/notes/*.json` 后重建，两册不再有 parked note。
+
+**判例**：凡做「全书专名归一」，必须同时检查 notes 里的 anchor/term 是否随之失效，否则脚注会
+从行内锚点降级为段末追加（构建器会打印 `~ N note(s) parked`）。这条已写入本轮判例，
+与 lotr 的 anchor 失配同源。
+
+**推送**：提交 `2c58abd`（224 文件），GitHub 直连失败，需走本机代理：
+`git -c http.proxy=http://127.0.0.1:7897 -c https.proxy=http://127.0.0.1:7897 -c http.postBuffer=1048576000
+ -c core.compression=0 push origin HEAD:main`（不关压缩会在 send-pack 阶段被 reset）。
