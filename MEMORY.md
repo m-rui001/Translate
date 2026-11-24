@@ -2387,3 +2387,49 @@ musketeers、bleakhouse、buddenbrooks、expectations、toerless、whale）。�
 `git -c http.proxy=http://127.0.0.1:7897 -c https.proxy=http://127.0.0.1:7897 -c http.postBuffer=1048576000 -c core.compression=0 push origin HEAD:main`
 （本轮提交见 `git log`：v3/v4 完成 → v6 完成 → v1/v5 完成 → v2 完成 → 全书收尾）。
 `work_proust/` 与 `.bak_*` 都在 .gitignore 里，**润色脚本要复制到 `.tmp/` 才进版本库**（旧惯例）。
+
+## 2026-11-26 续：work_pub 四册半成品收尾（prozess / malte / faust / neuegedichte）
+
+普鲁斯特那七卷读完后，接着把 work_pub 里四本「◐ 半册」读完。
+共 **152 片 / 271,207 汉字**，全部重建、`typo_check` 与 `verify_epub` 全 0 问题（全库 96 册 0 问题）。
+
+| 册 | 源 | 片 | 汉字 | 本轮改动要点 |
+|---|---|---|---|---|
+| 诉讼 prozess | 卡夫卡（德） | 63/63 | 108,383 | 职衔全册归一：文书主任／听差／女看护／舅舅／外甥／公寓／襄理；`notwendigerweise` 身不由己→必然 |
+| 马尔特手记 malte | 里尔克（德） | 46/46 | 93,786 | Stockhaus 疯人院→监狱；`erst` 表「直到后来才」被读反；`verziehen` 曲解→原谅；`Geliebte/Liebende` 爱者／被爱者 |
+| 浮士德 faust | 歌德（德，韵文） | 22/22 | 50,814 | `vogelfrei` 野鸟→人人得而诛之；`in einem Satz` 一句话→一跃；诗行一律未并 |
+| 新诗集 neuegedichte | **里尔克**（德，韵文） | 21/21 | 18,224 | 底本实为 Rilke《Neue Gedichte》，**不是海涅**；`DIE SPITZE` 尖端→花边；`Reischaube` 卷发→旅行风帽；`auftreten` 登台动作 |
+
+### 这一轮的新工具与做法
+
+- `work_pub/piece_tool.py`：`list / show / backup` 三个子命令。
+  **`show` 是逐片润色的关键**——它把 `chunks/<chapter>.json` 里第 k 组源段与
+  `out/<chapter>/c0k/final.txt` 逐段并排打印，子代理不用自己写解析。
+  注意：`head` 类型的项（组序号、诗题）会占中文一行，译文段号＝源段号+1，逐段对读时必须补偿偏移。
+- 说明书 `work_pub/SUBTASK_README_2026-11-26.md`（七类改动 + 四册各自的注意点 + 落盘铁律）。
+- 备份戳用 `final.txt.bak_20261126`；`work_proust/verify_polish.py` 默认找 `bak_20261125`，
+  所以执行者要顺手 `cp -n` 一份过去才能跑校验（说明书里已写明）。
+
+### 抓到的三类新病（德语特有）
+
+1. **德语框形结构照搬**：从句把动词推到句末，中文照搬后条件句/状语落不到主语上
+   （`wenn…` 后置成悬空状语，`nicht…sondern` 的两项不对等）。
+2. **限制词被吞**：`nur`／`erst`／`kaum`／`nicht üblich` —— 尤其 `erst`（直到后来才）最常读反。
+3. **性数线索丢失导致人物错认**：德语 `sie`（她／它／复数）与 `die`（关系代词复数）在汉语里全变成
+   「它／她们／他们」；malte 与 neuegedichte 各有一处把男孩写作「她们」。
+   判例：凡德语原文用关系代词承前面名词的，**回查名词的性与数**再定中文代词。
+
+### 顺手修的三处结构事故
+
+- `faust/c001/c10` 有一行舞台指示「动物：赴宴去了，出了屋子，」与其下一行重复成两遍
+  （译文把三行诗拆成两段时把整句写了两遍），已按「拆成两行、各承担半句」修好，行数不变。
+- `neuegedichte/c012/c00` 的「尖端」按全书 canon 改「花边」（同册 c011 诗题已定「花边」）。
+- `neuegedichte` 跨片平票归一：「主教座堂／大教堂」3:3 → **大教堂**；「布吕赫／布鲁日」2:2 → **布鲁日**。
+- `neuegedichte/c001/c00` 一处编辑事故 `春天：，他的头颅里也这般：`（顿号叠冒号），
+  按德语 `: so ist in seinem Haupte…` 改为「春天：同样，他的头颅里也没有…」。`typo_check` 抓出来的。
+
+### 仍待办
+
+- `neuegedichte/out/c018/c01` 里的 INHALT 目录与正文诗题有 25 处异名（如「花边／尖端」「捐赠者／创始人」），
+  目录是原文的目录页，逐条对齐要通读全册诗题，留待专轮。
+- 短篇批次（Blackwood 20 余册、Dunsany 10 余册、Poe 5、Bierce 5、Schwob、Egerton）仍未通读润色。
