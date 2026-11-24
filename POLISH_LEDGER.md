@@ -72,7 +72,7 @@ wilderMann 45k ✓｜zauberkaftan 44k ✓ —— C 组 18 册全部完成首轮�
 | 鼠疫 | work_camus/out | ✓ 2026-11-25（152 条 + 题词补全） |
 | 第六病室 | work_chekhov/out | ✓ 2026-11-25（60 条） |
 | 魔山 | work_zauberberg/out（244 分片／5873 段／51.1 万字） | P 2026-11-25 首轮（141 条：专名归一 132、读不通 3、外语句法 3、指代 1、体例 2；另清 71 处 BOM）。批评稿 `REVIEW_2026-11-25-zauberberg.md` |
-| 追忆似水年华 | work_proust/out + out_ind | ◐ v6/v7 全轮；v3/v4 部分逐段；**全书 7 卷专名合流完成** |
+| 追忆似水年华 | work_proust/out + out_ind | ◐ 专名 7 卷合流完成；v6/v7 全轮；v3 49/230、v4 66/178、v1 46/181、v2 48/228、v5 92/150 逐段 |
 
 ## E. 短篇集批次
 
