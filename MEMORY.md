@@ -2012,3 +2012,164 @@ bovary 代理删了 38 处=白丢斜体（文本无损，无法回滚，work_pub
 莫拉见上 / 塔尔西·扎洛 Tarsi Zalo / 阿尔德隆 Alderon /「较古的诸神」the Older gods。
 
 未 commit/push，未动其他文件，未跑全库体检。
+
+## 2026-11-25 全库通读润色轮（启动）
+
+用户指令：**通读，严肃文学批评，逐段润色所有已有译作，never stop**。
+
+本轮新增两份顶层文件：
+- `POLISH_BRIEF_2026-11-25.md` —— 作业准则（七类改动、红线、汇报格式）。子代理一律先读它。
+- `POLISH_LEDGER.md` —— 全库台账（96 册，按源层分 A/B/C/D/E 五组，标状态）。
+
+### 已完成（源层 revisions，均已重建 + 全库体检 0 问题）
+
+| 册 | 源 | 改动 | 要点 |
+|---|---|---|---|
+| darkness 黑暗的心 | revisions | 14 | not…but 对举拉平、被动式直搬、「他」双指 |
+| dopoidivorzio 离婚之后 | revisions | 85 | 亲属系统错位（外婆→奶奶）、confratello→善会会友 |
+| dubliners 都柏林人 | revisions | 9 | c011 译者跳出叙述一句（「原文到这里…」）删除；private chaplain→司铎 |
+| jacobsroom 雅各的房间 | revisions | 24 | Only 误作条件句、dress circle→二楼正座 |
+| mondaytuesday 星期一或星期二 | revisions | 24 | 「快递嗅盐瓶」← *Help Ho!*；卡斯塔莉亚归一 |
+| stundenbuch 时祷书 | revisions | 11 | zeitig（早临）读成「时间所作」；Kirchen 非 Kapellen |
+| voyageout 远航 | revisions | 18 | c007 说话人结构性误读（西班牙女佣/蔡利太太） |
+
+### 已完成（work_pub final.txt，均已重建）
+
+| 册 | 改动 | 要点 |
+|---|---|---|
+| twocities 双城记 | 270 | 专名 263 处归一（埃夫勒蒙/巴萨/补路工/复仇女神）；`his Worship` 君主→人物 |
+| emma 爱玛 | 123 | 专名 83（枫树园 7 写法归一）；「没有一个人赞成」漏否定 |
+| jude 无名的裘德 | 132 | c037 六处「淑德」实指裘德；Alfredston 六写法归一 |
+| tess 德伯家的苔丝 | 538 | **德北菲尔德/德伯维尔被译成同名**（哈代反讽装置归零）；安琪四式归一 |
+| bovary 包法利夫人 | 228 + 对白体例 656 行 | 集市大棚被读成市政厅、paquets d'amadou→引火绒；**全册破折号对白→双引号体** |
+| montecristo 基督山伯爵 | 811 | Dantès 六写法归一；典狱长/总督察/神甫；引号体统一 |
+| musketeers 三个火枪手 | 375+ | 达达尼昂四写法；红衣主教；176 行无引号对白补引号 |
+| bleakhouse 荒凉山庄 | 607+579 | 古皮/艾达/查莉/德洛克/衡平法院 全归一；Bagnet≠巴克特 三处厘清 |
+| buddenbrooks 布登勃洛克 | 228+417 | Konsul 领事（参事/参议 500+ 处）、Senator 参议员、绿蒂布洛姆→格吕恩利希 |
+| whale 白鲸 | ch041–135 共 80 条 | 灵柩车→灵车、*in an instant's compass*→瞬息一转、royal→顶桅 |
+
+### 本轮抓到的两类系统病
+
+1. **专名/术语在分片作业里各自为政** —— 十册里八册的主症。凡多子代理并行的大书，必须
+   先做「全书计数表 → 定 canon → 再动手」，且两份半册的 canon 表要互认（bleakhouse 两份
+   都写了 `scratch/rev2026/bleakhouse_canon_1125.md`，后写者追加「修订」节）。
+2. **说话人标签塞在引号里** —— 「“是个真傻瓜，波尔托斯说；但这事确凿吗？”」。全库扫出
+   真命中 8 处（musketeers c003/c02 五行、montecristo c017/c028 各一、bleakhouse c038/c04
+   分号），已逐条改为「“话，”某人说，“话。”」。扫描正则：引号内出现 `，[一-鿿]{2,5}(说|问|道)；`。
+
+### 待办（台账在 POLISH_LEDGER.md）
+
+- work_pub 未动：expectations / faust / goriot / malte / neuegedichte / prozess / toerless / miserables 二轮 / notredame 二轮
+- work_gutenberg 18 册全部未动（含 60 万字的 fortunata、49 万字的 regenta）
+- 专系：soledad / lotr / camus / chekhov / zauberberg / proust
+- 短篇批次：Blackwood 20 余册、Dunsany 10 余册、Poe 5 册、Bierce 5 册、Schwob、Egerton
+- 遗留：bovary c011/c030/c033/c034/c036 约 1.2 万字属另一套工序，需整片重译；c030/c03 有
+  两段孤立「—」；柔佛（whale）「他/它」人称全册并用需单设 pass
+
+### 2026-11-25 续：对白体例全库统一（破折号体 → 双引号体）
+
+子代理通道自本轮中段起持续超时（8 次连片失败，产物为零），改由主线程手工做机械工程活。
+
+- 新工具 `scratch/rev2026/dash_talk_generic.py <root>`：法语式「——话」→「“话”」，识别归属小句
+  （说话动词表已扩到 60+，含「又道／接口道／低声道」）、行尾归属（「……她问贴身仆人。」）、
+  归属后余句是否仍是引语（看有无我/你/您与语气词）；跳过章节数字行（——一——／——i——）与 ⟦i⟧ 诗行。
+- 新工具 `scratch/rev2026/repair_quote_blocks.py <root>`：把每段引号自平（长引语每段各自成对），
+  只加不缺，逐段断言，行数不变。
+- 已转并重建（9+3+2+1 册）：notredame 95、rouge 365、miserables 127、buddenbrooks 3、
+  maias 672、regenta 505、fortunata 408、guarany 352、sotileza 274、maxhavelaar 183、
+  ulloa 54、germinie 58、ayala 2、diana 3、lykkepers 2；另 goriot 438（手写专用脚本
+  `polish_goriot_1125_talk.py`，含人工裁定 7 处）。
+- rouge c052「侯爵密令」整段长引语缺三个开引号（转写事故），已补；rouge c030/c051 引号失衡已修。
+- 全库 96 册 clean_check / typo_check 均 0 问题。
+
+**判例**：`——i——`「——一——」这类分节数字行**不能**当对白转；`⟦i⟧…⟦/i⟧` 里的题辞/诗行同理。
+**判例**：跨段长引语在中文出版里可以「每段各自成对」，也可以「首段开、末段收」；本库统一取前者，
+因为后者在 `typo_check` 的逐段口径下永远报错，且读者分不清是漏引号还是体例。
+
+### 2026-11-25 续：revisions 层的体例现状（实测）
+
+`pipeline_gutenberg/revisions/*.json` 20 册里，`darkness`（193 对）、`dubliners`（1325）、
+`horla`（917）、`siddhartha`（371）用「」，其余用“”。**逐册自洽**，故不动。
+`work_pub/horla` 里的 `——` 全是**过时草稿**（成品读 revisions），不必改。
+
+### 2026-11-25 收束：本轮总量与遗留
+
+**通读 + 批评 + 润色完成的册数（均重建、体检 0 问题）**：21 册
+- revisions 层 7 册：darkness / dopoidivorzio / dubliners / jacobsroom / mondaytuesday / stundenbuch / voyageout
+- work_pub 层 13 册：twocities / emma / jude / tess / bovary / montecristo / musketeers / bleakhouse /
+  buddenbrooks / whale（ch041–135）/ expectations / prozess（半）/ malte（半）/ faust（半）/ goriot
+- work_gutenberg 层 11 册：只做了**对白体例统一**（未逐段读）：ayala / diana / fortunata / germinie /
+  guarany / lykkepers / maias / maxhavelaar / regenta / sotileza / ulloa
+
+**批评稿**：`REVIEW_2026-11-25-*.md` 13 篇（darkness、dopoidivorzio、dubliners、jacobsroom、
+mondaytuesday、stundenbuch、voyageout、twocities、emma、jude、tess、bovary、montecristo、
+musketeers、bleakhouse、buddenbrooks、expectations、toerless、whale）。体例统一册尚无批评稿。
+
+**本轮最大的一类收获仍是「工程病」**：
+- tess 把 Durbeyfield 与 d'Urberville 译成同一个「德伯维尔」——哈代全书的反讽装置归零；
+- bleakhouse 的 Bagnet 与 Bucket 三次并成一个姓；
+- montecristo 有 18 处把 Dantès 译成「但丁」；
+- buddenbrooks 把 Konsul（领事）统一读成「参事/参议」，Senator（参议员）另有其人；
+- jude 在 c037 六处把男主角写成「淑德」。
+这些都不是「译笔」问题，是分片作业没有术语表 + 没有校订 pass。
+
+**仍待做（按优先级）**
+1. work_gutenberg 7 册未读：nachsommer(357k)、timar(219k)、effi(148k)、buntesteine(142k)、
+   wilderMann(45k)、zauberkaftan(44k)、haidedorf(18k)。其中 nachsommer 与 timar 最长。
+2. 专系 6 册未读：soledad、lotr、camus（鼠疫）、chekhov（第六病室）、zauberberg（魔山）、proust（追忆）。
+3. 短篇批次（Blackwood 20 余册、Dunsany 10 余册、Poe 5、Bierce 5、Schwob、Egerton、温迪戈、柳林）——
+   抽查过《温迪戈》：专名一致、引号平衡、无 ASCII 引号、无残留英文，底子比 work_pub 那批干净得多，
+   已核对 `dunsany_dreamers.txt` 里「She is more beautiful than the moonrise」的整段重复是**原作手法**，
+   `scan_dups` 报的那一对不属缺陷（记此以免下轮误删）。
+4. 遗留硬伤：bovary c011/c030/c033/c034/c036 约 1.2 万字属另一套工序需整片重译；
+   whale ch101 荷兰文食谱在中英两侧都已缺失；toerless c002/c12 第 44–45 行是串稿。
+
+**工具沉淀**（下轮直接复用）
+- `scratch/rev2026/dash_talk_generic.py <root>`、`repair_quote_blocks.py <root>`、`dash_talk_json.py <book>`
+- `scratch/rev2026/_talk_lib.py` 说话动词表已扩到 60+（又道／接口道／沉声道…）
+- 判断规则：`——一——`／`——i——` 是分节数字行，`⟦i⟧` 包的是题辞诗行，两者都不得当对白转。
+
+### 2026-11-25 续二：短篇批次与专系通读（子代理通道恢复后）
+
+子代理一度连续超时，后恢复；本轮补齐了短篇批次与三部长篇。
+
+| 册 | 源 | 改动 | 要点 |
+|---|---|---|---|
+| 草原村 haidedorf | work_gutenberg | 100 | 注文德文词条复原 23 条；「地雨」←Landregen；「一千一千」←tausend und tausend |
+| 野人旅馆 wilderMann | work_gutenberg | 93 | Förster 四称归一；Blutstuhl「血椅岩」；`dem Freunde vom Blutstuhle` 误读 |
+| 魔法袍 zauberkaftan | work_gutenberg | 100 | Ofen 三种（奥芬/布达/翁芬）归一；教名当姓（阿戈什通·克里斯托夫→克里斯托夫·阿戈斯顿） |
+| 艾菲·布里斯特 effi | work_gutenberg | 127+117 | 英斯泰滕四写、霍恩-克雷门四写、Rummschüttel 四写、Niemeyer 统一「尼迈耶」 |
+| 彩石集 buntesteine | work_gutenberg | 约 120 段 | 爷爷/祖父归一、上普兰→奥伯普兰、渡鸦→寒鸦、椅子林→椅状林 |
+| 晚夏 nachsommer | work_gutenberg | 85+130 | 星苑/玫瑰屋/里萨赫/玛蒂尔德；Amonitenmarmor 菊石；拉丁名瘦译 |
+| 金人 timar | work_gutenberg | 130+289 | 蒂马尔（提玛/蒂马/蒂迈尔）、迈克尔五写、诺埃米；**末端两片是伪章与广告** |
+| 坡 5 册 | work_batch | 66 | pit 整句漏译补足；crotchet 衬垫→怪想；杜平→杜宾 |
+| 比尔斯 5 册 | work_batch | 81+89 段体例 | peck「配克」误作「啄」；`failure to deliver` 否定反转 |
+| 空屋/日与夜 | work_batch | 70 | 「一囱烟」不成词；`put two and two together`→「二加二凑成四」 |
+| 邓萨尼 3 组 50 片 | work_batch | 42 | 蒲裴慕拉→贝斯穆拉；两位先知被并成一位 |
+| 约翰·塞伦斯 5 案 | work_batch | 267 | js_nem_a 整章 184 段剥外层引号；「火精/精怪/元素之灵」归一 |
+| 光明的使者 | work_batch | 97 | N. H. 引号层级；「芬」→「菲」；f17/f18 段内重复删 |
+| 人类的和声 + 吉姆博 | work_batch | 47+24 | clergyman 教士→牧师；「跌在头上」→「头朝下摔下来」 |
+| 不可思议的冒险 | work_batch | 72 | Hendricks 24 处误作「希伯特」；`break` 断续→断裂 |
+| 马人 | work_batch | 132 | white horses 白马→白浪；`main body` 主格→主体 |
+| 柳林 + 温迪戈 | work_batch | 21+37 | Inn 认作 Iser 河；「火的脚」→「火脚」；多瑶河→多瑙河 |
+| 鼠疫 camus | work_camus | 152 | 塔鲁「房间」→「旅馆」；题词只剩两截已补全笛福原句；印刷署名行删除 |
+| 第六病室 chekhov | work_chekhov | 60 | накипь「浮渣」被译成「恶心」（全书唯一贯穿隐喻）；霍贝托夫→霍博托夫 |
+| 魔山 zauberberg | work_zauberberg | 141 | 俄国桌五种；Sterilett 三译归一「灭菌器」；BOM 71 处清除 |
+| 百年孤独 soledad | work_soledad | 130 | 「周三十一点」歧义；时间流逝的回声句跨章统一 |
+| 魔戒 lotr | work_overhaul | 162 段 | 全库归一到邓嘉宛系 canon：幽暗密林/凯兰崔尔/食人妖/西力斯昂哥 |
+
+### 本轮新增的两个结构判例
+
+1. **书末广告页与印刷署名必须剔**：`timar` 的 c047/c02（2500 字「评话体重写」的假章）与 c047/c03
+   （Gutenberg 广告页译文）连同 c001 扉页广告一并移除，成品章末恢复为「我的名字叫无人」；
+   `camus` 末行「一九五五年八月二十二日印毕。」同属印厂署名，已删。移除目录用 `work_gutenberg/<book>/_dropped/`。
+2. **专名改字会打断脚注锚点**：lotr 归一到新 canon 后，4 条 note anchor 失效（黑森林→幽暗密林、
+   奇立斯乌苟→西力斯昂哥、加拉德瑞尔的晶瓶→凯兰崔尔的晶瓶），已同步改 `work_overhaul/lotr/notes/*.json`。
+   今后凡做全局改名，必须同时跑「anchor 是否仍唯一命中」的检查。
+
+### 已知非缺陷
+
+- `scan_dups` 报「一个做梦人的故事集 c001[13]~[14]」为重复：核对 `dunsany_dreamers.txt` 272–288 行，
+  是邓萨尼原作的整段复沓，非缺陷。
+- `魔戒` 构建时的「N paragraphs, M types -- padding」警告是**改前既有**（types 数组本来就短于 texts），
+  与本轮润色无关；但确实意味着部分诗行被当散文排，属组装层待修项。

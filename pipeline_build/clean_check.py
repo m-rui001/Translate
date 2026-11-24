@@ -56,6 +56,8 @@ LOAN = {
     "delicado", "visitador", "prolongada", "peseta", "plaisir", "bandera",
     # German
     "kauern", "hoch",
+    # Stifter's glossary notes print the German headword being glossed
+    "halbtote", "halbgestorbene", "landregen", "wassersaeule",
     # Dutch colonial measures and terms, glossed in the same paragraph
     "erf",
     # other
