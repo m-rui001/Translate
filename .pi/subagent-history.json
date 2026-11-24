@@ -1,5 +1,49 @@
 [
   {
+    "id": "fg-mwufmole-zqox",
+    "agent": "general-purpose",
+    "task": "工作目录 E:/Translate。第一个工具调用必须是 read（读 work_proust/out_ind/v2/chunk114/final.txt），不要只说计划。\n\n先读 E:/Translate/POLISH_BRIEF_2026-11-25.md。专名已合流，不得反改。\n\n任务：《追忆似水年华》第二卷 chunk114–chunk227 逐段润色（段数不变，不拆长句）。\n\n每 20 个 chunk 落盘一次（p16–p21），每条 assert 单文件 count==1。\n\n批评稿：追加到 REVIEW_2026-11-25-proust-125.md。\n\n不 commit/push、不改 MEMORY.md、不动 out/*.epub。汇报改动条数与典型句。",
+    "status": "timeout",
+    "startedAt": 1795508882690,
+    "completedAt": 1795510582855,
+    "summary": "Hard timeout after 1700000ms",
+    "background": false,
+    "model": "ds-free/deepseek-v4.1-flash"
+  },
+  {
+    "id": "fg-mwufmold-pbx9",
+    "agent": "general-purpose",
+    "task": "工作目录 E:/Translate。第一个工具调用必须是 read（读 work_proust/out_ind/v1/chunk000/final.txt），不要只说计划。\n\n先读 E:/Translate/POLISH_BRIEF_2026-11-25.md。专名已全书合流（夏尔吕/凡德伊/安德烈/圣卢/斯万），**不得反改**。\n\n任务：《追忆似水年华》第一卷 chunk000–chunk060 逐段润色（一个 final.txt = 一段，段数不变）。\n\n重点：普鲁斯特的长句与插入语不得拆短；自由间接引语不得改成引号对白；社交场景称谓。只改真问题。\n\n每 15 个 chunk 落盘一次（p1–p4），每条 assert 单文件 count==1；已有 .bak_20261125 的不再覆。\n\n批评稿：追加到 E:/Translate/REVIEW_2026-11-25-proust-125.md（不存在则新建，体例照 REVIEW_2026-11-24-rouge.md）。\n\n不 commit/push、不改 MEMORY.md、不动 out/*.epub。汇报改动条数与典型句。",
+    "status": "timeout",
+    "startedAt": 1795508882689,
+    "completedAt": 1795510582821,
+    "summary": "我先读取润色纲要和第一个 chunk。",
+    "background": false,
+    "model": "ds-free/deepseek-v4.1-flash"
+  },
+  {
+    "id": "fg-mwufmold-usn6",
+    "agent": "general-purpose",
+    "task": "工作目录 E:/Translate。第一个工具调用必须是 read（读 work_proust/out_ind/v1/chunk061/final.txt），不要只说计划。\n\n先读 E:/Translate/POLISH_BRIEF_2026-11-25.md。专名已合流，不得反改。\n\n任务：《追忆似水年华》第一卷 chunk061–chunk180 逐段润色（段数不变，不拆长句）。\n\n每 20 个 chunk 落盘一次（p5–p9），每条 assert 单文件 count==1。\n\n批评稿：追加到 REVIEW_2026-11-25-proust-125.md。\n\n不 commit/push、不改 MEMORY.md、不动 out/*.epub。汇报改动条数与典型句。",
+    "status": "timeout",
+    "startedAt": 1795508882689,
+    "completedAt": 1795510582833,
+    "summary": "p5 已写入（第 61–84 个 chunk，共 15 处改动）。现在我会把 p6–p9 分批交给子代理并行处理，它们各自沿用同一套处理规程。",
+    "background": false,
+    "model": "ds-free/deepseek-v4.1-flash"
+  },
+  {
+    "id": "fg-mwufmold-9gwx",
+    "agent": "general-purpose",
+    "task": "工作目录 E:/Translate。第一个工具调用必须是 read（读 work_proust/out_ind/v2/chunk000/final.txt），不要只说计划。\n\n先读 E:/Translate/POLISH_BRIEF_2026-11-25.md。专名已合流，不得反改。\n\n任务：《追忆似水年华》第二卷 chunk000–chunk113 逐段润色（段数不变，不拆长句，不得把自由间接引语改成对白）。\n\n每 20 个 chunk 落盘一次（p10–p15），每条 assert 单文件 count==1。\n\n批评稿：追加到 REVIEW_2026-11-25-proust-125.md。\n\n不 commit/push、不改 MEMORY.md、不动 out/*.epub。汇报改动条数与典型句。",
+    "status": "timeout",
+    "startedAt": 1795508882689,
+    "completedAt": 1795510582844,
+    "summary": "我先读取任务要求指定的文件和 brief（任务说明）。",
+    "background": false,
+    "model": "ds-free/deepseek-v4.1-flash"
+  },
+  {
     "id": "fg-mwudt482-eaqh",
     "agent": "general-purpose",
     "task": "工作目录 E:/Translate。第一个工具调用必须是 read（读 work_proust/out/v4/chunk000/final.txt），不要只说计划。\n\n先读 E:/Translate/POLISH_BRIEF_2026-11-25.md 与 scratch/rev2026/proust_canon_1125.md。\n\n任务：《追忆似水年华》第四卷 chunk000–chunk088 逐段润色。同上准则（四卷的社交场景最密，贵族称谓已归一，不得反改）。\n\n每 15–20 个 chunk 落盘一次（p13–p17）。每条 assert 单文件 count==1。\n\n批评稿：追加到 REVIEW_2026-11-25-proust-34.md。\n\n不 commit/push、不改 MEMORY.md、不动 out/*.epub。汇报改动条数与典型句。",
@@ -11,17 +55,6 @@
     "model": "ds-free/deepseek-v4.1-flash"
   },
   {
-    "id": "fg-mwudt481-zqf4",
-    "agent": "general-purpose",
-    "task": "工作目录 E:/Translate。第一个工具调用必须是 read（读 work_proust/out/v3/chunk076/final.txt），不要只说计划。\n\n先读 E:/Translate/POLISH_BRIEF_2026-11-25.md 与 scratch/rev2026/proust_canon_1125.md。\n\n任务：《追忆似水年华》第三卷 chunk076–chunk152 逐段润色。同上准则；不得拆长句；专名不动。\n\n每 15–20 个 chunk 落盘一次（p5–p8）。每条 assert 单文件 count==1；已改过的 chunk 跳过。\n\n批评稿：追加到 REVIEW_2026-11-25-proust-34.md。\n\n不 commit/push、不改 MEMORY.md、不动 out/*.epub。汇报改动条数与典型句。",
-    "status": "timeout",
-    "startedAt": 1795505823649,
-    "completedAt": 1795507523890,
-    "summary": "我先读取要求的第一个文件，再读指定参考材料。",
-    "background": false,
-    "model": "ds-free/deepseek-v4.1-flash"
-  },
-  {
     "id": "fg-mwudt481-h3rr",
     "agent": "general-purpose",
     "task": "工作目录 E:/Translate。第一个工具调用必须是 read（读 work_proust/out/v3/chunk153/final.txt），不要只说计划。\n\n先读 E:/Translate/POLISH_BRIEF_2026-11-25.md 与 scratch/rev2026/proust_canon_1125.md。\n\n任务：《追忆似水年华》第三卷 chunk153–chunk229 逐段润色。同上准则。\n\n每 15–20 个 chunk 落盘一次（p9–p12）。每条 assert 单文件 count==1。\n\n批评稿：追加到 REVIEW_2026-11-25-proust-34.md。\n\n不 commit/push、不改 MEMORY.md、不动 out/*.epub。汇报改动条数与典型句。",
@@ -29,6 +62,17 @@
     "startedAt": 1795505823649,
     "completedAt": 1795507523910,
     "summary": "我先读取任务指定的文件。",
+    "background": false,
+    "model": "ds-free/deepseek-v4.1-flash"
+  },
+  {
+    "id": "fg-mwudt481-zqf4",
+    "agent": "general-purpose",
+    "task": "工作目录 E:/Translate。第一个工具调用必须是 read（读 work_proust/out/v3/chunk076/final.txt），不要只说计划。\n\n先读 E:/Translate/POLISH_BRIEF_2026-11-25.md 与 scratch/rev2026/proust_canon_1125.md。\n\n任务：《追忆似水年华》第三卷 chunk076–chunk152 逐段润色。同上准则；不得拆长句；专名不动。\n\n每 15–20 个 chunk 落盘一次（p5–p8）。每条 assert 单文件 count==1；已改过的 chunk 跳过。\n\n批评稿：追加到 REVIEW_2026-11-25-proust-34.md。\n\n不 commit/push、不改 MEMORY.md、不动 out/*.epub。汇报改动条数与典型句。",
+    "status": "timeout",
+    "startedAt": 1795505823649,
+    "completedAt": 1795507523890,
+    "summary": "我先读取要求的第一个文件，再读指定参考材料。",
     "background": false,
     "model": "ds-free/deepseek-v4.1-flash"
   },
@@ -2135,50 +2179,6 @@
     "startedAt": 1795444347041,
     "completedAt": 1795444909519,
     "summary": "译文已完成并通过检查。",
-    "background": false,
-    "model": "ds-free/deepseek-v4.1-flash"
-  },
-  {
-    "id": "fg-mwtd7gki-ocjr",
-    "agent": "worker",
-    "task": "翻译布莱克伍德《马人》第 7/9 片（接前片）。源文：work_batch_20261124/_centc_g_paras.json（150段，已清理）。输出：work_batch_20261124/cent_g_zh.json（150段）。背景：父子与奥马利深入无人之境；父亲讲述种族的历史。插入的题铭引文与署名行照译，署名行作「——某人《书名》。」。体例：逐段对应；引号「」（嵌套『』）；不用⟦i⟧标记；段末标点（。！？…：—…）。体例样板：work_batch_20261124/dt_yann_zh.json。专名：奥马利、施塔尔；其他自定但一致，汇报末尾列专名表。自检后贴首2段与末1段。不要 commit/push/改其他文件。不要跑全球体检。",
-    "status": "completed",
-    "startedAt": 1795444347042,
-    "completedAt": 1795444870350,
-    "summary": "我先查看源材料和样式模板。",
-    "background": false,
-    "model": "ds-free/deepseek-v4.1-flash"
-  },
-  {
-    "id": "fg-mwtd7gkg-d1gh",
-    "agent": "worker",
-    "task": "翻译布莱克伍德《马人》第 2/9 片（接前片）。源文：work_batch_20261124/_centc_b_paras.json（220段，已清理）。输出：work_batch_20261124/cent_b_zh.json（220段）。背景：轮船航行地中海，奥马利与神秘父子渐生感应；斯坦尔医生以理性解释一切。插入的题铭引文与署名行（源以 -- 开头）照译，署名行作「——某人《书名》。」。体例：逐段对应；引号「」（嵌套『』）；不用⟦i⟧标记；段末标点（。！？…：—…）。体例样板：work_batch_20261124/dt_yann_zh.json。专名：奥马利、施塔尔；其他自定但一致，汇报末尾列专名表。自检后贴首2段与末1段。不要 commit/push/改其他文件。不要跑全球体检。",
-    "status": "completed",
-    "startedAt": 1795444347040,
-    "completedAt": 1795444798042,
-    "summary": "已完成。输出 `work_batch_20261124/cent_b_zh.json`，220 段，与源 `_centc_b_paras.json` 逐段对应（源 220 段，无罗马数字分节行）。",
-    "background": false,
-    "model": "ds-free/deepseek-v4.1-flash"
-  },
-  {
-    "id": "fg-mwtd7gkh-8pg1",
-    "agent": "worker",
-    "task": "翻译布莱克伍德《马人》第 3/9 片（接前片）。源文：work_batch_20261124/_centc_c_paras.json（155段，已清理）。输出：work_batch_20261124/cent_c_zh.json（155段）。背景：轮船停靠巴统，进入高加索山野。插入的题铭引文与署名行照译，署名行作「——某人《书名》。」。体例：逐段对应；引号「」（嵌套『』）；不用⟦i⟧标记；段末标点（。！？…：—…）。体例样板：work_batch_20261124/dt_yann_zh.json。专名：奥马利、施塔尔；Batoum 巴统；Caucasus 高加索；其他自定但一致，汇报末尾列专名表。自检后贴首2段与末1段。不要 commit/push/改其他文件。不要跑全球体检。",
-    "status": "completed",
-    "startedAt": 1795444347041,
-    "completedAt": 1795444721002,
-    "summary": "《马人》第三片（3/9）译毕，155/155 段对应，已写入 `work_batch_20261124/cent_c_zh.json`。",
-    "background": false,
-    "model": "ds-free/deepseek-v4.1-flash"
-  },
-  {
-    "id": "fg-mwtd7gkg-v4mv",
-    "agent": "worker",
-    "task": "翻译阿尔杰农·布莱克伍德《马人》The Centaur（1911，长篇）第 1/9 片。源文：work_batch_20261124/_centc_a_paras.json（151段；已清理，无罗马数字分节行）。输出：work_batch_20261124/cent_a_zh.json（151段，逐段对应）。背景：爱尔兰人特伦斯·奥马利在轮船上结识斯坦尔医生，讲起他在高加索遇到的俄国农夫父子——那是远古马人种族的最后幸存者。注：本文大量插入题铭引文（詹姆斯、惠特曼、卡彭特等）与署名行（源文以 -- 开头，如 --WHITMAN），署名行译作「——惠特曼《书名》。」，以句号收尾。体例：逐段对应；引号「」（嵌套『』）；不用⟦i⟧标记；段末标点（。！？…：—…）。体例样板：work_batch_20261124/dt_yann_zh.json、js_dog_a_zh.json。专名：O'Malley 奥马利；Terence O'Malley 特伦斯·奥马利；Stahl 施塔尔；其他自定但一致，汇报末尾列专名表。自检（段数、外文、标点、无工具调用残留）后贴首2段与末1段。不要 commit/push/改其他文件。不要跑全球体检。",
-    "status": "completed",
-    "startedAt": 1795444347040,
-    "completedAt": 1795444672885,
-    "summary": "完成。`work_batch_20261124/cent_a_zh.json` 已生成：151 段，逐段与 `_centc_a_paras.json` 对应，共 18510 字。",
     "background": false,
     "model": "ds-free/deepseek-v4.1-flash"
   }
