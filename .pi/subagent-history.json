@@ -1,12 +1,89 @@
 [
   {
-    "id": "fg-mwul3xb8-45jq",
+    "id": "fg-mwulwb0z-ue2p",
     "agent": "general-purpose",
-    "task": "工作目录 E:/Translate。任务小：读 work_proust/out_ind/v2/chunk083 到 chunk089（7 个 final.txt），按 E:/Translate/POLISH_BRIEF_2026-11-25.md 的七类准则润色。专名不得改，不拆长句。每条 assert 单文件 count==1，改前 cp .bak_20261125（已存在则不覆），行数不变。读得通的不改。汇报改了哪几处。",
+    "task": "工作目录 E:/Translate。任务小：读 work_proust/out_ind/v1/chunk136 到 chunk142（7 个 final.txt），按 E:/Translate/POLISH_BRIEF_2026-11-25.md 的七类准则润色。专名不得改，不拆长句。每条 assert 单文件 count==1，改前 cp .bak_20261125（已存在则不覆），行数不变。读得通的不改。汇报改了哪几处。",
     "status": "completed",
-    "startedAt": 1795518085220,
-    "completedAt": 1795518243866,
-    "summary": "润色完成。自检全部通过。",
+    "startedAt": 1795519409363,
+    "completedAt": 1795519670978,
+    "summary": "已按七类准则通读并润色完毕。",
+    "background": false,
+    "model": "ds-free/deepseek-v4.1-flash"
+  },
+  {
+    "id": "fg-mwulwb0y-r7y4",
+    "agent": "general-purpose",
+    "task": "工作目录 E:/Translate。任务小：读 work_proust/out_ind/v5/chunk049 到 chunk055（7 个 final.txt），按 E:/Translate/POLISH_BRIEF_2026-11-25.md 的七类准则润色。专名不得改，不拆长句。每条 assert 单文件 count==1，改前 cp .bak_20261125（已存在则不覆），行数不变。读得通的不改。汇报改了哪几处。",
+    "status": "completed",
+    "startedAt": 1795519409362,
+    "completedAt": 1795519558231,
+    "summary": "7 个文件已按七类准则处理完毕。",
+    "background": false,
+    "model": "ds-free/deepseek-v4.1-flash"
+  },
+  {
+    "id": "fg-mwulwb0x-pzzf",
+    "agent": "general-purpose",
+    "task": "工作目录 E:/Translate。任务小：读 work_proust/out_ind/v2/chunk111 到 chunk117（7 个 final.txt），按 E:/Translate/POLISH_BRIEF_2026-11-25.md 的七类准则润色。专名不得改，不拆长句。每条 assert 单文件 count==1，改前 cp .bak_20261125（已存在则不覆），行数不变。读得通的不改。汇报改了哪几处。",
+    "status": "completed",
+    "startedAt": 1795519409361,
+    "completedAt": 1795519645342,
+    "summary": "7 个文件全部核完，改动清单已随 `_polish_20261125_111_117.py` 保存到文件，脚本内每条断言都要求 `count==1`，结尾带 `ast.parse` 自检；备份只补了缺失的 4 个（chunk111、112、113、116），已有的 chunk114、115、117 的 `.bak_20261125` 未覆盖。",
+    "background": false,
+    "model": "ds-free/deepseek-v4.1-flash"
+  },
+  {
+    "id": "fg-mwulwb0w-5f4i",
+    "agent": "general-purpose",
+    "task": "工作目录 E:/Translate。任务小：读 work_proust/out_ind/v2/chunk104 到 chunk110（7 个 final.txt），按 E:/Translate/POLISH_BRIEF_2026-11-25.md 的七类准则润色。专名不得改，不拆长句。每条 assert 单文件 count==1，改前 cp .bak_20261125（已存在则不覆），行数不变。读得通的不改。汇报改了哪几处。",
+    "status": "completed",
+    "startedAt": 1795519409360,
+    "completedAt": 1795519520764,
+    "summary": "改完 7 个文件，共 16 处。改前已 `cp -n` 备份成 `final.txt.bak_20261125`，每条都 `assert count == 1` 后才落盘，行数逐文件比对不变（9/1/1/19/3/3/7）。",
+    "background": false,
+    "model": "ds-free/deepseek-v4.1-flash"
+  },
+  {
+    "id": "fg-mwulawtd-d0jh",
+    "agent": "general-purpose",
+    "task": "工作目录 E:/Translate。任务小：读 work_proust/out_ind/v2/chunk090 到 chunk096（7 个 final.txt），按 E:/Translate/POLISH_BRIEF_2026-11-25.md 的七类准则润色。专名不得改，不拆长句。每条 assert 单文件 count==1，改前 cp .bak_20261125（已存在则不覆），行数不变。读得通的不改。汇报改了哪几处。",
+    "status": "completed",
+    "startedAt": 1795518411169,
+    "completedAt": 1795519335031,
+    "summary": "润色完成。7 个文件都按「定位唯一子串 → `assert count==1` → 替换 → 行数不变」写入，脚本 `work_proust/out_ind/v2/_polish_20261125_090_096.py`（末尾 `ast.parse` 自查通过）。备份 `final.txt.bak_20261125` 七份原已存在，未覆写。",
+    "background": false,
+    "model": "ds-free/deepseek-v4.1-flash"
+  },
+  {
+    "id": "fg-mwulawtc-h2oa",
+    "agent": "general-purpose",
+    "task": "工作目录 E:/Translate。任务小：读 work_proust/out_ind/v5/chunk035 到 chunk041（7 个 final.txt），按 E:/Translate/POLISH_BRIEF_2026-11-25.md 的七类准则润色。专名不得改，不拆长句。每条 assert 单文件 count==1，改前 cp .bak_20261125（已存在则不覆），行数不变。读得通的不改。汇报改了哪几处。",
+    "status": "completed",
+    "startedAt": 1795518411168,
+    "completedAt": 1795518558133,
+    "summary": "已完成 chunk035–041（7 个 final.txt，共 56 段）通读与润色。",
+    "background": false,
+    "model": "ds-free/deepseek-v4.1-flash"
+  },
+  {
+    "id": "fg-mwulawtc-y70s",
+    "agent": "general-purpose",
+    "task": "工作目录 E:/Translate。任务小：读 work_proust/out_ind/v5/chunk042 到 chunk048（7 个 final.txt），按 E:/Translate/POLISH_BRIEF_2026-11-25.md 的七类准则润色。专名不得改，不拆长句。每条 assert 单文件 count==1，改前 cp .bak_20261125（已存在则不覆），行数不变。读得通的不改。汇报改了哪几处。",
+    "status": "completed",
+    "startedAt": 1795518411168,
+    "completedAt": 1795518523845,
+    "summary": "改完并自检通过。汇报如下。",
+    "background": false,
+    "model": "ds-free/deepseek-v4.1-flash"
+  },
+  {
+    "id": "fg-mwulawtd-sy5p",
+    "agent": "general-purpose",
+    "task": "工作目录 E:/Translate。任务小：读 work_proust/out_ind/v2/chunk097 到 chunk103（7 个 final.txt），按 E:/Translate/POLISH_BRIEF_2026-11-25.md 的七类准则润色。专名不得改，不拆长句。每条 assert 单文件 count==1，改前 cp .bak_20261125（已存在则不覆），行数不变。读得通的不改。汇报改了哪几处。",
+    "status": "completed",
+    "startedAt": 1795518411169,
+    "completedAt": 1795518512331,
+    "summary": "七册读完并改毕。清单已落盘 `_polish_20261125_097_103.py`（含 assert 命中数、换行数不变校验），备份 `final.txt.bak_20261125` 均为新建。",
     "background": false,
     "model": "ds-free/deepseek-v4.1-flash"
   },
@@ -29,6 +106,17 @@
     "startedAt": 1795518085218,
     "completedAt": 1795518269480,
     "summary": "七个文件已读完、改完。共 **9 处**改动，所有段落数和每行行数都保持不变；每处改动前都先用 `assert old in text and count==1` 做唯一性校验，命中后才替换并写入文件。",
+    "background": false,
+    "model": "ds-free/deepseek-v4.1-flash"
+  },
+  {
+    "id": "fg-mwul3xb8-45jq",
+    "agent": "general-purpose",
+    "task": "工作目录 E:/Translate。任务小：读 work_proust/out_ind/v2/chunk083 到 chunk089（7 个 final.txt），按 E:/Translate/POLISH_BRIEF_2026-11-25.md 的七类准则润色。专名不得改，不拆长句。每条 assert 单文件 count==1，改前 cp .bak_20261125（已存在则不覆），行数不变。读得通的不改。汇报改了哪几处。",
+    "status": "completed",
+    "startedAt": 1795518085220,
+    "completedAt": 1795518243866,
+    "summary": "润色完成。自检全部通过。",
     "background": false,
     "model": "ds-free/deepseek-v4.1-flash"
   },
@@ -2076,94 +2164,6 @@
     "startedAt": 1795449784747,
     "completedAt": 1795449994377,
     "summary": "自检通过：114 段对齐、无拉丁字母残留、无工具调用或标记残留、引号已配平、没有空段，且段末标点全部符合体例：83 个「。」、26 个「」、3 个「！」、2 个「——」。",
-    "background": false,
-    "model": "ds-free/deepseek-v4.1-flash"
-  },
-  {
-    "id": "fg-mwtfzf8k-lsbd",
-    "agent": "worker",
-    "task": "翻译布莱克伍德《空屋及其他鬼故事》昆篇：《一名私人秘书在纽约的奇遇》第 2/2 片（接前片）。源文：work_batch_20261124/_eh_secretaryb_paras.json（37段）。输出：work_batch_20261124/eh_secretary_b_zh.json（37段）。体例：逐段对应；引号「」（嵌套『』）；不用⟦i⟧标记；段末标点（。！？…：—…）。体例样板：ia_damned_a_zh.json。专名与前片一致。自检后贴首2段与末1段。不要 commit/push/改其他文件。不要跑全球体检。",
-    "status": "completed",
-    "startedAt": 1795449010916,
-    "completedAt": 1795449715995,
-    "summary": "完成。输出 `work_batch_20261124/eh_secretary_b_zh.json`，共 37 段。",
-    "background": false,
-    "model": "ds-free/deepseek-v4.1-flash"
-  },
-  {
-    "id": "fg-mwtfzf8k-n34e",
-    "agent": "worker",
-    "task": "翻译布莱克伍德《空屋及其他鬼故事》末篇：《骷髅湖：营中插曲》Skeleton Lake: An Episode in Camp（87段）。源文：work_batch_20261124/_eh_skeleton_paras.json。输出：work_batch_20261124/eh_skeleton_zh.json（87段）。体例：逐段对应；引号「」（嵌套『』）；不用⟦i⟧标记；段末标点（。！？…：—…）。体例样板：ia_damned_a_zh.json。专名自定但全文一致，汇报末尾列专名表。自检后贴首2段与末1段。不要 commit/push/改其他文件。不要跑全球体检。",
-    "status": "completed",
-    "startedAt": 1795449010916,
-    "completedAt": 1795449389485,
-    "summary": "完成。",
-    "background": false,
-    "model": "ds-free/deepseek-v4.1-flash"
-  },
-  {
-    "id": "fg-mwtfzf8j-trgf",
-    "agent": "worker",
-    "task": "翻译布莱克伍德《空屋及其他鬼故事》第三组两篇：《史密斯：一间公寓里的插曲》Smith: An Episode in a Lodging-House（94段）、《一件可疑的礼物》A Suspicious Gift（73段）。源文：work_batch_20261124/_eh_smith_paras.json、_eh_gift_paras.json。输出：work_batch_20261124/eh_smith_zh.json（94段）、eh_gift_zh.json（73段）。体例：逐段对应；引号「」（嵌套『』）；不用⟦i⟧标记；段末标点（。！？…：—…）。体例样板：ia_damned_a_zh.json。专名自定但两篇一致，汇报末尾列专名表。自检后贴每篇首段。不要 commit/push/改其他文件。不要跑全球体检。",
-    "status": "completed",
-    "startedAt": 1795449010915,
-    "completedAt": 1795449265668,
-    "summary": "两篇都已经完成，并已写入文件。",
-    "background": false,
-    "model": "ds-free/deepseek-v4.1-flash"
-  },
-  {
-    "id": "fg-mwtfzf8j-k5ro",
-    "agent": "worker",
-    "task": "翻译阿尔杰农·布莱克伍德《空屋及其他鬼故事》（The Empty House and Other Ghost Stories, 1906）第一组三篇：《空屋》The Empty House（114段）、《闹鬼的岛》A Haunted Island（74段）、《窃听一例》A Case of Eavesdropping（113段）。源文：work_batch_20261124/_eh_empty_paras.json、_eh_island_paras.json、_eh_eaves_paras.json（均不含篇名）。输出：work_batch_20261124/eh_empty_zh.json（114段）、eh_island_zh.json（74段）、eh_eaves_zh.json（113段）。体例：逐段对应；引号「」（嵌套『』）；不用⟦i⟧标记；段末标点（。！？…：—…）。体例样板：work_batch_20261124/ia_damned_a_zh.json。专名自定但三篇彼此一致，汇报末尾列专名表。自检后贴每篇首段。不要 commit/push/改其他文件。不要跑全球体检。",
-    "status": "completed",
-    "startedAt": 1795449010915,
-    "completedAt": 1795449248299,
-    "summary": "我先查看源文件和体例样板文件。",
-    "background": false,
-    "model": "ds-free/deepseek-v4.1-flash"
-  },
-  {
-    "id": "fg-mwtfzf8k-hbhu",
-    "agent": "worker",
-    "task": "翻译布莱克伍德《空屋及其他鬼故事》单篇：《一名私人秘书在纽约的奇遇》The Strange Adventures of a Private Secretary in New York 第 1/2 片。源文：work_batch_20261124/_eh_secretarya_paras.json（210段，已剔去分节罗马数字）。输出：work_batch_20261124/eh_secretary_a_zh.json（210段）。体例：逐段对应；引号「」（嵌套『』）；不用⟦i⟧标记；段末标点（。！？…：—…）。体例样板：ia_damned_a_zh.json。专名自定但全文一致，汇报末尾列专名表。自检后贴首2段与末1段。不要 commit/push/改其他文件。不要跑全球体检。",
-    "status": "completed",
-    "startedAt": 1795449010916,
-    "completedAt": 1795449235867,
-    "summary": "第 1/2 片已完成：`work_batch_20261124/eh_secretary_a_zh.json`，共 **210 段**，与源文 `_eh_secretarya_paras.json` 逐段对应。临时文件已清理，未提交，未改动其他稿件。",
-    "background": false,
-    "model": "ds-free/deepseek-v4.1-flash"
-  },
-  {
-    "id": "fg-mwtfzf8j-89ba",
-    "agent": "worker",
-    "task": "翻译布莱克伍德《空屋及其他鬼故事》第二组三篇：《守信》Keeping His Promise（117段）、《蓄意窃取》With Intent to Steal（132段）、《死者之林》The Wood of the Dead（91段）。源文：work_batch_20261124/_eh_promise_paras.json、_eh_steal_paras.json、_eh_wood_paras.json。输出：work_batch_20261124/eh_promise_zh.json（117段）、eh_steal_zh.json（132段）、eh_wood_zh.json（91段）。体例：逐段对应；引号「」（嵌套『』）；不用⟦i⟧标记；段末标点（。！？…：—…）。体例样板：ia_damned_a_zh.json。专名自定但三篇一致，汇报末尾列专名表。自检后贴每篇首段。不要 commit/push/改其他文件。不要跑全球体检。",
-    "status": "completed",
-    "startedAt": 1795449010915,
-    "completedAt": 1795449125500,
-    "summary": "我先查看工作目录和参考文件。",
-    "background": false,
-    "model": "ds-free/deepseek-v4.1-flash"
-  },
-  {
-    "id": "fg-mwtfn9xn-nbti",
-    "agent": "worker",
-    "task": "翻译《吉姆博》第 5/5 片（末片）。源文：work_batch_20261124/_jb_e_paras.json（165段）。输出：work_batch_20261124/jb_e_zh.json（165段）。背景：四风之行、身体的召唤、回家。体例：逐段对应；引号「」（嵌套『』）；不用⟦i⟧标记；段末标点（。！？…：—…）；星号行作「＊　＊　＊　＊　＊」。体例样板：jb_b_zh.json（专名一致：吉姆博、莱克小姐、空屋、住客）。自检后贴首2段与末1段。不要 commit/push/改其他文件。不要跑全球体检。",
-    "status": "completed",
-    "startedAt": 1795448444171,
-    "completedAt": 1795448893230,
-    "summary": "第 5/5 片（末片）已完成。",
-    "background": false,
-    "model": "ds-free/deepseek-v4.1-flash"
-  },
-  {
-    "id": "fg-mwtfn9xn-dr8d",
-    "agent": "worker",
-    "task": "翻译《吉姆博》第 3/5 片（接前片）。源文：work_batch_20261124/_jb_c_paras.json（241段）。输出：work_batch_20261124/jb_c_zh.json（241段）。背景：吉姆博被困在空屋里，在古老记忆的长廊与恐惧造出的“住客”之间摸索出路。体例：逐段对应；引号「」（嵌套『』）；不用⟦i⟧标记；段末标点（。！？…：—…）；星号行作「＊　＊　＊　＊　＊」。体例样板：work_batch_20261124/jb_b_zh.json（专名必须一致：吉姆博、莱克小姐、空屋、住客、「恐怖」、詹姆斯·斯通）。自检后贴首2段与末1段。不要 commit/push/改其他文件。不要跑全球体检。",
-    "status": "completed",
-    "startedAt": 1795448444171,
-    "completedAt": 1795448853131,
-    "summary": "已翻译完成第 3/5 片，结果交付在 `work_batch_20261124/jb_c_zh.json`（241 段，段数与源文件 `_jb_c_paras.json` 逐段对应，文件为 UTF-8、格式与 `jb_b_zh.json` 一致）。",
     "background": false,
     "model": "ds-free/deepseek-v4.1-flash"
   }
