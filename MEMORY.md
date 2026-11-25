@@ -3404,3 +3404,18 @@ EPUB《饥饿艺术家》"兴致淡了许多"（work_pub 是"兴趣大大减退"
 ⇒ **今后对有 revision 的书，"改出最好作品"必须直接改 `pipeline_gutenberg/revisions/<book>.json`
    的 paragraphs，再重建 EPUB 并内容级验证（解包查关键句）；改 work_pub 属无效劳动。**
 ⇒ 校验方式：build 后 `zipfile` 读 `OEBPS/c*.xhtml`，确认关键精修句在其中。
+
+### 2026-11-26 续五九：revision 译本精修落地（hungerkuenstler）+ jedermann 判例纠正
+
+**正确工作流已验证**：改 `pipeline_gutenberg/revisions/hungerkuenstler.json` 的 paragraphs →
+`build_pub.py hungerkuenstler` → 解包 EPUB 内容级确认，3 处精修全部进入 EPUB：
+- `ein großer Tusch`「一阵短曲」→「响亮地吹奏一通」（Tusch=号角齐鸣/盛大吹奏，硬伤）
+- `günstigstenfalls`「往好处想，只当他谦虚」→「说得好听些，也不过当他谦逊」
+- `die Stirn hatte`「还有脸」→「厚着脸皮」
+
+**判例纠正（jedermann）**：revision 译本「众人5」全是舞台指示（众人：/众人落座/众人跟唱），
+「人人4」是 everyone 泛指，「凡人1」是 mortal——三者是不同概念，**不可机械归一**。
+我在 work_pub 做的「人人→凡人206处」是**过度统一**（错），幸未进 EPUB，未造成损害。
+⇒ **"人人"(everyone)/"凡人"(mortal)/"众人"(the crowd 舞台提示) 各司其职，保持原样。**
+
+torundtod revision 译本「那⟦i⟧曾是⟦/i⟧你的」时态本就正确（war=曾是），⟦i⟧→EPUB `<em>` 保留，无需改。
