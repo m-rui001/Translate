@@ -2524,3 +2524,50 @@ tg_southwind／tg_time／tg_usury／tg_vengeance／tg_yarnith／wendigo_a／wend
 `Connect Timeout Error (ai.idcidiot.com:443)`、以及「只回一句就结束」的空转。
 **超时多半已有产出**（备份 + 部分改动已落盘），判定办法见上一节。
 ⇒ 每派 4 个，先 `ls *_zh.json.bak_20261126` + 逐个 diff 统计，再决定重派哪些。
+
+## 2026-11-26 续四：短篇批次推进到 51 篇 + 组内工具化
+
+本轮在上一节（38 篇）基础上又读了 **13 篇**，并给「旧bak+现文」的差异导出做了工具。
+
+| 项 | 数 |
+|---|---|
+| 已读篇目 | **51 / 116** |
+| 本轮新读 | assignation、tg_mlideen、tg_night、tg_sea、tg_secret、tg_slept、tg_sorrow、tg_southwind、tg_time、tg_usury、tg_vengeance、tg_yarnith、tg_landtime、tg_sarnidac、tg_preface、hc_b、eh_skeleton、eh_smith、eh_steal、eh_wood、berenice、eleonora、pit、premature、purloined、bierce_missing、bierce_resaca、js_dog_a、js_dog_b（共 29 篇） |
+| 机械体检 | `check_batch` 全部 0 问题 |
+
+### 新工具：`_dump_diff_20261126.py`
+
+子代理常常「脚本写好但超时没运行」，或者「跑了一部分」。判断改了什么不必人工翻：
+```
+python work_batch_20261124/_dump_diff_20261126.py key1,key2 out.md   # bak vs 现文逐段旧→新
+```
+本轮已导出的附录：`POLISH_DIFF_2026-11-26_tg.md`、`_eh_rest.md`、`_hc_b.md`。
+**日志里只写要点，全清单指向这些 DIFF 文件**——省得把 74KB 的 diff 抄进 md。
+
+### 本轮抓到的病（新判例）
+
+- **题词／拉丁文最易读反**：`pit` 的 `non satiata`（从未餍足）被译成「餍足地喂养着…疯狂」，
+  主客与否定双双颠倒；`assignation` 的 `previous to her marriage`（婚前）被译成「婚后」，
+  与整段推论直接抵触。**凡题词、凡否定、凡时间关系词，必须回查原文。**
+- **`whether … does not` 是拉丁式反问**（意即「正是」），中文照搬成「是否…并不…」会读反
+  （`eleonora` 开篇）。判例：坡的爱用句法。
+- **`is offended by` 被动反转**（`assignation`：纯贞被图纹冒犯，不是纯贞去冒犯图纹）。
+- **量词与单复数**：`the last of the departing gods` 译成「最后一位离去的诸神」（`tg_sarnidac`）。
+- **`：——` 冒号＋破折号叠用**是本批的高频体例病（tg 组多篇、`eleonora`、`sarnidac`）。
+- **跨段引语**：本批体例是「每段各自成对」，与普鲁斯特「首段开、末段收」相反。
+  `purloined` 一处源文段落被中译拆成两段（38/39），须在说话人标签处收引号、下段重开。
+- **编辑性按语用全角方括** `［…］`（`pit` 题词注）、**分节行一律** `＊　＊　＊`（`bierce_missing` 原文是 ASCII 星号）。
+
+### 通道状况（本轮更差）
+
+两次 4 并发派活 **全部 hard timeout 或只回一句**，`background:true` 单发也一样：
+`hc_c`/`hc_d`/`dn_f`/`dr2` 四个后台任务全部 failed，只留下备份、一条改动都没有。
+⇒ **不要再指望委派**：能自己读就自己读；委派只在「小批量 + 明确 3 篇以内」时偶尔成功。
+⇒ 判据仍是「备份存在 + diff 非空」，但本轮多次出现「有备份、diff 全 0」，属未做，须重读。
+
+### 剩余（65 篇）
+
+`dn_f`、`dr2`、`dr7`、`dr8`、`dr9`、`hc_c`、`hc_d`、`hc_e`、`hc_f`、
+`jb_a`–`jb_e`、`js_dog_c`、`js_dog_d`、`js_worship`、`pf_a`–`pf_p`（16 篇）、
+`thousand_a`–`thousand_c`、`wendigo_a`、`wendigo_b`、`willows_a`、`willows_b`。
+已核对 `js_dog_a`、`js_dog_b`、`bierce_resaca`、`premature` 首读即通，未改（已建 bak）。
