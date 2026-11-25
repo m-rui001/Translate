@@ -2571,3 +2571,15 @@ python work_batch_20261124/_dump_diff_20261126.py key1,key2 out.md   # bak vs �
 `jb_a`–`jb_e`、`js_dog_c`、`js_dog_d`、`js_worship`、`pf_a`–`pf_p`（16 篇）、
 `thousand_a`–`thousand_c`、`wendigo_a`、`wendigo_b`、`willows_a`、`willows_b`。
 已核对 `js_dog_a`、`js_dog_b`、`bierce_resaca`、`premature` 首读即通，未改（已建 bak）。
+
+### 2026-11-26 续四补记
+
+- `purloined`、`thousand_c`、`ko` 一类的「一段话被中译拆成两段」是坡这批的通病：
+  源文一段含 `"A，" he said, "B...`，中文拆成两段后，后半段径直接写而无引号
+  （`purloined` 38/39、`thousand_c` 4/5）。修法固定：**前段在说话人标签后收 `」`，
+  后段开头补 `「`、末尾补 `」`**，段数不变。
+- 本轮又核过 `js_dog_a`、`js_dog_b`、`dr2`、`thousand_a`：首读即通，未改（已建 bak，
+  避免下轮重读）。
+- 重建并提交的册子：时间与诸神 / 黑猫 / 幽会（坡五则）/ 失窃的信（坡四则）/
+  奇卡莫加（比尔斯四则）/ 空屋（Benson 十则）/ 人类的和声 / 吉姆博（hcjb）/
+  一千零二夜的故事（坡四则）。`verify_epub` 96 册 0 错，`typo_check` 0 问题。
