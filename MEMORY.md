@@ -2603,3 +2603,16 @@ python work_batch_20261124/_dump_diff_20261126.py key1,key2 out.md   # bak vs �
   （《催眠术启示》），都按「前段收、后段补开补收」修好。
 ⇒ 判据补充：**full check 的报警要先分类再看，不要一律当缺陷去改**；`NO-END-PUNCT`
 在本批经常是箴言体与日期行。
+
+### 2026-11-26 续四收尾：又核过 dr7（138 段）
+
+`dr7`（《堂·罗德里格斯》第七片）逐段读完，只找到 `At the end of two hours we rested` 一类
+可以直读的地方，**未改**。至此 `dr2/dr7/dr9` 三片通读无必改，说明 Dunsany 这一册的
+底稿质量是这批里最好的一档（同一译者风格、句子长但主谓链清楚）。
+
+已读 **60 / 116**，剩 **29 篇**：`dn_f`、`dr8`、`hc_c`、`hc_d`、`hc_e`、`hc_f`、
+`jb_a`–`jb_e`、`js_dog_c`、`js_dog_d`、`js_worship`、`pf_a`–`pf_p`、`thousand_b`、
+`wendigo_a`、`wendigo_b`、`willows_a`、`willows_b`。
+
+**下轮开工顺序建议**：先 `pf_*`（16 篇，段落多但句式平实，出错集中在数量与时点），
+再 `hc_*`（学理独白，专名与术语要照 `hc_a` 的 canon），最后 `jb_*`/`js_*`/`willows_*`（最长）。
