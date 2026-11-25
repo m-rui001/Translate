@@ -3381,3 +3381,26 @@ warst du ein teuflischer Mensch` 译"你本来是个天真的孩子，可更其�
 导致它们悬在未提交状态（git status 显示 M out/*.epub）。已补提交（c0e99ba）。
 ⇒ **规则：凡重建过 EPUB，提交时必须 `git add out/`（或具体 epub），不能只 add MEMORY.md。
    每次提交后检查 `git status --short` 必须为空。**
+
+### 2026-11-26 续五八：**重大发现——有 revision 的书，EPUB 用的是 revision.json，不是 work_pub final.txt**
+
+⚠️ 这是项目最关键的流程认知，务必遵守：
+
+`pipeline_build/build_pub.py` 的 `collect()` 开头调用 `B.collect_revision(book)`；若返回非空，
+**直接用 `pipeline_gutenberg/revisions/<book>.json` 构建 EPUB，完全跳过 work_pub/**/final.txt**。
+有 revision 的书共 21 部：betrachtung, darkness, dopoidivorzio, dubliners, horla, hungerkuenstler,
+immensee, jacobsroom, jedermann, landarzt, mondaytuesday, mrsdalloway, persuasion, siddhartha,
+strafkolonie, stundenbuch, torundtod, urteil, verwandlung, voyageout（及可能新增）。
+
+**revision 与 work_pub 是两套独立译本**，段落数都不同（jedermann 1089 vs 1108；
+hungerkuenstler 12 vs 11）。我在 work_pub 做的精修，对这些书**完全没有进入 EPUB**：
+- hungerkuenstler 10 处精修、jedermann 206 处"凡人"统一、torundtod 时态修正、
+  strafkolonie 80 处、urteil/verwandlung/stundenbuch/mondaytuesday/horla 全部——用户看到的 EPUB 未变。
+- 无 revision 的书（faust, tess, bovary, pride 等）work_pub 才是源，改动有效。
+
+实证：EPUB《每个人》凡人1/人人4/众人5（work_pub 已统一到凡人277）；
+EPUB《饥饿艺术家》"兴致淡了许多"（work_pub 是"兴趣大大减退"）。
+
+⇒ **今后对有 revision 的书，"改出最好作品"必须直接改 `pipeline_gutenberg/revisions/<book>.json`
+   的 paragraphs，再重建 EPUB 并内容级验证（解包查关键句）；改 work_pub 属无效劳动。**
+⇒ 校验方式：build 后 `zipfile` 读 `OEBPS/c*.xhtml`，确认关键精修句在其中。
