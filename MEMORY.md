@@ -3345,3 +3345,13 @@ verify c00/c04 ALL OK；重建单册 EPUB（err=0），全库 96 册 verify/typo
   "即便用强迫也不吃"→"即便强迫他也不吃"（中文更顺）。
 
 ⇒ 判例：**七类是可改的"下限"不是"上限"；目标是最好，故可读处的用词/节奏打磨也属应当。**
+
+### 2026-11-26 续五四：《饥饿艺术家》文学精修 10 处（标准提升后的系统应用）
+
+用"改出最好作品"标准逐片对照德语精修（不只是硬伤）：c00 5 处（含 1 硬伤 gegen ihn handelten
+「怀疑他」→「待他不公」+ Schlag der Uhr 补报时 + 到场人数/去重复/中文更顺）、
+c01 4 处（günstigstenfalls/die Stirn hatte 更准 + 悖论修辞显化 + 去口语尾巴）、
+c02 1 处（verwöhnte 娇惯坏了）。共 10 处，4 片 verify ALL OK，重建 EPUB（err=0），
+全库 96 册 0 错 0 问题。日志 `work_pub/hungerkuenstler/POLISH_LOG_2026-11-26_lit.md`。
+⇒ 精修判例：**德语悖论修辞（im besten, ja noch nicht einmal im besten）中文要用破折号显化转折，
+否则读成笔误；verwöhnt/die Stirn haben/Schlag der Uhr 等词要译到位，不因"读得通"放过。**
