@@ -3166,3 +3166,18 @@ pf_ 是每段自成一对（故 pf_h/pf_m 我当时补了引号）；jb_ 此处�
 在形状和种类上一模一样」、`[192]`「它们的印记！」「它们可怕的印记！」。
 
 **至此 116 / 116 篇全部逐段通读完毕。** 全库 96 册 rebuild 后 `verify_epub` 0 错、`typo_check` 0 问题。
+
+### 2026-11-26 续三八：普鲁斯特 v1 chunk000/001 收尾通读（TODO 清单最后两项）
+
+`work_proust/POLISH_TODO.txt` 500 项，498 项早有 `bak_20261125`，仅 `out/v1/chunk000`、
+`chunk001` 无备份 —— 是清单最后的遗漏。按 `work_proust/SUBTASK_README` 逐段对照法语通读
+（`chunks/v1/chunks.json['0']` 4 段、`['1']` 3 段；即《在斯万家那边》开篇）。
+
+**判定：两片译文已润色到位，无七类必改项**（meta.audit 列出的 chercher le sommeil／sujet／
+jusqu'à son réveil／faire reculer le soleil／à la campagne 等误译正文里均已修正），不作文字改动。
+补建 `final.txt.bak_20261125` 使清单闭环；误建的 `bak_20261126` 已删；日志
+`work_proust/out/v1/POLISH_LOG_2026-11-26_chunk000-001.md`；
+`verify_polish.py` 两片 ALL OK。
+
+⇒ 至此 `POLISH_TODO.txt` 500 项全部有备份、全部通读完毕。注意 `out/v1`（非 out_ind）才是
+`assemble_proust.py` 的装配正文；`out_ind` 是独立重译对照版，两者不可混。
