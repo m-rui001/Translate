@@ -2685,3 +2685,22 @@ Charing Cross / Crayfield(克雷菲尔德) / Lambeth(兰贝斯)` 全对。
 ⇒ **判例：遇到「同一处引文两译」，先比原文两处是否逐字相同，再决定要不要归一。**
 
 已读 64 / 116；剩 25 篇。
+
+### 2026-11-26 续九：pf_d 读完（169 段，改 1 处）
+
+**改动**：`pf_d[15]` 说话人张冠李戴。
+旧：`「金宝，我要去找那个星尘待着的洞窟，」简·安妮说；…`
+新：`…」猴儿说；…`
+原文：`'Jimbo, I'm going to find that Cavern where the star stuff lies,' and Jimbo answered…`
+（上一段 `Monkey said in French—` 已点明说话人是猴儿/Monkey；简·安妮 Jinny 是十六岁的姐姐，
+这一夜根本不在场——下一段 `We found her gone off on her own adventures` 说的才是她的缺席。）
+**判例：梦境章里三个孩子同时出现，「她」和说话人最易错认；凡此处一律回查上一段的说话人交代。**
+
+其余段落读通，无必改。星窟／星网／爱插手的太阳／撒尘人／草垛女人／热基耶夫人／
+让娜婶婶／吉吉／紫藤寄宿舍／布德里（五千英尺松林）等专名与前三片一致。
+
+已重建《仙境囚徒》整册（2,529 段 / 208,186 汉字 / 322 KB）；全库 `verify_epub` 96 册 0 错、
+`typo_check` 0 问题。
+
+已读 65 / 116；剩 24 篇（`pf_e`–`pf_o` 11 篇、`hc_c/d/e/f`、`jb_a`–`jb_e`、`js_dog_c/d`、
+`js_worship`、`thousand_b`、`wendigo_a/b`、`willows_a/b`、`dr8`）。
