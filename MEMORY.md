@@ -3430,3 +3430,22 @@ torundtod revision 译本「那⟦i⟧曾是⟦/i⟧你的」时态本就正确�
 
 ⇒ 判例：**源文提纲笔记（«…«… 列写作要点）按全书体例不译，非漏译；对话段落合并属体例；
 普鲁斯特"的字密集"长句是风格不可拆；défilé cinématographique 译"电影式"术语统一优于"走马灯"。**
+
+### 2026-11-26 续六一：找更多书籍翻译——修复 4 部书的真漏译 + codebuddy 翻译通道打通
+
+**全库段级覆盖率扫描**（src words vs 译文 han，<0.18 阈值）排查出真漏译与假警报：
+- 真漏译（EPUB 缺内容，已补译并重建验证）：diana c010/c03（4842字符，14段，codebuddy 翻译）、
+  germinie c013/c01、guarany c003/c01、guarany c040/c01、timar c039/c01（末句）
+- 假警报（体例跳过，非漏译）：各书扉页/版权页/广告页；buddenbrooks c098 与 toerless c005
+  的**文本异文校勘表**（原行+改行成对出现，如 "die er nachher schwindelte"×2）；sotileza c031
+  西语航海术语表；haidedorf c006/c008 诗歌注释页。twocities 的"缺段"是 chunks 缓存陈旧假象
+  （src 10-27 重提后编号错位；EPUB 45 章完整）。
+- **codebuddy CLI = 可用免费翻译通道**（本地 8317 网关当前拒绝连接）：`codebuddy -p --model
+  deepseek-v4.1-flash`，stdin 喂 prompt，实测 7s/短句、~10min/8k字符块。Windows 下必须用
+  `C:/Users/hp/AppData/Roaming/npm/codebuddy.cmd`（bash shim 无法 CreateProcess）。
+  脚本 `pipeline_gutenberg/_cb_translate_20261126.py`：monkeypatch `llm.chat_pool`→codebuddy
+  后复用 `workflow.translate_chunk`（同验证/同格式）；《白鲸》提示词按书名归一；模型回显原文
+  （无中文）时追加纠偏指令重试。小片段（单句）模型易漏译/粘连原文——手写终稿更可靠。
+
+⇒ 判例：**段数差扫描要用 index+src 对齐，勿信 chunks 缓存（会陈旧）；校勘表/术语表/注释页
+  按体例不译；codebuddy.cmd 是 Windows 唯一可执行形态。**
