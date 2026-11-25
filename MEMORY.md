@@ -2837,3 +2837,15 @@ python -c "import json;t=''.join(json.load(open('pf_x_zh.json')));print(t.count(
 
 已读 73 / 116；剩 16 篇（`pf_m`、`pf_n`、`pf_o`、`hc_c/d/e/f`、`jb_a`–`jb_e`、
 `js_dog_c/d`、`js_worship`、`thousand_b`、`wendigo_a/b`、`willows_a/b`、`dr8`）。
+
+### 2026-11-26 续十八：pf_m 读完（124 段，未改）
+
+「爸爸念童话／勒梅尔小姐的异象／罗杰斯离村回伦敦」这一章通读无必改，`check_batch` 0 问题。
+
+确认两处身份等同（后文必须一致）：**安娜婶婶 = 勒梅尔小姐 = Tante Anna**，
+瘫痪三十年、夜身最亮的那位；`pf_k[14]`、`pf_g[127]`、`pf_m[33]` 三处互证。
+
+昴星团七姊妹名译：迈亚、塔格忒、阿尔库俄涅、墨洛珀（`pf_m[68]`、`pf_m[87]` 两处同形）。
+
+已读 74 / 116；剩 15 篇（`pf_n`、`pf_o`、`hc_c/d/e/f`、`jb_a`–`jb_e`、`js_dog_c/d`、
+`js_worship`、`thousand_b`、`wendigo_a/b`、`willows_a/b`、`dr8`）。
