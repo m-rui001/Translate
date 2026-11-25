@@ -80,7 +80,11 @@ wilderMann 45k ✓｜zauberkaftan 44k ✓ —— C 组 18 册全部完成首轮�
 邓萨尼（dg_*/dt_*/dsw_*/dw_*/tg_*/dr*）、坡（poe_*/assignation/berenice/eleonora/imp/island/owl/pit/premature/purloined/thousand_*/valdemar）、
 比尔斯（bierce_*）。
 `pipeline_batch_20261117/`：邓萨尼两册（translations.json / second_zh.json）、埃格顿、施沃布。
-—— 除 ia_* 外全部未通读润色。
+—— 2026-11-26 起逐篇通读（工具 `work_batch_20261124/paras_tool.py` + `check_batch.py`）：
+**已读 38/116 篇**（bm_a…bm_n、cent_a…cent_i、dn_a、dn_b、eh_empty、hc_a、imp、island、owl、
+poe_cask、valdemar、tg_dawn、tg_dreams、tg_honour、tg_jest、tg_kai、tg_king），
+4,583 段／419,353 汉字，789 段有改动、净 +525 字，`check_batch` 全 0 问题。其余 78 篇未读。
+ia_* 已于 2026-11-25 完成。
 
 ia_*（《不可思议的冒险》五则，12 片 1,306 段 156,417 字）：✓ 2026-11-25 通读润色（64 段／72 条，专名归一 33）
 批评稿 `REVIEW_2026-11-25-incredible-adventures.md`。
