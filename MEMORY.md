@@ -3181,3 +3181,25 @@ jusqu'à son réveil／faire reculer le soleil／à la campagne 等误译正文�
 
 ⇒ 至此 `POLISH_TODO.txt` 500 项全部有备份、全部通读完毕。注意 `out/v1`（非 out_ind）才是
 `assemble_proust.py` 的装配正文；`out_ind` 是独立重译对照版，两者不可混。
+
+### 2026-11-26 续三九：甲乙两版对勘——只采纳经法语坐实的 2 处
+
+外部知识库给了一份甲乙两版逐条对勘报告（甲=前、乙=现）。**总原则：以法语原文为准复核，
+不盲从报告**——报告自身把若干原文引错。脚本 `_polish_20261126_甲乙对勘.py`，日志
+`work_proust/POLISH_LOG_2026-11-26_甲乙对勘.md`，逐条采纳/否决理由全在日志。
+
+**采纳 2 处（⑥词义硬伤）**：
+- `out/v6/chunk030`「并不能不为自己铸造」→「并不能**自由地不替**自己铸造」：
+  法语 `nous ne sommes pas **libres** de ne pas nous les forger`，漏了 libres。
+- `out_ind/v5/chunk076`「善良、审慎、牺牲」→「善良、**良心的不苟且**、牺牲」：
+  法语 `bonté, le scrupule, le sacrifice`，scrupule 属伦理序列，非"审慎"。
+
+**否决（重要判例，防再踩）**：
+- 报告称"有修养的艺术家"应为"无神论艺术家"——**报告引错原文**：法语是 `l'artiste cultivé`，中文正确。
+- 报告斥"糊里糊涂地"为"冒失地"误译——引错：该处法语是诺普瓦"老糊涂、说话含混"；
+  真正的 `imprudemment` 处正文已作"冒失地"。
+- 报告主张 Phèdre→淮德拉、Andrée→安德蕾——**与本项目 canon 冲突**（已定《费德尔》24:10、安德烈 247:0）。
+- Bergotte/Vinteuil"段内分裂"指的是 `final_lit.txt`/`final_pre_polish.txt` 旧稿，非生效正文（已统一）。
+⇒ **凡外部对勘报告，先回原文逐条核实；报告引文与源文不符时以源文为准。**
+
+重建 `追忆似水年华（坟头草译）.epub`（0 XML 错），全库 96 册 verify/typo 均 0。
