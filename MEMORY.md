@@ -2631,3 +2631,19 @@ python work_batch_20261124/_dump_diff_20261126.py key1,key2 out.md   # bak vs �
   简·安妮（猴儿）、金宝、丽盖特、阿尔比尼娅、小伯爵夫人。**下篇同册的 pf_ 一律沿用。**
 
 已读 61 / 116；剩 28 篇。
+
+### 2026-11-26 续六：pf_a 读完（110 段，未改）
+
+`pf_a` 通读无必改。核对过数字与专名：`300 pounds a year, paid quarterly` → 「年薪三百镑，按季支付」、
+`half-past nine` → 「九点半」、`April 30th` → 「四月三十日」、`Bexley / Sidcup / St. John's /
+Charing Cross / Crayfield(克雷菲尔德) / Lambeth(兰贝斯)` 全对。
+
+`pf_a[0]` 报 NO-END-PUNCT 是**题词诗断在段末**（`我们的行为就是我们的天使，或善或恶，`
++ 下段 `我们的命运之影，至今仍与我们同行。`），与 `bierce_ck[2]`、`pf_p[11]` 同类，
+属**诗行／署名行豁免**。判例补一条：**题词（epigraph）按行分段时，前段可以没有句末标点。**
+
+另记：这一册（Bright Messenger 系，Henry Rogers 线）与 `pf_p` 是同一本书的分片，
+两篇里「星网」「昴星团／猎户座」「微光村」一类意象与专名必须同一（已核一致）。
+
+已读 62 / 116；剩 27 篇（`pf_b`–`pf_o` 14 篇、`hc_c/d/e/f`、`jb_a`–`jb_e`、
+`js_dog_c/d`、`js_worship`、`thousand_b`、`wendigo_a/b`、`willows_a/b`、`dr8`）。
