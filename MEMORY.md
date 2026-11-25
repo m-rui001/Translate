@@ -2433,3 +2433,16 @@ musketeers、bleakhouse、buddenbrooks、expectations、toerless、whale）。�
 - `neuegedichte/out/c018/c01` 里的 INHALT 目录与正文诗题有 25 处异名（如「花边／尖端」「捐赠者／创始人」），
   目录是原文的目录页，逐条对齐要通读全册诗题，留待专轮。
 - 短篇批次（Blackwood 20 余册、Dunsany 10 余册、Poe 5、Bierce 5、Schwob、Egerton）仍未通读润色。
+
+### 2026-11-26 · bm_e / bm_f（《光明的使者》第 5、6 片）已润完
+
+- 脚本 `work_batch_20261124/_polish_20261126_bm_ef.py`（改动表＋落盘＋自检，可 `python 脚本 bm_e`
+  单独落一篇；幂等，重跑报「改动 0 条」）；日志 `POLISH_LOG_2026-11-26_bm_ef.md`（含理由＋未改判定）。
+- bm_e 54 条（①23 ②3 ③17 ④1 ⑤1 ⑥7 ⑦2），bm_f 71 条（①27 ②11 ③16 ④2 ⑤1 ⑥14）。
+- **重要体例发现**：这两份 `_<key>_paras.json` 的 `[0]` **不是篇名而是正文首段**，
+  所以 `paras_tool.py show` 报 `offset=0`，`zh[i] ↔ src[i]`。以后见 offset=0 先核 `src[0]` 是不是正文，
+  不要按「offset 必须=1」误判成断段事故。
+- 本篇术语 canon：LeVallon=莱斯特、N. H.（保留字母）、Fillery=菲利里、Devonham=德文汉姆、
+  Nayan=娜扬、Khilkoff=基尔科夫、Povey=波维、the Home=疗养院（**不是**「家」）、
+  matron=护士长（**不是**女舍监，与 bm_c 一致）、Khaketian=卡赫季、floor-walker=巡场员。
+- bm_e/bm_f 的大段「宣言体」破碎句、诗行（以「／」分行）属作者刻意，不动。
