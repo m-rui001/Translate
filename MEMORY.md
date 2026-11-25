@@ -3374,3 +3374,10 @@ c02 1 处（verwöhnte 娇惯坏了）。共 10 处，4 片 verify ALL OK，重�
 warst du ein teuflischer Mensch` 译"你本来是个天真的孩子，可更其是个魔鬼般的人"——
 "更其"虽旧，却忠实保留 eigentlicher 比较级双关且合父亲暴烈短促语气，属有意处理，不改。
 ⇒ 判例：**高标准≠滥改；已是上乘、改动反损处应保持。精修只在有真实提升空间时动手。**
+
+### 2026-11-26 续五七：流程修正——重建 EPUB 后必须 git add out/
+
+发现前几次提交只 `git add MEMORY.md`，漏掉了重建的 EPUB（proust/hungerkuenstler），
+导致它们悬在未提交状态（git status 显示 M out/*.epub）。已补提交（c0e99ba）。
+⇒ **规则：凡重建过 EPUB，提交时必须 `git add out/`（或具体 epub），不能只 add MEMORY.md。
+   每次提交后检查 `git status --short` 必须为空。**
