@@ -2822,3 +2822,18 @@ python -c "import json;t=''.join(json.load(open('pf_x_zh.json')));print(t.count(
 这是本册处理轮唱的唯一体例，不要改成对话形式。
 
 已读 72 / 116；剩 17 篇。
+
+### 2026-11-26 续十七：pf_l 读完（179 段，未改）
+
+「黎明散场／晨蛛／简·安妮的头发／风与干草堆的求爱诗／罗杰斯离开前的最后一夜」这一章
+通读无必改，`check_batch` 0 问题。
+
+值得记的三点：
+- **「上床句」的构词法**（`pf_l[147]`）：「不管孩子说什么，妈妈就拿它当动词」，
+  中文照此造词（「你自己泥炭到床上去」），后面几章还会出现，**是体例，不是错**。
+- **模仿口音的写法**（`pf_l[110]`「Shuggairnort」、`pf_l[114]`「Snay pas un morsow de bong」、
+  `pf_l[113]`「Il n'y a pas de quar」）是作者故意把法语/英语拼错以示读音，照原样保留。
+- `pf_l[131]`「nunculus」是妈妈把 homunculus 念错，不是错译。
+
+已读 73 / 116；剩 16 篇（`pf_m`、`pf_n`、`pf_o`、`hc_c/d/e/f`、`jb_a`–`jb_e`、
+`js_dog_c/d`、`js_worship`、`thousand_b`、`wendigo_a/b`、`willows_a/b`、`dr8`）。
