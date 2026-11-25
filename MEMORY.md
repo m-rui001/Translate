@@ -3203,3 +3203,17 @@ jusqu'à son réveil／faire reculer le soleil／à la campagne 等误译正文�
 ⇒ **凡外部对勘报告，先回原文逐条核实；报告引文与源文不符时以源文为准。**
 
 重建 `追忆似水年华（坟头草译）.epub`（0 XML 错），全库 96 册 verify/typo 均 0。
+
+### 2026-11-26 续四〇：按对勘方式全库润色——第 1 册《在流放地》
+
+承接甲乙对勘方法（以原文为准逐条核，不盲从报告），开始逐册对勘全库。
+`work_pub` 40 册有 `chunks/*.json`↔`out/**/final.txt` 逐段配对，`pipeline_gutenberg/revisions`
+20 册有源，`work_batch_20261124` 251 篇有 `_paras.json`——这是"对勘"的基础。
+
+**strafkolonie《在流放地》c001（8 片）**：逐片以德语原文对照，发现并修正专名分裂 80 处——
+`Der Reisende` 四形（探险者20/旅人46/旅行者53/旅客6）统一为多数形「旅行者」，
+`兵士`8→「士兵」。脚本 `_polish_20261126_names.py`，日志
+`work_pub/strafkolonie/POLISH_LOG_2026-11-26_c001.md`，8 片 verify_polish ALL OK。
+「犯人」/「被判刑的人」语义侧重不同，按"读得通不改"保留。
+重建单册 EPUB（err=0），全库 96 册 verify/typo 均 0。
+⇒ 判例：**分片译文的同一人物异名，以本册出现最多者为 canon 统一；语义侧重不同的近义词不强行并**。
