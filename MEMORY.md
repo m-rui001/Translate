@@ -3419,3 +3419,14 @@ EPUB《饥饿艺术家》"兴致淡了许多"（work_pub 是"兴趣大大减退"
 ⇒ **"人人"(everyone)/"凡人"(mortal)/"众人"(the crowd 舞台提示) 各司其职，保持原样。**
 
 torundtod revision 译本「那⟦i⟧曾是⟦/i⟧你的」时态本就正确（war=曾是），⟦i⟧→EPUB `<em>` 保留，无需改。
+
+### 2026-11-26 续六〇：普鲁斯特专名归一 3 处（改出最好作品标准）
+
+以法语原文坐实，归一 3 处书名分裂：v4/k118、v7/k056《淮德拉》→《费德尔》
+（Phèdre，全书 canon 63→65 处）；v5/k011《墓中回忆录》→《墓外回忆录》
+（Mémoires d'Outre-Tombe，从多数并从 outre=beyond）。脚本 `_polish_20261126_phedre.py`
+逐处二进制替换、保留 CRLF/LF 风格、幂等。verify ALL OK，重建 EPUB 内容级验证
+「淮德拉/墓中回忆录」归零。日志 `work_proust/POLISH_LOG_2026-11-26_专名归一.md`。
+
+⇒ 判例：**源文提纲笔记（«…«… 列写作要点）按全书体例不译，非漏译；对话段落合并属体例；
+普鲁斯特"的字密集"长句是风格不可拆；défilé cinématographique 译"电影式"术语统一优于"走马灯"。**
