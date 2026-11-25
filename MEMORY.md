@@ -2494,3 +2494,33 @@ poe_cask、valdemar。
 - `priest` 在布莱克伍德这批里既有「牧师」也有「教区长」，按**篇内多数**定，不跨篇强统。
 - 每篇的专名表要写进日志（Fillery=菲利里／Devonham=德文汉姆／Khilkoff=基尔科夫／
   the Home=疗养院／matron=护士长／Khaketian=卡赫季 等），下次改同作者别册先读旧日志。
+
+### 2026-11-26 续三：短篇批次已读 38 篇（数字口径）
+
+| 项 | 数 |
+|---|---|
+| 已读篇目 | 38 / 116（bm_a–bm_n、cent_a–cent_i、dn_a、dn_b、eh_empty、hc_a、imp、island、owl、poe_cask、valdemar、tg_dawn、tg_dreams、tg_honour、tg_jest、tg_kai、tg_king） |
+| 段 | 4,583 |
+| 汉字 | 418,828 → **419,353**（净 +525） |
+| 有改动的段 | 789 |
+| 机械体检 | `check_batch` 0 问题（JSON、长度、空段、ASCII 引号、引号成对、重复标点、拉丁残留、段末标点） |
+
+**未读 78 篇**：assignation／berenice／eleonora／bierce_missing／bierce_resaca／dn_c–dn_h／dr2／dr7–dr9／
+eh_eaves／eh_gift／eh_island／eh_promise／eh_skeleton／eh_smith／eh_steal／eh_wood／hc_b–hc_f／
+jb_a–jb_e／js_dog_a–d／js_worship／pf_a–pf_p／pit／premature／purloined／thousand_a–c／
+tg_landtime／tg_mlideen／tg_night／tg_preface／tg_sarnidac／tg_sea／tg_secret／tg_slept／tg_sorrow／
+tg_southwind／tg_time／tg_usury／tg_vengeance／tg_yarnith／wendigo_a／wendigo_b／willows_a／willows_b。
+
+### check_batch 的四个豁免（写进脚本，别再去「修」）
+
+1. 分节行 `＊　＊　＊`（`SEP` 正则）；
+2. 纯数字节题「一／二／三」「I／II」（`NUM` 正则）——源文即裸数字，不加句末标点；
+3. 结尾是全角右括号 `］`／`】` 的译注段（`END_OK` 已收）；
+4. 诗行段末可无标点（`\n` 结尾者跳过）。
+
+### 通道现状（2026-11-26 后段，越来越差）
+
+4 并发里常见 1–2 个成功；失败形态三种：`Hard timeout after 1200000ms`、
+`Connect Timeout Error (ai.idcidiot.com:443)`、以及「只回一句就结束」的空转。
+**超时多半已有产出**（备份 + 部分改动已落盘），判定办法见上一节。
+⇒ 每派 4 个，先 `ls *_zh.json.bak_20261126` + 逐个 diff 统计，再决定重派哪些。

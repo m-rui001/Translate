@@ -15,8 +15,9 @@ STAMPS = ['_zh.json.bak_20261126', '_zh.json.bak_20261125']
 
 DBL = re.compile(r'[，。；：、]{2}|[！？]{3,}')
 LEAK = re.compile(r'[\u4e00-\u9fff] [a-z]{3,12} [\u4e00-\u9fff]')
-END_OK = tuple('。！？…：”——）」』』')
+END_OK = tuple('。！？…：”——）」』］】')
 SEP = re.compile(r'^[\s＊*·…\u3000]+$')
+NUM = re.compile(r'^[一二三四五六七八九十百]+$|^[IVXLC]+\.?$')
 
 
 def check(key):
@@ -55,7 +56,7 @@ def check(key):
         m = LEAK.search(p)
         if m:
             out.append('%s[%d]: LATIN-LEAK %r' % (key, i, m.group(0)))
-        if SEP.match(p):
+        if SEP.match(p) or NUM.match(p.strip()):
             continue
         if p.rstrip()[-1] not in END_OK and '\n' not in p.rstrip()[-1:]:
             out.append('%s[%d]: NO-END-PUNCT %r' % (key, i, p.rstrip()[-6:]))
