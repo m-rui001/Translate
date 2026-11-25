@@ -2954,5 +2954,8 @@ pf_l 5 / pf_o 7 / pf_p 1 处都在；只有 pf_n 那一处是我上一轮误删�
 米里亚姆、莫尔太太（萨拉·莫尔）、眨眨、敬畏之宅、荒原、紫/红/黄/绿四房、四字神名。
 已重建整册（841 段 / 90,649 汉字），全库 96 册 `verify_epub` 0 错、`typo_check` 0 问题。
 
-已读 81 / 116；剩 8 篇：`jb_a`–`jb_e`、`js_dog_c/d`、`js_worship`、`thousand_b`、
-`wendigo_a/b`、`willows_a/b`、`dr8` —— 实际是 12 篇（此前的累计数以 ledger 为准）。
+已读 103 / 116；`paras_tool.py list --todo` 实测剩 **13 篇**：
+`jb_a`–`jb_e`（5）、`js_dog_c`、`js_dog_d`、`js_worship`、`thousand_b`、
+`wendigo_a`、`wendigo_b`、`willows_a`、`willows_b`。
+（本轮把已读的 `pf_e`/`pf_o` 补建了 bak —— 当时是直接落盘改的、漏了先备份，
+故它们此前一直挂着 TODO；`dr8` 也已读过。此后每片务必**先 backup 再改**。）
