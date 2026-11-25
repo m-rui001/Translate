@@ -2647,3 +2647,21 @@ Charing Cross / Crayfield(克雷菲尔德) / Lambeth(兰贝斯)` 全对。
 
 已读 62 / 116；剩 27 篇（`pf_b`–`pf_o` 14 篇、`hc_c/d/e/f`、`jb_a`–`jb_e`、
 `js_dog_c/d`、`js_worship`、`thousand_b`、`wendigo_a/b`、`willows_a/b`、`dr8`）。
+
+### 2026-11-26 续七：pf_b 读完（162 段，未改）
+
+`pf_b` 通读无必改，`check_batch` 0 问题（本册第一份「0 报警」的）。否定与时点这一批最危险的地方
+逐处回查过英文原文：
+
+- `we have not forgotten you as you forgot us` → 「我们没有像你忘了我们那样忘了你」（不是「我们像你一样忘了你」）
+- `they had never actually found this Star Cave, for the Interfering Sun…` → 「从没找到过」
+- `They're only in hiding till he comes again` → 「它们也许只是藏起来，等他回来」（原译作「等他回来」，未误成「等他走」）
+- `the eyes must be blue, And the heart must be true` 歌谣六段全对，押韵处未改词。
+
+本册专名/意象 canon（`pf_a`/`pf_b`/`pf_p` 同一书）：
+星光快车（the Starlight Express）、星光之网、星窟（the Star Cave）、撒尘人（the Dustman）、
+扫烟囱的、点灯人（the Lamplighter）、草垛女人、总园丁、蓝眼车长、蓝眼仙子／《蓝之咒》、
+长径（the Long Walk）、微光村、布尔塞勒、汝拉山、阿勒兹峡谷、布德里。
+⇒ 后面 13 篇 `pf_*` 一律沿用；**「Interfering Sun」作「多管闲事的太阳」**（本册单形）。
+
+已读 63 / 116；剩 26 篇。
