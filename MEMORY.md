@@ -2446,3 +2446,51 @@ musketeers、bleakhouse、buddenbrooks、expectations、toerless、whale）。�
   Nayan=娜扬、Khilkoff=基尔科夫、Povey=波维、the Home=疗养院（**不是**「家」）、
   matron=护士长（**不是**女舍监，与 bm_c 一致）、Khaketian=卡赫季、floor-walker=巡场员。
 - bm_e/bm_f 的大段「宣言体」破碎句、诗行（以「／」分行）属作者刻意，不动。
+
+## 2026-11-26 续二：短篇批次（work_batch_20261124）逐段润色开工
+
+`work_batch_20261124` 是最大的一块未读原文：**116 对**（`_<key>_paras.json` 英文原段 + `<key>_zh.json` 中译），
+1,170,843 汉字 / 13,024 段。本轮开工，已读 **29 对**，其余 **87 对**照同一路数继续。
+
+### 两个新工具（务必先用）
+
+- `work_batch_20261124/paras_tool.py`：`list [--todo] / show <key> / backup <key>`。
+  `show` 并按 `offset = len(src) - len(zh)` 把中英逐段并排打印。
+- `work_batch_20261124/check_batch.py [key ...]`：机械体检（JSON 可解析、数组长度与备份一致、
+  无空段、无 ASCII 直引号、「」成对、无重复标点、无拉丁残留、段末标点齐）。
+  分节行 `＊　＊　＊` 不参与段末标点检查（脚本已豁免）。
+
+### 头号坑：`offset` 不固定
+
+`_<key>_paras.json` 的 `[0]` **有时是篇名、有时就是正文首段**：
+- offset=1（源 `[0]` 是篇名）：poe_cask、valdemar 等；
+- offset=0（源 `[0]` 即正文）：bm_a/bm_b/bm_c/bm_d/bm_e/bm_f/hc_a/eh_empty/dn_a 等。
+
+**绝不能按「zh[i] ↔ src[i+1]」硬套**。另有第三类：长篇分片里源文件夹着**未译的章号行**
+（cent_a 5 段、cent_b 6 段、cent_d 6 段、cent_g 6 段，形如 `XVII`／`I.`），
+`offset` 是个整数但**不是全篇同一偏移**，须按段内容人工校准（cent_d 的阶梯点是 zh[17]→2、zh[42]→3……）。
+
+### 通道状况（本轮后段）
+
+`subagent` 又一次降级：4 并发里常常只有 1–3 个成功，其余 `Hard timeout after 1200000ms` 或
+`Connect Timeout Error (ai.idcidiot.com:443)`。**超时的代理往往已经把改动落盘了，只是没来得及写日志**。
+判据：比 `<key>_zh.json` 与它的 `.bak_20261126`，有差异就是改过。本轮 cent_c(18 段)/cent_e(14)/cent_f(17)/
+cent_h(21)/cent_i(58) 都是这种「超时但有产出」，已由主线程逐段 diff 复核 + `check_batch` 体检后收下，
+并补了 `POLISH_LOG_2026-11-26_cent_cef.md` 说明来源。
+⇒ **规矩：派活后先 ls 备份 + diff，再决定要不要重派；不要因为报 timeout 就重做。**
+
+### 已读的 29 对（均通过 check_batch）
+
+bm_a…bm_n（14，布莱克伍德《光明的使者》一系）、cent_a…cent_i（9，《半人马》长篇分片）、
+dn_a（《日与夜的故事》首片）、hc_a（《人类的和声》首片）、eh_empty（本森《空屋》）、
+poe_cask、valdemar。
+
+### 短篇批次的判例增补
+
+- 英语 `not more than a dozen`、`five minutes before eleven` 这类**数量与时点**最容易读反，
+  且要靠上下文自证（「十点差五分」与后文「十点过几分」自相矛盾）。凡数字，回查原文。
+- 破折号体系：本批原稿混用 `;--`／`：——`，统一为「——」；诗行末行可不带标点。
+- 说话人标签塞进引号仍属⑦。
+- `priest` 在布莱克伍德这批里既有「牧师」也有「教区长」，按**篇内多数**定，不跨篇强统。
+- 每篇的专名表要写进日志（Fillery=菲利里／Devonham=德文汉姆／Khilkoff=基尔科夫／
+  the Home=疗养院／matron=护士长／Khaketian=卡赫季 等），下次改同作者别册先读旧日志。
