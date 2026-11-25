@@ -3355,3 +3355,14 @@ c02 1 处（verwöhnte 娇惯坏了）。共 10 处，4 片 verify ALL OK，重�
 全库 96 册 0 错 0 问题。日志 `work_pub/hungerkuenstler/POLISH_LOG_2026-11-26_lit.md`。
 ⇒ 精修判例：**德语悖论修辞（im besten, ja noch nicht einmal im besten）中文要用破折号显化转折，
 否则读成笔误；verwöhnt/die Stirn haben/Schlag der Uhr 等词要译到位，不因"读得通"放过。**
+
+### 2026-11-26 续五五：普鲁斯特 v5/chunk046 精修 + 备份陈旧隐患发现
+
+- **精修**：`vous ne me survivriez pas quarante-huit heures` 原"您比我多活不了四十八小时"
+  （语义方向模糊）→"我若死了，您连四十八小时都活不过，您会自杀的"（条件式存活关系显化，
+  冷酷独白语气到位）。verify ALL OK，重建普鲁斯特 EPUB，全库 96 册 0 错 0 问题。
+- **⚠ 流程隐患**：`work_proust/out_ind/v5/chunk046/final.txt.bak_20261125` 是陈旧旧版，
+  与当前文本差异很大（安德蕾→安德烈、有好处→有理由、我爱的您→我是在爱您等 canon 修正
+  都在当前文件里但不在备份里）。说明 compact 前该文件已被全面修正过，但备份未更新。
+  `if not exists` 备份逻辑不会覆盖旧备份。**当前工作状态正确（安德烈1/安德蕾0），不可回滚备份。**
+  今后遇到 bak_20261125 与当前文本差异巨大时，以当前文件+git为准，勿轻信旧备份。
