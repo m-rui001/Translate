@@ -3625,3 +3625,16 @@ PG #9629 *More Ghost Stories*（1911）GITenberg 拉取；7 篇
 主线程修复：s05 日记段两处尾标点；日期行「一九〇—年」豁免（tail_ok 扩至
 ，、：年日〕收尾直接过——此豁免面偏宽，后续书籍单独核）；符咒题尾豁免。
 **全库 107 册 0 错 0 问题。**M.R.詹姆斯专架 2 册。
+
+### 2026-11-26 续七四：新译《吸血之宅》（第108册，维里克，新作者）
+
+PG #17144 *The House of the Vampire*（1907，George Sylvester Viereck）
+GITenberg 拉取（repo 名与 PG id 不匹配：The-House-of-the-Vampire_17144，
+repo 检索用 api.github.com/search）；**31 章**（源文 XXV 前漏切 XXVI-XXXI，
+grep 全部章号后重切）。**13 个子代理四波并行（每代理 2-3 章）**；
+43,286 汉字/26,808 源词/793 段。canon：雷金纳德·克拉克/欧内斯特·菲尔德
+（源文 Fielder/Fielding 混用→统一菲尔德，版本说明注明）/埃塞尔·布兰登堡/
+杰克/沃尔卡姆。opencc 恒等、菲尔丁 1 处归一全过。build_hv.py 断言全过；
+**全库 108 册 verify_epub 0 错、typo_check 0 问题。**
+⇒ 判例：**章号切片须 grep 全部罗马数字（XXV 后还有 XXXI）；源文专名自身
+不一致时统一并在版权页注明。**
