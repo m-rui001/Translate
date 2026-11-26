@@ -26,3 +26,5 @@ _smoke.out
 # GITenberg raw-source cache (regenerable)
 _pol/
 .pi/subagent-history.json
+work_batch_*/*_check.txt
+work_batch_*/*_cmp.txt
