@@ -22,3 +22,7 @@ _smoke.out
 /_*.json
 /_*.out
 .env
+
+# GITenberg raw-source cache (regenerable)
+_pol/
+.pi/subagent-history.json
