@@ -121,24 +121,31 @@ def gate_json(quiet=False):
             for dd in DOUBLE:
                 if dd in para:
                     problems.append((name, i, "doubled punctuation " + dd))
-            # quote ordering
-            state = "closed"
+            # quote ordering: 「」 -> 『』 -> 「」 alternating nesting.
+            # A paragraph may legitimately end with an unclosed quotation when
+            # the speech carries into the next paragraph (each para re-opens
+            # with 「), so only mis-nesting is gated.
+            stack = []
             err = None
             for ch in para:
-                if ch == "「":
-                    if state == "open":
-                        err = "double-open quote"
-                        break
-                    state = "open"
-                elif ch == "」":
-                    if state == "closed":
+                if ch in "「『":
+                    if stack:
+                        want = "「" if stack[-1] == "『" else "『"
+                        if ch != want:
+                            err = "wrong open %s at depth %d" % (ch, len(stack))
+                            break
+                    stack.append(ch)
+                elif ch in "」』":
+                    if not stack:
                         err = "close-before-open quote"
                         break
-                    state = "closed"
+                    want = "」" if stack[-1] == "「" else "』"
+                    if ch != want:
+                        err = "wrong close %s at depth %d" % (ch, len(stack))
+                        break
+                    stack.pop()
             if err:
                 problems.append((name, i, err))
-            elif state == "open" and para.rstrip().endswith(("「", "『")):
-                problems.append((name, i, "paragraph ends on an opening quote"))
             # canon drift
             for canon, bads in VARIANTS.items():
                 for bad in bads:
