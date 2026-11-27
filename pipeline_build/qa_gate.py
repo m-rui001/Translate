@@ -125,6 +125,10 @@ def gate_json(quiet=False):
                 s = src[i]
                 if len(s) < 40 and len(para) > len(s) * 4 + 40:
                     problems.append((name, i, "hallucinated length %d->%d" % (len(s), len(para))))
+            for qq in ("“", "”", "‘", "’"):
+                if qq in para:
+                    problems.append((name, i, "typographic %s found" % qq))
+                    break
             if LATIN.search(para):
                 problems.append((name, i, "latin letters: " + LATIN.search(para).group()))
             for dd in DOUBLE:
