@@ -109,7 +109,16 @@ def gate_json(quiet=False):
         if src is not None and len(src) != len(zh):
             problems.append((name, -1, "length %d vs src %d" % (len(zh), len(src))))
 
+        seen = {}
         for i, para in enumerate(zh):
+            seen.setdefault(para.strip(), []).append(i)
+
+        for i, para in enumerate(zh):
+            # a short paragraph that merely repeats another short paragraph while
+            # the source here is real prose == a chapter heading standing in for
+            # the text (the "title swallowed the paragraph" failure).
+            if src is not None and i < len(src) and len(para.strip()) <= 24                     and len(src[i]) > 120 and i not in (0, 1)                     and len(seen.get(para.strip(), [])) > 1:
+                problems.append((name, i, "heading stands in for prose"))
             if RESIDUE.search(para):
                 problems.append((name, i, "AI residue: " + para[:50]))
             if src is not None and i < len(src):
