@@ -3793,3 +3793,13 @@ PG #13334 Vol.II *In the Midst of Life*（1893）GITenberg 拉取（bi2）；九
 回绝段（模型对'III'/'IV'单独成段会拒译，主线查源文回填中文数字——
 4 处）、直引号配对、繁体归一。**全库 121 册 verify_epub 0 错、
 typo_check 0 问题。**比尔斯专架 5 册。
+
+### 2026-11-26 续八八：新译《大潘神》（第122册，马琴，新作者）
+
+PG #389 *The Great God Pan*（1894，Arthur Machen）GITenberg 拉取
+（repo 文件名 389.txt，非 -0）；八章。36,677 汉字/21,629 源词/338 段。
+canon：维利尔斯×66/克拉克×82/海伦×35/潘神×10。**codebuddy 通道全走通**
+（子代理池此前配额耗尽）；QA 修复直引号配对、繁体归一、罗马数字回绝段。
+build_gp.py：八节以「一　实验」式全角空格标题；方括号编者小注豁免；
+label 取 UNITS、body=zh 全量。**全库 122 册 verify_epub 0 错、
+typo_check 0 问题。**马琴专架开张。
